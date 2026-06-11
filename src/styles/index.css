@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-beige-50 text-ink font-body text-lg leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-gold/20 text-ink;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      135deg,
+      var(--color-gold-dark) 0%,
+      var(--color-gold-light) 45%,
+      var(--color-gold) 70%,
+      var(--color-gold-dark) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-padding {
+    @apply py-section-sm md:py-section;
+  }
+
+  .container-premium {
+    @apply mx-auto w-full max-w-7xl px-container md:px-8 lg:px-12;
+  }
+}
