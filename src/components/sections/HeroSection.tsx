@@ -2,37 +2,56 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
-import { getReferenceImage } from '@/data/referenceImages'
 
 export function HeroSection() {
-  const heroBackground = getReferenceImage(0)
+  const heroImage = '/images/hero-ref-01.webp'
+  const heroTexture = '/images/hero-texture.webp'
 
   return (
     <section
       aria-label="Presentación"
-      className="relative min-h-[90vh] flex items-center bg-ink overflow-hidden"
+      className="relative min-h-[90vh] flex items-center bg-black overflow-hidden"
     >
+      <div className="absolute inset-y-0 right-0 hidden lg:block w-1/2" aria-hidden>
+        <img
+          src={heroImage}
+          alt=""
+          aria-hidden
+          className="h-full w-full object-cover object-center [mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]"
+          loading="eager"
+          decoding="sync"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black/70" />
+      </div>
+
+      <div className="absolute inset-y-0 left-0 hidden lg:block w-1/2" aria-hidden>
+        <img
+          src={heroTexture}
+          alt=""
+          aria-hidden
+          className="h-full w-full scale-x-[-1] object-cover object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]"
+          loading="eager"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
+      </div>
+
       <img
-        src={heroBackground}
+        src={heroImage}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
+        className="absolute inset-0 h-full w-full object-cover object-right opacity-55 lg:hidden"
         loading="eager"
         decoding="sync"
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black/45 lg:from-transparent lg:via-black/10 lg:to-black/35" aria-hidden />
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-black via-black/85 to-transparent lg:w-1/2 lg:from-black/25 lg:via-black/10"
         aria-hidden
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse at 30% 50%, rgba(201, 169, 98, 0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(212, 201, 184, 0.08) 0%, transparent 50%)',
-        }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/95 to-ink-soft" aria-hidden />
-
       <Container className="relative z-10 py-section">
-        <div className="max-w-5xl">
+        <div className="max-w-5xl lg:max-w-[50%]">
           <p className="font-ui text-xs uppercase tracking-[0.35em] text-gold mb-8 md:mb-12">
             Alta calidad en imagen gastronómica
           </p>
@@ -51,11 +70,12 @@ export function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <Link to="/#galeria">
-              <Button size="lg">Descubrir colección</Button>
-            </Link>
-            <Link to="/contacto">
-              <Button variant="outline" size="lg">
-                Solicitar presupuesto
+              <Button
+                variant="ghost"
+                size="lg"
+                className="!px-0 !py-0 !text-beige-100 hover:!text-gold cursor-pointer"
+              >
+                Descubrir colección
               </Button>
             </Link>
           </div>

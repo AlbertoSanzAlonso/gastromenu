@@ -18,9 +18,9 @@ export function Header() {
         <Link
           to="/"
           className="font-display text-2xl md:text-3xl text-beige-100 tracking-wide hover:text-gold-light transition-colors"
-          aria-label="GastroMenúPremium — Inicio"
+          aria-label="GastroMenu - Inicio"
         >
-          Gastro<em className="gold-shimmer not-italic">Menú</em>Premium
+          Gastro<em className="gold-shimmer not-italic">Menu</em>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10" aria-label="Navegación principal">
@@ -29,7 +29,7 @@ export function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-ui text-xs uppercase tracking-[0.25em] font-light transition-colors hover:text-gold-light ${
+                `relative font-ui text-xs uppercase tracking-[0.25em] font-light transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold/70 after:transition-transform after:duration-300 hover:text-gold-light hover:after:scale-x-100 ${
                   isActive ? 'text-gold' : 'text-beige-300'
                 }`
               }
@@ -41,14 +41,14 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="group md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span className={`block w-6 h-px bg-beige-100 transition-transform ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-px bg-beige-100 transition-opacity ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-px bg-beige-100 transition-transform ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </Container>
 
@@ -64,7 +64,7 @@ export function Header() {
                   <Link
                     to={link.to}
                     onClick={() => setOpen(false)}
-                    className="font-ui text-sm uppercase tracking-[0.25em] text-beige-300 hover:text-gold-light transition-colors"
+                    className="inline-block font-ui text-sm uppercase tracking-[0.25em] text-beige-300 transition-all duration-300 hover:translate-x-1 hover:text-gold-light"
                   >
                     {link.label}
                   </Link>
