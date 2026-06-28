@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fallbackCategories, fallbackGalleryItems } from '@/data/fallback'
+import { getReferenceImage } from '@/data/referenceImages'
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
 import type { GalleryCategory, GalleryItem } from '@/lib/supabase/types'
 
@@ -12,7 +13,7 @@ interface GalleryData {
 
 export function useGallery(): GalleryData {
   const [categories, setCategories] = useState<GalleryCategory[]>(fallbackCategories)
-  const [items, setItems] = useState<GalleryItem[]>(fallbackGalleryItems)
+  const [items, setItems] = useState<GalleryItem[]>(addReferenceImages(fallbackGalleryItems))
   const [loading, setLoading] = useState(isSupabaseConfigured)
   const [error, setError] = useState<string | null>(null)
 
@@ -36,7 +37,9 @@ export function useGallery(): GalleryData {
         if (itemsRes.error) throw itemsRes.error
 
         if (categoriesRes.data?.length) setCategories(categoriesRes.data as GalleryCategory[])
-        if (itemsRes.data?.length) setItems(itemsRes.data as GalleryItem[])
+        if (itemsRes.data?.length) {
+          setItems(addReferenceImages(itemsRes.data as GalleryItem[]))
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error al cargar la galería')
       } finally {
@@ -48,6 +51,13 @@ export function useGallery(): GalleryData {
   }, [])
 
   return { categories, items, loading, error }
+}
+
+function addReferenceImages(items: GalleryItem[]): GalleryItem[] {
+  return items.map((item, index) => ({
+    ...item,
+    image_url: item.image_url ?? getReferenceImage(index),
+  }))
 }
 
 export function getItemsByCategory(

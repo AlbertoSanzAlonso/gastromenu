@@ -2,13 +2,24 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
+import { getReferenceImage } from '@/data/referenceImages'
 
 export function HeroSection() {
+  const heroBackground = getReferenceImage(0)
+
   return (
     <section
       aria-label="Presentación"
       className="relative min-h-[90vh] flex items-center bg-ink overflow-hidden"
     >
+      <img
+        src={heroBackground}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
+        loading="eager"
+        decoding="sync"
+      />
       <div
         className="absolute inset-0 opacity-30"
         aria-hidden
