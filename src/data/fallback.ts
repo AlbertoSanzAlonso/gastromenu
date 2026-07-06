@@ -44,21 +44,21 @@ export const fallbackCategories: GalleryCategory[] = [
 ]
 
 export const fallbackGalleryItems: GalleryItem[] = [
-  { id: 'c1', category_id: '1', title: 'Cartas en piel con tornillos vistos', description: null, image_url: null, sort_order: 1, featured: true, created_at: '' },
-  { id: 'c2', category_id: '1', title: 'Cartas en semipiel troquel seco', description: null, image_url: null, sort_order: 2, featured: false, created_at: '' },
-  { id: 'c3', category_id: '1', title: 'Carta 3D Reserva UVI', description: null, image_url: null, sort_order: 3, featured: true, created_at: '' },
-  { id: 'c4', category_id: '1', title: 'Cartas en maderas nobles', description: null, image_url: null, sort_order: 4, featured: false, created_at: '' },
-  { id: 'c5', category_id: '1', title: 'Carta en semipiel troquel y stamping oro', description: null, image_url: null, sort_order: 5, featured: true, created_at: '' },
-  { id: 'c6', category_id: '1', title: 'Carta de cócteles en policarbonato', description: null, image_url: null, sort_order: 6, featured: false, created_at: '' },
-  { id: 'm1', category_id: '2', title: 'Mantel de chiringuito', description: 'Patrocinado', image_url: null, sort_order: 1, featured: true, created_at: '' },
-  { id: 'm2', category_id: '2', title: 'Mantel de bar y cafetería', description: null, image_url: null, sort_order: 2, featured: false, created_at: '' },
-  { id: 'm3', category_id: '2', title: 'Mantel infantil para colorear', description: null, image_url: null, sort_order: 3, featured: false, created_at: '' },
-  { id: 'm4', category_id: '2', title: 'Mantel restaurante mexicano', description: null, image_url: null, sort_order: 4, featured: true, created_at: '' },
-  { id: 'p1', category_id: '3', title: 'Elegante curvatura en acero', description: null, image_url: null, sort_order: 1, featured: true, created_at: '' },
-  { id: 'p2', category_id: '3', title: 'Portamenú con 3 iluminaciones', description: null, image_url: null, sort_order: 2, featured: true, created_at: '' },
-  { id: 'p3', category_id: '3', title: 'Logo soldado a mano', description: null, image_url: null, sort_order: 3, featured: false, created_at: '' },
-  { id: 'a1', category_id: '4', title: 'Porta adiciones con logo grabado', description: 'Tejido, piel o semipiel', image_url: null, sort_order: 1, featured: true, created_at: '' },
-  { id: 'b1', category_id: '5', title: 'Diseño personalizado, elegante y versátil', description: '3 mm de grosor, robusto y lavable', image_url: null, sort_order: 1, featured: true, created_at: '' },
+  { id: 'c1', category_id: '1', title: 'Cartas en piel con tornillos vistos', description: null, image_url: '/images/gallery/cervantes-vinos.jpg', sort_order: 1, featured: true, created_at: '' },
+  { id: 'c2', category_id: '1', title: 'Cartas en semipiel troquel seco', description: null, image_url: '/images/gallery/haruki-japones.jpg', sort_order: 2, featured: false, created_at: '' },
+  { id: 'c3', category_id: '1', title: 'Carta 3D Reserva UVI', description: null, image_url: '/images/gallery/reserva-uvi.jpg', sort_order: 3, featured: true, created_at: '' },
+  { id: 'c4', category_id: '1', title: 'Cartas en maderas nobles', description: null, image_url: '/images/gallery/asador-inaki.jpg', sort_order: 4, featured: false, created_at: '' },
+  { id: 'c5', category_id: '1', title: 'Carta en semipiel troquel y stamping oro', description: null, image_url: '/images/gallery/jaipur-palace.jpg', sort_order: 5, featured: true, created_at: '' },
+  { id: 'c6', category_id: '1', title: 'Carta de cócteles en policarbonato', description: null, image_url: '/images/gallery/plaza-vinos.jpg', sort_order: 6, featured: false, created_at: '' },
+  { id: 'm1', category_id: '2', title: 'Mantel de chiringuito', description: 'Patrocinado', image_url: '/images/gallery/diseno-esencia.png', sort_order: 1, featured: true, created_at: '' },
+  { id: 'm2', category_id: '2', title: 'Mantel de bar y cafetería', description: null, image_url: '/images/gallery/bella-coppia.jpg', sort_order: 2, featured: false, created_at: '' },
+  { id: 'm3', category_id: '2', title: 'Mantel infantil para colorear', description: null, image_url: '/images/gallery/paella-menu.jpg', sort_order: 3, featured: false, created_at: '' },
+  { id: 'm4', category_id: '2', title: 'Mantel restaurante mexicano', description: null, image_url: '/images/gallery/carihuela-chica.jpg', sort_order: 4, featured: true, created_at: '' },
+  { id: 'p1', category_id: '3', title: 'Elegante curvatura en acero', description: null, image_url: '/images/gallery/artesania-coleccion.png', sort_order: 1, featured: true, created_at: '' },
+  { id: 'p2', category_id: '3', title: 'Portamenú con 3 iluminaciones', description: null, image_url: '/images/gallery/gastromenu-brand.png', sort_order: 2, featured: true, created_at: '' },
+  { id: 'p3', category_id: '3', title: 'Logo soldado a mano', description: null, image_url: '/images/gallery/asador-carne.jpg', sort_order: 3, featured: false, created_at: '' },
+  { id: 'a1', category_id: '4', title: 'Porta adiciones con logo grabado', description: 'Tejido, piel o semipiel', image_url: '/images/gallery/bistrobar-triptico.jpg', sort_order: 1, featured: true, created_at: '' },
+  { id: 'b1', category_id: '5', title: 'Diseño personalizado, elegante y versátil', description: '3 mm de grosor, robusto y lavable', image_url: '/images/gallery/angus-sirloin.jpg', sort_order: 1, featured: true, created_at: '' },
 ]
 
 export const fallbackTeam: TeamMember[] = [

@@ -15,7 +15,7 @@ export function SEO({
   title,
   description,
   path = '/',
-  image = '/og-image.jpg',
+  image = '/og-image.png',
   type = 'website',
 }: SEOProps) {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`
