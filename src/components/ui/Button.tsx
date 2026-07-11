@@ -31,7 +31,7 @@ export function Button({
     <button
       className={`
         inline-flex items-center justify-center
-        font-ui font-light uppercase tracking-[0.2em]
+        font-brand font-normal uppercase tracking-[0.25em]
         transition-all duration-400 ease-premium
         disabled:opacity-50 disabled:cursor-not-allowed
         ${variantStyles[variant]}

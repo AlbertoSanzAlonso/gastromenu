@@ -23,7 +23,7 @@ export function ContactForm() {
   if (success) {
     return (
       <div className="text-center py-16">
-        <p className="font-display text-3xl text-beige-100 mb-4">
+        <p className="font-brand text-2xl text-cream mb-4 font-semibold uppercase tracking-[0.08em]">
           Gracias por su confianza
         </p>
         <p className="text-beige-300 font-light max-w-md mx-auto mb-8">
@@ -39,18 +39,18 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-10 max-w-3xl mx-auto">
       {error && (
-        <p className="text-red-300 text-sm font-ui" role="alert">
+        <p className="text-red-300 text-sm font-brand" role="alert">
           {error}
         </p>
       )}
 
       <fieldset className="space-y-6">
-        <legend className="font-ui text-xs uppercase tracking-[0.25em] text-gold mb-6">
+        <legend className="brand-eyebrow text-[10px] mb-6">
           Establecimiento
         </legend>
 
         <div>
-          <label htmlFor="establishment" className="block font-ui text-sm text-beige-300 mb-2">
+          <label htmlFor="establishment" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
             Nombre y tipo de establecimiento *
           </label>
           <input
@@ -63,7 +63,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="type" className="block font-ui text-sm text-beige-300 mb-2">
+          <label htmlFor="type" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
             Tipo de establecimiento *
           </label>
           <select
@@ -84,13 +84,13 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset className="space-y-6">
-        <legend className="font-ui text-xs uppercase tracking-[0.25em] text-gold mb-6">
+        <legend className="brand-eyebrow text-[10px] mb-6">
           Persona de contacto
         </legend>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="firstName" className="block font-ui text-sm text-beige-300 mb-2">
+            <label htmlFor="firstName" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
               Nombre *
             </label>
             <input
@@ -102,7 +102,7 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block font-ui text-sm text-beige-300 mb-2">
+            <label htmlFor="lastName" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
               Apellidos *
             </label>
             <input
@@ -117,7 +117,7 @@ export function ContactForm() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="phone" className="block font-ui text-sm text-beige-300 mb-2">
+            <label htmlFor="phone" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
               Teléfono *
             </label>
             <input
@@ -130,7 +130,7 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block font-ui text-sm text-beige-300 mb-2">
+            <label htmlFor="email" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
               Correo electrónico *
             </label>
             <input
@@ -145,7 +145,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="address" className="block font-ui text-sm text-beige-300 mb-2">
+          <label htmlFor="address" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
             Dirección, ciudad y provincia
           </label>
           <input
@@ -158,7 +158,7 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset>
-        <legend className="font-ui text-xs uppercase tracking-[0.25em] text-gold mb-6">
+        <legend className="brand-eyebrow text-[10px] mb-6">
           ¿En qué podemos ayudarle?
         </legend>
         <div className="space-y-4">
@@ -182,7 +182,7 @@ export function ContactForm() {
       </fieldset>
 
       <div>
-        <label htmlFor="message" className="block font-ui text-sm text-beige-300 mb-2">
+        <label htmlFor="message" className="block font-brand text-sm text-cream-muted mb-2 tracking-wide">
           Mensaje adicional
         </label>
         <textarea

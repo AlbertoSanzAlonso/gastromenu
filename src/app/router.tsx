@@ -10,7 +10,7 @@ const ContactPage = lazy(() =>
 function PageLoader() {
   return (
     <div className="flex items-center justify-center min-h-[50vh]">
-      <span className="font-ui text-xs uppercase tracking-[0.3em] text-stone">
+      <span className="brand-caption text-mist">
         Cargando…
       </span>
     </div>

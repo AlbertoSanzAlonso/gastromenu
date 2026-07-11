@@ -17,7 +17,7 @@ function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
   return (
     <div className="mb-6 flex flex-col items-center gap-4">
       <span
-        className="font-display text-5xl md:text-6xl font-light gold-shimmer tabular-nums leading-none"
+        className="font-brand text-5xl md:text-6xl font-semibold text-gold-text tabular-nums leading-none"
         aria-hidden
       >
         {String(sortOrder).padStart(2, '0')}
@@ -28,7 +28,7 @@ function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
           <span className="w-1.5 h-1.5 rotate-45 bg-gold/50 group-hover:bg-gold/75 transition-colors duration-400" />
           <span className="h-px flex-1 bg-gold/35 group-hover:bg-gold/55 transition-colors duration-400" />
         </div>
-        <p className="font-ui text-[10px] uppercase tracking-[0.35em] text-gold/75 group-hover:text-gold transition-colors duration-400">
+        <p className="brand-caption text-gold-text/75 group-hover:text-gold-text transition-colors duration-400">
           {label}
         </p>
       </div>
@@ -57,7 +57,7 @@ export function TeamSection() {
             className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/60 hover:border-gold/40 transition-colors duration-400"
           >
             <TeamStepMarker sortOrder={member.sort_order} />
-            <h3 className="font-display text-xl text-ink mb-3 font-light">
+            <h3 className="font-brand text-lg text-ink mb-3 font-medium uppercase tracking-[0.06em]">
               {member.title}
             </h3>
             {member.description && (

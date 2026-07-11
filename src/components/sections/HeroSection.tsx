@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
+import { BrandDivider } from '@/components/ui/BrandDivider'
 import { Container } from '@/components/ui/Container'
-import { GoldText } from '@/components/ui/GoldText'
 
 export function HeroSection() {
   const heroImage = '/images/hero-ref-01.webp'
@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section
       aria-label="Presentación"
-      className="relative min-h-[90vh] flex items-center bg-black overflow-hidden"
+      className="relative z-20 min-h-[90vh] flex items-center bg-black overflow-hidden"
     >
       <div className="absolute inset-y-0 right-0 hidden lg:block w-1/2" aria-hidden>
         <img
@@ -51,34 +51,42 @@ export function HeroSection() {
       />
 
       <Container className="relative z-10 py-section">
-        <div className="max-w-5xl lg:max-w-[50%]">
-          <p className="font-ui text-xs uppercase tracking-[0.35em] text-gold mb-8 md:mb-12">
-            Alta calidad en imagen gastronómica
-          </p>
-
-          <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] font-light text-beige-50 leading-[1.05] tracking-tight text-balance mb-8">
-            La excelencia
-            <br />
-            como <GoldText>destino</GoldText>
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="brand-title text-4xl md:text-6xl lg:text-7xl gold-shimmer mb-8">
+            GASTROMENU
           </h1>
 
-          <blockquote className="max-w-2xl mb-12 md:mb-16">
-            <p className="font-display text-xl md:text-2xl text-beige-300 font-light italic leading-relaxed">
-              «A veces una primera impresión es la que queda para siempre…»
-            </p>
-          </blockquote>
+          <BrandDivider className="mb-8" />
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <Link to="/#galeria">
-              <Button
-                variant="ghost"
-                size="lg"
-                className="!px-0 !py-0 !text-beige-100 hover:!text-gold cursor-pointer"
-              >
-                Descubrir colección
-              </Button>
-            </Link>
-          </div>
+          <p className="brand-subtitle text-sm md:text-base leading-loose mb-6">
+            Cartas artesanales premium
+            <br />
+            para el alma de tu negocio
+          </p>
+
+          <BrandDivider className="mb-8" />
+
+          <p className="brand-eyebrow text-[11px] md:text-xs leading-loose mb-10">
+            Premium handcrafted menus
+            <br />
+            for the soul of your business
+          </p>
+
+          <p className="brand-caption mb-12">
+            Fabricación propia desde 1997
+            <br />
+            in-house manufacturing since 1997
+          </p>
+
+          <Link to="/#galeria">
+            <Button
+              variant="outline"
+              size="lg"
+              className="!border-gold-text/40 !text-cream hover:!border-gold-text hover:!text-gold-text"
+            >
+              Descubrir colección
+            </Button>
+          </Link>
         </div>
       </Container>
 
@@ -86,7 +94,7 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
         aria-hidden
       >
-        <span className="font-ui text-[10px] uppercase tracking-[0.3em] text-mist">
+        <span className="brand-caption text-mist">
           Scroll
         </span>
         <div className="w-px h-12 bg-gradient-to-b from-gold/60 to-transparent animate-pulse" />

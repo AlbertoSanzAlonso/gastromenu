@@ -8,7 +8,7 @@ interface SEOProps {
   type?: 'website' | 'article'
 }
 
-const SITE_NAME = 'GastroMenúPremium'
+const SITE_NAME = 'GASTROMENU'
 const SITE_URL = 'https://gastromenupremium.com'
 
 export function SEO({

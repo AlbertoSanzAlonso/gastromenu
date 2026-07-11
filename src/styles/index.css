@@ -22,17 +22,47 @@
     text-wrap: balance;
   }
 
+  /* Logotipo GASTROMENU — hero, header y footer */
   .gold-shimmer {
     background: linear-gradient(
       135deg,
-      var(--color-gold-dark) 0%,
-      var(--color-gold-light) 45%,
-      var(--color-gold) 70%,
-      var(--color-gold-dark) 100%
+      var(--color-gold-shadow) 0%,
+      var(--color-gold-dark) 18%,
+      var(--color-gold-mid) 38%,
+      var(--color-gold-highlight) 52%,
+      var(--color-gold-light) 62%,
+      var(--color-gold) 78%,
+      var(--color-gold-dark) 92%,
+      var(--color-gold-shadow) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(84, 54, 36, 0.35));
+  }
+
+  .brand-title {
+    @apply font-brand uppercase tracking-[0.12em] font-semibold;
+  }
+
+  /* Español — "Cartas artesanales premium…" */
+  .brand-subtitle {
+    @apply font-brand uppercase tracking-[0.28em] text-cream font-normal;
+  }
+
+  /* Inglés — "Premium handcrafted menus…" */
+  .brand-eyebrow {
+    @apply font-brand text-xs uppercase tracking-[0.35em] text-gold-text font-normal;
+  }
+
+  /* Pie — "Fabricación propia desde 1997…" */
+  .brand-caption {
+    @apply font-brand text-[10px] uppercase tracking-[0.35em] text-cream-muted font-normal;
+  }
+
+  /* Acentos en títulos y textos destacados (oro sólido, sin degradado) */
+  .brand-accent {
+    @apply font-brand text-gold-text not-italic;
   }
 
   .section-padding {
@@ -41,5 +71,19 @@
 
   .container-premium {
     @apply mx-auto w-full max-w-7xl px-container md:px-8 lg:px-12;
+  }
+
+  .brand-watermark {
+    @apply pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden;
+  }
+
+  .brand-watermark img {
+    width: min(95vw, 56rem);
+    max-height: 88vh;
+    object-fit: contain;
+    opacity: 0.26;
+    filter: saturate(1.2) brightness(1.08) contrast(1.05);
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
 
 const navLinks = [
@@ -9,18 +10,42 @@ const navLinks = [
   { to: '/contacto', label: 'Contacto' },
 ]
 
+const SCROLL_THRESHOLD = 80
+
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const headerSurface = open
+    ? 'bg-ink/78 backdrop-blur-md border-gold/10'
+    : scrolled
+      ? 'bg-ink/40 backdrop-blur-xl border-gold/10'
+      : 'bg-ink/78 backdrop-blur-md border-gold/10'
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-ink/90 backdrop-blur-md border-b border-beige-400/10">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ease-premium ${headerSurface}`}
+    >
       <Container as="div" className="flex items-center justify-between h-20 md:h-24">
         <Link
           to="/"
-          className="font-display text-2xl md:text-3xl text-beige-100 tracking-wide hover:text-gold-light transition-colors"
+          className="flex items-center gap-3 md:gap-4 group"
           aria-label="GastroMenu - Inicio"
         >
-          Gastro<em className="gold-shimmer not-italic">Menu</em>
+          <BrandLogo className="h-9 w-9 md:h-11 md:w-11 object-contain transition-transform duration-300 group-hover:scale-105" />
+          <span className="brand-title text-base md:text-lg gold-shimmer transition-opacity group-hover:opacity-90">
+            GASTROMENU
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10" aria-label="Navegación principal">
@@ -29,8 +54,8 @@ export function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `relative font-ui text-xs uppercase tracking-[0.25em] font-light transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gold/70 after:transition-transform after:duration-300 hover:text-gold-light hover:after:scale-x-100 ${
-                  isActive ? 'text-gold' : 'text-beige-300'
+                `font-brand text-xs md:text-sm uppercase tracking-[0.3em] font-normal text-white transition-opacity duration-300 hover:opacity-80 ${
+                  isActive ? 'opacity-100 font-medium' : 'opacity-90'
                 }`
               }
             >
@@ -46,15 +71,15 @@ export function Header() {
           aria-expanded={open}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-px bg-beige-100 transition-all duration-300 group-hover:bg-gold-light ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </Container>
 
       {open && (
         <nav
-          className="md:hidden bg-ink border-t border-beige-400/10 py-8"
+          className="md:hidden bg-ink/78 backdrop-blur-md border-t border-gold/10 py-8"
           aria-label="Navegación móvil"
         >
           <Container>
@@ -64,7 +89,7 @@ export function Header() {
                   <Link
                     to={link.to}
                     onClick={() => setOpen(false)}
-                    className="inline-block font-ui text-sm uppercase tracking-[0.25em] text-beige-300 transition-all duration-300 hover:translate-x-1 hover:text-gold-light"
+                    className="inline-block font-brand text-base uppercase tracking-[0.3em] font-normal text-white transition-opacity duration-300 hover:opacity-80"
                   >
                     {link.label}
                   </Link>

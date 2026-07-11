@@ -28,7 +28,7 @@ export function AboutSection() {
             consolidar su <GoldText>imagen</GoldText>
           </Heading>
 
-          <div className="space-y-6 text-beige-300 font-light leading-relaxed max-w-xl">
+          <div className="space-y-6 text-cream-muted font-normal leading-relaxed max-w-xl">
             <p>
               Deseamos ayudarle a potenciar sus ventas y a consolidar su imagen.
               Apoyamos al sector gastronómico con los mejores materiales y diseños
@@ -39,8 +39,8 @@ export function AboutSection() {
               no solo incrementar sus ventas, sino también consolidar la imagen de
               su establecimiento ante sus comensales.
             </p>
-            <p className="font-display text-xl text-beige-100 italic">
-              Confíe en <GoldText>GastroMenúPremium</GoldText>.
+            <p className="font-brand text-xl text-cream font-normal tracking-wide">
+              Confíe en <GoldText>GASTROMENU</GoldText>.
             </p>
           </div>
         </div>
@@ -51,13 +51,13 @@ export function AboutSection() {
               key={value.title}
               className="border-l border-gold/30 pl-8 py-2"
             >
-              <span className="font-ui text-[10px] uppercase tracking-[0.3em] text-gold-muted">
+              <span className="brand-caption text-gold-muted">
                 0{index + 1}
               </span>
-              <h3 className="font-display text-2xl text-beige-100 mt-2 mb-3">
+              <h3 className="font-brand text-xl text-cream mt-2 mb-3 font-medium uppercase tracking-[0.06em]">
                 {value.title}
               </h3>
-              <p className="text-beige-400 font-light text-base leading-relaxed">
+              <p className="text-cream-muted font-normal text-base leading-relaxed">
                 {value.description}
               </p>
             </article>

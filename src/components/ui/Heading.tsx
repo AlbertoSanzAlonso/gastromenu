@@ -9,10 +9,10 @@ interface HeadingProps {
 }
 
 const sizeStyles = {
-  h1: 'text-5xl md:text-7xl lg:text-8xl font-display font-light tracking-tight leading-[1.05]',
-  h2: 'text-4xl md:text-5xl lg:text-6xl font-display font-light tracking-tight',
-  h3: 'text-2xl md:text-3xl font-display font-normal',
-  h4: 'text-xl font-display font-medium',
+  h1: 'text-4xl md:text-6xl lg:text-7xl font-brand font-semibold uppercase tracking-[0.1em] leading-[1.1]',
+  h2: 'text-3xl md:text-4xl lg:text-5xl font-brand font-semibold uppercase tracking-[0.1em]',
+  h3: 'text-2xl md:text-3xl font-brand font-medium uppercase tracking-[0.08em]',
+  h4: 'text-xl font-brand font-medium uppercase tracking-[0.06em]',
 }
 
 export function Heading({
@@ -30,7 +30,7 @@ export function Heading({
         {children}
       </Tag>
       {subtitle && (
-        <p className="mt-6 text-stone font-ui text-sm uppercase tracking-[0.25em] font-light">
+        <p className="mt-6 brand-eyebrow text-[10px]">
           {subtitle}
         </p>
       )}

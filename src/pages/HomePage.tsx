@@ -9,15 +9,17 @@ export function HomePage() {
   return (
     <>
       <SEO
-        title="GastroMenúPremium"
-        description="Cartas de menú, manteles y portamenús de alta calidad para la hostelería. Excelencia artesanal, diseño premium y compromiso desde 1998."
+        title="GASTROMENU"
+        description="Cartas artesanales premium para el alma de tu negocio. Fabricación propia desde 1997."
         path="/"
       />
       <HeroSection />
-      <GallerySection />
-      <AboutSection />
-      <TeamSection />
-      <ContactCTA />
+      <div className="relative z-10">
+        <GallerySection />
+        <AboutSection />
+        <TeamSection />
+        <ContactCTA />
+      </div>
     </>
   )
 }

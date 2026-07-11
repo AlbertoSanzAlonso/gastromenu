@@ -9,7 +9,7 @@ export function ContactPage() {
     <>
       <SEO
         title="Contacto"
-        description="Solicite presupuesto sin compromiso. GastroMenúPremium — cartas, manteles y portamenús de alta calidad para su establecimiento."
+        description="Solicite presupuesto sin compromiso. GASTROMENU — cartas artesanales premium para el alma de tu negocio."
         path="/contacto"
       />
       <Section variant="dark" className="!pt-32">
