@@ -103,4 +103,79 @@
     user-select: none;
     -webkit-user-drag: none;
   }
+
+  .section-watermark {
+    position: absolute;
+    z-index: 0;
+    object-fit: contain;
+    opacity: 0.78;
+    filter: brightness(0.95) saturate(0.95);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .about-section__visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: min(62%, 40rem);
+    background-size: cover;
+    background-position: 68% center;
+    background-repeat: no-repeat;
+    opacity: 0.68;
+    pointer-events: none;
+  }
+
+  .about-section__visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--color-ink) 0%,
+      rgba(0, 0, 0, 0.72) 28%,
+      rgba(0, 0, 0, 0.2) 62%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .section-watermark--footer {
+    right: -6%;
+    bottom: -8%;
+    width: min(88vw, 52rem);
+    max-height: 130%;
+    object-position: right bottom;
+    opacity: 0.82;
+    filter: brightness(1) saturate(1);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 18%,
+      rgba(0, 0, 0, 0.75) 40%,
+      black 60%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 18%,
+      rgba(0, 0, 0, 0.75) 40%,
+      black 60%
+    );
+  }
+
+  .section-watermark-overlay {
+    @apply absolute inset-0 z-[1] pointer-events-none;
+  }
+
+  .section-watermark-overlay--about {
+    @apply bg-transparent;
+  }
+
+  .section-watermark-overlay--footer {
+    @apply bg-transparent;
+  }
 }

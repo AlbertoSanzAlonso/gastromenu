@@ -6,6 +6,7 @@ import { Heading } from '@/components/ui/Heading'
 import { Section } from '@/components/ui/Section'
 import { getItemsByCategory, useGallery } from '@/features/gallery/hooks/useGallery'
 import { GoldText } from '@/components/ui/GoldText'
+import { getBentoLayout } from '@/lib/gallery/bentoGrid'
 
 export function GallerySection() {
   const { categories, items, loading } = useGallery()
@@ -65,21 +66,26 @@ export function GallerySection() {
                 )}
               </header>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 justify-items-center">
-                {categoryItems.map((item) => (
-                  <ImageCard
-                    key={item.id}
-                    title={item.title}
-                    description={item.description}
-                    imageUrl={item.image_url}
-                    featured={item.featured}
-                    onClick={
-                      item.image_url
-                        ? () => setActiveSlideIndex(slideIndexById.get(item.id) ?? 0)
-                        : undefined
-                    }
-                  />
-                ))}
+              <div className="grid grid-cols-6 gap-2 sm:gap-3 md:gap-4">
+                {categoryItems.map((item, index) => {
+                  const { spanClass, size } = getBentoLayout(index, categoryItems.length)
+
+                  return (
+                    <div key={item.id} className={`${spanClass} min-h-[200px]`}>
+                      <ImageCard
+                        title={item.title}
+                        description={item.description}
+                        imageUrl={item.image_url}
+                        size={size}
+                        onClick={
+                          item.image_url
+                            ? () => setActiveSlideIndex(slideIndexById.get(item.id) ?? 0)
+                            : undefined
+                        }
+                      />
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )

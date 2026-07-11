@@ -27,10 +27,13 @@ export function Header() {
   }, [])
 
   const headerSurface = open
-    ? 'bg-ink/78 backdrop-blur-md border-gold/10'
+    ? 'bg-ink border-gold/10'
     : scrolled
-      ? 'bg-ink/40 backdrop-blur-xl border-gold/10'
-      : 'bg-ink/78 backdrop-blur-md border-gold/10'
+      ? 'bg-ink/90 border-gold/10'
+      : 'bg-ink border-gold/10'
+
+  const headerTextColor = scrolled ? 'text-white' : 'text-gold-slide'
+  const headerLineColor = scrolled ? 'bg-white' : 'bg-gold-slide'
 
   return (
     <header
@@ -42,8 +45,14 @@ export function Header() {
           className="flex items-center gap-3 md:gap-4 group"
           aria-label="GastroMenu - Inicio"
         >
-          <BrandLogo className="h-9 w-9 md:h-11 md:w-11 object-contain transition-transform duration-300 group-hover:scale-105" />
-          <span className="brand-title text-base md:text-lg gold-shimmer transition-opacity group-hover:opacity-90">
+          <BrandLogo
+            className={`h-9 w-9 md:h-11 md:w-11 object-contain transition-all duration-500 ease-premium group-hover:scale-105 ${
+              scrolled ? 'brightness-0 invert' : ''
+            }`}
+          />
+          <span
+            className={`brand-title text-base md:text-lg transition-all duration-500 ease-premium group-hover:opacity-80 ${headerTextColor}`}
+          >
             GASTROMENU
           </span>
         </Link>
@@ -54,7 +63,7 @@ export function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-brand text-xs md:text-sm uppercase tracking-[0.3em] font-normal text-white transition-opacity duration-300 hover:opacity-80 ${
+                `font-brand text-xs md:text-sm uppercase tracking-[0.3em] font-normal transition-all duration-500 ease-premium hover:opacity-80 ${headerTextColor} ${
                   isActive ? 'opacity-100 font-medium' : 'opacity-90'
                 }`
               }
@@ -71,15 +80,15 @@ export function Header() {
           aria-expanded={open}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-px bg-white transition-all duration-300 group-hover:bg-white/80 ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px transition-all duration-500 ease-premium group-hover:opacity-80 ${headerLineColor} ${open ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-px transition-all duration-500 ease-premium group-hover:opacity-80 ${headerLineColor} ${open ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-px transition-all duration-500 ease-premium group-hover:opacity-80 ${headerLineColor} ${open ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </Container>
 
       {open && (
         <nav
-          className="md:hidden bg-ink/78 backdrop-blur-md border-t border-gold/10 py-8"
+          className="md:hidden bg-ink border-t border-gold/10 py-8"
           aria-label="Navegación móvil"
         >
           <Container>
@@ -89,7 +98,7 @@ export function Header() {
                   <Link
                     to={link.to}
                     onClick={() => setOpen(false)}
-                    className="inline-block font-brand text-base uppercase tracking-[0.3em] font-normal text-white transition-opacity duration-300 hover:opacity-80"
+                    className={`inline-block font-brand text-base uppercase tracking-[0.3em] font-normal transition-all duration-500 ease-premium hover:opacity-80 ${headerTextColor}`}
                   >
                     {link.label}
                   </Link>

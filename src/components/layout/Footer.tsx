@@ -2,18 +2,28 @@ import { Link } from 'react-router-dom'
 import { BrandDivider } from '@/components/ui/BrandDivider'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
+import { FOOTER_WATERMARK_SRC } from '@/data/brand'
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 bg-ink/78 backdrop-blur-md border-t border-gold/10 py-16 md:py-20 text-cream [&_.slide-body]:text-cream-muted">
-      <Container>
+    <footer className="relative z-10 overflow-hidden bg-ink border-t border-gold/10 py-16 md:py-20 text-cream [&_.slide-body]:text-cream-muted">
+      <img
+        src={FOOTER_WATERMARK_SRC}
+        alt=""
+        aria-hidden
+        decoding="async"
+        className="section-watermark section-watermark--footer"
+      />
+      <div aria-hidden className="section-watermark-overlay section-watermark-overlay--footer" />
+
+      <Container className="relative z-[2]">
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <BrandLogo className="h-12 w-12 md:h-14 md:w-14 object-contain opacity-90" />
-              <p className="brand-title text-sm gold-shimmer">
+              <p className="brand-title text-sm text-gold-slide">
                 GASTROMENU
               </p>
             </div>
