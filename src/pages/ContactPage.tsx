@@ -22,7 +22,7 @@ export function ContactPage() {
           Hablemos de su <GoldText>proyecto</GoldText>
         </Heading>
 
-        <p className="text-center text-beige-400 font-light max-w-2xl mx-auto mb-16 -mt-8 leading-relaxed">
+        <p className="text-center slide-body max-w-2xl mx-auto mb-16 -mt-8">
           Envíenos sus preguntas y, en el menor tiempo posible, nos pondremos en
           contacto con usted para sugerirle la mejor solución.
         </p>

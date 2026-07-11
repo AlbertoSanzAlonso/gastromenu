@@ -13,7 +13,7 @@
   }
 
   ::selection {
-    @apply bg-gold/20 text-ink;
+    @apply bg-gold-slide/30 text-ink;
   }
 }
 
@@ -45,24 +45,41 @@
     @apply font-brand uppercase tracking-[0.12em] font-semibold;
   }
 
-  /* Español — "Cartas artesanales premium…" */
   .brand-subtitle {
     @apply font-brand uppercase tracking-[0.28em] text-cream font-normal;
   }
 
-  /* Inglés — "Premium handcrafted menus…" */
   .brand-eyebrow {
-    @apply font-brand text-xs uppercase tracking-[0.35em] text-gold-text font-normal;
+    @apply font-label text-xs uppercase tracking-[0.35em] text-gold-slide font-medium;
   }
 
-  /* Pie — "Fabricación propia desde 1997…" */
   .brand-caption {
-    @apply font-brand text-[10px] uppercase tracking-[0.35em] text-cream-muted font-normal;
+    @apply font-label text-[10px] uppercase tracking-[0.35em] text-cream-muted font-normal;
   }
 
-  /* Acentos en títulos y textos destacados (oro sólido, sin degradado) */
   .brand-accent {
-    @apply font-brand text-gold-text not-italic;
+    @apply font-script text-gold-slide not-italic;
+  }
+
+  /* Estilo diapositiva — secciones fuera del hero */
+  .slide-heading {
+    @apply font-serif font-light leading-snug tracking-normal normal-case;
+  }
+
+  .slide-label {
+    @apply font-label text-[11px] md:text-xs uppercase tracking-[0.32em] text-gold-slide font-medium;
+  }
+
+  .slide-body {
+    @apply font-serif font-light leading-relaxed;
+  }
+
+  .slide-accent {
+    @apply font-script text-gold-slide;
+  }
+
+  .slide-frame {
+    @apply border border-gold-slide/25;
   }
 
   .section-padding {
@@ -82,7 +99,7 @@
     max-height: 88vh;
     object-fit: contain;
     opacity: 0.26;
-    filter: saturate(1.2) brightness(1.08) contrast(1.05);
+    filter: saturate(1.1) brightness(1.05) contrast(1.05);
     user-select: none;
     -webkit-user-drag: none;
   }

@@ -10,9 +10,12 @@ interface SectionProps {
 }
 
 const variantStyles = {
-  light: 'bg-beige-50/65 text-ink',
-  dark: 'bg-ink/78 text-cream',
-  beige: 'bg-beige-100/65 text-ink',
+  light:
+    'bg-beige-50/65 text-ink [&_.slide-heading]:text-ink [&_.slide-body]:text-stone',
+  dark:
+    'bg-ink/78 text-cream [&_.slide-heading]:text-cream [&_.slide-body]:text-cream-muted',
+  beige:
+    'bg-beige-100/65 text-ink [&_.slide-heading]:text-ink [&_.slide-body]:text-stone',
 }
 
 export function Section({

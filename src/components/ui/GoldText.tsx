@@ -12,7 +12,7 @@ export function GoldText({
   className = '',
 }: GoldTextProps) {
   return (
-    <Tag className={`brand-accent ${className}`}>
+    <Tag className={`slide-accent ${className}`}>
       {children}
     </Tag>
   )

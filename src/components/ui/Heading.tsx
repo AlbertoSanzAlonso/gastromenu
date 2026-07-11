@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { BrandDivider } from '@/components/ui/BrandDivider'
 
 interface HeadingProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4'
@@ -9,10 +10,10 @@ interface HeadingProps {
 }
 
 const sizeStyles = {
-  h1: 'text-4xl md:text-6xl lg:text-7xl font-brand font-semibold uppercase tracking-[0.1em] leading-[1.1]',
-  h2: 'text-3xl md:text-4xl lg:text-5xl font-brand font-semibold uppercase tracking-[0.1em]',
-  h3: 'text-2xl md:text-3xl font-brand font-medium uppercase tracking-[0.08em]',
-  h4: 'text-xl font-brand font-medium uppercase tracking-[0.06em]',
+  h1: 'text-4xl md:text-5xl lg:text-6xl',
+  h2: 'text-3xl md:text-4xl lg:text-5xl',
+  h3: 'text-2xl md:text-3xl',
+  h4: 'text-xl md:text-2xl',
 }
 
 export function Heading({
@@ -26,13 +27,14 @@ export function Heading({
 
   return (
     <header className={`mb-16 md:mb-20 max-w-4xl ${alignClass} ${className}`}>
-      <Tag className={`${sizeStyles[Tag]} text-balance`}>
+      <Tag className={`slide-heading ${sizeStyles[Tag]} text-balance`}>
         {children}
       </Tag>
       {subtitle && (
-        <p className="mt-6 brand-eyebrow text-[10px]">
-          {subtitle}
-        </p>
+        <>
+          <BrandDivider className={`mt-8 mb-6 ${align === 'center' ? '' : '!mx-0'}`} />
+          <p className="slide-label">{subtitle}</p>
+        </>
       )}
     </header>
   )

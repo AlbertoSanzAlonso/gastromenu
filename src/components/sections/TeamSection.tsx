@@ -17,18 +17,18 @@ function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
   return (
     <div className="mb-6 flex flex-col items-center gap-4">
       <span
-        className="font-brand text-5xl md:text-6xl font-semibold text-gold-text tabular-nums leading-none"
+        className="font-serif text-5xl md:text-6xl font-light text-gold-slide tabular-nums leading-none"
         aria-hidden
       >
         {String(sortOrder).padStart(2, '0')}
       </span>
       <div className="flex flex-col items-center gap-3">
         <div className="flex items-center gap-3 w-20" aria-hidden>
-          <span className="h-px flex-1 bg-gold/35 group-hover:bg-gold/55 transition-colors duration-400" />
-          <span className="w-1.5 h-1.5 rotate-45 bg-gold/50 group-hover:bg-gold/75 transition-colors duration-400" />
-          <span className="h-px flex-1 bg-gold/35 group-hover:bg-gold/55 transition-colors duration-400" />
+          <span className="h-px flex-1 bg-gold-slide/35 group-hover:bg-gold-slide/55 transition-colors duration-400" />
+          <span className="w-1.5 h-1.5 rotate-45 bg-gold-slide/60 group-hover:bg-gold-slide transition-colors duration-400" />
+          <span className="h-px flex-1 bg-gold-slide/35 group-hover:bg-gold-slide/55 transition-colors duration-400" />
         </div>
-        <p className="brand-caption text-gold-text/75 group-hover:text-gold-text transition-colors duration-400">
+        <p className="slide-label text-[10px]">
           {label}
         </p>
       </div>
@@ -54,14 +54,14 @@ export function TeamSection() {
         {members.map((member) => (
           <article
             key={member.id}
-            className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/60 hover:border-gold/40 transition-colors duration-400"
+            className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/70 bg-transparent hover:border-gold-slide/50 transition-colors duration-400"
           >
             <TeamStepMarker sortOrder={member.sort_order} />
-            <h3 className="font-brand text-lg text-ink mb-3 font-medium uppercase tracking-[0.06em]">
+            <h3 className="slide-heading text-lg mb-3">
               {member.title}
             </h3>
             {member.description && (
-              <p className="text-stone text-sm font-light leading-relaxed">
+              <p className="slide-body text-sm">
                 {member.description}
               </p>
             )}

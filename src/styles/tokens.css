@@ -1,5 +1,5 @@
 @theme {
-  /* Paleta extraída de la imagen de marca (redes sociales) */
+  /* Paleta diapositiva premium — negro y oro */
   --color-ink: #000000;
   --color-ink-soft: #0a0a0a;
   --color-ink-muted: #121212;
@@ -14,6 +14,7 @@
   --color-beige-200: #ebeae4;
   --color-beige-300: #d8d6ce;
   --color-beige-400: #c4c0b4;
+  --color-gold-slide: #c5a059;
   --color-gold-highlight: #e8c89a;
   --color-gold-light: #d4a574;
   --color-gold: #c49a6c;
@@ -21,21 +22,23 @@
   --color-gold-dark: #7b4b2a;
   --color-gold-shadow: #543624;
   --color-gold-muted: #6c4e36;
-  /* Oro sólido — bloque inglés de la imagen de marca */
-  --color-gold-text: #9a7a4e;
+  --color-gold-text: #c5a059;
 
-  /* Cinzel — tipografía de la imagen de marca */
+  /* Hero / logotipo */
   --font-brand: 'Cinzel', Georgia, serif;
-  --font-display: var(--font-brand);
-  --font-body: var(--font-brand);
-  --font-ui: var(--font-brand);
 
-  /* Espaciado generoso — diseño diáfano */
+  /* Diapositiva — fuera del hero */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-label: 'Montserrat', system-ui, sans-serif;
+  --font-script: 'Pinyon Script', cursive;
+  --font-display: var(--font-serif);
+  --font-body: var(--font-serif);
+  --font-ui: var(--font-label);
+
   --spacing-section: 7.5rem;
   --spacing-section-sm: 5rem;
   --spacing-container: 1.5rem;
 
-  /* Animaciones sutiles */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-slow: 600ms;
   --duration-normal: 400ms;

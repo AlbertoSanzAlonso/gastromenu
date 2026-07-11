@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { BrandDivider } from '@/components/ui/BrandDivider'
 import { GalleryLightbox, type GallerySlide } from '@/components/ui/GalleryLightbox'
 import { ImageCard } from '@/components/ui/ImageCard'
 import { Heading } from '@/components/ui/Heading'
@@ -40,7 +41,7 @@ export function GallerySection() {
       </Heading>
 
       {loading && (
-        <p className="text-center text-stone font-brand text-sm mb-12" aria-live="polite">
+        <p className="text-center text-stone font-label text-sm mb-12" aria-live="polite">
           Cargando galería…
         </p>
       )}
@@ -52,12 +53,13 @@ export function GallerySection() {
 
           return (
             <div key={category.id}>
-              <header className="mb-12 md:mb-16 max-w-3xl">
-                <h3 className="font-brand text-2xl md:text-3xl font-medium uppercase tracking-[0.06em] text-ink mb-3">
+              <header className="mb-12 md:mb-16">
+                <BrandDivider className="mb-6" />
+                <h3 className="slide-label text-center mb-3">
                   {category.title}
                 </h3>
                 {category.subtitle && (
-                  <p className="brand-eyebrow text-[10px]">
+                  <p className="slide-body text-center text-sm max-w-2xl mx-auto">
                     {category.subtitle}
                   </p>
                 )}

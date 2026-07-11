@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 bg-ink/78 backdrop-blur-md border-t border-gold/10 py-16 md:py-20">
+    <footer className="relative z-10 bg-ink/78 backdrop-blur-md border-t border-gold/10 py-16 md:py-20 text-cream [&_.slide-body]:text-cream-muted">
       <Container>
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           <div>
@@ -18,13 +18,13 @@ export function Footer() {
               </p>
             </div>
             <BrandDivider className="!mx-0 !max-w-[8rem] mb-4" />
-            <p className="brand-caption !text-left !tracking-[0.2em] leading-relaxed max-w-xs">
+            <p className="slide-body text-sm !text-left leading-relaxed max-w-xs">
               Cartas artesanales premium para el alma de tu negocio.
             </p>
           </div>
 
           <div>
-            <p className="brand-eyebrow text-[10px] mb-6">
+            <p className="slide-label text-[10px] mb-6">
               Navegación
             </p>
             <ul className="space-y-3">
@@ -36,7 +36,7 @@ export function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="brand-caption !text-left !tracking-[0.2em] hover:text-gold-text transition-colors"
+                    className="slide-body text-sm !text-left hover:text-gold-slide transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -46,23 +46,27 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="brand-eyebrow text-[10px] mb-6">
+            <p className="slide-label text-[10px] mb-6">
               Compromiso
             </p>
-            <p className="text-cream-muted font-brand font-normal text-sm leading-relaxed tracking-wide">
+            <p className="slide-body text-sm leading-relaxed">
               Materiales de primerísima calidad, diseños adaptados y un equipo artesanal
               que interpreta cada proyecto con exquisitez y dedicación.
             </p>
           </div>
         </div>
 
+        <p className="mt-8 slide-accent text-xl md:text-2xl text-center">
+          Porque la excelencia también se sirve en la mesa.
+        </p>
+
         <BrandDivider className="my-12" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="brand-caption">
+          <p className="slide-label text-[10px]">
             © {year} GastroMenu. Todos los derechos reservados.
           </p>
-          <p className="brand-caption">
+          <p className="slide-label text-[10px]">
             Aviso legal · Política de privacidad
           </p>
         </div>
