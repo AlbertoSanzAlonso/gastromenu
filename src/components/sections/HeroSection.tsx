@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { BrandDivider } from '@/components/ui/BrandDivider'
 import { Container } from '@/components/ui/Container'
+import { GoldText } from '@/components/ui/GoldText'
 
 export function HeroSection() {
   const heroImage = '/images/hero-ref-01.webp'
@@ -51,8 +52,8 @@ export function HeroSection() {
       />
 
       <Container className="relative z-10 py-section">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="brand-title text-4xl md:text-6xl lg:text-7xl gold-shimmer mb-8">
+        <div className="max-w-3xl mx-auto text-center lg:hidden">
+          <h1 className="brand-title text-4xl md:text-6xl gold-shimmer mb-8">
             GASTROMENU
           </h1>
 
@@ -83,6 +84,34 @@ export function HeroSection() {
               variant="outline"
               size="lg"
               className="!border-gold-text/40 !text-cream hover:!border-gold-text hover:!text-gold-text"
+            >
+              Descubrir colección
+            </Button>
+          </Link>
+        </div>
+
+        <div className="hidden lg:block max-w-5xl lg:max-w-[50%]">
+          <p className="slide-label mb-8 md:mb-12">
+            Alta calidad en imagen gastronómica
+          </p>
+
+          <h1 className="slide-heading text-5xl md:text-7xl lg:text-[6.5rem] text-cream leading-[1.05] mb-8">
+            La excelencia
+            <br />
+            como <GoldText>destino</GoldText>
+          </h1>
+
+          <blockquote className="max-w-2xl mb-12 md:mb-16">
+            <p className="slide-body text-xl md:text-2xl text-cream-muted italic">
+              «A veces una primera impresión es la que queda para siempre…»
+            </p>
+          </blockquote>
+
+          <Link to="/#galeria">
+            <Button
+              variant="ghost"
+              size="lg"
+              className="!px-0 !py-0 !text-cream hover:!text-gold-slide cursor-pointer"
             >
               Descubrir colección
             </Button>

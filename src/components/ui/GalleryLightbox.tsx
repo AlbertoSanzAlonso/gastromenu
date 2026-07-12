@@ -16,14 +16,17 @@ interface GalleryLightboxProps {
 }
 
 const navButtonClass = `
-  flex shrink-0 items-center justify-center
+  group flex shrink-0 items-center justify-center
   h-14 w-14 md:h-16 md:w-16
-  border-2 border-cream/50 bg-charcoal/90 text-cream
+  text-cream
   text-3xl md:text-4xl font-light leading-none
-  transition-all duration-300
-  hover:border-gold-light hover:bg-charcoal hover:text-gold-light
-  disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-cream/50 disabled:hover:bg-charcoal/90 disabled:hover:text-cream
+  disabled:opacity-30 disabled:cursor-not-allowed
   cursor-pointer
+`
+
+const navArrowClass = `
+  block transition-all duration-300 ease-premium
+  group-hover:scale-110 group-hover:text-gold-light
 `
 
 export function GalleryLightbox({
@@ -81,7 +84,7 @@ export function GalleryLightbox({
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 right-4 md:top-6 md:right-6 z-20 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream border-2 border-cream/40 bg-charcoal/90 px-5 py-2.5 hover:border-gold-light hover:text-gold-light transition-colors cursor-pointer"
+        className="absolute top-4 right-4 md:top-6 md:right-6 z-20 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream px-5 py-2.5 hover:text-gold-light hover:scale-105 transition-all duration-300 ease-premium cursor-pointer"
         aria-label="Cerrar"
       >
         Cerrar ✕
@@ -94,7 +97,9 @@ export function GalleryLightbox({
         className={`absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-20 ${navButtonClass}`}
         aria-label="Imagen anterior"
       >
-        ‹
+        <span className={navArrowClass} aria-hidden>
+          ‹
+        </span>
       </button>
 
       <button
@@ -104,12 +109,14 @@ export function GalleryLightbox({
         className={`absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-20 ${navButtonClass}`}
         aria-label="Imagen siguiente"
       >
-        ›
+        <span className={navArrowClass} aria-hidden>
+          ›
+        </span>
       </button>
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-14 md:px-20">
         <figure className="flex w-full flex-col items-center">
-          <div className="w-full overflow-hidden bg-ink-soft border-2 border-cream/20 shadow-2xl">
+          <div className="w-full overflow-hidden">
             <img
               src={slide.imageUrl}
               alt={slide.title}
@@ -127,7 +134,7 @@ export function GalleryLightbox({
                 {slide.description}
               </p>
             )}
-            <p className="mt-6 inline-flex items-center justify-center min-w-[5rem] px-4 py-2 border border-cream/35 bg-charcoal/80 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream tabular-nums">
+            <p className="mt-6 inline-flex items-center justify-center min-w-[5rem] px-4 py-2 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream tabular-nums">
               {activeIndex + 1} / {slides.length}
             </p>
           </figcaption>
