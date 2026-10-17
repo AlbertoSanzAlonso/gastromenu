@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fallbackCategories, fallbackGalleryItems } from '@/data/fallback'
+import { readLocalData, subscribeLocalChanges } from '@/features/admin/localStore'
 import { getReferenceImage } from '@/data/referenceImages'
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
 import type { GalleryCategory, GalleryItem } from '@/lib/supabase/types'
@@ -11,11 +12,28 @@ interface GalleryData {
   error: string | null
 }
 
+function gallerySnapshot() {
+  const draft = !isSupabaseConfigured ? readLocalData() : null
+  return {
+    categories: draft ? draft.categories : fallbackCategories,
+    items: addReferenceImages(draft ? draft.items : fallbackGalleryItems),
+  }
+}
+
 export function useGallery(): GalleryData {
-  const [categories, setCategories] = useState<GalleryCategory[]>(fallbackCategories)
-  const [items, setItems] = useState<GalleryItem[]>(addReferenceImages(fallbackGalleryItems))
+  const [categories, setCategories] = useState<GalleryCategory[]>(() => gallerySnapshot().categories)
+  const [items, setItems] = useState<GalleryItem[]>(() => gallerySnapshot().items)
   const [loading, setLoading] = useState(isSupabaseConfigured)
   const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (isSupabaseConfigured) return
+    return subscribeLocalChanges(() => {
+      const next = gallerySnapshot()
+      setCategories(next.categories)
+      setItems(next.items)
+    })
+  }, [])
 
   useEffect(() => {
     if (!isSupabaseConfigured) return

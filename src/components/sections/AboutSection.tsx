@@ -2,6 +2,8 @@ import { Container } from '@/components/ui/Container'
 import { Heading } from '@/components/ui/Heading'
 import { GoldText } from '@/components/ui/GoldText'
 import { ABOUT_SECTION_WATERMARK_SRC } from '@/data/brand'
+import { paragraphsOf, siteContentDefaults } from '@/features/content/catalog'
+import { useSiteContent } from '@/features/content/hooks/useSiteContent'
 
 const values = [
   {
@@ -22,6 +24,9 @@ const values = [
 ]
 
 export function AboutSection() {
+  const { read } = useSiteContent()
+  const paragraphs = paragraphsOf(read('about_text', siteContentDefaults.about_text))
+
   return (
     <section
       id="nosotros"
@@ -53,16 +58,9 @@ export function AboutSection() {
             </blockquote>
 
             <div className="space-y-6 slide-body max-w-xl">
-              <p>
-                Llevamos 28 años diseñando y fabricando cartas de menú, manteles
-                personalizados y atriles portamenú para restaurantes que entienden
-                que cada detalle cuenta.
-              </p>
-              <p>
-                Combinamos la artesanía tradicional con la innovación del sector premium:
-                diseños personalizados, materiales nobles y un marketing gastronómico
-                que interpreta sus deseos.
-              </p>
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
           </div>
 

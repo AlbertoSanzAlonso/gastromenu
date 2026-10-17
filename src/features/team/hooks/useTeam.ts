@@ -1,11 +1,22 @@
 import { useEffect, useState } from 'react'
 import { fallbackTeam } from '@/data/fallback'
+import { readLocalData, subscribeLocalChanges } from '@/features/admin/localStore'
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
 import type { TeamMember } from '@/lib/supabase/types'
 
+function teamSnapshot() {
+  const draft = !isSupabaseConfigured ? readLocalData() : null
+  return draft ? draft.team : fallbackTeam
+}
+
 export function useTeam() {
-  const [members, setMembers] = useState<TeamMember[]>(fallbackTeam)
+  const [members, setMembers] = useState<TeamMember[]>(teamSnapshot)
   const [loading, setLoading] = useState(isSupabaseConfigured)
+
+  useEffect(() => {
+    if (isSupabaseConfigured) return
+    return subscribeLocalChanges(() => setMembers(teamSnapshot()))
+  }, [])
 
   useEffect(() => {
     if (!isSupabaseConfigured) return

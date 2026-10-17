@@ -16,7 +16,8 @@ insert into team_members (title, description, sort_order) values
   ('Un gran equipo a su disposición', 'Desde 1998 al servicio de la hostelería', 5);
 
 insert into site_content (key, value) values
-  ('hero_title', 'La excelencia como destino'),
+  ('hero_image', '/images/hero-ref-01.webp'),
+  ('hero_title', E'La excelencia\ncomo destino'),
   ('hero_quote', 'A veces una primera impresión es la que queda para siempre…'),
-  ('about_text', 'Desde 1998 apoyamos al sector gastronómico con los mejores materiales.')
+  ('about_text', E'Llevamos 28 años diseñando y fabricando cartas de menú, manteles personalizados y atriles portamenú para restaurantes que entienden que cada detalle cuenta.\n\nCombinamos la artesanía tradicional con la innovación del sector premium: diseños personalizados, materiales nobles y un marketing gastronómico que interpreta sus deseos.')
 on conflict (key) do nothing;

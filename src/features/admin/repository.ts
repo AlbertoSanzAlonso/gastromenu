@@ -88,9 +88,14 @@ const localRepository: AdminRepository = {
   },
   async saveCategory(draft) {
     const data = loadLocal()
+    const slug = draft.slug.trim()
+    const duplicate = data.categories.find(
+      (category) => category.slug === slug && category.id !== draft.id,
+    )
+    if (duplicate) throw new Error('Ya existe un registro con ese identificador.')
     const payload: GalleryCategory = {
       id: draft.id ?? crypto.randomUUID(),
-      slug: draft.slug.trim(),
+      slug,
       title: draft.title.trim(),
       subtitle: emptyToNull(draft.subtitle),
       sort_order: toOrder(draft.sort_order),

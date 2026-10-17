@@ -56,6 +56,13 @@ export function TeamSection() {
             key={member.id}
             className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/70 bg-transparent hover:border-gold-slide/50 transition-colors duration-400"
           >
+            {member.image_url && (
+              <img
+                src={member.image_url}
+                alt=""
+                className="mx-auto mb-6 h-28 w-28 object-cover"
+              />
+            )}
             <TeamStepMarker sortOrder={member.sort_order} />
             <h3 className="slide-heading text-lg mb-3">
               {member.title}

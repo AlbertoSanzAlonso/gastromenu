@@ -7,6 +7,12 @@ import { exclusividadesPage } from '@/data/dossier/exclusividades'
 import { mantelesPage } from '@/data/dossier/manteles'
 import { nosotrosPage } from '@/data/dossier/nosotros'
 import { loadDossierPage } from '@/lib/cloudflare/content'
+import { AdminContentPage } from '@/pages/admin/AdminContentPage'
+import { AdminGalleryPage } from '@/pages/admin/AdminGalleryPage'
+import { AdminHomePage } from '@/pages/admin/AdminHomePage'
+import { AdminInquiriesPage } from '@/pages/admin/AdminInquiriesPage'
+import { AdminLayout } from '@/pages/admin/AdminLayout'
+import { AdminTeamPage } from '@/pages/admin/AdminTeamPage'
 import { AtrilesPage } from '@/pages/AtrilesPage'
 import { BlogPage } from '@/pages/BlogPage'
 import { CartasPage } from '@/pages/CartasPage'
@@ -53,6 +59,17 @@ export const router = createBrowserRouter([
         element: <BlogPage />,
       },
       { path: 'contacto', element: <ContactPage /> },
+    ],
+  },
+  {
+    path: '/admin',
+    element: <AdminLayout />,
+    children: [
+      { index: true, element: <AdminHomePage /> },
+      { path: 'contenido', element: <AdminContentPage /> },
+      { path: 'galeria', element: <AdminGalleryPage /> },
+      { path: 'equipo', element: <AdminTeamPage /> },
+      { path: 'consultas', element: <AdminInquiriesPage /> },
     ],
   },
 ])
