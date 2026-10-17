@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export const HERO_SLIDE_MS = 6800
+export const HERO_SLIDE_MS = 3800
 
 export function useHeroSlider(length: number) {
   const [index, setIndex] = useState(0)

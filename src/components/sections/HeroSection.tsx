@@ -32,6 +32,7 @@ export function HeroSection() {
 
   const slider = useHeroSlider(slides.length)
   const slide = slides[slider.index] ?? slides[0]
+  const mirrored = slider.index % 2 === 1
   const touch = useRef({ x: 0, armed: false })
 
   function onPointerDown(event: PointerEvent<HTMLElement>) {
@@ -61,13 +62,27 @@ export function HeroSection() {
         touch.current.armed = false
       }}
     >
-      <HeroStage slides={slides} index={slider.index} reduced={slider.reduced} />
+      <HeroStage
+        slides={slides}
+        index={slider.index}
+        reduced={slider.reduced}
+        mirrored={mirrored}
+      />
 
-      <div className="absolute inset-y-0 left-0 hidden w-1/2 lg:block" aria-hidden>
+      <div
+        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:block ${
+          mirrored ? 'translate-x-full' : 'translate-x-0'
+        }`}
+        aria-hidden
+      >
         <img
           src={HERO_TEXTURE}
           alt=""
-          className="h-full w-full scale-x-[-1] object-cover object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]"
+          className={`h-full w-full object-cover ${
+            mirrored
+              ? 'object-left [mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]'
+              : 'scale-x-[-1] object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]'
+          }`}
           loading="eager"
           decoding="async"
         />
@@ -75,17 +90,21 @@ export function HeroSection() {
       </div>
 
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/35 to-black/70 lg:from-transparent lg:via-black/10 lg:to-black/35"
+        className="pointer-events-none absolute inset-0 z-[1] lg:bg-gradient-to-b lg:from-transparent lg:via-black/10 lg:to-black/35"
         aria-hidden
       />
       <div className="hero-mobile-scrim pointer-events-none absolute inset-0 z-[1]" aria-hidden />
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-full bg-gradient-to-r from-black via-black/85 to-transparent lg:w-1/2 lg:from-black/25 lg:via-black/10"
+        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:w-1/2 lg:via-black/10 lg:to-transparent ${
+          mirrored
+            ? 'lg:translate-x-full lg:bg-gradient-to-l lg:from-black/30'
+            : 'lg:translate-x-0 lg:bg-gradient-to-r lg:from-black/30'
+        }`}
         aria-hidden
       />
 
       <Container className="relative z-10 w-full py-12 md:py-16">
-        <div className="mx-auto max-w-3xl text-center lg:hidden">
+        <div className="hero-mobile-copy mx-auto max-w-3xl text-center lg:hidden">
           <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
           <BrandDivider className="mb-8" />
           {slide && (
@@ -115,14 +134,24 @@ export function HeroSection() {
           </Link>
         </div>
 
-        <div className="hidden max-w-5xl lg:block lg:max-w-[50%]">
+        <div
+          className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:block lg:max-w-[50%] ${
+            mirrored ? 'lg:translate-x-full lg:text-right' : 'lg:translate-x-0 lg:text-left'
+          }`}
+        >
           {slide && (
-            <div key={slide.id} className="hero-copy">
-              <p className="slide-label mb-6 md:mb-8">{slide.label}</p>
-              <EditorialTitle text={slide.title} />
-              <blockquote className="mb-8 max-w-2xl md:mb-10">
-                <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{slide.quote}»</p>
-              </blockquote>
+            <div
+              key={slide.id}
+              className={`hero-letters ${mirrored ? 'origin-right' : 'origin-left'}`}
+              style={slider.reduced ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }}
+            >
+              <div className="hero-copy">
+                <p className="slide-label mb-6 md:mb-8">{slide.label}</p>
+                <EditorialTitle text={slide.title} />
+                <blockquote className="mb-8 max-w-2xl md:mb-10">
+                  <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{slide.quote}»</p>
+                </blockquote>
+              </div>
             </div>
           )}
           <Link to="/cartas">
@@ -155,14 +184,20 @@ function HeroStage({
   slides,
   index,
   reduced,
+  mirrored,
 }: {
   slides: HeroSlide[]
   index: number
   reduced: boolean
+  mirrored: boolean
 }) {
   return (
     <div
-      className="absolute inset-0 overflow-hidden opacity-80 lg:left-1/2 lg:opacity-100 lg:[mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]"
+      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:inset-y-0 lg:left-0 lg:w-1/2 ${
+        mirrored
+          ? 'lg:translate-x-0 lg:[mask-image:linear-gradient(to_left,transparent_0%,black_52%,black_100%)]'
+          : 'lg:translate-x-full lg:[mask-image:linear-gradient(to_right,transparent_0%,black_52%,black_100%)]'
+      }`}
       aria-hidden
     >
       {slides.map((item, position) => {
@@ -181,7 +216,7 @@ function HeroStage({
             <img
               src={item.image}
               alt=""
-              className={`h-full w-full object-cover ${active && !reduced ? 'hero-drift' : 'scale-[1.14]'}`}
+              className={`h-full w-full object-cover max-lg:blur-[6px] lg:blur-none ${active && !reduced ? 'hero-drift' : 'scale-[1.14]'}`}
               style={active && !reduced ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
               loading={position === 0 ? 'eager' : 'lazy'}
               decoding={position === 0 ? 'sync' : 'async'}
