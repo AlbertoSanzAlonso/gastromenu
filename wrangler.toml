@@ -1,0 +1,13 @@
+name = "gastromenu-content"
+main = "workers/content/index.ts"
+compatibility_date = "2026-10-17"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gastromenu"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "gastromenu-media"

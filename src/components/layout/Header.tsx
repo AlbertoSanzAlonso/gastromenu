@@ -2,13 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
-
-const navLinks = [
-  { to: '/', label: 'Inicio' },
-  { to: '/#galeria', label: 'Galería' },
-  { to: '/#nosotros', label: 'Nosotros' },
-  { to: '/contacto', label: 'Contacto' },
-]
+import { mainNav } from '@/data/navigation'
 
 const SCROLL_THRESHOLD = 80
 
@@ -57,13 +51,13 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10" aria-label="Navegación principal">
-          {navLinks.map((link) => (
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-7" aria-label="Navegación principal">
+          {mainNav.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-brand text-xs md:text-sm uppercase tracking-[0.3em] font-normal transition-all duration-500 ease-premium hover:opacity-80 ${headerTextColor} ${
+                `font-brand text-[11px] 2xl:text-xs uppercase tracking-[0.16em] 2xl:tracking-[0.22em] font-normal whitespace-nowrap transition-all duration-500 ease-premium hover:opacity-80 ${headerTextColor} ${
                   isActive ? 'opacity-100 font-medium' : 'opacity-90'
                 }`
               }
@@ -75,7 +69,7 @@ export function Header() {
 
         <button
           type="button"
-          className="group md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+          className="group xl:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
@@ -88,12 +82,12 @@ export function Header() {
 
       {open && (
         <nav
-          className="md:hidden bg-ink border-t border-gold/10 py-8"
+          className="xl:hidden bg-ink border-t border-gold/10 py-8"
           aria-label="Navegación móvil"
         >
           <Container>
             <ul className="space-y-6">
-              {navLinks.map((link) => (
+              {mainNav.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}

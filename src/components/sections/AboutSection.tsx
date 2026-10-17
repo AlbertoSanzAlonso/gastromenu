@@ -6,15 +6,18 @@ import { ABOUT_SECTION_WATERMARK_SRC } from '@/data/brand'
 const values = [
   {
     title: 'Premium',
-    description: 'Materiales nobles y acabados que transmiten distinción desde el primer contacto.',
+    description:
+      'Piel, semipiel, tejidos nobles, maderas selectas, tapas rígidas y acero, elegidos para durar.',
   },
   {
     title: 'Exquisitez',
-    description: 'Cada detalle —desde el troquel hasta el stamping en oro— es pensado con cuidado.',
+    description:
+      'Diseños personalizados y acabados —troquel, stamping, reserva UVI— pensados carta a carta.',
   },
   {
     title: 'Compromiso',
-    description: 'Desde 1998 interpretamos sus gustos para consolidar la imagen de su establecimiento.',
+    description:
+      '28 años interpretando cada proyecto para que la imagen del local empiece en la mesa.',
   },
 ]
 
@@ -35,7 +38,7 @@ export function AboutSection() {
       <Container className="relative z-[2]">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div>
-            <Heading as="h2" subtitle="Desde 1998">
+            <Heading as="h2" subtitle="28 años de experiencia">
               Potenciar sus ventas,
               <br />
               consolidar su <GoldText>imagen</GoldText>
@@ -51,14 +54,14 @@ export function AboutSection() {
 
             <div className="space-y-6 slide-body max-w-xl">
               <p>
-                Deseamos ayudarle a potenciar sus ventas y a consolidar su imagen.
-                Apoyamos al sector gastronómico con los mejores materiales y diseños
-                adaptados a sus cartas y manteles.
+                Llevamos 28 años diseñando y fabricando cartas de menú, manteles
+                personalizados y atriles portamenú para restaurantes que entienden
+                que cada detalle cuenta.
               </p>
               <p>
-                Interpretamos sus gustos y hacemos nuestros sus proyectos, para que vean
-                no solo incrementar sus ventas, sino también consolidar la imagen de
-                su establecimiento ante sus comensales.
+                Combinamos la artesanía tradicional con la innovación del sector premium:
+                diseños personalizados, materiales nobles y un marketing gastronómico
+                que interpreta sus deseos.
               </p>
             </div>
           </div>

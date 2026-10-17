@@ -1,21 +1,20 @@
-import { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
+import { atrilesPage } from '@/data/dossier/atriles'
+import { blogPage } from '@/data/dossier/blog'
+import { cartasPage } from '@/data/dossier/cartas'
+import { exclusividadesPage } from '@/data/dossier/exclusividades'
+import { mantelesPage } from '@/data/dossier/manteles'
+import { nosotrosPage } from '@/data/dossier/nosotros'
+import { loadDossierPage } from '@/lib/cloudflare/content'
+import { AtrilesPage } from '@/pages/AtrilesPage'
+import { BlogPage } from '@/pages/BlogPage'
+import { CartasPage } from '@/pages/CartasPage'
+import { ContactPage } from '@/pages/ContactPage'
+import { ExclusividadesPage } from '@/pages/ExclusividadesPage'
 import { HomePage } from '@/pages/HomePage'
-
-const ContactPage = lazy(() =>
-  import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })),
-)
-
-function PageLoader() {
-  return (
-    <div className="flex items-center justify-center min-h-[50vh]">
-      <span className="brand-caption text-mist">
-        Cargando…
-      </span>
-    </div>
-  )
-}
+import { MantelesPage } from '@/pages/MantelesPage'
+import { NosotrosPage } from '@/pages/NosotrosPage'
 
 export const router = createBrowserRouter([
   {
@@ -24,13 +23,36 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: 'contacto',
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <ContactPage />
-          </Suspense>
-        ),
+        path: 'nosotros',
+        loader: () => loadDossierPage('nosotros', nosotrosPage),
+        element: <NosotrosPage />,
       },
+      {
+        path: 'cartas',
+        loader: () => loadDossierPage('cartas', cartasPage),
+        element: <CartasPage />,
+      },
+      {
+        path: 'atriles',
+        loader: () => loadDossierPage('atriles', atrilesPage),
+        element: <AtrilesPage />,
+      },
+      {
+        path: 'manteles',
+        loader: () => loadDossierPage('manteles', mantelesPage),
+        element: <MantelesPage />,
+      },
+      {
+        path: 'exclusividades',
+        loader: () => loadDossierPage('exclusividades', exclusividadesPage),
+        element: <ExclusividadesPage />,
+      },
+      {
+        path: 'blog',
+        loader: () => loadDossierPage('blog', blogPage),
+        element: <BlogPage />,
+      },
+      { path: 'contacto', element: <ContactPage /> },
     ],
   },
 ])

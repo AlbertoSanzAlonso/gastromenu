@@ -74,12 +74,12 @@ export function HeroSection() {
           </p>
 
           <p className="brand-caption mb-12">
-            Fabricación propia desde 1997
+            Fabricación propia desde 1998
             <br />
-            in-house manufacturing since 1997
+            in-house manufacturing since 1998
           </p>
 
-          <Link to="/#galeria">
+          <Link to="/cartas">
             <Button
               variant="outline"
               size="lg"
@@ -107,7 +107,7 @@ export function HeroSection() {
             </p>
           </blockquote>
 
-          <Link to="/#galeria">
+          <Link to="/cartas">
             <Button
               variant="ghost"
               size="lg"

@@ -1,0 +1,230 @@
+import type { DossierPageContent } from '@/data/dossierTypes'
+
+export const mantelesPage: DossierPageContent = {
+  path: '/manteles',
+  seoTitle: 'Manteles',
+  seoDescription:
+    'Manteles de papel personalizados y manteles rígidos de aluminio lacados a mano. Neuromarketing, varios idiomas y diseño para hostelería.',
+  kicker: 'Manteles',
+  title: 'El mantel también es una herramienta de',
+  emphasis: 'venta',
+  lead:
+    'Diseñamos manteles de un solo uso y manteles rígidos lacados a mano para que la mesa comunique antes de que llegue el primer plato. Neuromarketing, varios idiomas, fotografías propias o de nuestro banco de imágenes, y piezas infantiles para dibujar.',
+  sections: [
+    {
+      id: 'papel',
+      nav: 'De papel',
+      kicker: 'Un solo uso',
+      title: 'Cuando el arte llega a la',
+      emphasis: 'mesa',
+      paragraphs: [
+        'El mantel de papel de alta calidad hace algo más que proteger la mesa: informa, sugiere y dirige la mirada. Lo elaboramos en varios idiomas y, si lo desea, con fotografías de sus propios platos o con imágenes gastronómicas de nuestro archivo.',
+        'Usamos papel de alto gramaje, incluido papel reciclado, en brillo o en mate. El diseño se integra en el establecimiento y forma una barrera limpia frente a lo que ya pasó por esa mesa.',
+      ],
+      highlights: [
+        'Personalizados, con neuromarketing',
+        'Varios idiomas',
+        'Fotografía propia o banco de imágenes',
+        'Alto gramaje, brillo o mate, también reciclado',
+      ],
+      images: [
+        { file: 'MANTELES ÚNICO.png', caption: 'Único' },
+        { file: 'MANTEL EL ENCUENTRO (PEQUEÑO PARA PRESENTACIÓN CARTAS MENÚ - 10X7 A 100).png', caption: 'El Encuentro' },
+        { file: 'MANTEL FONDO PERGAMINO LA CASITA (11.02.26).png', caption: 'La Casita' },
+        { file: 'DESPUÉS (MANTELES LA CEPA).png', caption: 'La Cepa' },
+      ],
+      variant: 'light',
+    },
+    {
+      id: 'caso',
+      nav: 'Un caso',
+      kicker: 'Manteles de papel',
+      title: 'Una historia que cruzó',
+      emphasis: 'fronteras',
+      paragraphs: [
+        'A partir de una obra pictórica que el padre de una clienta había pintado en homenaje a un hombre, plantamos un estilo gráfico sobre el mantel. El nombre del establecimiento quedó en cuestión —y con él, el apoyo de una marca de cervezas— hasta que varios clientes habituales decidieron poner el mantel de su bolsillo.',
+        'Hoy esos manteles viajan con quienes se los llevan a casa, se usan a diario en un rincón de la comida o la cena, y han llegado a paredes de casa en España y fuera de ella. A veces el orgullo de un trabajo bien hecho no se queda en la mesa.',
+      ],
+      images: [
+        { file: 'ANTES (MANTELES LA CEPA).png', caption: 'Antes' },
+        { file: 'DESPUÉS (MANTELES LA CEPA).png', caption: 'Después' },
+        { file: 'MANTELES ARTÍSTICOS DE LA CEPA EN EUROPA 1.png', caption: 'La Cepa, en Europa' },
+      ],
+      variant: 'beige',
+    },
+    {
+      id: 'texto',
+      nav: 'Con texto',
+      kicker: 'Informativos',
+      title: 'Toda la información, de un',
+      emphasis: 'vistazo',
+      paragraphs: [
+        'El mantel de papel tiene lo que la carta de sala no siempre puede: estar delante del comensal el tiempo que dura la mesa. Menú, alérgenos, sugerencias, códigos para seguir el local y un mensaje que empuja el plato que más interesa vender.',
+        'Diagramamos la pieza para que se lea con claridad y la acompañamos de fotografías cuando el producto lo pide. Si dejamos una ración de muestra, el comensal entiende la oferta mejor que con una descripción larga.',
+      ],
+      images: [
+        { file: 'MANTEL EL ENCUENTRO (PEQUEÑO PARA PRESENTACIÓN CARTAS MENÚ - 10X7 A 100).png', caption: 'El Encuentro' },
+        { file: 'MANTEL FONDO PERGAMINO LA CASITA (11.02.26).png', caption: 'Texto y marca' },
+      ],
+      variant: 'light',
+    },
+    {
+      id: 'diseno',
+      nav: 'Diseño',
+      kicker: 'Personalizados',
+      title: 'Cuando el arte viste su',
+      emphasis: 'mesa',
+      paragraphs: [
+        'Si prefiere que el mantel no compita con el entorno, lo mimamos con un diseño que marca la diferencia sin levantar la voz. Y si quiere una pieza de autor, la ilustramos, la coloreamos y la adaptamos al estilo del local.',
+        'Personalizamos, adaptamos y asesoramos sobre motivos, tintas y gramaje. El mantel tiene que parecer del restaurante, no un impreso genérico dejado sobre la mesa.',
+      ],
+      images: [
+        { file: 'MANTEL FONDO PERGAMINO LA CASITA (11.02.26).png', caption: 'Pergamino' },
+        { file: 'MANTELES ÚNICO.png', caption: 'Identidad propia' },
+      ],
+      variant: 'beige',
+    },
+    {
+      id: 'asadores',
+      nav: 'Asadores',
+      kicker: 'Parrillas',
+      title: 'Al calor de las',
+      emphasis: 'brasas',
+      paragraphs: [
+        'La visualidad que desprenden los manteles de papel encaja especialmente bien en asadores y parrillas: el producto se entiende antes de que el camarero lo nombre.',
+        'Manteles específicos para destacar la carne, el corte o la brasa, con una imagen directa y un texto que invita a pedir. Es una de las formas más claras de poner el producto estrella en el centro de la mesa.',
+      ],
+      images: [
+        { file: 'MANTEL EL ASADOR.png', caption: 'El Asador' },
+        { file: 'MANTEL ARGENTINO.png', caption: 'Parrilla argentina' },
+        { file: 'MANTEL ASADOR VASCO.png', caption: 'Asador vasco' },
+      ],
+      variant: 'dark',
+    },
+    {
+      id: 'vinos',
+      nav: 'Vinos',
+      kicker: 'Bodegas',
+      title: 'Promocionar el buen',
+      emphasis: 'vino',
+      paragraphs: [
+        'Una opción muy interesante para bodegas y distribuidores: el mantel patrocinado lleva la imagen del vino y el mensaje que quiere hacer llegar al consumidor final, dentro del restaurante, en el momento en que se elige qué beber.',
+        'Es publicidad en una región específica, con la mesa como soporte. Disponemos de condiciones especiales para bodegas y distribuidores.',
+      ],
+      images: [
+        { file: 'MANTEL VINOS UNICO.png', caption: 'Único' },
+        { file: 'IMPRESIÓN - MANTEL PROTOS GRANDE.png', caption: 'Protos' },
+        { file: 'MANTEL VINO - LÓPEZ DE HARO - FONDO NEGRO CON BOTELLA SIRVIENDO VINO -.png', caption: 'López de Haro' },
+      ],
+      variant: 'light',
+    },
+    {
+      id: 'internacionales',
+      nav: 'Temáticos',
+      kicker: 'Cocina internacional',
+      title: 'Manteles para todo el',
+      emphasis: 'mundo',
+      paragraphs: [
+        'La oferta se adapta al tipo de establecimiento. Un restaurante temático, o cualquier otra cocina, puede vestir la mesa con un mantel que pertenezca a ese mundo: mexicano, italiano, libanés, asiático o el motivo que el local ya reconoce como suyo.',
+        'Llevamos años viendo cómo estos manteles ayudan a decidir el último pedido. El comensal mira, reconoce y pide.',
+      ],
+      images: [
+        { file: 'MANTEL MISTER NOODLES (PEQUE).png', caption: 'Mister Noodles' },
+        { file: 'MANTEL MEXICANO.png', caption: 'Cocina mexicana' },
+        { file: 'MANTEL TEMÁTICO LIBANÉS.png', caption: 'Cocina libanesa' },
+        { file: 'MANTEL ITALIANO WEB.png', caption: 'Cocina italiana' },
+      ],
+      variant: 'beige',
+    },
+    {
+      id: 'cocteles',
+      nav: 'Cócteles',
+      kicker: 'Tamaño reducido',
+      title: 'Por qué no un mantel de',
+      emphasis: 'cóctel',
+      paragraphs: [
+        'Disponemos de manteles pequeños para potenciar los cócteles, junto a la carta o como pieza propia. Funcionan como un argumento breve, a la vista, mientras se decide la copa.',
+        'El formato reducido cabe en la barra y en la mesa auxiliar. Misma lógica que el mantel grande: una imagen, un nombre y una razón para pedir.',
+      ],
+      images: [
+        { file: 'MANTEL COCKTAIL HIELO.png', caption: 'Cóctel' },
+        { file: 'MANTEL PEQUEÑO - FOLLETO - CÓCKTAIL MADAGASCAR - 28.07.25.png', caption: 'Formato reducido' },
+      ],
+      variant: 'light',
+    },
+    {
+      id: 'chiringuitos',
+      nav: 'Chiringuitos',
+      kicker: 'Playa',
+      title: 'Con la frescura del',
+      emphasis: 'verano',
+      paragraphs: [
+        'En temporada, el mantel de papel permite cambiar la información con la misma rapidez con la que cambia la oferta del chiringuito. Se moja, se retira y al día siguiente hay otro.',
+        'También combinan manteles de mesa con cartas menú: el mantel presenta los platos que más interesa vender y la carta guarda el detalle. Y, si el comensal se lleva el mantel, la marca se va con él.',
+      ],
+      images: [
+        { file: 'MANTEL (ESPETOS) - CHIRINGUITO ALMA MEDITERRÁNEA.png', caption: 'Alma Mediterránea' },
+        { file: 'MANTELERÍA LA MAR SALÁ (peque).png', caption: 'La Mar Salá' },
+        { file: 'MANTEL CHIRINGUITO (MARISCOS) - MEU MARE.png', caption: 'Meu Mare' },
+      ],
+      variant: 'beige',
+    },
+    {
+      id: 'desayunos',
+      nav: 'Desayunos',
+      kicker: 'Para empezar el día',
+      title: 'Un buen desayuno también se',
+      emphasis: 'diseña',
+      paragraphs: [
+        'Hoteles, cafeterías y oficinas usan el desayuno como primer contacto del día. El mantel pequeño presenta la oferta —bollería, zumos, huevos, smoothies— con una imagen que abre el apetito antes de que llegue la carta.',
+        'Lo diseñamos a la medida del servicio, con la higiene de un soporte de un solo uso y la claridad de quien tiene pocos minutos para decidir.',
+      ],
+      images: [
+        { file: 'MANTEL DESAYUNO PEQUEÑO - HOTEL AMBASSADOR.png', caption: 'Hotel Ambassador' },
+        { file: 'MANTEL DESAYUNO PEQUEÑO - DESAYUNOS DE PUEBLO.png', caption: 'Desayunos de pueblo' },
+        { file: 'IMAGEN CHICOS DESAYUNANDO CON MANTELES DEBAJO.png', caption: 'En la mesa' },
+      ],
+      variant: 'light',
+    },
+    {
+      id: 'rigidos',
+      nav: 'Rígidos',
+      kicker: 'Alubond',
+      title: 'Cuando el lujo llega a la',
+      emphasis: 'mesa',
+      paragraphs: [
+        'Para destacar del resto fabricamos manteles de aluminio, rígidos, lacados a mano, con los motivos del local. Se lavan, duran y dan una imagen de alto standing. Si se mantienen en la línea visual del restaurante, afianzan el marketing de la sala.',
+        'Producto de alto nivel, cortado a láser y acabado de uno en uno. Alubond en mate o brillo, con el espesor y la presencia de una pieza que no se retira entre servicio y servicio.',
+      ],
+      highlights: [
+        'Aluminio rígido, lacado a mano',
+        'Lavables y de larga duración',
+        'Corte láser y acabado artesanal',
+        'Mate o brillo',
+      ],
+      images: [
+        { file: 'SALVAMANTELES 16.png', caption: 'Mantel rígido' },
+        { file: 'MUJER COMIENDO CON MANTEL DE ALUBOND.png', caption: 'Alubond en mesa' },
+        { file: 'ESPESOR MANTELES RÍGIDOS.png', caption: 'Espesor' },
+      ],
+      variant: 'dark',
+    },
+    {
+      id: 'infantiles',
+      nav: 'Infantiles',
+      kicker: 'Para los más pequeños',
+      title: 'Los niños también',
+      emphasis: 'cuentan',
+      paragraphs: [
+        'Para que los más pequeños se entretengan sin perder el hilo de la mesa, diseñamos manteles para colorear y jugar. Mantienen la atención, alargan la estancia con naturalidad y dejan un recuerdo que el niño se quiere llevar.',
+        'El mantel infantil es también una herramienta comercial: mientras el niño dibuja, la mesa sigue pidiendo.',
+      ],
+      images: [
+        { file: 'MANTEL-INFANTIL-COMIC.png', caption: 'Para colorear' },
+        { file: 'MANTEL-INFANTIL-COMIC-2.png', caption: 'Mantel infantil' },
+        { file: 'MADRE CON NIÑO Y MANTELES INFANTILES (ARREGLAR).png', caption: 'En el restaurante' },
+      ],
+      variant: 'beige',
+    },
+  ],
+}

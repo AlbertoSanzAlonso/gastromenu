@@ -3,6 +3,7 @@ import { BrandDivider } from '@/components/ui/BrandDivider'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
 import { FOOTER_WATERMARK_SRC } from '@/data/brand'
+import { mainNav } from '@/data/navigation'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -38,11 +39,7 @@ export function Footer() {
               Navegación
             </p>
             <ul className="space-y-3">
-              {[
-                { to: '/', label: 'Inicio' },
-                { to: '/#galeria', label: 'Galería' },
-                { to: '/contacto', label: 'Contacto' },
-              ].map((link) => (
+              {mainNav.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}

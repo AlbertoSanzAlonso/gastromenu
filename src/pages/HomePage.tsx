@@ -1,6 +1,6 @@
 import { SEO } from '@/lib/seo/SEO'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { GallerySection } from '@/components/sections/GallerySection'
+import { CollectionsSection } from '@/components/sections/CollectionsSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { TeamSection } from '@/components/sections/TeamSection'
 import { ContactCTA } from '@/components/sections/ContactCTA'
@@ -10,12 +10,12 @@ export function HomePage() {
     <>
       <SEO
         title="GASTROMENU"
-        description="Cartas artesanales premium para el alma de tu negocio. Fabricación propia desde 1997."
+        description="Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998."
         path="/"
       />
       <HeroSection />
       <div className="relative z-10">
-        <GallerySection />
+        <CollectionsSection />
         <AboutSection />
         <TeamSection />
         <ContactCTA />
