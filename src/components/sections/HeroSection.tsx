@@ -1,4 +1,4 @@
-import { useMemo, useRef, type KeyboardEvent, type PointerEvent } from 'react'
+import { useMemo, useRef, type PointerEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { BrandDivider } from '@/components/ui/BrandDivider'
@@ -23,9 +23,11 @@ export function HeroSection() {
         id: 'actual',
         image: heroImage,
         alt: 'Imagen de portada de Gastromenu',
-        caption: 'Portada',
+        label: 'Alta calidad en imagen gastronómica',
+        title: heroTitle,
+        quote: heroQuote,
       }),
-    [heroImage],
+    [heroImage, heroQuote, heroTitle],
   )
 
   const slider = useHeroSlider(slides.length)
@@ -82,21 +84,21 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <Container className="relative z-10 w-full pt-6 pb-32 md:pt-8 md:pb-28">
+      <Container className="relative z-10 w-full py-12 md:py-16">
         <div className="mx-auto max-w-3xl text-center lg:hidden">
           <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
           <BrandDivider className="mb-8" />
-          <p className="brand-subtitle mb-6 text-sm leading-loose md:text-base">
-            Cartas artesanales premium
-            <br />
-            para el alma de tu negocio
-          </p>
-          <BrandDivider className="mb-8" />
-          <p className="brand-eyebrow mb-10 text-[11px] leading-loose md:text-xs">
-            Premium handcrafted menus
-            <br />
-            for the soul of your business
-          </p>
+          {slide && (
+            <div key={slide.id} className="hero-copy">
+              <p className="brand-eyebrow mb-6 text-[11px] md:text-xs">{slide.label}</p>
+              <EditorialTitle
+                as="p"
+                text={slide.title}
+                className="slide-heading mb-6 text-4xl !leading-[1.05] text-cream md:text-5xl"
+              />
+              <p className="slide-body mb-8 text-lg italic text-cream-muted">«{slide.quote}»</p>
+            </div>
+          )}
           <p className="brand-caption mb-12">
             Fabricación propia desde 1998
             <br />
@@ -114,11 +116,15 @@ export function HeroSection() {
         </div>
 
         <div className="hidden max-w-5xl lg:block lg:max-w-[50%]">
-          <p className="slide-label mb-6 md:mb-8">Alta calidad en imagen gastronómica</p>
-          <EditorialTitle text={heroTitle} />
-          <blockquote className="mb-8 max-w-2xl md:mb-10">
-            <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{heroQuote}»</p>
-          </blockquote>
+          {slide && (
+            <div key={slide.id} className="hero-copy">
+              <p className="slide-label mb-6 md:mb-8">{slide.label}</p>
+              <EditorialTitle text={slide.title} />
+              <blockquote className="mb-8 max-w-2xl md:mb-10">
+                <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{slide.quote}»</p>
+              </blockquote>
+            </div>
+          )}
           <Link to="/cartas">
             <Button
               variant="ghost"
@@ -132,31 +138,14 @@ export function HeroSection() {
 
       </Container>
 
-      {slide && (
-        <div className="absolute inset-x-0 bottom-6 z-20 md:bottom-8">
-          <Container>
-            <HeroControls
-              slides={slides}
-              index={slider.index}
-              caption={slide.caption}
-              reduced={slider.reduced}
-              held={slider.held}
-              onPrev={slider.prev}
-              onNext={slider.next}
-              onGoTo={slider.goTo}
-              onToggle={() => slider.setHeld((value) => !value)}
-              onHover={slider.setHovering}
-            />
-          </Container>
-        </div>
-      )}
-
       <div
-        className="absolute bottom-8 right-6 z-10 hidden flex-col items-center gap-3 lg:flex"
+        className="pointer-events-none absolute inset-x-0 bottom-8 z-10 flex justify-center"
         aria-hidden
       >
-        <span className="brand-caption text-mist">Scroll</span>
-        <div className="h-12 w-px animate-pulse bg-gradient-to-b from-gold/60 to-transparent" />
+        <div className="flex flex-col items-center gap-3">
+          <span className="brand-caption text-mist">Scroll</span>
+          <div className="h-12 w-px animate-pulse bg-gradient-to-b from-gold/60 to-transparent" />
+        </div>
       </div>
     </section>
   )
@@ -204,143 +193,25 @@ function HeroStage({
   )
 }
 
-function HeroControls({
-  slides,
-  index,
-  caption,
-  reduced,
-  held,
-  onPrev,
-  onNext,
-  onGoTo,
-  onToggle,
-  onHover,
+function EditorialTitle({
+  text,
+  className,
+  as: Tag = 'h1',
 }: {
-  slides: HeroSlide[]
-  index: number
-  caption: string
-  reduced: boolean
-  held: boolean
-  onPrev: () => void
-  onNext: () => void
-  onGoTo: (index: number) => void
-  onToggle: () => void
-  onHover: (hovering: boolean) => void
+  text: string
+  className?: string
+  as?: 'h1' | 'p'
 }) {
-  function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key === 'ArrowRight') {
-      event.preventDefault()
-      onNext()
-    }
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault()
-      onPrev()
-    }
-  }
-
-  return (
-    <div
-      className="mx-auto flex max-w-xl flex-col items-center lg:mx-0 lg:max-w-[46%] lg:items-start"
-      onPointerEnter={(event) => {
-        if (event.pointerType === 'mouse') onHover(true)
-      }}
-      onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') onHover(false)
-      }}
-    >
-      <div className="flex w-full items-center justify-center gap-3 lg:justify-start">
-        <SliderButton label="Imagen anterior" onClick={onPrev}>
-          ‹
-        </SliderButton>
-
-        <div
-          role="tablist"
-          aria-label="Imágenes de portada"
-          className="flex max-w-full gap-2.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          onKeyDown={onKeyDown}
-        >
-          {slides.map((item, position) => {
-            const active = position === index
-            return (
-              <button
-                key={item.id}
-                type="button"
-                role="tab"
-                aria-selected={active}
-                tabIndex={active ? 0 : -1}
-                aria-label={`${item.caption}, imagen ${position + 1} de ${slides.length}`}
-                onClick={() => onGoTo(position)}
-                className={`relative h-14 w-10 shrink-0 cursor-pointer overflow-hidden border transition-all duration-500 ease-premium focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-gold-slide sm:h-16 sm:w-12 ${
-                  active
-                    ? 'border-gold-slide opacity-100'
-                    : 'border-cream/20 opacity-55 hover:border-cream/50 hover:opacity-100'
-                }`}
-              >
-                <img src={item.image} alt="" className="h-full w-full object-cover" />
-                {active && (
-                  <span
-                    className={`absolute inset-x-0 bottom-0 h-px bg-gold-slide ${reduced ? '' : 'hero-progress'}`}
-                    style={reduced ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }}
-                  />
-                )}
-              </button>
-            )
-          })}
-        </div>
-
-        <SliderButton label="Imagen siguiente" onClick={onNext}>
-          ›
-        </SliderButton>
-      </div>
-
-      <div className="mt-4 flex items-center gap-5">
-        <p key={caption} className="hero-caption brand-caption text-cream/80">
-          {String(index + 1).padStart(2, '0')}
-          <span className="mx-2 text-cream/35">/</span>
-          {String(slides.length).padStart(2, '0')}
-          <span className="mx-3 text-gold-slide/70">—</span>
-          {caption}
-        </p>
-        <button
-          type="button"
-          aria-pressed={held}
-          onClick={onToggle}
-          className="brand-caption cursor-pointer text-cream/60 transition-colors duration-500 ease-premium hover:text-gold-slide focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-gold-slide"
-        >
-          {held ? 'Seguir' : 'Pausa'}
-        </button>
-      </div>
-    </div>
-  )
-}
-
-function SliderButton({
-  label,
-  onClick,
-  children,
-}: {
-  label: string
-  onClick: () => void
-  children: string
-}) {
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      onClick={onClick}
-      className="flex h-10 w-8 shrink-0 cursor-pointer items-center justify-center font-serif text-3xl leading-none text-cream/70 transition-colors duration-500 ease-premium hover:text-gold-slide focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-gold-slide"
-    >
-      <span aria-hidden>{children}</span>
-    </button>
-  )
-}
-
-function EditorialTitle({ text }: { text: string }) {
   const lines = text.split('\n').map((line) => line.trim()).filter(Boolean)
   const safeLines = lines.length > 0 ? lines : [text]
 
   return (
-    <h1 className="slide-heading mb-8 text-5xl !leading-[0.98] text-cream md:text-6xl lg:text-[4.6rem] xl:text-[5.5rem] 2xl:text-[6rem]">
+    <Tag
+      className={
+        className ??
+        'slide-heading mb-8 text-5xl !leading-[0.98] text-cream md:text-6xl lg:text-[4.6rem] xl:text-[5.5rem] 2xl:text-[6rem]'
+      }
+    >
       {safeLines.map((line, index) => {
         const words = line.split(/\s+/).filter(Boolean)
         const accent = index === safeLines.length - 1 && words.length > 1 ? words.pop() : undefined
@@ -356,6 +227,6 @@ function EditorialTitle({ text }: { text: string }) {
           </span>
         )
       })}
-    </h1>
+    </Tag>
   )
 }

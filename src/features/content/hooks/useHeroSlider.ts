@@ -4,8 +4,6 @@ export const HERO_SLIDE_MS = 6800
 
 export function useHeroSlider(length: number) {
   const [index, setIndex] = useState(0)
-  const [held, setHeld] = useState(false)
-  const [hovering, setHovering] = useState(false)
   const [hidden, setHidden] = useState(() => document.hidden)
   const [reduced, setReduced] = useState(() =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -26,7 +24,7 @@ export function useHeroSlider(length: number) {
     return () => document.removeEventListener('visibilitychange', sync)
   }, [])
 
-  const paused = held || hovering || hidden || reduced || length < 2
+  const paused = hidden || reduced || length < 2
   const activeIndex = length === 0 ? 0 : index % length
 
   const goTo = useCallback(
@@ -64,10 +62,6 @@ export function useHeroSlider(length: number) {
     index: activeIndex,
     paused,
     reduced,
-    held,
-    setHeld,
-    setHovering,
-    goTo,
     next,
     prev,
   }

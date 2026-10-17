@@ -2,7 +2,9 @@ export interface HeroSlide {
   id: string
   image: string
   alt: string
-  caption: string
+  label: string
+  title: string
+  quote: string
 }
 
 /**
@@ -14,31 +16,41 @@ export const mockHeroSlides: HeroSlide[] = [
     id: 'cervantes',
     image: '/images/gallery/cervantes-vinos.jpg',
     alt: 'Carta de vinos Cervantes en piel, con cantoneras y tornillos vistos',
-    caption: 'Carta de vinos en piel',
+    label: 'Cartas de vino',
+    title: 'La piel\nque recibe',
+    quote: 'Tornillos vistos y cantoneras de oro para una carta que se recuerda en la mano.',
   },
   {
     id: 'jaipur',
     image: '/images/gallery/jaipur-palace.jpg',
     alt: 'Carta Jaipur Palace en semipiel verde con pavo real estampado en oro',
-    caption: 'Stamping en oro',
+    label: 'Stamping en oro',
+    title: 'Un nombre\nen oro',
+    quote: 'El pavo real queda estampado para que la mesa hable antes que la carta.',
   },
   {
     id: 'reserva-uvi',
     image: '/images/gallery/reserva-uvi.jpg',
     alt: 'Carta Reserva UVI con corona en relieve sobre portada bicolor',
-    caption: 'Relieve Reserva UVI',
+    label: 'Reserva UVI',
+    title: 'Relieve\nque se toca',
+    quote: 'La corona se siente con los dedos antes de abrir la primera página.',
   },
   {
     id: 'haruki',
     image: '/images/gallery/haruki-japones.jpg',
     alt: 'Carta japonesa Haruki con troquel seco',
-    caption: 'Carta japonesa troquelada',
+    label: 'Troquel japonés',
+    title: 'Oro sobre\nla noche',
+    quote: 'Dos koi y un troquel seco, pensados para una mesa que no necesita alzar la voz.',
   },
   {
     id: 'plaza',
     image: '/images/gallery/plaza-vinos.jpg',
     alt: 'Carta de vinos y bebidas Plaza Cafetería, impresa sobre madera',
-    caption: 'Carta en madera',
+    label: 'Impresión en madera',
+    title: 'La madera\nse queda',
+    quote: 'Vino, corcho y el nombre del local, impresos para acompañar la mesa.',
   },
 ]
 
