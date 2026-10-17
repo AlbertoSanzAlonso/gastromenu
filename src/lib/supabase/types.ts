@@ -1,13 +1,6 @@
-export type GalleryCategorySlug =
-  | 'cartas'
-  | 'manteles'
-  | 'portamenus'
-  | 'adiciones'
-  | 'bajo-platos'
-
 export interface GalleryCategory {
   id: string
-  slug: GalleryCategorySlug
+  slug: string
   title: string
   subtitle: string | null
   sort_order: number

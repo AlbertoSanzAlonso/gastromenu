@@ -11,22 +11,21 @@ function localContentMap() {
   return Object.fromEntries(draft.content.map((row) => [row.key, row.value]))
 }
 
-function loadRemote() {
+function loadRemote(): Promise<Record<string, string>> {
   if (remoteCache) return Promise.resolve(remoteCache)
   if (!remotePending) {
-    remotePending = supabase
-      .from('site_content')
-      .select('key, value')
-      .then(({ data, error }) => {
-        const next: Record<string, string> = {}
-        if (!error && data) {
-          for (const row of data as { key: string; value: string }[]) {
-            next[row.key] = row.value
-          }
+    remotePending = Promise.resolve(
+      supabase.from('site_content').select('key, value'),
+    ).then(({ data, error }) => {
+      const next: Record<string, string> = {}
+      if (!error && data) {
+        for (const row of data as { key: string; value: string }[]) {
+          next[row.key] = row.value
         }
-        remoteCache = next
-        return next
-      })
+      }
+      remoteCache = next
+      return next
+    })
   }
   return remotePending
 }
