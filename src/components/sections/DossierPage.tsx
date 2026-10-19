@@ -41,7 +41,7 @@ export function DossierPage({ content }: DossierPageProps) {
           {content.sections.length > 1 && (
             <nav
               aria-label="Secciones"
-              className="mt-10 flex gap-3 overflow-x-auto pb-1"
+              className="mt-10 flex flex-wrap gap-3"
             >
               {content.sections.map((section) => (
                 <a

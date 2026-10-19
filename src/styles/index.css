@@ -190,13 +190,68 @@
 }
 
 @keyframes hero-copy {
-  from {
+  0% {
     opacity: 0;
-    transform: translate3d(0, 0.85rem, 0);
+    filter: blur(0);
+    transform: translate3d(0, 0.55rem, 0);
   }
-  to {
+  46% {
+    opacity: 0.55;
+    filter: blur(6px);
+    transform: translate3d(0, 0.12rem, 0);
+  }
+  100% {
     opacity: 1;
+    filter: blur(0);
     transform: none;
+  }
+}
+
+@keyframes hero-copy-out {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+  46% {
+    opacity: 0.4;
+    filter: blur(6px);
+    transform: translate3d(0, -0.1rem, 0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(0);
+    transform: translate3d(0, -0.28rem, 0);
+  }
+}
+
+@keyframes hero-slide-in {
+  0% {
+    opacity: 0;
+    filter: blur(0);
+  }
+  46% {
+    opacity: 0.6;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-slide-out {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  46% {
+    opacity: 0.42;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(0);
   }
 }
 
@@ -216,7 +271,19 @@
 }
 
 .hero-copy {
-  animation: hero-copy 900ms var(--ease-premium) both;
+  animation: hero-copy 1600ms ease-in-out both;
+}
+
+.hero-copy-out {
+  animation: hero-copy-out 1600ms ease-in-out both;
+}
+
+.hero-slide-in {
+  animation: hero-slide-in 1600ms ease-in-out both;
+}
+
+.hero-slide-out {
+  animation: hero-slide-out 1600ms ease-in-out both;
 }
 
 .hero-letters {
@@ -256,6 +323,9 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-drift,
   .hero-copy,
+  .hero-copy-out,
+  .hero-slide-in,
+  .hero-slide-out,
   .hero-letters {
     animation: none;
   }

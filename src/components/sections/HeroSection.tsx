@@ -1,4 +1,4 @@
-import { useMemo, useRef, type PointerEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { BrandDivider } from '@/components/ui/BrandDivider'
@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { siteContentDefaults } from '@/features/content/catalog'
 import { composeHeroSlides, slideOffset, type HeroSlide } from '@/features/content/heroSlides'
-import { HERO_SLIDE_MS, useHeroSlider } from '@/features/content/hooks/useHeroSlider'
+import { HERO_CROSSFADE_MS, HERO_SLIDE_MS, useHeroSlider } from '@/features/content/hooks/useHeroSlider'
 import { useSiteContent } from '@/features/content/hooks/useSiteContent'
 
 const HERO_TEXTURE = '/images/hero-texture.webp'
@@ -108,15 +108,19 @@ export function HeroSection() {
           <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
           <BrandDivider className="mb-8" />
           {slide && (
-            <div key={slide.id} className="hero-copy">
-              <p className="brand-eyebrow mb-6 text-[11px] md:text-xs">{slide.label}</p>
-              <EditorialTitle
-                as="p"
-                text={slide.title}
-                className="slide-heading mb-6 text-4xl !leading-[1.05] text-cream md:text-5xl"
-              />
-              <p className="slide-body mb-8 text-lg italic text-cream-muted">«{slide.quote}»</p>
-            </div>
+            <FadingCopy slide={slide} reduced={slider.reduced}>
+              {(item) => (
+                <>
+                  <p className="brand-eyebrow mb-6 text-[11px] md:text-xs">{item.label}</p>
+                  <EditorialTitle
+                    as="p"
+                    text={item.title}
+                    className="slide-heading mb-6 text-4xl !leading-[1.05] text-cream md:text-5xl"
+                  />
+                  <p className="slide-body mb-8 text-lg italic text-cream-muted">«{item.quote}»</p>
+                </>
+              )}
+            </FadingCopy>
           )}
           <p className="brand-caption mb-12">
             Fabricación propia desde 1998
@@ -140,19 +144,22 @@ export function HeroSection() {
           }`}
         >
           {slide && (
-            <div
-              key={slide.id}
-              className={`hero-letters ${mirrored ? 'origin-right' : 'origin-left'}`}
-              style={slider.reduced ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }}
+            <FadingCopy
+              slide={slide}
+              reduced={slider.reduced}
+              shellClassName={`hero-letters ${mirrored ? 'origin-right' : 'origin-left'}`}
+              shellStyle={slider.reduced ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }}
             >
-              <div className="hero-copy">
-                <p className="slide-label mb-6 md:mb-8">{slide.label}</p>
-                <EditorialTitle text={slide.title} />
-                <blockquote className="mb-8 max-w-2xl md:mb-10">
-                  <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{slide.quote}»</p>
-                </blockquote>
-              </div>
-            </div>
+              {(item) => (
+                <>
+                  <p className="slide-label mb-6 md:mb-8">{item.label}</p>
+                  <EditorialTitle text={item.title} />
+                  <blockquote className="mb-8 max-w-2xl md:mb-10">
+                    <p className="slide-body text-xl italic text-cream-muted md:text-2xl">«{item.quote}»</p>
+                  </blockquote>
+                </>
+              )}
+            </FadingCopy>
           )}
           <Link to="/cartas">
             <Button
@@ -191,6 +198,22 @@ function HeroStage({
   reduced: boolean
   mirrored: boolean
 }) {
+  const [tracked, setTracked] = useState(index)
+  const [leaving, setLeaving] = useState<number | null>(null)
+  const [motionOn, setMotionOn] = useState(false)
+
+  if (index !== tracked) {
+    setLeaving(reduced ? null : tracked)
+    setTracked(index)
+    if (!motionOn) setMotionOn(true)
+  }
+
+  useEffect(() => {
+    if (leaving === null) return
+    const id = window.setTimeout(() => setLeaving(null), HERO_CROSSFADE_MS)
+    return () => window.clearTimeout(id)
+  }, [leaving, tracked])
+
   return (
     <div
       className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:inset-y-0 lg:left-0 lg:w-1/2 ${
@@ -203,14 +226,17 @@ function HeroStage({
       {slides.map((item, position) => {
         const offset = slideOffset(position, index, slides.length)
         const active = position === index
+        const exiting = position === leaving
         return (
           <div
             key={item.id}
-            className="absolute inset-0 transition-[transform,opacity] duration-[1400ms] ease-premium motion-reduce:transition-none"
+            className={`absolute inset-0 transition-transform duration-[1600ms] ease-in-out motion-reduce:transition-none ${
+              !motionOn ? '' : active ? 'hero-slide-in' : exiting ? 'hero-slide-out' : ''
+            }`}
             style={{
               transform: `translate3d(${reduced ? 0 : offset * 6}%, 0, 0)`,
-              opacity: active ? 1 : 0,
-              zIndex: active ? 2 : 1,
+              opacity: active || exiting ? undefined : 0,
+              zIndex: exiting ? 3 : active ? 2 : 1,
             }}
           >
             <img
@@ -224,6 +250,66 @@ function HeroStage({
           </div>
         )
       })}
+    </div>
+  )
+}
+
+function useHeroCrossfade(slide: HeroSlide, reduced: boolean) {
+  const [current, setCurrent] = useState(slide)
+  const [outgoing, setOutgoing] = useState<HeroSlide | null>(null)
+
+  if (slide.id !== current.id) {
+    setOutgoing(reduced ? null : current)
+    setCurrent(slide)
+  } else if (reduced && outgoing) {
+    setOutgoing(null)
+  } else if (slide !== current) {
+    setCurrent(slide)
+  }
+
+  useEffect(() => {
+    if (!outgoing) return
+    const id = window.setTimeout(() => setOutgoing(null), HERO_CROSSFADE_MS)
+    return () => window.clearTimeout(id)
+  }, [outgoing, current.id])
+
+  return { current, outgoing }
+}
+
+function FadingCopy({
+  slide,
+  reduced,
+  shellClassName,
+  shellStyle,
+  children,
+}: {
+  slide: HeroSlide
+  reduced: boolean
+  shellClassName?: string
+  shellStyle?: { animationDuration: string }
+  children: (item: HeroSlide) => ReactNode
+}) {
+  const view = useHeroCrossfade(slide, reduced)
+  const animate = !reduced && view.outgoing !== null
+  const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
+
+  return (
+    <div className="relative">
+      {view.outgoing ? (
+        <div
+          key={view.outgoing.id}
+          className={animate ? 'hero-copy-out pointer-events-none absolute inset-x-0 top-0' : 'pointer-events-none absolute inset-x-0 top-0'}
+          style={crossfadeStyle}
+          aria-hidden
+        >
+          {children(view.outgoing)}
+        </div>
+      ) : null}
+      <div key={view.current.id} className={shellClassName} style={shellStyle}>
+        <div className={animate ? 'hero-copy' : undefined} style={crossfadeStyle}>
+          {children(view.current)}
+        </div>
+      </div>
     </div>
   )
 }
