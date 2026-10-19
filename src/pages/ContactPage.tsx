@@ -1,7 +1,9 @@
+import { ContactDetails } from '@/components/sections/ContactDetails'
 import { Section } from '@/components/ui/Section'
 import { Heading } from '@/components/ui/Heading'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { GoldText } from '@/components/ui/GoldText'
+import { company } from '@/data/contact'
 import { SEO } from '@/lib/seo/SEO'
 
 export function ContactPage() {
@@ -9,7 +11,7 @@ export function ContactPage() {
     <>
       <SEO
         title="Contacto"
-        description="Solicite presupuesto sin compromiso. GASTROMENU — cartas artesanales premium para el alma de tu negocio."
+        description="Llámenos al 605 989 264 o escríbanos a info@cartasmenu.com. Oficina en Benalmádena Pueblo, Málaga. Talleres en Madrid, Málaga y Granada."
         path="/contacto"
       />
       <Section variant="dark" className="!pt-32">
@@ -23,10 +25,17 @@ export function ContactPage() {
         </Heading>
 
         <p className="text-center slide-body max-w-2xl mx-auto mb-16 -mt-8">
-          Envíenos sus preguntas y, en el menor tiempo posible, nos pondremos en
-          contacto con usted para sugerirle la mejor solución.
+          {company.callLabel} al{' '}
+          <a
+            href={`tel:${company.phones[0].tel}`}
+            className="text-gold-slide transition-colors hover:text-gold-highlight"
+          >
+            {company.phones[0].display}
+          </a>
+          , o escríbanos para indicarnos sus necesidades. Nos pondremos en contacto lo antes posible.
         </p>
 
+        <ContactDetails />
         <ContactForm />
       </Section>
     </>

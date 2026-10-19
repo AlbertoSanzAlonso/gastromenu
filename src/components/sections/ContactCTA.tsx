@@ -3,6 +3,7 @@ import { BrandDivider } from '@/components/ui/BrandDivider'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { GoldText } from '@/components/ui/GoldText'
+import { company } from '@/data/contact'
 
 export function ContactCTA() {
   return (
@@ -25,6 +26,15 @@ export function ContactCTA() {
             Contactar ahora
           </Button>
         </Link>
+        <p className="mt-8 slide-body">
+          {company.callLabel}:{' '}
+          <a
+            href={`tel:${company.phones[0].tel}`}
+            className="text-gold-dark transition-colors hover:text-gold-slide"
+          >
+            {company.phones[0].display}
+          </a>
+        </p>
         <p className="mt-12 slide-accent text-2xl md:text-3xl">
           Porque la excelencia también se sirve en la mesa.
         </p>
