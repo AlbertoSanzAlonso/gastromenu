@@ -41,8 +41,8 @@ export function Header() {
     }
   }, [open])
 
-  const headerSurface = open || scrolled ? 'bg-ink/95 border-gold/15' : 'bg-ink border-gold/10'
-  const headerTextColor = scrolled && !open ? 'text-white' : 'text-gold-slide'
+  const headerSurface = scrolled ? 'bg-ink/95 border-gold/15' : 'bg-ink border-gold/10'
+  const logoColor = scrolled ? 'text-white' : 'text-gold-slide'
 
   return (
     <>
@@ -58,20 +58,21 @@ export function Header() {
         >
           <BrandLogo
             className={`h-8 w-8 object-contain transition-all duration-500 ease-premium group-hover:scale-105 sm:h-9 sm:w-9 md:h-11 md:w-11 ${
-              scrolled && !open ? 'brightness-0 invert' : ''
+              scrolled ? 'brightness-0 invert' : ''
             }`}
           />
           <span
-            className={`brand-title text-sm transition-all duration-500 ease-premium group-hover:opacity-80 sm:text-base md:text-lg ${headerTextColor}`}
+            className={`brand-title text-sm transition-all duration-500 ease-premium group-hover:opacity-80 sm:text-base md:text-lg ${logoColor}`}
           >
             GASTROMENU
           </span>
         </Link>
       </Container>
+    </header>
 
       <button
         type="button"
-        className={`nav-toggle absolute top-1/2 right-5 z-10 -translate-y-1/2 cursor-pointer p-2.5 transition-opacity duration-500 ease-premium hover:opacity-80 sm:right-8 md:right-10 ${headerTextColor}`}
+        className={`nav-toggle fixed top-5 right-5 z-[70] cursor-pointer p-2.5 transition-colors duration-500 ease-premium hover:opacity-80 sm:right-8 md:top-7 md:right-10 ${open ? 'text-ink' : logoColor}`}
         data-open={open ? 'true' : 'false'}
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
@@ -88,11 +89,16 @@ export function Header() {
           </span>
         </span>
       </button>
-    </header>
 
       <div className="site-drawer-root" data-open={open ? 'true' : 'false'} inert={open ? undefined : true}>
         <div className="site-drawer-backdrop" onClick={() => setOpen(false)} />
         <nav id="site-menu" className="site-drawer" aria-label="Navegación principal">
+          <div className="site-drawer-head">
+            <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
+              <BrandLogo className="h-10 w-10 object-contain md:h-12 md:w-12" />
+              <span className="brand-title text-sm text-gold-dark md:text-base">GASTROMENU</span>
+            </Link>
+          </div>
           <ul>
             {mainNav.map((link, index) => (
               <li

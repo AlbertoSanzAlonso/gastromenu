@@ -57,7 +57,10 @@ export function DossierPage({ content }: DossierPageProps) {
         </Container>
       </section>
 
-      {content.sections.map((section) => (
+      {content.sections.map((section, index) => {
+        const mirrored = index % 2 === 1
+
+        return (
         <Section
           key={section.id}
           id={section.id}
@@ -65,7 +68,11 @@ export function DossierPage({ content }: DossierPageProps) {
           ariaLabel={section.nav}
           className="scroll-mt-24 md:scroll-mt-28"
         >
-          <header className="max-w-3xl mb-10 md:mb-14">
+          <header
+            className={`mb-10 max-w-3xl md:mb-14 ${
+              mirrored ? 'lg:ml-auto lg:text-right' : 'lg:mr-auto lg:text-left'
+            }`}
+          >
             <p className="slide-label mb-4">{section.kicker}</p>
             <h2 className="slide-heading text-3xl md:text-4xl lg:text-5xl text-balance">
               {section.title}{' '}
@@ -81,7 +88,10 @@ export function DossierPage({ content }: DossierPageProps) {
             {section.highlights && section.highlights.length > 0 && (
               <ul className="mt-8 space-y-3">
                 {section.highlights.map((item) => (
-                  <li key={item} className="flex gap-3 slide-body text-base">
+                  <li
+                    key={item}
+                    className={`flex gap-3 slide-body text-base ${mirrored ? 'lg:flex-row-reverse' : ''}`}
+                  >
                     <span
                       className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-slide"
                       aria-hidden
@@ -95,7 +105,8 @@ export function DossierPage({ content }: DossierPageProps) {
 
           <DossierGallery images={section.images} />
         </Section>
-      ))}
+        )
+      })}
 
       <ContactCTA />
     </>
