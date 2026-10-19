@@ -1,4 +1,5 @@
 import type { FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { establishmentTypes, interestOptions } from '@/data/fallback'
 import { useContactForm } from '@/features/contact/hooks/useContactForm'
@@ -206,7 +207,14 @@ export function ContactForm() {
           className="mt-1 h-4 w-4 accent-gold-slide"
         />
         <span className="slide-body text-sm">
-          He leído y acepto la política de privacidad *
+          He leído y acepto la{' '}
+          <Link
+            to="/privacidad"
+            className="text-gold-slide underline underline-offset-4 transition-colors hover:text-gold-highlight"
+          >
+            política de privacidad
+          </Link>{' '}
+          *
         </span>
       </label>
 

@@ -15,9 +15,10 @@ const iconPaths: Record<SocialId, string> = {
 
 interface SocialLinksProps {
   className?: string
+  compact?: boolean
 }
 
-export function SocialLinks({ className = '' }: SocialLinksProps) {
+export function SocialLinks({ className = '', compact = false }: SocialLinksProps) {
   return (
     <ul className={`flex flex-nowrap items-center gap-2 ${className}`}>
       {socialLinks.map((item) => {
@@ -26,8 +27,9 @@ export function SocialLinks({ className = '' }: SocialLinksProps) {
             <path d={iconPaths[item.id]} />
           </svg>
         )
-        const frame =
-          'flex h-9 w-9 items-center justify-center border border-gold-slide/35 text-gold-slide transition-colors duration-300'
+        const frame = compact
+          ? 'flex h-8 w-8 items-center justify-center border border-gold-slide/30 text-gold-slide/80 transition-colors duration-300 hover:text-gold-slide'
+          : 'flex h-9 w-9 items-center justify-center border border-gold-slide/35 text-gold-slide transition-colors duration-300'
 
         return (
           <li key={item.id}>

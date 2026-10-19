@@ -1,7 +1,16 @@
 export const company = {
   legalName: 'Fudys Gourmet SL',
   cif: 'B06899389',
+  brand: 'GASTROMENU',
+  domain: 'gastromenupremium.com',
+  url: 'https://gastromenupremium.com',
   email: 'info@cartasmenu.com',
+  /** Domicilio social publicado en el Registro Mercantil. */
+  registeredAddress:
+    'Av. de los Botijos, s/n, bloque 5A, local 13, Edificio Alquibla, 29639 Benalmádena (Málaga)',
+  registry:
+    'Registro Mercantil de Málaga, tomo 6047, libro 4954, folio 13, sección 8, hoja 161726, inscripción 1',
+  legalUpdated: '19 de octubre de 2026',
   hours: 'Lunes a viernes, de 09:00 a 15:00 h.',
   callLabel: 'Llámenos',
   callBody:
@@ -21,16 +30,6 @@ export const company = {
     places: ['Madrid', 'Málaga', 'Granada'],
   },
 } as const
-
-export const footerNav = [
-  { to: '/', label: 'Inicio' },
-  { to: '/nosotros', label: 'Qué hacemos' },
-  { to: '/cartas', label: 'Cartas menú' },
-  { to: '/manteles', label: 'Manteles de papel' },
-  { to: '/atriles', label: 'Portamenús' },
-  { to: '/exclusividades', label: 'Otros servicios' },
-  { to: '/contacto', label: 'Contacto' },
-] as const
 
 /** Las redes sin URL pública se muestran, pero no enlazan hasta tener el perfil. */
 export const socialLinks = [
