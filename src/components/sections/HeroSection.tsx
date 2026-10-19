@@ -122,20 +122,11 @@ export function HeroSection() {
               )}
             </FadingCopy>
           )}
-          <p className="brand-caption mb-12">
+          <p className="brand-caption">
             Fabricación propia desde 1998
             <br />
             in-house manufacturing since 1998
           </p>
-          <Link to="/cartas">
-            <Button
-              variant="outline"
-              size="lg"
-              className="!border-gold-text/40 !text-cream hover:!border-gold-text hover:!text-gold-text"
-            >
-              Descubrir colección
-            </Button>
-          </Link>
         </div>
 
         <div
@@ -161,27 +152,20 @@ export function HeroSection() {
               )}
             </FadingCopy>
           )}
-          <Link to="/cartas">
-            <Button
-              variant="ghost"
-              size="lg"
-              className="!px-0 !py-0 !text-cream hover:!text-gold-slide cursor-pointer"
-            >
-              Descubrir colección
-            </Button>
-          </Link>
         </div>
 
       </Container>
 
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-8 z-10 flex justify-center"
-        aria-hidden
-      >
-        <div className="flex flex-col items-center gap-3">
-          <span className="brand-caption text-mist">Scroll</span>
-          <div className="h-12 w-px animate-pulse bg-gradient-to-b from-gold/60 to-transparent" />
-        </div>
+      <div className="absolute inset-x-0 bottom-8 z-10 flex justify-center">
+        <Link to="/cartas">
+          <Button
+            variant="outline"
+            size="lg"
+            className="!border-gold-text/40 !text-cream hover:!border-gold-text hover:!text-gold-text"
+          >
+            Descubrir colección
+          </Button>
+        </Link>
       </div>
     </section>
   )
@@ -230,7 +214,7 @@ function HeroStage({
         return (
           <div
             key={item.id}
-            className={`absolute inset-0 transition-transform duration-[1600ms] ease-in-out motion-reduce:transition-none ${
+            className={`absolute inset-0 transition-transform duration-[200ms] ease-in-out motion-reduce:transition-none ${
               !motionOn ? '' : active ? 'hero-slide-in' : exiting ? 'hero-slide-out' : ''
             }`}
             style={{

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 export const HERO_SLIDE_MS = 4800
-export const HERO_CROSSFADE_MS = 1600
+export const HERO_CROSSFADE_MS = 700
 
 export function useHeroSlider(length: number) {
   const [index, setIndex] = useState(0)
