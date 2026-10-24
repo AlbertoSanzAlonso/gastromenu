@@ -59,6 +59,7 @@ export function DossierPage({ content }: DossierPageProps) {
 
       {content.sections.map((section, index) => {
         const mirrored = index % 2 === 1
+        const hasImages = section.images.length > 0
 
         return (
         <Section
@@ -68,42 +69,50 @@ export function DossierPage({ content }: DossierPageProps) {
           ariaLabel={section.nav}
           className="scroll-mt-24 md:scroll-mt-28"
         >
-          <header
-            className={`mb-10 max-w-3xl md:mb-14 ${
-              mirrored ? 'lg:ml-auto lg:text-right' : 'lg:mr-auto lg:text-left'
-            }`}
+          <div
+            className={
+              hasImages
+                ? 'grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20'
+                : undefined
+            }
           >
-            <p className="slide-label mb-4">{section.kicker}</p>
-            <h2 className="slide-heading text-3xl md:text-4xl lg:text-5xl text-balance">
-              {section.title}{' '}
-              {section.emphasis && <GoldText>{section.emphasis}</GoldText>}
-            </h2>
-            <div className="mt-6 space-y-4">
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="slide-body">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            {section.highlights && section.highlights.length > 0 && (
-              <ul className="mt-8 space-y-3">
-                {section.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className={`flex gap-3 slide-body text-base ${mirrored ? 'lg:flex-row-reverse' : ''}`}
-                  >
-                    <span
-                      className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-slide"
-                      aria-hidden
-                    />
-                    <span>{item}</span>
-                  </li>
+            <header className={mirrored && hasImages ? 'lg:order-2 lg:text-right' : undefined}>
+              <p className="slide-label mb-4">{section.kicker}</p>
+              <h2 className="slide-heading text-3xl md:text-4xl lg:text-5xl text-balance">
+                {section.title}{' '}
+                {section.emphasis && <GoldText>{section.emphasis}</GoldText>}
+              </h2>
+              <div className="mt-6 space-y-4">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="slide-body">
+                    {paragraph}
+                  </p>
                 ))}
-              </ul>
-            )}
-          </header>
+              </div>
+              {section.highlights && section.highlights.length > 0 && (
+                <ul className="mt-8 space-y-3">
+                  {section.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className={`flex gap-3 slide-body text-base ${mirrored ? 'lg:flex-row-reverse' : ''}`}
+                    >
+                      <span
+                        className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-slide"
+                        aria-hidden
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </header>
 
-          <DossierGallery images={section.images} />
+            {hasImages && (
+              <div className={mirrored ? 'lg:order-1' : undefined}>
+                <DossierGallery images={section.images} />
+              </div>
+            )}
+          </div>
         </Section>
         )
       })}
