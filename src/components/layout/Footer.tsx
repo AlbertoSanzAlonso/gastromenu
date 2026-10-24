@@ -25,10 +25,10 @@ export function Footer() {
       <Container className="relative z-[2]">
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <BrandLogo className="h-12 w-12 md:h-14 md:w-14 object-contain opacity-90" />
-              <p className="brand-title text-sm text-gold-slide">GASTROMENU</p>
-            </div>
+            <BrandLogo
+              variant="lockup"
+              className="mb-4 h-28 w-auto max-w-[16rem] object-contain object-left opacity-95 md:h-32"
+            />
             <BrandDivider className="!mx-0 !max-w-[8rem] mb-4" />
             <p className="slide-body text-sm !text-left leading-relaxed max-w-xs">
               Cartas artesanales premium para el alma de tu negocio.
