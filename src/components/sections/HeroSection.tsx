@@ -112,7 +112,7 @@ export function HeroSection() {
                     text={item.title}
                     className="slide-heading mb-6 text-4xl !leading-[1.05] text-cream md:text-5xl"
                   />
-                  <p className="slide-body mb-8 text-lg italic text-cream-muted">«{item.quote}»</p>
+                  <p className="slide-body mb-8 text-lg italic leading-relaxed text-cream">«{item.quote}»</p>
                 </>
               )}
             </FadingCopy>
@@ -206,11 +206,11 @@ function HeroStage({
         return (
           <div
             key={item.id}
-            className={`absolute inset-0 transition-transform duration-[200ms] ease-in-out ${
+            className={`hero-slide-frame absolute inset-0 ${
               !motionOn ? '' : active ? 'hero-slide-in' : exiting ? 'hero-slide-out' : ''
             }`}
             style={{
-              transform: `translate3d(${offset * 6}%, 0, 0)`,
+              ['--hero-x' as string]: `${offset * 6}%`,
               opacity: active || exiting ? undefined : 0,
               zIndex: exiting ? 3 : active ? 2 : 1,
             }}
@@ -218,10 +218,10 @@ function HeroStage({
             <img
               src={item.image}
               alt=""
-              className={`h-full w-full max-lg:blur-[6px] lg:blur-none ${
+              className={`h-full w-full max-lg:object-cover max-lg:blur-[7px] lg:blur-none ${
                 item.fit === 'contain'
-                  ? 'object-contain'
-                  : `object-cover ${active ? 'hero-drift' : 'scale-[1.14]'}`
+                  ? 'lg:object-contain'
+                  : `lg:object-cover ${active ? 'hero-drift' : 'scale-[1.14]'}`
               }`}
               style={active && item.fit !== 'contain' ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
               loading={position === 0 ? 'eager' : 'lazy'}

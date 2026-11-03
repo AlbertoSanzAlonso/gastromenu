@@ -379,6 +379,49 @@
   animation: hero-slide-out 700ms linear both;
 }
 
+.hero-slide-frame {
+  transform: none;
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-slide-in,
+  .hero-copy {
+    animation-name: hero-fade-in;
+    animation-timing-function: ease;
+  }
+
+  .hero-slide-out,
+  .hero-copy-out {
+    animation-name: hero-fade-out;
+    animation-timing-function: ease;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-slide-frame {
+    transform: translate3d(var(--hero-x, 0%), 0, 0);
+    transition: transform 200ms ease-in-out;
+  }
+}
+
 .hero-letters {
   animation-name: hero-letters;
   animation-timing-function: linear;
@@ -393,18 +436,21 @@
 .hero-mobile-scrim {
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.22) 46%,
-    rgba(0, 0, 0, 0.28) 100%
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.66) 42%,
+    rgba(0, 0, 0, 0.74) 100%
   );
 }
 
 .hero-mobile-copy {
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.82);
 }
 
 .hero-mobile-copy .gold-shimmer {
-  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.55));
+  background: none;
+  color: var(--color-gold-text);
+  -webkit-text-fill-color: var(--color-gold-text);
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.75));
 }
 
 @media (min-width: 1024px) {
