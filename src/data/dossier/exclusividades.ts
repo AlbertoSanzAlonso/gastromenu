@@ -30,9 +30,9 @@ export const exclusividadesPage: DossierPageContent = {
         'Estampación en oro o plata',
       ],
       images: [
-        { file: 'PORTACUENTAS NEGRO DE TELA _LAS BRASAS _EXTERIOR_.png', caption: 'Las Brasas' },
-        { file: 'PORTACUENTAS EXTERIOR.png', caption: 'Exterior' },
-        { file: 'PORTA ADICIONES - PORTA CUENTAS.png', caption: 'Porta adiciones' },
+        { file: '01-las-brasas-cerrado-premium.webp', caption: 'Las Brasas', src: '/images/web/exclusividades/01-las-brasas-cerrado-premium.webp' },
+        { file: '02-las-brasas-abierto-premium.webp', caption: 'Las Brasas, abierto', src: '/images/web/exclusividades/02-las-brasas-abierto-premium.webp' },
+        { file: '03-the-view-abierto-premium.webp', caption: 'The View', src: '/images/web/exclusividades/03-the-view-abierto-premium.webp' },
       ],
       variant: 'light',
     },

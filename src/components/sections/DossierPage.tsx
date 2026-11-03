@@ -4,9 +4,17 @@ import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { Section } from '@/components/ui/Section'
 import { SEO } from '@/lib/seo/SEO'
-import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierImageUrl, type DossierPageContent } from '@/data/dossierTypes'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { DossierGallery } from '@/components/sections/DossierGallery'
+
+const pageHeroWatermark: Record<string, string> = {
+  '/cartas': '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
+  '/atriles': '/images/web/inicio/02-atriles-portamenu-premium-1620x945.webp',
+  '/manteles': '/images/web/inicio/03-manteles-premium-1620x945.webp',
+  '/exclusividades': '/images/web/inicio/04-exclusividades-premium-1620x945.webp',
+  '/nosotros': '/images/web/nosotros/nosotros-01.webp',
+}
 
 interface DossierPageProps {
   content: DossierPageContent
@@ -28,8 +36,17 @@ export function DossierPage({ content }: DossierPageProps) {
     <>
       <SEO title={content.seoTitle} description={content.seoDescription} path={content.path} />
 
-      <section className="bg-ink text-cream">
-        <Container className="pt-12 pb-12 md:pt-16 md:pb-16">
+      <section className="relative overflow-hidden bg-ink text-cream">
+        {pageHeroWatermark[content.path] && (
+          <img
+            src={pageHeroWatermark[content.path]}
+            alt=""
+            aria-hidden
+            decoding="async"
+            className="dossier-hero-watermark"
+          />
+        )}
+        <Container className="relative z-[1] pt-12 pb-12 md:pt-16 md:pb-16">
           <p className="slide-label mb-6">{content.kicker}</p>
           <h1 className="slide-heading text-4xl md:text-6xl text-cream max-w-4xl text-balance">
             {content.title}{' '}
@@ -68,6 +85,8 @@ export function DossierPage({ content }: DossierPageProps) {
           variant={section.variant}
           ariaLabel={section.nav}
           className="scroll-mt-24 md:scroll-mt-28"
+          watermarkSrc={hasImages ? dossierImageUrl(section.images[0]) : undefined}
+          watermarkAlign={mirrored ? 'start' : 'end'}
         >
           <div
             className={

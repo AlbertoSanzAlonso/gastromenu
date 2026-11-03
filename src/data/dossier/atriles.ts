@@ -29,9 +29,7 @@ export const atrilesPage: DossierPageContent = {
         'Sin iluminación, eléctrico o autónomo',
       ],
       images: [
-        { file: 'FACHADA ALTANOUR CON PORTAMENÚ.png', caption: 'En fachada' },
-        { file: 'PORTAMENÚ RÍGIDO - MEDIDAS TÉCNICAS.jpg', caption: 'Medidas técnicas' },
-        { file: 'PORTAMENÚ RIGIDO DE NOCHE EN RESTAURANTE.jpg', caption: 'De noche' },
+        { file: '01-atril-de-pie-altanour-premium.webp', caption: 'Altanour', src: '/images/web/atriles/01-atril-de-pie-altanour-premium.webp' },
       ],
       variant: 'light',
     },
@@ -52,8 +50,7 @@ export const atrilesPage: DossierPageContent = {
         'Iluminación eléctrica, autónoma o apagada de día',
       ],
       images: [
-        { file: 'MODELO PORTAMENÚ DE PIÉ CILÍNDRICO PANTALLA FINA.png', caption: 'Modelo cilíndrico' },
-        { file: 'DETALLE PARTES DE ATRIL PORTAMENÚ CILÍNDRICO.png', caption: 'Partes del atril' },
+        { file: '02-atril-cilindrico-premium.webp', caption: 'Modelo cilíndrico', src: '/images/web/atriles/02-atril-cilindrico-premium.webp' },
       ],
       variant: 'beige',
     },
@@ -74,10 +71,7 @@ export const atrilesPage: DossierPageContent = {
         'Gráfica sustituible',
       ],
       images: [
-        {
-          file: 'SIMULACIÓN DE CARTEL DE PARED ILUMINADO CORTADO A LASER (RIO BRAVO HORIZONTAL) - IA - 29.09.26.png',
-          caption: 'Río Bravo',
-        },
+        { file: '03-atril-pared-rio-bravo-premium.webp', caption: 'Río Bravo', src: '/images/web/atriles/03-atril-pared-rio-bravo-premium.webp' },
       ],
       variant: 'dark',
     },
@@ -97,9 +91,7 @@ export const atrilesPage: DossierPageContent = {
         'Modelos de exterior para terraza y fachada',
       ],
       images: [
-        { file: 'PANTALLA-70x50.jpg', caption: 'Pantalla 70 × 50 cm' },
-        { file: 'DOBLE PORTAMENÚ EN BANÚS 2.png', caption: 'Puerto Banús' },
-        { file: 'PORTAMENÚ EN BANÚS (FONDO OSCURO).png', caption: 'De noche en Banús' },
+        { file: '04-atril-pantalla-ancha-premium.webp', caption: 'Pantalla ancha', src: '/images/web/atriles/04-atril-pantalla-ancha-premium.webp' },
       ],
       variant: 'light',
     },

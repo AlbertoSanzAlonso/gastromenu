@@ -6,7 +6,7 @@ import { createServer } from 'vite'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const remote = process.argv.includes('--remote')
-const imagesDir = path.join(root, 'public', 'dossier')
+const publicDir = path.join(root, 'public')
 const migrationPath = path.join(root, 'migrations', '0001_content.sql')
 const seedPath = path.join(root, 'cloudflare', '.seed.sql')
 const wranglerBin = path.join(root, 'node_modules', '.bin', 'wrangler')
@@ -87,9 +87,12 @@ function buildStatements(pages) {
       })
 
       section.images.forEach((image, index) => {
-        files.add(image.file)
+        const key = image.src?.startsWith('/images/')
+          ? image.src.slice(1)
+          : image.file
+        files.add(key)
         statements.push(
-          `INSERT INTO section_images (section_id, sort_order, r2_key, caption) VALUES (${sqlString(sectionId)}, ${index + 1}, ${sqlString(image.file)}, ${sqlString(image.caption)})`,
+          `INSERT INTO section_images (section_id, sort_order, r2_key, caption) VALUES (${sqlString(sectionId)}, ${index + 1}, ${sqlString(key)}, ${sqlString(image.caption)})`,
         )
       })
     })
@@ -136,7 +139,7 @@ async function seedLocal(statements, files) {
 
     let uploaded = 0
     for (const fileName of files) {
-      const bytes = await readFile(path.join(imagesDir, fileName))
+      const bytes = await readFile(path.join(publicDir, fileName))
       await proxy.env.MEDIA.put(fileName, bytes, {
         httpMetadata: { contentType: contentTypeFor(fileName) },
       })
@@ -177,7 +180,7 @@ async function seedRemote(statements, files) {
       'object',
       'put',
       `gastromenu-media/${fileName}`,
-      `--file=${path.join(imagesDir, fileName)}`,
+      `--file=${path.join(publicDir, fileName)}`,
       `--content-type=${contentTypeFor(fileName)}`,
       '--remote',
     ])

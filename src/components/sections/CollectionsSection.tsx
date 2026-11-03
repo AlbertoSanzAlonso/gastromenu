@@ -3,32 +3,31 @@ import { ImageCard } from '@/components/ui/ImageCard'
 import { Heading } from '@/components/ui/Heading'
 import { Section } from '@/components/ui/Section'
 import { GoldText } from '@/components/ui/GoldText'
-import { dossierImageUrl } from '@/data/dossierTypes'
 
 const collections = [
   {
     to: '/cartas',
     title: 'Cartas menú',
     description: 'Tapas duras, piel, tejidos y madera',
-    file: 'PORTADA CARTA MARGARITA.png',
+    imageUrl: '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
   },
   {
     to: '/atriles',
     title: 'Atriles portamenú',
     description: 'De pie, de pared y retroiluminados',
-    file: 'FACHADA ALTANOUR CON PORTAMENÚ.png',
+    imageUrl: '/images/web/inicio/02-atriles-portamenu-premium-1620x945.webp',
   },
   {
     to: '/manteles',
     title: 'Manteles',
     description: 'De papel y rígidos lacados a mano',
-    file: 'IMAGEN CHICOS DESAYUNANDO CON MANTELES DEBAJO.png',
+    imageUrl: '/images/web/inicio/03-manteles-premium-1620x945.webp',
   },
   {
     to: '/exclusividades',
     title: 'Exclusividades',
     description: 'Porta cuentas y porta adiciones',
-    file: 'PORTA ADICIONES - PORTA CUENTAS.png',
+    imageUrl: '/images/web/inicio/04-exclusividades-premium-1620x945.webp',
   },
 ]
 
@@ -60,7 +59,7 @@ export function CollectionsSection() {
             <ImageCard
               title={item.title}
               description={item.description}
-              imageUrl={dossierImageUrl(item.file)}
+              imageUrl={item.imageUrl}
               size="large"
             />
           </Link>
