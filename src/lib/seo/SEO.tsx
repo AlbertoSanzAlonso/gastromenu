@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { useMessages } from '@/i18n/useMessages'
 
 interface SEOProps {
   title: string
@@ -18,6 +19,7 @@ export function SEO({
   image = '/og-image.png',
   type = 'website',
 }: SEOProps) {
+  const { m } = useMessages()
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`
   const url = `${SITE_URL}${path}`
 
@@ -33,7 +35,7 @@ export function SEO({
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:image" content={`${SITE_URL}${image}`} />
-      <meta property="og:locale" content="es_ES" />
+      <meta property="og:locale" content={m.seo.locale} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

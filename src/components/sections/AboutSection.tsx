@@ -2,36 +2,19 @@ import { Container } from '@/components/ui/Container'
 import { Heading } from '@/components/ui/Heading'
 import { GoldText } from '@/components/ui/GoldText'
 import { ABOUT_SECTION_WATERMARK_SRC } from '@/data/brand'
-import { paragraphsOf, siteContentDefaults } from '@/features/content/catalog'
-import { useSiteContent } from '@/features/content/hooks/useSiteContent'
-
-const values = [
-  {
-    title: 'Nuestra historia',
-    description: '28 años de experiencia.',
-  },
-  {
-    title: 'Lo que hacemos',
-    description: 'Cartas, manteles y portamenús.',
-  },
-  {
-    title: 'Cómo trabajamos',
-    description: 'Diseño personalizado y fabricación artesanal.',
-  },
-  {
-    title: 'Nuestro compromiso',
-    description: 'Calidad, materiales, durabilidad y atención personalizada.',
-  },
-]
+import { paragraphsOf } from '@/features/content/catalog'
+import { useMessages } from '@/i18n/useMessages'
+import { useSiteCopy } from '@/i18n/useSiteCopy'
 
 export function AboutSection() {
-  const { read } = useSiteContent()
-  const paragraphs = paragraphsOf(read('about_text', siteContentDefaults.about_text))
+  const { m } = useMessages()
+  const { text } = useSiteCopy()
+  const paragraphs = paragraphsOf(text('about_text'))
 
   return (
     <section
       id="nosotros"
-      aria-label="Sobre nosotros"
+      aria-label={m.home.aboutLabel}
       className="section-padding relative overflow-hidden bg-ink text-cream [&_.slide-heading]:text-cream [&_.slide-body]:text-cream-muted"
     >
       <div
@@ -44,15 +27,15 @@ export function AboutSection() {
       <Container className="relative z-[2]">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div>
-            <Heading as="h2" subtitle="28 años de experiencia">
-              La presentación también forma parte de la <GoldText>experiencia</GoldText>
+            <Heading as="h2" subtitle={m.home.aboutSubtitle}>
+              {m.home.aboutTitleBefore} <GoldText>{m.home.aboutTitleAccent}</GoldText>
             </Heading>
 
             <blockquote className="relative slide-body text-xl md:text-2xl max-w-xl mb-8 pl-6 border-l border-gold-slide/40">
               <span className="slide-accent text-4xl leading-none absolute -left-1 -top-2" aria-hidden>
                 "
               </span>
-              Que la imagen del restaurante empiece antes de que el cliente se siente a la mesa.
+              {m.home.aboutQuote}
             </blockquote>
 
             <div className="space-y-6 slide-body max-w-xl">
@@ -63,7 +46,7 @@ export function AboutSection() {
           </div>
 
           <div className="space-y-6 lg:pt-8">
-            {values.map((value, index) => (
+            {m.home.values.map((value, index) => (
               <article
                 key={value.title}
                 className="slide-frame bg-ink-soft/35 px-8 py-6"

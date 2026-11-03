@@ -1,3 +1,5 @@
+import { useMessages } from '@/i18n/useMessages'
+
 interface ImageCardProps {
   title: string
   description?: string | null
@@ -13,6 +15,7 @@ export function ImageCard({
   size = 'compact',
   onClick,
 }: ImageCardProps) {
+  const { m } = useMessages()
   const isInteractive = Boolean(imageUrl && onClick)
 
   return (
@@ -36,7 +39,7 @@ export function ImageCard({
       }
       role={isInteractive ? 'button' : undefined}
       tabIndex={isInteractive ? 0 : undefined}
-      aria-label={isInteractive ? `Ver ${title}` : undefined}
+      aria-label={isInteractive ? `${m.gallery.view} ${title}` : undefined}
     >
       <div className="absolute inset-0">
         {imageUrl ? (

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
-import { mainNav } from '@/data/navigation'
+import { LanguageSwitch } from '@/components/ui/LanguageSwitch'
+import { useMessages } from '@/i18n/useMessages'
 
 const SCROLL_THRESHOLD = 80
 
@@ -10,6 +11,7 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const { m } = useMessages()
 
   useEffect(() => {
     function handleScroll() {
@@ -53,7 +55,7 @@ export function Header() {
         <Link
           to="/"
           className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 group sm:gap-3 md:gap-4"
-          aria-label="GastroMenu - Inicio"
+          aria-label={m.nav.home}
           onClick={() => setOpen(false)}
         >
           <BrandLogo
@@ -70,6 +72,12 @@ export function Header() {
       </Container>
     </header>
 
+      <LanguageSwitch
+        className={`fixed top-5 left-5 z-[70] p-2.5 transition-opacity duration-500 ease-premium md:top-7 md:left-10 ${
+          open ? 'max-md:pointer-events-none max-md:opacity-0' : ''
+        }`}
+      />
+
       <button
         type="button"
         className={`nav-toggle fixed top-5 right-5 z-[70] cursor-pointer p-2.5 transition-colors duration-500 ease-premium hover:opacity-80 sm:right-8 md:top-7 md:right-10 ${open ? 'text-ink' : logoColor}`}
@@ -77,7 +85,7 @@ export function Header() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="site-menu"
-        aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+        aria-label={open ? m.nav.close : m.nav.open}
       >
         <span className="nav-toggle__bars" aria-hidden>
           <span className="nav-toggle__bar nav-toggle__bar--top">
@@ -92,15 +100,16 @@ export function Header() {
 
       <div className="site-drawer-root" data-open={open ? 'true' : 'false'} inert={open ? undefined : true}>
         <div className="site-drawer-backdrop" onClick={() => setOpen(false)} />
-        <nav id="site-menu" className="site-drawer" aria-label="Navegación principal">
+        <nav id="site-menu" className="site-drawer" aria-label={m.nav.primary}>
           <div className="site-drawer-head">
             <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
               <BrandLogo className="h-10 w-10 object-contain md:h-12 md:w-12" />
               <span className="brand-title text-sm text-gold-dark md:text-base">GASTROMENU</span>
             </Link>
+            <LanguageSwitch tone="light" className="mr-14 md:hidden" />
           </div>
           <ul>
-            {mainNav.map((link, index) => (
+            {m.nav.links.map((link, index) => (
               <li
                 key={link.to}
                 className="site-drawer-link"
@@ -120,9 +129,9 @@ export function Header() {
           </ul>
           <div className="site-drawer-foot">
             <Link to="/contacto" className="site-drawer-cta" onClick={() => setOpen(false)}>
-              Contactar
+              {m.nav.contact}
             </Link>
-            <p className="site-drawer-note">Porque la excelencia también se sirve en la mesa.</p>
+            <p className="site-drawer-note">{m.nav.note}</p>
           </div>
         </nav>
       </div>

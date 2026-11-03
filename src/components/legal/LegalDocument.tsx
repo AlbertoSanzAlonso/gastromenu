@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/Section'
 import { Heading } from '@/components/ui/Heading'
 import { GoldText } from '@/components/ui/GoldText'
 import { company } from '@/data/contact'
+import { useMessages } from '@/i18n/useMessages'
 import { SEO } from '@/lib/seo/SEO'
 
 interface LegalDocumentProps {
@@ -23,6 +24,8 @@ export function LegalDocument({
   path,
   children,
 }: LegalDocumentProps) {
+  const { m } = useMessages()
+
   return (
     <>
       <SEO title={seoTitle} description={description} path={path} />
@@ -33,7 +36,7 @@ export function LegalDocument({
 
         <article className="mx-auto -mt-8 max-w-3xl">
           <p className="slide-label mb-14 text-center text-[10px] !tracking-[0.16em] sm:!tracking-[0.28em]">
-            Actualizado el {company.legalUpdated}
+            {m.legal.updated}
           </p>
           <div className="space-y-12">{children}</div>
         </article>
@@ -54,15 +57,16 @@ export function LegalSection({ title, children }: { title: string; children: Rea
 }
 
 export function LegalIdentity() {
+  const { m } = useMessages()
   const rows = [
-    ['Denominación social', company.legalName],
-    ['Nombre comercial', company.brand],
-    ['CIF', company.cif],
-    ['Domicilio social', company.registeredAddress],
-    ['Inscripción', company.registry],
-    ['Correo electrónico', company.email],
-    ['Teléfono', company.phones.map((phone) => phone.display).join(' · ')],
-    ['Sitio web', company.domain],
+    [m.legal.legalName, company.legalName],
+    [m.legal.tradeName, company.brand],
+    [m.legal.taxId, company.cif],
+    [m.legal.office, company.registeredAddress],
+    [m.legal.registry, company.registry],
+    [m.legal.email, company.email],
+    [m.legal.phone, company.phones.map((phone) => phone.display).join(' · ')],
+    [m.legal.website, company.domain],
   ] as const
 
   return (

@@ -1,8 +1,8 @@
 import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
-import { establishmentTypes, interestOptions } from '@/data/fallback'
 import { useContactForm } from '@/features/contact/hooks/useContactForm'
+import { useMessages } from '@/i18n/useMessages'
 
 const fieldClass =
   'w-full bg-ink-soft border border-gold-slide/25 px-5 py-4 text-cream font-serif font-light focus:border-gold-slide focus:outline-none transition-colors'
@@ -18,6 +18,7 @@ export function ContactForm() {
     error,
     resetSuccess,
   } = useContactForm()
+  const { m } = useMessages()
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -28,13 +29,13 @@ export function ContactForm() {
     return (
       <div className="text-center py-16">
         <p className="slide-heading text-2xl mb-4">
-          Gracias por su confianza
+          {m.form.thanksTitle}
         </p>
         <p className="slide-body max-w-md mx-auto mb-8">
-          Hemos recibido su consulta. Nos pondremos en contacto con usted en el menor tiempo posible.
+          {m.form.thanksBody}
         </p>
         <Button variant="outlineDark" onClick={resetSuccess}>
-          Enviar otra consulta
+          {m.form.another}
         </Button>
       </div>
     )
@@ -50,12 +51,12 @@ export function ContactForm() {
 
       <fieldset className="space-y-6">
         <legend className="slide-label mb-6">
-          Establecimiento
+          {m.form.establishment}
         </legend>
 
         <div>
           <label htmlFor="establishment" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-            Nombre y tipo de establecimiento *
+            {m.form.establishmentName}
           </label>
           <input
             id="establishment"
@@ -68,7 +69,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="type" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-            Tipo de establecimiento *
+            {m.form.establishmentType}
           </label>
           <select
             id="type"
@@ -77,10 +78,10 @@ export function ContactForm() {
             onChange={(e) => updateField('establishmentType', e.target.value)}
             className={fieldClass}
           >
-            <option value="">Seleccione una opción</option>
-            {establishmentTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
+            <option value="">{m.form.select}</option>
+            {m.form.types.map((type) => (
+              <option key={type.value} value={type.value}>
+                {type.label}
               </option>
             ))}
           </select>
@@ -89,13 +90,13 @@ export function ContactForm() {
 
       <fieldset className="space-y-6">
         <legend className="slide-label mb-6">
-          Persona de contacto
+          {m.form.person}
         </legend>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-              Nombre *
+              {m.form.firstName}
             </label>
             <input
               id="firstName"
@@ -107,7 +108,7 @@ export function ContactForm() {
           </div>
           <div>
             <label htmlFor="lastName" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-              Apellidos *
+              {m.form.lastName}
             </label>
             <input
               id="lastName"
@@ -122,7 +123,7 @@ export function ContactForm() {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="phone" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-              Teléfono *
+              {m.form.phone}
             </label>
             <input
               id="phone"
@@ -135,7 +136,7 @@ export function ContactForm() {
           </div>
           <div>
             <label htmlFor="email" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-              Correo electrónico *
+              {m.form.email}
             </label>
             <input
               id="email"
@@ -150,7 +151,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="address" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-            Dirección, ciudad y provincia
+            {m.form.address}
           </label>
           <input
             id="address"
@@ -163,22 +164,22 @@ export function ContactForm() {
 
       <fieldset>
         <legend className="slide-label mb-6">
-          ¿En qué podemos ayudarle?
+          {m.form.help}
         </legend>
         <div className="space-y-4">
-          {interestOptions.map((option) => (
+          {m.form.interests.map((option) => (
             <label
-              key={option}
+              key={option.value}
               className="flex items-center gap-4 cursor-pointer group"
             >
               <input
                 type="checkbox"
-                checked={form.interests.includes(option)}
-                onChange={() => toggleInterest(option)}
+                checked={form.interests.includes(option.value)}
+                onChange={() => toggleInterest(option.value)}
                 className="h-4 w-4 accent-gold-slide"
               />
               <span className="slide-body text-sm group-hover:text-cream transition-colors">
-                {option}
+                {option.label}
               </span>
             </label>
           ))}
@@ -187,7 +188,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block slide-label text-[10px] !tracking-[0.2em] mb-2">
-          Mensaje adicional
+          {m.form.message}
         </label>
         <textarea
           id="message"
@@ -207,12 +208,12 @@ export function ContactForm() {
           className="mt-1 h-4 w-4 accent-gold-slide"
         />
         <span className="slide-body text-sm">
-          He leído y acepto la{' '}
+          {m.form.privacyBefore}{' '}
           <Link
             to="/privacidad"
             className="text-gold-slide underline underline-offset-4 transition-colors hover:text-gold-highlight"
           >
-            política de privacidad
+            {m.form.privacyLink}
           </Link>{' '}
           *
         </span>
@@ -220,7 +221,7 @@ export function ContactForm() {
 
       <div className="text-center pt-4">
         <Button type="submit" size="lg" disabled={submitting}>
-          {submitting ? 'Enviando…' : 'Enviar consulta'}
+          {submitting ? m.form.sending : m.form.submit}
         </Button>
       </div>
     </form>

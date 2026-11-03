@@ -3,71 +3,45 @@ import { ImageCard } from '@/components/ui/ImageCard'
 import { Heading } from '@/components/ui/Heading'
 import { Section } from '@/components/ui/Section'
 import { GoldText } from '@/components/ui/GoldText'
+import { useMessages } from '@/i18n/useMessages'
 
-const collections = [
-  {
-    to: '/cartas',
-    title: 'Cartas menú',
-    description: 'Tapas duras, piel, tejidos y madera',
-    imageUrl: '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
-  },
-  {
-    to: '/atriles',
-    title: 'Atriles portamenú',
-    description: 'De pie, de pared y retroiluminados',
-    imageUrl: '/images/web/inicio/02-atriles-portamenu-premium-1620x945.webp',
-  },
-  {
-    to: '/manteles',
-    title: 'Manteles',
-    description: 'De papel y rígidos lacados a mano',
-    imageUrl: '/images/web/inicio/03-manteles-premium-1620x945.webp',
-  },
-  {
-    to: '/exclusividades',
-    title: 'Exclusividades',
-    description: 'Porta cuentas y porta adiciones',
-    imageUrl: '/images/web/inicio/04-exclusividades-premium-1620x945.webp',
-  },
-]
-
-const sectors = [
-  { to: '/cartas#chiringuitos', label: 'Chiringuitos' },
-  { to: '/cartas#asadores', label: 'Asadores' },
-  { to: '/cartas#pizzerias', label: 'Pizzerías' },
-  { to: '/cartas#etnicas', label: 'Étnicos' },
-  { to: '/cartas#vinos', label: 'Vinos' },
-  { to: '/cartas#postres', label: 'Postres' },
-  { to: '/cartas#cocteles', label: 'Cócteles' },
+const collectionPaths = ['/cartas', '/atriles', '/manteles', '/exclusividades']
+const collectionImages = [
+  '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
+  '/images/web/inicio/02-atriles-portamenu-premium-1620x945.webp',
+  '/images/web/inicio/03-manteles-premium-1620x945.webp',
+  '/images/web/inicio/04-exclusividades-premium-1620x945.webp',
 ]
 
 export function CollectionsSection() {
+  const { m } = useMessages()
+
   return (
-    <Section id="coleccion" variant="beige" ariaLabel="Colecciones">
+    <Section id="coleccion" variant="beige" ariaLabel={m.home.collectionsLabel}>
       <Heading
         as="h2"
-        subtitle="Cartas, atriles, manteles y exclusividades"
+        subtitle={m.home.collectionsSubtitle}
         align="center"
         className="mx-auto"
       >
-        Nuestra <GoldText>colección</GoldText>
+        {m.home.collectionsTitleBefore} <GoldText>{m.home.collectionsTitleAccent}</GoldText>
       </Heading>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-        {collections.map((item) => (
-          <Link key={item.to} to={item.to} className="block min-h-[240px] cursor-pointer">
+        {m.home.collectionCards.map((item, index) => (
+          <Link key={collectionPaths[index]} to={collectionPaths[index]} className="block min-h-[240px] cursor-pointer">
             <ImageCard
               title={item.title}
               description={item.description}
-              imageUrl={item.imageUrl}
+              imageUrl={collectionImages[index]}
               size="large"
             />
           </Link>
         ))}
       </div>
 
-      <nav aria-label="Sectores" className="mt-12 flex flex-wrap justify-center gap-3">
-        {sectors.map((sector) => (
+      <nav aria-label={m.home.sectors} className="mt-12 flex flex-wrap justify-center gap-3">
+        {m.home.sectorLinks.map((sector) => (
           <Link
             key={sector.to}
             to={sector.to}

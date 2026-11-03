@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
 import type { ContactInquiry } from '@/lib/supabase/types'
+import { useMessages } from '@/i18n/useMessages'
 
 interface ContactFormState {
   establishmentName: string
@@ -29,6 +30,7 @@ const initialState: ContactFormState = {
 }
 
 export function useContactForm() {
+  const { m } = useMessages()
   const [form, setForm] = useState<ContactFormState>(initialState)
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
@@ -82,7 +84,7 @@ export function useContactForm() {
       setSuccess(true)
       setForm(initialState)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'No se pudo enviar la consulta')
+      setError(err instanceof Error ? err.message : m.form.error)
     } finally {
       setSubmitting(false)
     }

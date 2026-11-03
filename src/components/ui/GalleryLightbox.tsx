@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { useMessages } from '@/i18n/useMessages'
 
 export interface GallerySlide {
   id: string
@@ -35,6 +36,7 @@ export function GalleryLightbox({
   onClose,
   onNavigate,
 }: GalleryLightboxProps) {
+  const { m } = useMessages()
   const slide = slides[activeIndex]
   const hasPrev = activeIndex > 0
   const hasNext = activeIndex < slides.length - 1
@@ -72,22 +74,22 @@ export function GalleryLightbox({
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10"
       role="dialog"
       aria-modal="true"
-      aria-label={`Galería: ${slide.title}`}
+      aria-label={`${m.gallery.dialog}: ${slide.title}`}
     >
       <button
         type="button"
         className="absolute inset-0 bg-ink/95 backdrop-blur-sm cursor-default"
         onClick={onClose}
-        aria-label="Cerrar galería"
+        aria-label={m.gallery.closeGallery}
       />
 
       <button
         type="button"
         onClick={onClose}
         className="absolute top-4 right-4 md:top-6 md:right-6 z-20 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream px-5 py-2.5 hover:text-gold-light hover:scale-105 transition-all duration-300 ease-premium cursor-pointer"
-        aria-label="Cerrar"
+        aria-label={m.gallery.close}
       >
-        Cerrar ✕
+        {m.gallery.close} ✕
       </button>
 
       <button
@@ -95,7 +97,7 @@ export function GalleryLightbox({
         onClick={goPrev}
         disabled={!hasPrev}
         className={`absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-20 ${navButtonClass}`}
-        aria-label="Imagen anterior"
+        aria-label={m.gallery.previous}
       >
         <span className={navArrowClass} aria-hidden>
           ‹
@@ -107,7 +109,7 @@ export function GalleryLightbox({
         onClick={goNext}
         disabled={!hasNext}
         className={`absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-20 ${navButtonClass}`}
-        aria-label="Imagen siguiente"
+        aria-label={m.gallery.next}
       >
         <span className={navArrowClass} aria-hidden>
           ›

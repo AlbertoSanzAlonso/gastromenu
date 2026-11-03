@@ -1,18 +1,13 @@
 import { Section } from '@/components/ui/Section'
 import { Heading } from '@/components/ui/Heading'
 import { GoldText } from '@/components/ui/GoldText'
+import { messages } from '@/i18n/messages'
+import { useMessages } from '@/i18n/useMessages'
 import { useTeam } from '@/features/team/hooks/useTeam'
 
-const stepLabels: Record<number, string> = {
-  1: 'In situ',
-  2: 'Estudio',
-  3: 'Retoque',
-  4: 'Acabado',
-  5: 'Equipo',
-}
-
 function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
-  const label = stepLabels[sortOrder] ?? 'Paso'
+  const { m } = useMessages()
+  const label = m.home.teamSteps[sortOrder - 1] ?? m.home.teamStep
 
   return (
     <div className="mb-6 flex flex-col items-center gap-4">
@@ -37,21 +32,33 @@ function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
 }
 
 export function TeamSection() {
+  const { locale, m } = useMessages()
   const { members } = useTeam()
+  const spanishTeam = messages.es.home.teamMembers
 
   return (
-    <Section variant="light" ariaLabel="Nuestro equipo">
+    <Section variant="light" ariaLabel={m.home.teamLabel}>
       <Heading
         as="h2"
-        subtitle="Un gran equipo a su servicio"
+        subtitle={m.home.teamSubtitle}
         align="center"
         className="mx-auto"
       >
-        Artesanía y <GoldText>dedicación</GoldText>
+        {m.home.teamTitleBefore} <GoldText>{m.home.teamTitleAccent}</GoldText>
       </Heading>
 
       <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-        {members.map((member) => (
+        {members.map((member) => {
+          const index = member.sort_order - 1
+          const source = spanishTeam[index]
+          const target = m.home.teamMembers[index]
+          const translated = locale === 'en' && source && target && member.title === source.title
+          const localized = {
+            title: translated ? target.title : member.title,
+            description: translated ? target.description || member.description : member.description,
+          }
+
+          return (
           <article
             key={member.id}
             className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/70 bg-transparent hover:border-gold-slide/50 transition-colors duration-400"
@@ -65,15 +72,16 @@ export function TeamSection() {
             )}
             <TeamStepMarker sortOrder={member.sort_order} />
             <h3 className="slide-heading text-lg mb-3">
-              {member.title}
+              {localized.title}
             </h3>
-            {member.description && (
+            {localized.description && (
               <p className="slide-body text-sm">
-                {member.description}
+                {localized.description}
               </p>
             )}
           </article>
-        ))}
+          )
+        })}
       </div>
     </Section>
   )

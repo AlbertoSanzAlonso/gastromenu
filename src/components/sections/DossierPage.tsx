@@ -5,6 +5,8 @@ import { GoldText } from '@/components/ui/GoldText'
 import { Section } from '@/components/ui/Section'
 import { SEO } from '@/lib/seo/SEO'
 import { dossierImageUrl, type DossierPageContent } from '@/data/dossierTypes'
+import { localizeDossier } from '@/data/dossier/en'
+import { useMessages } from '@/i18n/useMessages'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { DossierGallery } from '@/components/sections/DossierGallery'
 
@@ -21,6 +23,8 @@ interface DossierPageProps {
 }
 
 export function DossierPage({ content }: DossierPageProps) {
+  const { locale, m } = useMessages()
+  const page = localizeDossier(content, locale)
   useEffect(() => {
     const id = window.location.hash.slice(1)
     if (!id) return
@@ -34,12 +38,12 @@ export function DossierPage({ content }: DossierPageProps) {
 
   return (
     <>
-      <SEO title={content.seoTitle} description={content.seoDescription} path={content.path} />
+      <SEO title={page.seoTitle} description={page.seoDescription} path={page.path} />
 
       <section className="relative overflow-hidden bg-ink text-cream">
-        {pageHeroWatermark[content.path] && (
+        {pageHeroWatermark[page.path] && (
           <img
-            src={pageHeroWatermark[content.path]}
+            src={pageHeroWatermark[page.path]}
             alt=""
             aria-hidden
             decoding="async"
@@ -47,20 +51,20 @@ export function DossierPage({ content }: DossierPageProps) {
           />
         )}
         <Container className="relative z-[1] pt-12 pb-12 md:pt-16 md:pb-16">
-          <p className="slide-label mb-6">{content.kicker}</p>
+          <p className="slide-label mb-6">{page.kicker}</p>
           <h1 className="slide-heading text-4xl md:text-6xl text-cream max-w-4xl text-balance">
-            {content.title}{' '}
-            {content.emphasis && <GoldText>{content.emphasis}</GoldText>}
+            {page.title}{' '}
+            {page.emphasis && <GoldText>{page.emphasis}</GoldText>}
           </h1>
           <BrandDivider className="!mx-0 mt-8 mb-6 max-w-[8rem]" />
-          <p className="slide-body !text-cream-muted max-w-3xl text-lg md:text-xl">{content.lead}</p>
+          <p className="slide-body !text-cream-muted max-w-3xl text-lg md:text-xl">{page.lead}</p>
 
-          {content.sections.length > 1 && (
+          {page.sections.length > 1 && (
             <nav
-              aria-label="Secciones"
+              aria-label={m.dossier.sections}
               className="mt-10 flex flex-wrap gap-3"
             >
-              {content.sections.map((section) => (
+              {page.sections.map((section) => (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
@@ -74,7 +78,7 @@ export function DossierPage({ content }: DossierPageProps) {
         </Container>
       </section>
 
-      {content.sections.map((section, index) => {
+      {page.sections.map((section, index) => {
         const mirrored = index % 2 === 1
         const hasImages = section.images.length > 0
 

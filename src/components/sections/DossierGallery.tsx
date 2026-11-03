@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { GalleryLightbox, type GallerySlide } from '@/components/ui/GalleryLightbox'
 import { dossierImageUrl, type DossierImage } from '@/data/dossierTypes'
+import { useMessages } from '@/i18n/useMessages'
 
 const SAMPLE_MS = 5200
 const CROSSFADE_MS = 1400
@@ -10,6 +11,7 @@ interface DossierGalleryProps {
 }
 
 export function DossierGallery({ images }: DossierGalleryProps) {
+  const { m } = useMessages()
   const [previewIndex, setPreviewIndex] = useState(0)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [motionReduced, setMotionReduced] = useState(false)
@@ -65,7 +67,7 @@ export function DossierGallery({ images }: DossierGalleryProps) {
           type="button"
           onClick={() => setLightboxIndex(activePreview)}
           className="group relative block w-full cursor-pointer border-0 bg-transparent p-0 text-left shadow-[0_22px_46px_-18px_rgb(0_0_0_/_0.55)]"
-          aria-label={`Abrir galería, ${images.length} ${images.length === 1 ? 'imagen' : 'imágenes'}`}
+          aria-label={images.length === 1 ? m.gallery.openOne : m.gallery.openMany(images.length)}
         >
           <span className="relative block aspect-[4/3] max-h-[32rem] w-full overflow-hidden">
             {images.map((image, index) => {

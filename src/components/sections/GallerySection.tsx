@@ -6,9 +6,11 @@ import { Heading } from '@/components/ui/Heading'
 import { Section } from '@/components/ui/Section'
 import { getItemsByCategory, useGallery } from '@/features/gallery/hooks/useGallery'
 import { GoldText } from '@/components/ui/GoldText'
+import { useMessages } from '@/i18n/useMessages'
 import { getBentoLayout } from '@/lib/gallery/bentoGrid'
 
 export function GallerySection() {
+  const { m } = useMessages()
   const { categories, items, loading } = useGallery()
   const [activeSlideIndex, setActiveSlideIndex] = useState<number | null>(null)
 
@@ -31,19 +33,19 @@ export function GallerySection() {
   )
 
   return (
-    <Section id="galeria" variant="beige" ariaLabel="Galería de productos">
+    <Section id="galeria" variant="beige" ariaLabel={m.gallery.label}>
       <Heading
         as="h2"
-        subtitle="Todo lo que hacemos, de un vistazo"
+        subtitle={m.gallery.subtitle}
         align="center"
         className="mx-auto"
       >
-        Nuestra <GoldText>colección</GoldText>
+        {m.gallery.titleBefore} <GoldText>{m.gallery.titleAccent}</GoldText>
       </Heading>
 
       {loading && (
         <p className="text-center text-stone font-label text-sm mb-12" aria-live="polite">
-          Cargando galería…
+          {m.gallery.loading}
         </p>
       )}
 

@@ -6,8 +6,13 @@ import {
   LegalSection,
 } from '@/components/legal/LegalDocument'
 import { company } from '@/data/contact'
+import { AvisoLegalEnglish } from '@/i18n/legal/AvisoLegalEnglish'
+import { useLocale } from '@/i18n/locale'
 
 export function AvisoLegalPage() {
+  const { locale } = useLocale()
+  if (locale === 'en') return <AvisoLegalEnglish />
+
   return (
     <LegalDocument
       seoTitle="Aviso legal"

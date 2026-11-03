@@ -5,29 +5,44 @@ import { BrandDivider } from '@/components/ui/BrandDivider'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { siteContentDefaults } from '@/features/content/catalog'
-import { composeHeroSlides, slideOffset, type HeroSlide } from '@/features/content/heroSlides'
+import { composeHeroSlides, mockHeroSlides, slideOffset, type HeroSlide } from '@/features/content/heroSlides'
 import { HERO_CROSSFADE_MS, HERO_SLIDE_MS, useHeroSlider } from '@/features/content/hooks/useHeroSlider'
 import { useSiteContent } from '@/features/content/hooks/useSiteContent'
+import { useMessages } from '@/i18n/useMessages'
+import { useSiteCopy } from '@/i18n/useSiteCopy'
 
 const HERO_TEXTURE = '/images/hero-texture.webp'
 
 export function HeroSection() {
+  const { m } = useMessages()
   const { read } = useSiteContent()
+  const { text } = useSiteCopy()
   const heroImage = read('hero_image', siteContentDefaults.hero_image)
-  const heroTitle = read('hero_title', siteContentDefaults.hero_title)
-  const heroQuote = read('hero_quote', siteContentDefaults.hero_quote)
+  const heroTitle = text('hero_title')
+  const heroQuote = text('hero_quote')
+  const extras = useMemo(
+    () =>
+      mockHeroSlides.map((slide, index) => ({
+        ...slide,
+        ...m.hero.slides[index],
+      })),
+    [m],
+  )
 
   const slides = useMemo(
     () =>
-      composeHeroSlides({
-        id: 'actual',
-        image: heroImage,
-        alt: 'Imagen de portada de Gastromenu',
-        label: 'Alta calidad en imagen gastronómica',
-        title: heroTitle,
-        quote: heroQuote,
-      }),
-    [heroImage, heroQuote, heroTitle],
+      composeHeroSlides(
+        {
+          id: 'actual',
+          image: heroImage,
+          alt: m.hero.coverAlt,
+          label: m.hero.coverLabel,
+          title: heroTitle,
+          quote: heroQuote,
+        },
+        extras,
+      ),
+    [extras, heroImage, heroQuote, heroTitle, m.hero.coverAlt, m.hero.coverLabel],
   )
 
   const slider = useHeroSlider(slides.length)
@@ -52,8 +67,8 @@ export function HeroSection() {
 
   return (
     <section
-      aria-roledescription="carrusel"
-      aria-label="Presentación"
+      aria-roledescription={m.hero.carousel}
+      aria-label={m.hero.presentation}
       data-paused={slider.paused ? 'true' : 'false'}
       className="hero-stage relative z-20 flex h-[calc(100svh-5rem)] min-h-[34rem] items-center overflow-hidden bg-black touch-pan-y md:h-[calc(100svh-6rem)]"
       onPointerDown={onPointerDown}
@@ -117,11 +132,7 @@ export function HeroSection() {
               )}
             </FadingCopy>
           )}
-          <p className="brand-caption">
-            Fabricación propia desde 1998
-            <br />
-            in-house manufacturing since 1998
-          </p>
+          <p className="brand-caption">{m.hero.since}</p>
         </div>
 
         <div
@@ -157,7 +168,7 @@ export function HeroSection() {
             size="lg"
             className="!border-gold-text/40 !text-cream hover:!border-gold-text hover:!text-gold-text"
           >
-            Descubrir colección
+            {m.hero.discover}
           </Button>
         </Link>
       </div>

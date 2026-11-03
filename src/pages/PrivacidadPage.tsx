@@ -6,8 +6,13 @@ import {
   LegalSection,
 } from '@/components/legal/LegalDocument'
 import { company } from '@/data/contact'
+import { useLocale } from '@/i18n/locale'
+import { PrivacyEnglish } from '@/i18n/legal/PrivacyEnglish'
 
 export function PrivacidadPage() {
+  const { locale } = useLocale()
+  if (locale === 'en') return <PrivacyEnglish />
+
   return (
     <LegalDocument
       seoTitle="Política de privacidad"

@@ -5,11 +5,12 @@ import { Container } from '@/components/ui/Container'
 import { SocialLinks } from '@/components/ui/SocialLinks'
 import { FOOTER_WATERMARK_SRC } from '@/data/brand'
 import { company } from '@/data/contact'
-import { mainNav } from '@/data/navigation'
+import { useMessages } from '@/i18n/useMessages'
 
 export function Footer() {
   const year = new Date().getFullYear()
   const [primary, secondary] = company.phones
+  const { m } = useMessages()
 
   return (
     <footer className="relative z-10 overflow-hidden bg-ink border-t border-gold/10 py-16 md:py-20 text-cream [&_.slide-body]:text-cream-muted">
@@ -31,15 +32,15 @@ export function Footer() {
             />
             <BrandDivider className="!mx-0 !max-w-[8rem] mb-4" />
             <p className="slide-body text-sm !text-left leading-relaxed max-w-xs">
-              Cartas artesanales premium para el alma de tu negocio.
+              {m.footer.tagline}
             </p>
             <SocialLinks compact className="mt-8" />
           </div>
 
           <div>
-            <p className="slide-label text-[10px] mb-6">Navegación</p>
+            <p className="slide-label text-[10px] mb-6">{m.footer.navigation}</p>
             <ul className="space-y-3">
-              {mainNav.map((link) => (
+              {m.nav.links.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
@@ -53,10 +54,9 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="slide-label text-[10px] mb-6">Compromiso</p>
+            <p className="slide-label text-[10px] mb-6">{m.footer.commitment}</p>
             <p className="slide-body text-sm leading-relaxed max-w-xs">
-              Materiales de primerísima calidad, diseños adaptados y un equipo artesanal
-              que interpreta cada proyecto con exquisitez y dedicación.
+              {m.footer.commitmentBody}
             </p>
           </div>
         </div>
@@ -89,13 +89,13 @@ export function Footer() {
             <span className="mt-1 block">{company.office.city}</span>
           </a>
           <p className="slide-label text-[10px]">
-            Talleres en {company.workshops.places.join(', ')}
+            {m.footer.workshops} {company.workshops.places.join(', ')}
           </p>
-          <p className="slide-label text-[10px]">{company.hours}</p>
+          <p className="slide-label text-[10px]">{m.contact.hours}</p>
         </div>
 
         <p className="mt-12 slide-accent text-xl md:text-2xl text-center">
-          Porque la excelencia también se sirve en la mesa.
+          {m.footer.motto}
         </p>
 
         <BrandDivider className="my-12" />
@@ -107,14 +107,14 @@ export function Footer() {
         </p>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="slide-label text-[10px]">© {year} GastroMenu. Todos los derechos reservados.</p>
+          <p className="slide-label text-[10px]">© {year} GastroMenu. {m.footer.rights}</p>
           <p className="slide-label text-[10px]">
             <Link to="/aviso-legal" className="transition-colors hover:text-gold-highlight">
-              Aviso legal
+              {m.footer.legal}
             </Link>
             <span className="mx-2 text-gold-slide/40">·</span>
             <Link to="/privacidad" className="transition-colors hover:text-gold-highlight">
-              Política de privacidad
+              {m.footer.privacy}
             </Link>
           </p>
         </div>

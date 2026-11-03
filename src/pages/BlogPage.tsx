@@ -6,10 +6,14 @@ import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { Section } from '@/components/ui/Section'
+import { localizeDossier } from '@/data/dossier/en'
+import { useMessages } from '@/i18n/useMessages'
 import { SEO } from '@/lib/seo/SEO'
 
 export function BlogPage() {
-  const content = useLoaderData() as DossierPageContent
+  const loaded = useLoaderData() as DossierPageContent
+  const { locale, m } = useMessages()
+  const content = localizeDossier(loaded, locale)
 
   return (
     <>
@@ -26,7 +30,7 @@ export function BlogPage() {
         </Container>
       </section>
 
-      <Section variant="light" ariaLabel="Temas del blog">
+      <Section variant="light" ariaLabel={m.blog.topics}>
         <div className="grid md:grid-cols-2 gap-6">
           {content.sections.map((topic, index) => (
             <article key={topic.id} className="slide-frame px-8 py-7">
@@ -39,10 +43,10 @@ export function BlogPage() {
 
         <div className="mt-16 text-center">
           <p className="slide-body mb-8">
-            Mientras tanto, si quiere resolver un proyecto concreto, escríbanos.
+            {m.blog.meanwhile}
           </p>
           <Link to="/contacto" className="inline-block cursor-pointer">
-            <Button size="lg">Contactar</Button>
+            <Button size="lg">{m.blog.contact}</Button>
           </Link>
         </div>
       </Section>
