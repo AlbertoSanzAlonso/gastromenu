@@ -7,19 +7,20 @@ import { useSiteContent } from '@/features/content/hooks/useSiteContent'
 
 const values = [
   {
-    title: 'Premium',
-    description:
-      'Piel, semipiel, tejidos nobles, maderas selectas, tapas rígidas y acero, elegidos para durar.',
+    title: 'Nuestra historia',
+    description: '28 años de experiencia.',
   },
   {
-    title: 'Exquisitez',
-    description:
-      'Diseños personalizados y acabados —troquel, stamping, reserva UVI— pensados carta a carta.',
+    title: 'Lo que hacemos',
+    description: 'Cartas, manteles y portamenús.',
   },
   {
-    title: 'Compromiso',
-    description:
-      '28 años interpretando cada proyecto para que la imagen del local empiece en la mesa.',
+    title: 'Cómo trabajamos',
+    description: 'Diseño personalizado y fabricación artesanal.',
+  },
+  {
+    title: 'Nuestro compromiso',
+    description: 'Calidad, materiales, durabilidad y atención personalizada.',
   },
 ]
 
@@ -44,17 +45,14 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div>
             <Heading as="h2" subtitle="28 años de experiencia">
-              Potenciar sus ventas,
-              <br />
-              consolidar su <GoldText>imagen</GoldText>
+              La presentación también forma parte de la <GoldText>experiencia</GoldText>
             </Heading>
 
             <blockquote className="relative slide-body text-xl md:text-2xl max-w-xl mb-8 pl-6 border-l border-gold-slide/40">
               <span className="slide-accent text-4xl leading-none absolute -left-1 -top-2" aria-hidden>
                 "
               </span>
-              Como un traje a medida, la carta que{' '}
-              <GoldText>sirve en la mesa</GoldText> comunica no solo platos, sino quién eres.
+              Que la imagen del restaurante empiece antes de que el cliente se siente a la mesa.
             </blockquote>
 
             <div className="space-y-6 slide-body max-w-xl">

@@ -4,29 +4,26 @@ export const mantelesPage: DossierPageContent = {
   path: '/manteles',
   seoTitle: 'Manteles',
   seoDescription:
-    'Manteles de papel personalizados y manteles rígidos de aluminio lacados a mano. Neuromarketing, varios idiomas y diseño para hostelería.',
+    'Manteles de papel de un solo uso y manteles rígidos lacados a mano. Diseño personalizado, neuromárketing y papeles de 90 gramos.',
   kicker: 'Manteles',
-  title: 'El mantel también es una herramienta de',
-  emphasis: 'venta',
+  title: 'Cuando el arte llega a la',
+  emphasis: 'mesa',
   lead:
-    'Diseñamos manteles de un solo uso y manteles rígidos lacados a mano para que la mesa comunique antes de que llegue el primer plato. Neuromarketing, varios idiomas, fotografías propias o de nuestro banco de imágenes, y piezas infantiles para dibujar.',
+    'Diseño personalizado de manteles de papel de alta calidad con neuromárketing. Los elaboramos en varios idiomas y, si lo desea, con fotografías de sus propios platos o con imágenes gastronómicas de nuestro banco de imágenes. Papel de alto gramaje, incluso reciclado, en brillo o en mate. También diseñamos manteles infantiles. Forman una barrera natural contra los gérmenes que existen en las mesas.',
   sections: [
     {
       id: 'papel',
       nav: 'De papel',
-      kicker: 'Un solo uso',
+      kicker: 'Manteles de papel',
       title: 'Cuando el arte llega a la',
       emphasis: 'mesa',
       paragraphs: [
-        'El mantel de papel de alta calidad hace algo más que proteger la mesa: informa, sugiere y dirige la mirada. Lo elaboramos en varios idiomas y, si lo desea, con fotografías de sus propios platos o con imágenes gastronómicas de nuestro archivo.',
-        'Usamos papel de alto gramaje, incluido papel reciclado, en brillo o en mate. El diseño se integra en el establecimiento y forma una barrera limpia frente a lo que ya pasó por esa mesa.',
+        'Muchas veces no nos damos cuenta que, en una mesa pueda haber bacterias… Sí, por muy limpia que parezca, están ahí. Y una de las funciones de un mantel de un solo uso es, justamente, hacer de barrera entre estos bichitos y el plato de su comensal.',
+        'Independientemente de ello, los manteles individuales de papel (totalmente reciclables) de un solo uso, pueden contener información de su menú o de los platos que Ud. quiera destacar, o bien una galería fotográfica breve (recuerde que comemos con la mirada). También —y si está en zona turística— una buena solución es la de imprimir el menú por ambas caras pero con idiomas diferentes, para darle más oportunidad a sus clientes extranjeros a que puedan interpretar su oferta.',
+        'Pero si desea sólo un mantel de imagen, en GastroMenú Premium diseñamos de manera personalizada todo tipo de manteles adaptándonos a su imagen corporativa, utilizando papeles de alta calidad de 90 grs. tanto satinados, para que sus imágenes adquieran un vívido protagonismo o mate, si así lo prefiere y por supuesto son totalmente reciclables e impresos con tintas ecológicas.',
+        'Pero no solo de menú vive el hombre, también disponemos de manteles para desayunos, o manteles para varios establecimientos (hoteles, cafeterías, etc.). Recuerde que su comensal estará mirando el mantel, cada vez que agache la cabeza hacia el plato. E incluso mucho antes que el plato esté encima del mantel… También elaboramos manteles infantiles (a ver si se quedan quietos de una vez!) para pintar y hacer crucigramas. También aquí puede potenciar su menú infantil.',
       ],
-      highlights: [
-        'Personalizados, con neuromarketing',
-        'Varios idiomas',
-        'Fotografía propia o banco de imágenes',
-        'Alto gramaje, brillo o mate, también reciclado',
-      ],
+      highlights: ['Papel de 90 gramos', 'Satinado o mate', 'Tintas ecológicas', 'Totalmente reciclables'],
       images: [
         { file: '01-manteles-mesa-montada-premium.webp', caption: 'En la mesa', src: '/images/web/manteles/01-manteles-mesa-montada-premium.webp' },
       ],
@@ -36,11 +33,15 @@ export const mantelesPage: DossierPageContent = {
       id: 'caso',
       nav: 'Un caso',
       kicker: 'Manteles de papel',
-      title: 'Una historia que cruzó',
-      emphasis: 'fronteras',
+      title: 'Un caso de',
+      emphasis: 'éxito',
       paragraphs: [
-        'A partir de una obra pictórica que el padre de una clienta había pintado en homenaje a un hombre, plantamos un estilo gráfico sobre el mantel. El nombre del establecimiento quedó en cuestión —y con él, el apoyo de una marca de cervezas— hasta que varios clientes habituales decidieron poner el mantel de su bolsillo.',
-        'Hoy esos manteles viajan con quienes se los llevan a casa, se usan a diario en un rincón de la comida o la cena, y han llegado a paredes de casa en España y fuera de ella. A veces el orgullo de un trabajo bien hecho no se queda en la mesa.',
+        'Si nos permite una breve licencia, le contaremos un caso peculiar que ocurrió con uno de nuestros clientes…',
+        'Desarrollamos un diseño de mantel a partir de una obra pictórica que había realizado el padre de nuestra clienta, como homenaje al hombre, que plasmó una litografía en un cuadro de la fachada del restaurante con un estilo muy peculiar.',
+        'Pues bien, ese fue el motivo del mantel en sí, con el nombre del establecimiento en cuestión y (porqué no) con el apoyo de una marca de cervezas famosas.',
+        'Fue tanto el éxito de esa decisión que varios clientes extranjeros habituales al restaurante, decidieron pedir varios manteles y llevárselos a sus respectivos países.',
+        'Se preguntará Ud. para qué, no es así? Bien, pues allí unos los han plastificado y lo usan a diario en sus hogares a la hora de la comida o cena, en recuerdo permanente de aquella estadía en España y lo bien que se lo pasaron en ese restaurante y otros hasta lo han enmarcado y realizado un cuadro que engalana alguna de las paredes de su estancia. Increíble, pero cierto… además aquí adjuntamos las imágenes que les han remitido los comensales extranjeros a nuestra cliente que no nos dejan mentir.',
+        'Ni qué decir del orgullo del equipo de GastroMenú Premium cuando nos enteramos de la noticia! El orgullo de un trabajo bien hecho que trasciende fronteras.',
       ],
       images: [
         { file: '02-mantel-antes-dos-puestos-premium.webp', caption: 'Antes y después', src: '/images/web/manteles/02-mantel-antes-dos-puestos-premium.webp' },
@@ -50,12 +51,14 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'texto',
       nav: 'Con texto',
-      kicker: 'Informativos',
-      title: 'Toda la información, de un',
+      kicker: 'Manteles de papel con texto',
+      title: 'Toda la información de un',
       emphasis: 'vistazo',
       paragraphs: [
-        'El mantel de papel tiene lo que la carta de sala no siempre puede: estar delante del comensal el tiempo que dura la mesa. Menú, alérgenos, sugerencias, códigos para seguir el local y un mensaje que empuja el plato que más interesa vender.',
-        'Diagramamos la pieza para que se lea con claridad y la acompañamos de fotografías cuando el producto lo pide. Si dejamos una ración de muestra, el comensal entiende la oferta mejor que con una descripción larga.',
+        'Si algo tienen los manteles de papel de un solo uso, es la capacidad de transmitir información inmediata al comensal. Ofrecerle todo el menú de un solo vistazo, ahorra tiempo y dinero. Además de que le da un plus de higiene adicional, ya que, como dijimos anteriormente, el mantel es una barrera natural entre los gérmenes y bacterias que se encuentran en la superficie de la mesa y los alimentos que va a ingerir sus clientes.',
+        'Qué mejor que darles toda la oferta, perfectamente diagramada y con técnicas de neuromárketing para que puedan elegir el plato que a Ud. más le interese (sea por escandallo, por rapidez en cocina, etc.) y si lo acompaña de pequeñas fotografías adicionales (no excluyente) tanto mejor.',
+        'Aquí le dejamos una variedad de manteles de papel, elaborados con tintas ecológicas especiales y totalmente reciclables, de 90 grs. y tamaño A3 o superior.',
+        'En GastroMenú Premium llevamos 28 años diseñando manteles con su carta para que su comensal tenga a mano toda su oferta y Ud. pueda ampliar sus ingresos.',
       ],
       images: [
         { file: '03-mantel-informativo-el-encuentro-premium.webp', caption: 'El Encuentro', src: '/images/web/manteles/03-mantel-informativo-el-encuentro-premium.webp' },
@@ -65,12 +68,12 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'diseno',
       nav: 'Diseño',
-      kicker: 'Personalizados',
+      kicker: 'Manteles de papel con diseño',
       title: 'Cuando el arte viste su',
       emphasis: 'mesa',
       paragraphs: [
-        'Si prefiere que el mantel no compita con el entorno, lo mimamos con un diseño que marca la diferencia sin levantar la voz. Y si quiere una pieza de autor, la ilustramos, la coloreamos y la adaptamos al estilo del local.',
-        'Personalizamos, adaptamos y asesoramos sobre motivos, tintas y gramaje. El mantel tiene que parecer del restaurante, no un impreso genérico dejado sobre la mesa.',
+        'Sí, por el contrario quiere que sus manteles se mimeticen con su entorno, marquen una diferencia con la competencia o bien desea darle a sus clientes otro tipo de imagen, le recomendamos los manteles con diseño personalizado, sin texto, sólo su logo o bien acompañado de un logo de algún patrocinador de los mismos.',
+        'En GastroMenú Premium diseñamos a medida los manteles que Ud. desee colocar en sus mesas. Personalizamos, adaptamos y asesoramos sobre estilos y tipos de manteles que mejor le cuadre a su establecimiento. Ganará en elegancia, estilo y buen gusto y eso, sus clientes se lo agradecerán.',
       ],
       images: [
         { file: '04-mantel-diseno-la-casita-premium.webp', caption: 'La Casita', src: '/images/web/manteles/04-mantel-diseno-la-casita-premium.webp' },
@@ -80,12 +83,13 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'asadores',
       nav: 'Asadores',
-      kicker: 'Parrillas',
+      kicker: 'Parrillas y asadores',
       title: 'Al calor de las',
       emphasis: 'brasas',
       paragraphs: [
-        'La visualidad que desprenden los manteles de papel encaja especialmente bien en asadores y parrillas: el producto se entiende antes de que el camarero lo nombre.',
-        'Manteles específicos para destacar la carne, el corte o la brasa, con una imagen directa y un texto que invita a pedir. Es una de las formas más claras de poner el producto estrella en el centro de la mesa.',
+        'La versatilidad que disponen los manteles de papel descartables se puede traducir que se adaptan perfectamente a todo tipo de establecimientos.',
+        'En este caso, les presentamos —si Ud. tiene asador o parrilla— manteles específicos que destacan el producto estrella o presentan un abanico de la amplia oferta que le interesa que sus cliente tengan a mano.',
+        'El mantel, lógicamente se integra al entorno y transmite el mensaje que Ud. quiere hacer llegar o si desea un mantel de diseño, sólo tiene que pedirlo a GastroMenú Premium. Es la opción más económica, práctica y más higiénica que se pueda imaginar.',
       ],
       images: [
         { file: '05-mantel-asador-el-asador-premium.webp', caption: 'El Asador', src: '/images/web/manteles/05-mantel-asador-el-asador-premium.webp' },
@@ -95,12 +99,14 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'vinos',
       nav: 'Vinos',
-      kicker: 'Bodegas',
+      kicker: 'Promoción de bodegas',
       title: 'Promocionar el buen',
       emphasis: 'vino',
       paragraphs: [
-        'Una opción muy interesante para bodegas y distribuidores: el mantel patrocinado lleva la imagen del vino y el mensaje que quiere hacer llegar al consumidor final, dentro del restaurante, en el momento en que se elige qué beber.',
-        'Es publicidad en una región específica, con la mesa como soporte. Disponemos de condiciones especiales para bodegas y distribuidores.',
+        'Una opción muy interesante para bodegas y distribuidores es la promoción de sus productos en diferentes establecimientos gastronómicos.',
+        'GastroMenú Premium, no solo diseña —utilizando técnicas de neuromárketing adaptadas al cliente final— esos manteles especiales con la imagen de sus vinos y el mensaje que quiera hacer llegar al consumidor final, para potenciar el consumo de los mejores caldos, sino que también se los pueden hacer llegar a los restaurantes que designe la bodega, sin que se tenga que preocupar por nada.',
+        'Es una excelente opción para que, en todo tipo de restaurantes, o en una región específica, se ejecute una acción de marketing con excelentes resultados.',
+        'Disponemos de condiciones especiales para bodegas y distribuidores. ¡Consúltenos!',
       ],
       images: [
         { file: '06-mantel-vino-real-italian-food-premium.webp', caption: 'Real Italian Food', src: '/images/web/manteles/06-mantel-vino-real-italian-food-premium.webp' },
@@ -110,12 +116,12 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'internacionales',
       nav: 'Temáticos',
-      kicker: 'Cocina internacional',
+      kicker: 'Restaurantes temáticos',
       title: 'Manteles para todo el',
       emphasis: 'mundo',
       paragraphs: [
-        'La oferta se adapta al tipo de establecimiento. Un restaurante temático, o cualquier otra cocina, puede vestir la mesa con un mantel que pertenezca a ese mundo: mexicano, italiano, libanés, asiático o el motivo que el local ya reconoce como suyo.',
-        'Llevamos años viendo cómo estos manteles ayudan a decidir el último pedido. El comensal mira, reconoce y pide.',
+        'La amplia oferta que dispone GastroMenú Premium para adaptar manteles para todo tipo de establecimientos es enorme. Tanto si tiene Ud. un restaurante temático, o cualquier otro tipo de establecimiento. Le aconsejamos vivamente la implementación de manteles de papel de un solo uso, por la versatilidad que éstos disponen y el excelente resultado que otorgan al momento ya que —y así se ha demostrado— tienen un elevado poder de toma de decisión en el último momento cara a sus clientes.',
+        'Si los quiere probar, llámenos y le enseñaremos muchos modelos de manteles de clientes con éxito asegurado y daremos forma al suyo, para que Ud. sea uno de ellos.',
       ],
       images: [
         { file: '07-mantel-mister-noodles-premium.webp', caption: 'Mister Noodles', src: '/images/web/manteles/07-mantel-mister-noodles-premium.webp' },
@@ -125,12 +131,11 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'cocteles',
       nav: 'Cócteles',
-      kicker: 'Tamaño reducido',
-      title: 'Por qué no un mantel de',
-      emphasis: 'cóctel',
+      kicker: 'Pequeños manteles de papel',
+      title: 'Porqué no un',
+      emphasis: 'cócktail',
       paragraphs: [
-        'Disponemos de manteles pequeños para potenciar los cócteles, junto a la carta o como pieza propia. Funcionan como un argumento breve, a la vista, mientras se decide la copa.',
-        'El formato reducido cabe en la barra y en la mesa auxiliar. Misma lógica que el mantel grande: una imagen, un nombre y una razón para pedir.',
+        'Disponemos de manteles pequeños (tipo A4) para potenciar los cócktails o, si lo desea, colocar este apartado en un mantel grande junto a su menú o diseño subjetivo para potenciar los cócktails. Sea como fuere, en GastroMenú Premium disponemos de soluciones para que estos aperitivos le ayuden a aumentar su facturación.',
       ],
       images: [
         { file: '08-mantel-cocteles-excelsior-premium.webp', caption: 'Excelsior', src: '/images/web/manteles/08-mantel-cocteles-excelsior-premium.webp' },
@@ -140,12 +145,16 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'chiringuitos',
       nav: 'Chiringuitos',
-      kicker: 'Playa',
+      kicker: 'Restaurantes de playa',
       title: 'Con la frescura del',
       emphasis: 'verano',
       paragraphs: [
-        'En temporada, el mantel de papel permite cambiar la información con la misma rapidez con la que cambia la oferta del chiringuito. Se moja, se retira y al día siguiente hay otro.',
-        'También combinan manteles de mesa con cartas menú: el mantel presenta los platos que más interesa vender y la carta guarda el detalle. Y, si el comensal se lleva el mantel, la marca se va con él.',
+        'Y no solo verano, también en las demás estaciones, porque si algo tienen los manteles de papel descartables es que puede cambiar la información rápidamente!',
+        'Son totalmente moldeables, puede vestir las mesas de su chiringuito, restaurante de playa, beach club, etc. con una imagen refrescante en verano y otra diferente el resto del año (si abre en otros meses).',
+        'En GastroMenú Premium sabemos muy bien de la inmediatez de la rotación de mesas, de vestirlas, armarlas y dejarlas listas para el servicio.',
+        'Pues para ello, los manteles de mesa le dan la rapidez y la seguridad de que en un instante tiene la mesa preparada y ya de paso le brinda la información del menú a sus próximos clientes.',
+        'También puede combinar manteles de mesa con cartas menú, por ejemplo en los manteles de mesa puede colocar sus mejores ofertas, acompañadas (o no) con imágenes para que el cliente pueda “picar” en algo que nos interesa y luego la carta refuerza la oferta gastronómica. Rematamos la jugada estupendamente.',
+        'También el mantel puede hacer alusión a los postres existentes y ésta imagen estará ahí toda la comida… cada vez que su comensal agache la cabeza hacia el plato la oferta de postres le acompañará y qué hará cuando termine de comer…??',
       ],
       images: [
         { file: '09-mantel-chiringuito-alma-mediterranea-premium.webp', caption: 'Alma Mediterránea', src: '/images/web/manteles/09-mantel-chiringuito-alma-mediterranea-premium.webp' },
@@ -155,12 +164,14 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'desayunos',
       nav: 'Desayunos',
-      kicker: 'Para empezar el día',
-      title: 'Un buen desayuno también se',
-      emphasis: 'diseña',
+      kicker: 'Manteles de papel para desayunos',
+      title: 'Para empezar bien la',
+      emphasis: 'mañana',
       paragraphs: [
-        'Hoteles, cafeterías y oficinas usan el desayuno como primer contacto del día. El mantel pequeño presenta la oferta —bollería, zumos, huevos, smoothies— con una imagen que abre el apetito antes de que llegue la carta.',
-        'Lo diseñamos a la medida del servicio, con la higiene de un soporte de un solo uso y la claridad de quien tiene pocos minutos para decidir.',
+        'Qué mejor por la mañana que un muy buen desayuno para afrontar el día con energía?',
+        'Pero muchos de sus comensales, tal vez no sepa que Ud. dispone de otros productos que integran el desayuno, como, tal vez smoothies, panes especiales, determinados bols de frutas y semillas, etc… y qué mejor que plasmarlo en sus nuevos manteles de desayuno para potenciar las ventas de los mismos?',
+        'En GastroMenú Premium le animamos a que pueda colocar en su establecimiento, manteles especialmente diseñados de manera personalizada, para potenciar sus desayunos, incorporando imágenes específicas para realzar aún más su oferta o dar a conocer aquellos productos que su público desconoce que tiene.',
+        'Además de garantizar la higiene en sus mesas, va a notar como sus ventas suben y su caja se lo agradecerá.',
       ],
       images: [
         { file: '10-mantel-desayuno-ambassador-premium.webp', caption: 'Hotel Ambassador', src: '/images/web/manteles/10-mantel-desayuno-ambassador-premium.webp' },
@@ -170,18 +181,20 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'rigidos',
       nav: 'Rígidos',
-      kicker: 'Alubond',
+      kicker: 'Manteles rígidos lacados a mano',
       title: 'Cuando el lujo llega a la',
       emphasis: 'mesa',
       paragraphs: [
-        'Para destacar del resto fabricamos manteles de aluminio, rígidos, lacados a mano, con los motivos del local. Se lavan, duran y dan una imagen de alto standing. Si se mantienen en la línea visual del restaurante, afianzan el marketing de la sala.',
-        'Producto de alto nivel, cortado a láser y acabado de uno en uno. Alubond en mate o brillo, con el espesor y la presencia de una pieza que no se retira entre servicio y servicio.',
+        'Según en qué restaurantes los manteles de papel no son suficiente y hay que escalar un paso más.',
+        'Por ello, en GastroMenú Premium diseñamos y elaboramos manteles rígidos lacados a mano, en alubond (sandwich de aluminio), con las esquinas cortadas a láser y con una pátina de lacado brillante, de fácil lavado y ahí sí que no existe ni rastro de bacterias.',
+        'Con una visibilidad exhuberante y un amplio tamaño de 40x30 cms. y 5 mm. de altura, más que suficiente para un servicio individual de auténtico lujo.',
+        'La presentación de los platos puestos sobre este mantel rígido, se elevan a una categoría infinita. Fácil de almacenar y fácil de limpiar y, por supuesto, totalmente personalizados. Pídalos ahora y disfrute de la exclusividad de un producto único.',
       ],
       highlights: [
-        'Aluminio rígido, lacado a mano',
-        'Lavables y de larga duración',
-        'Corte láser y acabado artesanal',
-        'Mate o brillo',
+        'Alubond, sandwich de aluminio',
+        '40 × 30 cm y 5 mm de altura',
+        'Esquinas cortadas a láser',
+        'Lacado brillante, lavable',
       ],
       images: [
         { file: '11-mantel-lujo-cinnabar-cafe-premium.webp', caption: 'Cinnabar Café', src: '/images/web/manteles/11-mantel-lujo-cinnabar-cafe-premium.webp' },
@@ -191,12 +204,12 @@ export const mantelesPage: DossierPageContent = {
     {
       id: 'infantiles',
       nav: 'Infantiles',
-      kicker: 'Para los más pequeños',
+      kicker: 'Manteles infantiles',
       title: 'Los niños también',
       emphasis: 'cuentan',
       paragraphs: [
-        'Para que los más pequeños se entretengan sin perder el hilo de la mesa, diseñamos manteles para colorear y jugar. Mantienen la atención, alargan la estancia con naturalidad y dejan un recuerdo que el niño se quiere llevar.',
-        'El mantel infantil es también una herramienta comercial: mientras el niño dibuja, la mesa sigue pidiendo.',
+        'Y para que las cuentas salgan redondas, qué mejor que mantener entretenida a la tropa bajita. GastroMenú Premium diseña manteles especialmente pensados para ellos, donde no solo podrán pintar o hacer crucigramas, etc. sino que verán la oferta —especialmente dirigida a ellos— para potenciar ventas y subir las cuentas.',
+        'No pierda la oportunidad de interconectar con el público infantil para dar a conocer su oferta. No se arrepentirá!',
       ],
       images: [
         { file: '12-mantel-infantil-bilbil-house-premium.webp', caption: 'Bilbil House', src: '/images/web/manteles/12-mantel-infantil-bilbil-house-premium.webp' },

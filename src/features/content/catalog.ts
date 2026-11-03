@@ -3,7 +3,7 @@ export const siteContentDefaults = {
   hero_title: 'La excelencia\ncomo destino',
   hero_quote: 'A veces una primera impresión es la que queda para siempre…',
   about_text:
-    'Llevamos 28 años diseñando y fabricando cartas de menú, manteles personalizados y atriles portamenú para restaurantes que entienden que cada detalle cuenta.\n\nCombinamos la artesanía tradicional con la innovación del sector premium: diseños personalizados, materiales nobles y un marketing gastronómico que interpreta sus deseos.',
+    'En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.\n\nDiseñamos y fabricamos cartas de menú, manteles personalizados tanto rígidos como descartables y atriles portamenús de acero, que combinan diseño, artesanía y materiales de alta calidad. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.\n\nPor eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.\n\n28 años de experiencia. Diseño personalizado. Fabricación artesanal.',
 } as const
 
 export type SiteContentKey = keyof typeof siteContentDefaults

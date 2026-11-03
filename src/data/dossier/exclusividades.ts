@@ -4,30 +4,29 @@ export const exclusividadesPage: DossierPageContent = {
   path: '/exclusividades',
   seoTitle: 'Exclusividades',
   seoDescription:
-    'Porta cuentas y porta adiciones artesanales en tejido, semipiel y piel. Un detalle de alta calidad para llevar la cuenta a la mesa.',
+    'Portacuentas artesanales en tejido y semipiel, con el logo del restaurante. Un toque de clase para presentar la cuenta.',
   kicker: 'Exclusividades',
-  title: 'El último gesto de la mesa, también se',
-  emphasis: 'diseña',
+  title: 'Un toque de',
+  emphasis: 'clase',
   lead:
-    'Fabricamos porta cuentas para que llevar la cuenta a la mesa sea un gesto diferenciado: una pieza de alta calidad, no un sobre improvisado. Tejido especial, semipiel o piel, con el logo del restaurante.',
+    'Fabricamos prácticos porta cuentas, para que el acto de llevar la cuenta a una mesa sea diferenciado con un producto de alta calidad. Una atractiva experiencia y un toque de clase en la mesa, con bolsillo interior para llevar la tarjeta de su establecimiento.',
   sections: [
     {
       id: 'porta-cuentas',
       nav: 'Porta cuentas',
-      kicker: 'Porta cuentas y porta adiciones',
+      kicker: 'Portacuentas',
       title: 'Un toque de',
       emphasis: 'clase',
       paragraphs: [
-        'El acto de llevar la cuenta puede ser tan cuidado como el resto del servicio. Elaboramos porta cuentas en tejido especial y en distintas tonalidades, y también en semipiel, con huecograbado, troquel o grabado del logotipo en ambas caras.',
-        'El bolsillo interior guarda la cuenta, la tarjeta del establecimiento o la adición. En varios materiales y colores: tejidos, piel, semipiel o gráficos grabados y estampados en oro o plata.',
-        'Es una pieza pequeña y se nota. Cierra la experiencia con el mismo criterio con el que se abrió la carta.',
+        'Cuando llega la hora de presentar la cuenta a sus clientes, que mejor que realizarlo en un envoltorio elegante, fino y delicado, a la vez que práctico y duradero.',
+        'Le presentamos un portacuentas totalmente personalizado, para que sus comensales finalicen la experiencia de haberse sentido bien atendidos, bien comidos y con una excelente sensación interior. La cuenta, dentro de un portacuentas de tejido o en semipiel, con su logo grabado en la portada y por dentro, cuando su cliente lo abra, una inscripción agradeciéndole su visita, acompañado de una tarjeta de su establecimiento para invitarle a retornar pronto. Qué mejor despedida?…',
+        'En GastroMenú Premium los elaboramos a mano, como todo lo que hacemos y en varias tonalidades de color y personalización de su logo. Pregunte por ellos y agregue un toque de clase adicional a la colección de sus nuevas cartas.',
       ],
       highlights: [
-        'Tejido especial en distintas tonalidades',
-        'Semipiel con huecograbado',
-        'Logo troquelado o grabado en ambas caras',
+        'Grabado o troquel del logo en ambas caras',
+        'Semipiel de varias tonalidades, con huecograbado',
+        'Tejido especial, en diferentes colores',
         'Bolsillo interior para la cuenta o la tarjeta',
-        'Estampación en oro o plata',
       ],
       images: [
         { file: '01-las-brasas-cerrado-premium.webp', caption: 'Las Brasas', src: '/images/web/exclusividades/01-las-brasas-cerrado-premium.webp' },
