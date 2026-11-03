@@ -6,18 +6,8 @@ export const HERO_CROSSFADE_MS = 700
 export function useHeroSlider(length: number) {
   const [index, setIndex] = useState(0)
   const [hidden, setHidden] = useState(() => document.hidden)
-  const [reduced, setReduced] = useState(() =>
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  )
   const remaining = useRef(HERO_SLIDE_MS)
   const token = useRef(0)
-
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const sync = () => setReduced(media.matches)
-    media.addEventListener('change', sync)
-    return () => media.removeEventListener('change', sync)
-  }, [])
 
   useEffect(() => {
     const sync = () => setHidden(document.hidden)
@@ -25,7 +15,7 @@ export function useHeroSlider(length: number) {
     return () => document.removeEventListener('visibilitychange', sync)
   }, [])
 
-  const paused = hidden || reduced || length < 2
+  const paused = hidden || length < 2
   const activeIndex = length === 0 ? 0 : index % length
 
   const goTo = useCallback(
@@ -62,7 +52,6 @@ export function useHeroSlider(length: number) {
   return {
     index: activeIndex,
     paused,
-    reduced,
     next,
     prev,
   }

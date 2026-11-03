@@ -62,15 +62,10 @@ export function HeroSection() {
         touch.current.armed = false
       }}
     >
-      <HeroStage
-        slides={slides}
-        index={slider.index}
-        reduced={slider.reduced}
-        mirrored={mirrored}
-      />
+      <HeroStage slides={slides} index={slider.index} mirrored={mirrored} />
 
       <div
-        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:block ${
+        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-premium lg:block ${
           mirrored ? 'translate-x-full' : 'translate-x-0'
         }`}
         aria-hidden
@@ -95,7 +90,7 @@ export function HeroSection() {
       />
       <div className="hero-mobile-scrim pointer-events-none absolute inset-0 z-[1]" aria-hidden />
       <div
-        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:w-1/2 lg:via-black/10 lg:to-transparent ${
+        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-premium lg:w-1/2 lg:via-black/10 lg:to-transparent ${
           mirrored
             ? 'lg:translate-x-full lg:bg-gradient-to-l lg:from-black/30'
             : 'lg:translate-x-0 lg:bg-gradient-to-r lg:from-black/30'
@@ -108,7 +103,7 @@ export function HeroSection() {
           <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
           <BrandDivider className="mb-8" />
           {slide && (
-            <FadingCopy slide={slide} reduced={slider.reduced}>
+            <FadingCopy slide={slide}>
               {(item) => (
                 <>
                   <p className="brand-eyebrow mb-6 text-[11px] md:text-xs">{item.label}</p>
@@ -130,16 +125,15 @@ export function HeroSection() {
         </div>
 
         <div
-          className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:block lg:max-w-[50%] ${
+          className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-premium lg:block lg:max-w-[50%] ${
             mirrored ? 'lg:translate-x-full lg:text-right' : 'lg:translate-x-0 lg:text-left'
           }`}
         >
           {slide && (
             <FadingCopy
               slide={slide}
-              reduced={slider.reduced}
               shellClassName={`hero-letters ${mirrored ? 'origin-right' : 'origin-left'}`}
-              shellStyle={slider.reduced ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }}
+              shellStyle={{ animationDuration: `${HERO_SLIDE_MS}ms` }}
             >
               {(item) => (
                 <>
@@ -174,12 +168,10 @@ export function HeroSection() {
 function HeroStage({
   slides,
   index,
-  reduced,
   mirrored,
 }: {
   slides: HeroSlide[]
   index: number
-  reduced: boolean
   mirrored: boolean
 }) {
   const [tracked, setTracked] = useState(index)
@@ -187,7 +179,7 @@ function HeroStage({
   const [motionOn, setMotionOn] = useState(false)
 
   if (index !== tracked) {
-    setLeaving(reduced ? null : tracked)
+    setLeaving(tracked)
     setTracked(index)
     if (!motionOn) setMotionOn(true)
   }
@@ -200,7 +192,7 @@ function HeroStage({
 
   return (
     <div
-      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-premium motion-reduce:transition-none lg:inset-y-0 lg:left-0 lg:w-1/2 ${
+      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-premium lg:inset-y-0 lg:left-0 lg:w-1/2 ${
         mirrored
           ? 'lg:translate-x-0 lg:[mask-image:linear-gradient(to_left,transparent_0%,black_52%,black_100%)]'
           : 'lg:translate-x-full lg:[mask-image:linear-gradient(to_right,transparent_0%,black_52%,black_100%)]'
@@ -214,11 +206,11 @@ function HeroStage({
         return (
           <div
             key={item.id}
-            className={`absolute inset-0 transition-transform duration-[200ms] ease-in-out motion-reduce:transition-none ${
+            className={`absolute inset-0 transition-transform duration-[200ms] ease-in-out ${
               !motionOn ? '' : active ? 'hero-slide-in' : exiting ? 'hero-slide-out' : ''
             }`}
             style={{
-              transform: `translate3d(${reduced ? 0 : offset * 6}%, 0, 0)`,
+              transform: `translate3d(${offset * 6}%, 0, 0)`,
               opacity: active || exiting ? undefined : 0,
               zIndex: exiting ? 3 : active ? 2 : 1,
             }}
@@ -226,8 +218,8 @@ function HeroStage({
             <img
               src={item.image}
               alt=""
-              className={`h-full w-full object-cover max-lg:blur-[6px] lg:blur-none ${active && !reduced ? 'hero-drift' : 'scale-[1.14]'}`}
-              style={active && !reduced ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
+              className={`h-full w-full object-cover max-lg:blur-[6px] lg:blur-none ${active ? 'hero-drift' : 'scale-[1.14]'}`}
+              style={active ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
               loading={position === 0 ? 'eager' : 'lazy'}
               decoding={position === 0 ? 'sync' : 'async'}
             />
@@ -238,15 +230,13 @@ function HeroStage({
   )
 }
 
-function useHeroCrossfade(slide: HeroSlide, reduced: boolean) {
+function useHeroCrossfade(slide: HeroSlide) {
   const [current, setCurrent] = useState(slide)
   const [outgoing, setOutgoing] = useState<HeroSlide | null>(null)
 
   if (slide.id !== current.id) {
-    setOutgoing(reduced ? null : current)
+    setOutgoing(current)
     setCurrent(slide)
-  } else if (reduced && outgoing) {
-    setOutgoing(null)
   } else if (slide !== current) {
     setCurrent(slide)
   }
@@ -262,19 +252,17 @@ function useHeroCrossfade(slide: HeroSlide, reduced: boolean) {
 
 function FadingCopy({
   slide,
-  reduced,
   shellClassName,
   shellStyle,
   children,
 }: {
   slide: HeroSlide
-  reduced: boolean
   shellClassName?: string
   shellStyle?: { animationDuration: string }
   children: (item: HeroSlide) => ReactNode
 }) {
-  const view = useHeroCrossfade(slide, reduced)
-  const animate = !reduced && view.outgoing !== null
+  const view = useHeroCrossfade(slide)
+  const animate = view.outgoing !== null
   const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
 
   return (
