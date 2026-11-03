@@ -86,7 +86,6 @@ export function DossierPage({ content }: DossierPageProps) {
           ariaLabel={section.nav}
           className="scroll-mt-24 md:scroll-mt-28"
           watermarkSrc={hasImages ? dossierImageUrl(section.images[0]) : undefined}
-          watermarkAlign={mirrored ? 'start' : 'end'}
         >
           <div
             className={

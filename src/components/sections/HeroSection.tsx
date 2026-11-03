@@ -218,8 +218,12 @@ function HeroStage({
             <img
               src={item.image}
               alt=""
-              className={`h-full w-full object-cover max-lg:blur-[6px] lg:blur-none ${active ? 'hero-drift' : 'scale-[1.14]'}`}
-              style={active ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
+              className={`h-full w-full max-lg:blur-[6px] lg:blur-none ${
+                item.fit === 'contain'
+                  ? 'object-contain'
+                  : `object-cover ${active ? 'hero-drift' : 'scale-[1.14]'}`
+              }`}
+              style={active && item.fit !== 'contain' ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
               loading={position === 0 ? 'eager' : 'lazy'}
               decoding={position === 0 ? 'sync' : 'async'}
             />

@@ -5,6 +5,7 @@ export interface HeroSlide {
   label: string
   title: string
   quote: string
+  fit?: 'cover' | 'contain'
 }
 
 /**
@@ -13,44 +14,40 @@ export interface HeroSlide {
  */
 export const mockHeroSlides: HeroSlide[] = [
   {
+    id: 'the-view',
+    image: '/images/hero/01-the-view.webp',
+    alt: 'Carta The View en azul, con el sol en oro y cantoneras doradas',
+    label: 'Restaurant & Cocktail Bar',
+    title: 'El nombre\nen oro',
+    quote: 'Un sol dorado y cantoneras de oro para una carta que abre la mesa.',
+    fit: 'contain',
+  },
+  {
+    id: 'amaretto',
+    image: '/images/hero/02-amaretto.webp',
+    alt: 'Carta de cócteles Amaretto en piel marrón, con copa y marco dorado',
+    label: 'Cartas de cócteles',
+    title: 'La copa\nantes del brindis',
+    quote: 'Piel, marco dorado y el nombre del cóctel, pensados para la barra.',
+    fit: 'contain',
+  },
+  {
+    id: 'the-butcher',
+    image: '/images/hero/03-the-butcher.webp',
+    alt: 'Carta The Butcher en madera, con el nombre grabado y tornillos vistos',
+    label: 'Impresión en madera',
+    title: 'La madera\nse queda',
+    quote: 'Veta, tornillos vistos y el nombre del local, grabados para la mesa.',
+    fit: 'contain',
+  },
+  {
     id: 'cervantes',
-    image: '/images/gallery/cervantes-vinos.jpg',
-    alt: 'Carta de vinos Cervantes en piel, con cantoneras y tornillos vistos',
+    image: '/images/hero/04-cervantes.webp',
+    alt: 'Carta de vinos Cervantes en piel negra, con cantoneras y tornillos de oro',
     label: 'Cartas de vino',
     title: 'La piel\nque recibe',
     quote: 'Tornillos vistos y cantoneras de oro para una carta que se recuerda en la mano.',
-  },
-  {
-    id: 'jaipur',
-    image: '/images/gallery/jaipur-palace.jpg',
-    alt: 'Carta Jaipur Palace en semipiel verde con pavo real estampado en oro',
-    label: 'Stamping en oro',
-    title: 'Un nombre\nen oro',
-    quote: 'El pavo real queda estampado para que la mesa hable antes que la carta.',
-  },
-  {
-    id: 'reserva-uvi',
-    image: '/images/gallery/reserva-uvi.jpg',
-    alt: 'Carta Reserva UVI con corona en relieve sobre portada bicolor',
-    label: 'Reserva UVI',
-    title: 'Relieve\nque se toca',
-    quote: 'La corona se siente con los dedos antes de abrir la primera página.',
-  },
-  {
-    id: 'haruki',
-    image: '/images/gallery/haruki-japones.jpg',
-    alt: 'Carta japonesa Haruki con troquel seco',
-    label: 'Troquel japonés',
-    title: 'Oro sobre\nla noche',
-    quote: 'Dos koi y un troquel seco, pensados para una mesa que no necesita alzar la voz.',
-  },
-  {
-    id: 'plaza',
-    image: '/images/gallery/plaza-vinos.jpg',
-    alt: 'Carta de vinos y bebidas Plaza Cafetería, impresa sobre madera',
-    label: 'Impresión en madera',
-    title: 'La madera\nse queda',
-    quote: 'Vino, corcho y el nombre del local, impresos para acompañar la mesa.',
+    fit: 'contain',
   },
 ]
 

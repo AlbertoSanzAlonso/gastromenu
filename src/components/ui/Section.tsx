@@ -8,7 +8,6 @@ interface SectionProps {
   variant?: 'light' | 'dark' | 'beige'
   ariaLabel?: string
   watermarkSrc?: string
-  watermarkAlign?: 'start' | 'end'
 }
 
 const variantStyles = {
@@ -27,7 +26,6 @@ export function Section({
   variant = 'light',
   ariaLabel,
   watermarkSrc,
-  watermarkAlign = 'end',
 }: SectionProps) {
   return (
     <section
@@ -35,15 +33,13 @@ export function Section({
       aria-label={ariaLabel}
       className={`section-padding relative overflow-hidden ${variantStyles[variant]} ${className}`}
     >
-      {watermarkSrc && (
+      {watermarkSrc && variant === 'dark' && (
         <img
           src={watermarkSrc}
           alt=""
           aria-hidden
           decoding="async"
-          className={`section-hero-watermark ${
-            watermarkAlign === 'start' ? 'section-hero-watermark--start' : 'section-hero-watermark--end'
-          } ${variant === 'dark' ? 'section-hero-watermark--dark' : ''}`}
+          className="section-hero-watermark"
         />
       )}
       <Container className="relative z-[1]">{children}</Container>
