@@ -188,6 +188,8 @@ const es = {
   },
   dossier: {
     sections: 'Secciones',
+    more: 'Leer más',
+    less: 'Leer menos',
   },
   blog: {
     topics: 'Temas del blog',
@@ -422,6 +424,8 @@ const en: typeof es = {
   },
   dossier: {
     sections: 'Sections',
+    more: 'Read more',
+    less: 'Read less',
   },
   blog: {
     topics: 'Blog topics',

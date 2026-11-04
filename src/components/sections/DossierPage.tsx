@@ -9,6 +9,7 @@ import { localizeDossier } from '@/data/dossier/en'
 import { useMessages } from '@/i18n/useMessages'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { DossierGallery } from '@/components/sections/DossierGallery'
+import { ExpandableCopy } from '@/components/sections/ExpandableCopy'
 
 const pageHeroWatermark: Record<string, string> = {
   '/cartas': '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
@@ -104,29 +105,13 @@ export function DossierPage({ content }: DossierPageProps) {
                 {section.title}{' '}
                 {section.emphasis && <GoldText>{section.emphasis}</GoldText>}
               </h2>
-              <div className="mt-6 space-y-4">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="slide-body">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-              {section.highlights && section.highlights.length > 0 && (
-                <ul className="mt-8 space-y-3">
-                  {section.highlights.map((item) => (
-                    <li
-                      key={item}
-                      className={`flex gap-3 slide-body text-base ${mirrored ? 'lg:flex-row-reverse' : ''}`}
-                    >
-                      <span
-                        className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rotate-45 bg-gold-slide"
-                        aria-hidden
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ExpandableCopy
+                key={`${section.id}-${locale}`}
+                paragraphs={section.paragraphs}
+                highlights={section.highlights}
+                mirrored={mirrored && hasImages}
+                sectionId={section.id}
+              />
             </header>
 
             {hasImages && (
