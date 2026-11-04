@@ -37,6 +37,12 @@ export function CookieNotice() {
           src={FOOTER_WATERMARK_SRC}
           alt=""
           decoding="sync"
+          className="cookie-notice-watermark cookie-notice-watermark--soft"
+        />
+        <img
+          src={FOOTER_WATERMARK_SRC}
+          alt=""
+          decoding="sync"
           className="cookie-notice-watermark"
         />
       </div>
