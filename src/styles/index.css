@@ -235,6 +235,7 @@
     border-top: 1px solid color-mix(in srgb, var(--color-gold-slide) 16%, transparent);
     background: var(--color-ink);
     color: var(--color-cream);
+    min-height: 12.5rem;
     padding-block: 1.35rem;
     box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.4);
     animation: cookie-notice-in 0.6s var(--ease-premium) backwards;
@@ -244,23 +245,26 @@
     position: absolute;
     z-index: 0;
     top: 50%;
-    right: -0.5rem;
-    width: 11rem;
-    height: auto;
-    transform: translateY(-42%);
+    right: 0.85rem;
+    width: auto;
+    height: 11rem;
+    transform: translateY(-50%);
     object-fit: contain;
+    object-position: center;
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
+    opacity: 0.8;
+    filter: brightness(0.9) saturate(1.1);
   }
 
   .cookie-notice-fade {
     position: absolute;
     z-index: 1;
     top: 0;
-    right: 6.5rem;
+    right: 8.4rem;
     bottom: 0;
-    width: 5rem;
+    width: 2.75rem;
     background: linear-gradient(to right, var(--color-ink) 0%, transparent 100%);
     pointer-events: none;
   }
@@ -268,31 +272,84 @@
   .cookie-notice .cookie-notice-panel {
     position: relative;
     z-index: 2;
-    padding-right: 8.5rem;
+    padding-right: 9.75rem;
   }
 
   @media (min-width: 768px) {
     .cookie-notice {
-      padding-block: 1.85rem;
+      min-height: 0;
+      padding-block: 1.35rem;
     }
 
     .cookie-notice .cookie-notice-panel {
-      padding-right: 22rem;
+      padding-right: 10.5rem;
     }
 
     .cookie-notice-watermark {
-      right: 1rem;
-      width: 20rem;
+      right: 0rem;
+      height: 15rem;
     }
 
     .cookie-notice-fade {
-      right: 12rem;
-      width: 8rem;
+      right: 8rem;
+      width: 3rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .cookie-notice {
+      animation: none;
+    }
+  }
+
+  .lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--color-ink);
+  }
+
+  .lightbox-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(108vw, 92rem);
+    height: min(108vh, 64rem);
+    max-width: none;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    filter: blur(10px) saturate(0.75) brightness(0.62);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    animation: lightbox-watermark-in 0.9s var(--ease-premium);
+  }
+
+  .lightbox-watermark-veil {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.28) 0%,
+        rgba(0, 0, 0, 0.42) 46%,
+        rgba(0, 0, 0, 0.78) 100%
+      );
+    pointer-events: none;
+  }
+
+  @keyframes lightbox-watermark-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.2;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox-watermark {
       animation: none;
     }
   }

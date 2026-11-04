@@ -86,9 +86,19 @@ export function GalleryLightbox({
       aria-modal="true"
       aria-label={`${m.gallery.dialog}: ${slide.title}`}
     >
+      <div className="lightbox-backdrop" aria-hidden>
+        <img
+          key={slide.imageUrl}
+          src={slide.imageUrl}
+          alt=""
+          className="lightbox-watermark"
+        />
+        <div className="lightbox-watermark-veil" />
+      </div>
+
       <button
         type="button"
-        className="absolute inset-0 bg-ink/95 backdrop-blur-sm cursor-default"
+        className="absolute inset-0 z-[1] cursor-default"
         onClick={onClose}
         aria-label={m.gallery.closeGallery}
       />

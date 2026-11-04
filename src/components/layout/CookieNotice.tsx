@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { COOKIE_NOTICE_IMAGE_SRC } from '@/data/brand'
+import { FOOTER_WATERMARK_SRC } from '@/data/brand'
 import { useMessages } from '@/i18n/useMessages'
 
 const STORAGE_KEY = 'gastromenu.cookie-notice'
@@ -33,7 +33,7 @@ export function CookieNotice() {
   return (
     <aside className="cookie-notice" role="region" aria-label={m.cookies.label}>
       <img
-        src={COOKIE_NOTICE_IMAGE_SRC}
+        src={FOOTER_WATERMARK_SRC}
         alt=""
         aria-hidden
         decoding="sync"
