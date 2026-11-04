@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const mantelesPage: DossierPageContent = {
-  path: '/manteles',
-  seoTitle: 'Manteles',
-  seoDescription:
-    'Manteles de papel de un solo uso y manteles rígidos lacados a mano. Diseño personalizado, neuromárketing y papeles de 90 gramos.',
+  path: dossierSeo.manteles.path,
+  seoTitle: dossierSeo.manteles.title,
+  seoDescription: dossierSeo.manteles.description,
   kicker: 'Manteles',
   title: 'Cuando el arte llega a la',
   emphasis: 'mesa',

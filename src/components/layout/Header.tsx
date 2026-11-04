@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container'
 import { LanguageSwitch } from '@/components/ui/LanguageSwitch'
 import { useMessages } from '@/i18n/useMessages'
 
-const SCROLL_THRESHOLD = 80
+const SCROLL_THRESHOLD = 12
 
 export function Header() {
   const [open, setOpen] = useState(false)

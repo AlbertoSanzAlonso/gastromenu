@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { FOOTER_WATERMARK_SRC } from '@/data/brand'
+import { COOKIE_NOTICE_IMAGE_SRC } from '@/data/brand'
 import { useMessages } from '@/i18n/useMessages'
 
 const STORAGE_KEY = 'gastromenu.cookie-notice'
@@ -33,7 +33,7 @@ export function CookieNotice() {
   return (
     <aside className="cookie-notice" role="region" aria-label={m.cookies.label}>
       <img
-        src={FOOTER_WATERMARK_SRC}
+        src={COOKIE_NOTICE_IMAGE_SRC}
         alt=""
         aria-hidden
         decoding="sync"
@@ -41,7 +41,7 @@ export function CookieNotice() {
       />
       <div className="cookie-notice-fade" aria-hidden />
 
-      <Container className="cookie-notice-panel flex flex-col items-start gap-6 pr-24 md:flex-row md:items-center md:justify-between md:pr-80">
+      <Container className="cookie-notice-panel flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <p className="slide-label mb-3 text-[10px]">{m.cookies.label}</p>
           <p className="slide-body text-sm leading-relaxed text-cream-muted">

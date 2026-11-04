@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const cartasPage: DossierPageContent = {
-  path: '/cartas',
-  seoTitle: 'Cartas menú',
-  seoDescription:
-    'Cartas de menú, vinos, postres y cócteles en tapas duras, piel, semipiel, tejidos nobles y maderas selectas. Fabricación artesanal GastroMenú Premium.',
+  path: dossierSeo.cartas.path,
+  seoTitle: dossierSeo.cartas.title,
+  seoDescription: dossierSeo.cartas.description,
   kicker: 'Cartas menú',
   title: 'Una carta no ocupa un lugar en la mesa.',
   emphasis: 'Forma parte de él.',

@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const exclusividadesPage: DossierPageContent = {
-  path: '/exclusividades',
-  seoTitle: 'Exclusividades',
-  seoDescription:
-    'Portacuentas artesanales en tejido y semipiel, con el logo del restaurante. Un toque de clase para presentar la cuenta.',
+  path: dossierSeo.exclusividades.path,
+  seoTitle: dossierSeo.exclusividades.title,
+  seoDescription: dossierSeo.exclusividades.description,
   kicker: 'Exclusividades',
   title: 'Un toque de',
   emphasis: 'clase',

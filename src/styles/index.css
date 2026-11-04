@@ -205,21 +205,24 @@
   .site-header::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: 0 0 -2px;
     z-index: -1;
     pointer-events: none;
     background: var(--color-ink);
-    border-bottom: 1px solid color-mix(in srgb, var(--color-gold-slide) 10%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
     transition:
       background-color 500ms var(--ease-premium),
-      border-color 500ms var(--ease-premium);
+      backdrop-filter 500ms var(--ease-premium),
+      -webkit-backdrop-filter 500ms var(--ease-premium);
   }
 
   .site-header[data-scrolled='true']::before {
-    background: color-mix(in srgb, var(--color-ink) 95%, transparent);
-    border-bottom-color: color-mix(in srgb, var(--color-gold-slide) 15%, transparent);
+    background: color-mix(in srgb, var(--color-ink) 62%, transparent);
+    backdrop-filter: blur(22px) saturate(1.25);
+    -webkit-backdrop-filter: blur(22px) saturate(1.25);
   }
 
   .cookie-notice {
@@ -240,14 +243,12 @@
   .cookie-notice-watermark {
     position: absolute;
     z-index: 0;
-    top: 0;
-    right: -0.75rem;
-    bottom: 0;
-    width: 9.75rem;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 48%;
-    opacity: 0.94;
+    top: 50%;
+    right: -0.5rem;
+    width: 11rem;
+    height: auto;
+    transform: translateY(-42%);
+    object-fit: contain;
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -257,16 +258,17 @@
     position: absolute;
     z-index: 1;
     top: 0;
-    right: 0;
+    right: 6.5rem;
     bottom: 0;
-    width: 11.5rem;
-    background: linear-gradient(to right, var(--color-ink) 0%, transparent 72%);
+    width: 5rem;
+    background: linear-gradient(to right, var(--color-ink) 0%, transparent 100%);
     pointer-events: none;
   }
 
-  .cookie-notice-panel {
+  .cookie-notice .cookie-notice-panel {
     position: relative;
     z-index: 2;
+    padding-right: 8.5rem;
   }
 
   @media (min-width: 768px) {
@@ -274,14 +276,18 @@
       padding-block: 1.85rem;
     }
 
+    .cookie-notice .cookie-notice-panel {
+      padding-right: 22rem;
+    }
+
     .cookie-notice-watermark {
-      right: -1.25rem;
+      right: 1rem;
       width: 20rem;
-      object-position: 50% 38%;
     }
 
     .cookie-notice-fade {
-      width: 24rem;
+      right: 12rem;
+      width: 8rem;
     }
   }
 

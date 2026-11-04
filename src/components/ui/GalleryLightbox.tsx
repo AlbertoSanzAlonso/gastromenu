@@ -1,6 +1,7 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useMessages } from '@/i18n/useMessages'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 
 export interface GallerySlide {
   id: string
@@ -40,6 +41,15 @@ export function GalleryLightbox({
   const slide = slides[activeIndex]
   const hasPrev = activeIndex > 0
   const hasNext = activeIndex < slides.length - 1
+  const [zoomed, setZoomed] = useState(false)
+  const [zoomIndex, setZoomIndex] = useState(activeIndex)
+  if (zoomIndex !== activeIndex) {
+    setZoomIndex(activeIndex)
+    setZoomed(false)
+  }
+  const handleZoomedChange = useCallback((next: boolean) => {
+    setZoomed(next)
+  }, [])
 
   const goPrev = useCallback(() => {
     if (hasPrev) onNavigate(activeIndex - 1)
@@ -118,16 +128,16 @@ export function GalleryLightbox({
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-14 md:px-20">
         <figure className="flex w-full flex-col items-center">
-          <div className="w-full overflow-hidden">
-            <img
-              src={slide.imageUrl}
-              alt={slide.title}
-              className="w-full max-h-[62vh] object-contain"
-              decoding="async"
-            />
-          </div>
+          <ZoomableImage
+            key={`${slide.id}-${activeIndex}`}
+            src={slide.imageUrl}
+            alt={slide.title}
+            zoomInLabel={m.gallery.zoomIn}
+            zoomOutLabel={m.gallery.zoomOut}
+            onZoomedChange={handleZoomedChange}
+          />
 
-          <figcaption className="mt-8 text-center max-w-2xl">
+          <figcaption className="mt-5 text-center max-w-2xl md:mt-8">
             <p className="font-brand text-lg md:text-2xl uppercase tracking-[0.18em] text-cream font-medium">
               {slide.title}
             </p>
@@ -138,6 +148,9 @@ export function GalleryLightbox({
             )}
             <p className="mt-6 inline-flex items-center justify-center min-w-[5rem] px-4 py-2 font-brand text-sm md:text-base uppercase tracking-[0.25em] text-cream tabular-nums">
               {activeIndex + 1} / {slides.length}
+            </p>
+            <p className="mt-2 font-brand text-[10px] uppercase tracking-[0.16em] text-cream/55 md:text-xs md:tracking-[0.28em]">
+              {zoomed ? m.gallery.zoomHintActive : m.gallery.zoomHint}
             </p>
           </figcaption>
         </figure>

@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const nosotrosPage: DossierPageContent = {
-  path: '/nosotros',
-  seoTitle: 'Nosotros',
-  seoDescription:
-    'GastroMenú Premium. Más de 28 años convirtiendo la presentación en parte de la experiencia. Cartas, manteles y atriles portamenú.',
+  path: dossierSeo.nosotros.path,
+  seoTitle: dossierSeo.nosotros.title,
+  seoDescription: dossierSeo.nosotros.description,
   kicker: 'Nosotros',
   title: 'La presentación también forma parte de la',
   emphasis: 'experiencia',

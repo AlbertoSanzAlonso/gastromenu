@@ -8,17 +8,20 @@ import {
 import { company } from '@/data/contact'
 import { AvisoLegalEnglish } from '@/i18n/legal/AvisoLegalEnglish'
 import { useLocale } from '@/i18n/locale'
+import { messages } from '@/i18n/messages'
 
 export function AvisoLegalPage() {
   const { locale } = useLocale()
   if (locale === 'en') return <AvisoLegalEnglish />
 
+  const copy = messages.es.legal
+
   return (
     <LegalDocument
-      seoTitle="Aviso legal"
-      heading="Aviso"
-      accent="legal"
-      description="Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenu, titularidad de Fudys Gourmet SL."
+      seoTitle={copy.noticeTitle}
+      heading={copy.noticeHeading}
+      accent={copy.noticeAccent}
+      description={copy.noticeDescription}
       path="/aviso-legal"
     >
       <LegalSection title="Datos identificativos">

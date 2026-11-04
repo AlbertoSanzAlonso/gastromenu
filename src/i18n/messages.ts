@@ -1,3 +1,5 @@
+import { contactSeo, homeSeo, legalNoticeSeo, privacySeo } from '@/lib/seo/site'
+
 const es = {
   language: {
     label: 'Idioma',
@@ -22,11 +24,10 @@ const es = {
     note: 'Porque la excelencia también se sirve en la mesa.',
   },
   seo: {
-    homeTitle: 'GASTROMENU',
-    homeDescription: 'Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998.',
-    contactTitle: 'Contacto',
-    contactDescription:
-      'Llámenos al 605 989 264 o escríbanos a info@cartasmenu.com. Oficina en Benalmádena Pueblo, Málaga. Talleres en Madrid, Málaga y Granada.',
+    homeTitle: homeSeo.title,
+    homeDescription: homeSeo.description,
+    contactTitle: contactSeo.title,
+    contactDescription: contactSeo.description,
     locale: 'es_ES',
   },
   hero: {
@@ -216,6 +217,10 @@ const es = {
     dialog: 'Galería',
     openOne: 'Abrir galería, 1 imagen',
     openMany: (count: number) => `Abrir galería, ${count} imágenes`,
+    zoomIn: 'Ampliar imagen',
+    zoomOut: 'Reducir imagen',
+    zoomHint: 'Pulsa para ampliar',
+    zoomHintActive: 'Pulsa para reducir',
   },
   legal: {
     updated: 'Actualizado el 19 de octubre de 2026',
@@ -227,16 +232,14 @@ const es = {
     email: 'Correo electrónico',
     phone: 'Teléfono',
     website: 'Sitio web',
-    noticeTitle: 'Aviso legal',
+    noticeTitle: legalNoticeSeo.title,
     noticeHeading: 'Aviso',
     noticeAccent: 'legal',
-    noticeDescription:
-      'Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenu, titularidad de Fudys Gourmet SL.',
-    privacyTitle: 'Política de privacidad',
+    noticeDescription: legalNoticeSeo.description,
+    privacyTitle: privacySeo.title,
     privacyHeading: 'Política de',
     privacyAccent: 'privacidad',
-    privacyDescription:
-      'Información sobre el tratamiento de datos personales de GastroMenu, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD.',
+    privacyDescription: privacySeo.description,
   },
 }
 
@@ -264,7 +267,7 @@ const en: typeof es = {
     note: 'Because excellence is also served at the table.',
   },
   seo: {
-    homeTitle: 'GASTROMENU',
+    homeTitle: 'GASTROMENU — Handcrafted premium menus',
     homeDescription: 'Handcrafted menus, placemats and menu stands. Made in-house since 1998.',
     contactTitle: 'Contact',
     contactDescription:
@@ -458,6 +461,10 @@ const en: typeof es = {
     dialog: 'Gallery',
     openOne: 'Open gallery, 1 image',
     openMany: (count: number) => `Open gallery, ${count} images`,
+    zoomIn: 'Enlarge image',
+    zoomOut: 'Reduce image',
+    zoomHint: 'Click to enlarge',
+    zoomHintActive: 'Click to reduce',
   },
   legal: {
     updated: 'Updated on 19 October 2026',

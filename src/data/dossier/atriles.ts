@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const atrilesPage: DossierPageContent = {
-  path: '/atriles',
-  seoTitle: 'Atriles portamenú',
-  seoDescription:
-    'Atriles portamenú de acero, de pie, cilíndricos y de pared. Pantalla retroiluminada, batería o conexión eléctrica, corte láser y pintura al horno.',
+  path: dossierSeo.atriles.path,
+  seoTitle: dossierSeo.atriles.title,
+  seoDescription: dossierSeo.atriles.description,
   kicker: 'Atriles portamenú',
   title: 'Simplemente:',
   emphasis: 'espectacular',

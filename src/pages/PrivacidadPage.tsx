@@ -7,18 +7,21 @@ import {
 } from '@/components/legal/LegalDocument'
 import { company } from '@/data/contact'
 import { useLocale } from '@/i18n/locale'
+import { messages } from '@/i18n/messages'
 import { PrivacyEnglish } from '@/i18n/legal/PrivacyEnglish'
 
 export function PrivacidadPage() {
   const { locale } = useLocale()
   if (locale === 'en') return <PrivacyEnglish />
 
+  const copy = messages.es.legal
+
   return (
     <LegalDocument
-      seoTitle="Política de privacidad"
-      heading="Política de"
-      accent="privacidad"
-      description="Información sobre el tratamiento de datos personales de GastroMenu, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD."
+      seoTitle={copy.privacyTitle}
+      heading={copy.privacyHeading}
+      accent={copy.privacyAccent}
+      description={copy.privacyDescription}
       path="/privacidad"
     >
       <LegalSection title="Responsable del tratamiento">

@@ -1,10 +1,10 @@
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierSeo } from '@/lib/seo/site'
 
 export const blogPage: DossierPageContent = {
-  path: '/blog',
-  seoTitle: 'Blog',
-  seoDescription:
-    'Comentarios, sugerencias y consejos de GastroMenú Premium sobre cartas, portamenús y manteles. Los artículos irán llegando a esta sección.',
+  path: dossierSeo.blog.path,
+  seoTitle: dossierSeo.blog.title,
+  seoDescription: dossierSeo.blog.description,
   kicker: 'Blog',
   title: 'Comentarios, sugerencias y',
   emphasis: 'consejos',

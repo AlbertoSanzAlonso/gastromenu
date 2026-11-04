@@ -1,0 +1,19 @@
+{
+  "name": "GASTROMENU",
+  "short_name": "GASTROMENU",
+  "description": "Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/logo-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
