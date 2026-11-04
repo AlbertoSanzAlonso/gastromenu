@@ -311,15 +311,13 @@
 
   .lightbox-watermark {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: min(108vw, 92rem);
-    height: min(108vh, 64rem);
-    max-width: none;
-    object-fit: contain;
-    transform: translate(-50%, -50%);
-    opacity: 0.2;
-    filter: blur(10px) saturate(0.75) brightness(0.62);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.72;
+    filter: grayscale(1) brightness(0.38) contrast(0.92) blur(8px);
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -329,13 +327,7 @@
   .lightbox-watermark-veil {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0.28) 0%,
-        rgba(0, 0, 0, 0.42) 46%,
-        rgba(0, 0, 0, 0.78) 100%
-      );
+    background: rgba(0, 0, 0, 0.28);
     pointer-events: none;
   }
 
@@ -344,7 +336,7 @@
       opacity: 0;
     }
     to {
-      opacity: 0.2;
+      opacity: 0.72;
     }
   }
 
