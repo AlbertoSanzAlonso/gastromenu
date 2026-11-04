@@ -137,6 +137,12 @@ const es = {
     legal: 'Aviso legal',
     privacy: 'Política de privacidad',
   },
+  cookies: {
+    label: 'Cookies',
+    body: 'Este sitio solo utiliza cookies técnicas, necesarias para el funcionamiento y la seguridad de la página. No empleamos cookies de análisis ni de publicidad. Consulte la',
+    privacy: 'política de privacidad',
+    accept: 'Entendido',
+  },
   contact: {
     subtitle: 'Sin compromiso, al mejor precio',
     titleBefore: 'Hablemos de su',
@@ -372,6 +378,12 @@ const en: typeof es = {
     rights: 'All rights reserved.',
     legal: 'Legal notice',
     privacy: 'Privacy policy',
+  },
+  cookies: {
+    label: 'Cookies',
+    body: 'This site uses only technical cookies, required for the page to work and stay secure. We do not use analytics or advertising cookies. See the',
+    privacy: 'privacy policy',
+    accept: 'Understood',
   },
   contact: {
     subtitle: 'Without obligation, at the right price',

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrandDivider } from '@/components/ui/BrandDivider'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
@@ -26,6 +26,7 @@ interface DossierPageProps {
 export function DossierPage({ content }: DossierPageProps) {
   const { locale, m } = useMessages()
   const page = localizeDossier(content, locale)
+  const [openSection, setOpenSection] = useState<string | null>(null)
   useEffect(() => {
     const id = window.location.hash.slice(1)
     if (!id) return
@@ -111,6 +112,10 @@ export function DossierPage({ content }: DossierPageProps) {
                 highlights={section.highlights}
                 mirrored={mirrored && hasImages}
                 sectionId={section.id}
+                open={openSection === section.id}
+                onToggle={() =>
+                  setOpenSection((current) => (current === section.id ? null : section.id))
+                }
               />
             </header>
 

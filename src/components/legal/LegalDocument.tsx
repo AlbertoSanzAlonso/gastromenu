@@ -45,9 +45,17 @@ export function LegalDocument({
   )
 }
 
-export function LegalSection({ title, children }: { title: string; children: ReactNode }) {
+export function LegalSection({
+  title,
+  id,
+  children,
+}: {
+  title: string
+  id?: string
+  children: ReactNode
+}) {
   return (
-    <section>
+    <section id={id} className={id ? 'scroll-mt-28' : undefined}>
       <h2 className="slide-heading mb-5 text-2xl text-cream md:text-3xl">{title}</h2>
       <div className="space-y-4 text-base leading-relaxed [&_a]:text-gold-slide [&_a]:underline [&_a]:underline-offset-4 [&_a]:transition-colors hover:[&_a]:text-gold-highlight [&_li]:slide-body [&_p]:slide-body [&_strong]:font-normal [&_strong]:text-cream">
         {children}

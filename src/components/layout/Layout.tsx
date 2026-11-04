@@ -1,15 +1,24 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { BrandWatermark } from '@/components/layout/BrandWatermark'
+import { CookieNotice } from '@/components/layout/CookieNotice'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 
 export function Layout() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1))
+      if (target) {
+        target.scrollIntoView()
+        return
+      }
+    }
+
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, hash])
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -19,6 +28,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <CookieNotice />
     </div>
   )
 }

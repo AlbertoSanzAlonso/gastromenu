@@ -144,7 +144,7 @@ export function PrivacyEnglish() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Cookies">
+      <LegalSection id="cookies" title="Cookies">
         <p>
           The site does not use analytics or advertising cookies. The hosting provider may use cookies
           or identifiers that are strictly technical, needed for the security and working of the page.

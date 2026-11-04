@@ -1,11 +1,18 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useId, useLayoutEffect, useRef, useState } from 'react'
 import { useMessages } from '@/i18n/useMessages'
+
+const COLLAPSED_HEIGHT = '11.5rem'
+const ALIGN_AFTER_MS = 700
+
+let scrollToken = 0
 
 interface ExpandableCopyProps {
   paragraphs: string[]
   highlights?: string[]
   mirrored?: boolean
   sectionId?: string
+  open: boolean
+  onToggle: () => void
 }
 
 export function ExpandableCopy({
@@ -13,41 +20,102 @@ export function ExpandableCopy({
   highlights,
   mirrored = false,
   sectionId,
+  open,
+  onToggle,
 }: ExpandableCopyProps) {
   const { m } = useMessages()
   const copyId = useId()
   const copyRef = useRef<HTMLDivElement>(null)
-  const [open, setOpen] = useState(false)
+  const collapsedHeight = useRef(0)
+  const overflowsRef = useRef(false)
+  const didMount = useRef(false)
+  const openRef = useRef(open)
   const [truncated, setTruncated] = useState(false)
+  const [ready, setReady] = useState(false)
+  openRef.current = open
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = copyRef.current
     if (!node) return
 
-    const measure = () => {
-      if (node.dataset.open === 'true') return
-      setTruncated(node.scrollHeight > node.clientHeight + 2)
-    }
+    const saved = node.style.height
+    node.style.height = COLLAPSED_HEIGHT
+    const clamped = node.getBoundingClientRect().height
+    collapsedHeight.current = clamped
+    node.style.height = saved
 
-    measure()
-    const observer = new ResizeObserver(measure)
-    observer.observe(node)
-    return () => observer.disconnect()
+    const overflows = node.scrollHeight > clamped + 2
+    overflowsRef.current = overflows
+    setTruncated(overflows)
+
+    if (openRef.current) node.style.height = 'auto'
+    else node.style.height = overflows ? `${clamped}px` : 'auto'
+    setReady(true)
   }, [paragraphs, highlights])
 
+  useLayoutEffect(() => {
+    const node = copyRef.current
+    if (!node) return
+
+    if (!didMount.current) {
+      didMount.current = true
+      if (open) node.style.height = 'auto'
+      return
+    }
+
+    if (!overflowsRef.current) return
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduced) {
+      node.style.height = open ? 'auto' : `${collapsedHeight.current}px`
+      return
+    }
+
+    const from = node.getBoundingClientRect().height
+    const to = open ? node.scrollHeight : collapsedHeight.current
+    node.style.height = `${from}px`
+    node.offsetHeight
+    node.style.height = `${to}px`
+
+    const onEnd = (event: TransitionEvent) => {
+      if (event.target !== node || event.propertyName !== 'height') return
+      if (node.dataset.open === 'true') node.style.height = 'auto'
+    }
+
+    node.addEventListener('transitionend', onEnd)
+    return () => node.removeEventListener('transitionend', onEnd)
+  }, [open])
+
+  function alignSection() {
+    if (!sectionId) return
+    document.getElementById(sectionId)?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
+
   function toggle() {
-    setOpen((current) => {
-      const next = !current
-      if (!next && sectionId) {
-        requestAnimationFrame(() => {
-          const section = document.getElementById(sectionId)
-          if (section && section.getBoundingClientRect().top < 80) {
-            section.scrollIntoView({ block: 'start' })
-          }
-        })
-      }
-      return next
+    const closing = open
+    onToggle()
+    if (!sectionId) return
+
+    if (closing) {
+      requestAnimationFrame(() => {
+        const section = document.getElementById(sectionId)
+        if (section && section.getBoundingClientRect().top < 80) alignSection()
+      })
+      return
+    }
+
+    const token = ++scrollToken
+    requestAnimationFrame(() => {
+      if (token !== scrollToken) return
+      alignSection()
     })
+    window.setTimeout(() => {
+      if (token !== scrollToken) return
+      const section = document.getElementById(sectionId)
+      if (!section) return
+      const target = Number.parseFloat(getComputedStyle(section).scrollMarginTop) || 0
+      if (Math.abs(section.getBoundingClientRect().top - target) > 12) alignSection()
+    }, ALIGN_AFTER_MS)
   }
 
   const canToggle = truncated || open
@@ -58,6 +126,8 @@ export function ExpandableCopy({
         id={copyId}
         ref={copyRef}
         data-open={open ? 'true' : 'false'}
+        data-truncated={truncated ? 'true' : 'false'}
+        data-ready={ready ? 'true' : 'false'}
         className="dossier-copy mt-6 space-y-4"
       >
         {paragraphs.map((paragraph) => (

@@ -154,7 +154,7 @@ export function PrivacidadPage() {
         </p>
       </LegalSection>
 
-      <LegalSection title="Cookies">
+      <LegalSection id="cookies" title="Cookies">
         <p>
           El sitio no utiliza cookies de análisis ni de publicidad. El prestador de alojamiento puede
           emplear cookies o identificadores estrictamente técnicos, necesarios para la seguridad y el
