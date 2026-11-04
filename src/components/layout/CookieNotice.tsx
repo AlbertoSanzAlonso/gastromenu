@@ -36,11 +36,12 @@ export function CookieNotice() {
         src={FOOTER_WATERMARK_SRC}
         alt=""
         aria-hidden
-        decoding="async"
-        className="section-watermark cookie-notice-watermark"
+        decoding="sync"
+        className="cookie-notice-watermark"
       />
+      <div className="cookie-notice-fade" aria-hidden />
 
-      <Container className="relative z-[2] flex flex-col items-start gap-6 pr-24 md:flex-row md:items-center md:justify-between md:pr-80">
+      <Container className="cookie-notice-panel flex flex-col items-start gap-6 pr-24 md:flex-row md:items-center md:justify-between md:pr-80">
         <div className="max-w-2xl">
           <p className="slide-label mb-3 text-[10px]">{m.cookies.label}</p>
           <p className="slide-body text-sm leading-relaxed text-cream-muted">

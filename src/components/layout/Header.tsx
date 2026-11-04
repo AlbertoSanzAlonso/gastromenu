@@ -43,23 +43,23 @@ export function Header() {
     }
   }, [open])
 
-  const headerSurface = scrolled ? 'bg-ink/95 border-gold/15' : 'bg-ink border-gold/10'
   const logoColor = scrolled ? 'text-white' : 'text-gold-slide'
 
   return (
     <>
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors duration-500 ease-premium ${headerSurface}`}
+      className="site-header fixed top-0 left-0 right-0 z-50"
+      data-scrolled={scrolled ? 'true' : 'false'}
     >
-      <Container as="div" className="relative flex h-20 items-center md:h-24">
+      <Container as="div" className="flex h-20 items-center justify-center md:h-24">
         <Link
           to="/"
-          className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 group sm:gap-3 md:gap-4"
+          className="z-10 flex items-center gap-2 group sm:gap-3 md:gap-4"
           aria-label={m.nav.home}
           onClick={() => setOpen(false)}
         >
           <BrandLogo
-            className={`h-8 w-8 object-contain transition-all duration-500 ease-premium group-hover:scale-105 sm:h-9 sm:w-9 md:h-11 md:w-11 ${
+            className={`h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-11 md:w-11 ${
               scrolled ? 'brightness-0 invert' : ''
             }`}
           />

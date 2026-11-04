@@ -231,7 +231,7 @@ function HeroStage({
               alt=""
               className={`h-full w-full max-lg:object-cover max-lg:blur-[7px] lg:blur-none ${
                 item.fit === 'contain'
-                  ? 'lg:object-contain'
+                  ? 'hero-float lg:object-contain'
                   : `lg:object-cover ${active ? 'hero-drift' : 'scale-[1.14]'}`
               }`}
               style={active && item.fit !== 'contain' ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
