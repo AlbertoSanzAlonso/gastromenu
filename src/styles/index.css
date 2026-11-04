@@ -637,6 +637,10 @@
 }
 
 @media (max-width: 1023px) {
+  .hero-carta {
+    opacity: 0.8;
+  }
+
   .hero-slide-in,
   .hero-copy {
     animation-name: hero-fade-in;

@@ -7,7 +7,7 @@ interface LanguageSwitchProps {
   className?: string
 }
 
-const flagClass = 'lang-flag block h-5 w-[1.85rem]'
+const flagClass = 'lang-flag block h-3.5 w-[1.3rem]'
 
 export function LanguageSwitch({ tone = 'dark', className = '' }: LanguageSwitchProps) {
   const { locale, setLocale, m } = useMessages()
@@ -17,16 +17,16 @@ export function LanguageSwitch({ tone = 'dark', className = '' }: LanguageSwitch
   ]
 
   return (
-    <div role="group" aria-label={m.language.label} className={`flex items-center gap-2.5 ${className}`}>
+    <div role="group" aria-label={m.language.label} className={`flex items-center gap-2 ${className}`}>
       {options.map((option, index) => {
         const active = locale === option.id
 
         return (
-          <span key={option.id} className="flex items-center gap-2.5">
+          <span key={option.id} className="flex items-center gap-2">
             {index > 0 && (
               <span
                 aria-hidden
-                className={`h-5 w-px ${tone === 'light' ? 'bg-gold-dark/35' : 'bg-cream/35'}`}
+                className={`h-3.5 w-px ${tone === 'light' ? 'bg-gold-dark/35' : 'bg-cream/35'}`}
               />
             )}
             <button
