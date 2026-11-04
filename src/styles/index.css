@@ -232,7 +232,6 @@
     bottom: 0;
     left: 0;
     overflow: hidden;
-    border-top: 1px solid color-mix(in srgb, var(--color-gold-slide) 16%, transparent);
     background: var(--color-ink);
     color: var(--color-cream);
     min-height: 12.5rem;
