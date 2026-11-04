@@ -32,13 +32,14 @@ export function CookieNotice() {
 
   return (
     <aside className="cookie-notice" role="region" aria-label={m.cookies.label}>
-      <img
-        src={FOOTER_WATERMARK_SRC}
-        alt=""
-        aria-hidden
-        decoding="sync"
-        className="cookie-notice-watermark"
-      />
+      <div className="cookie-notice-art" aria-hidden>
+        <img
+          src={FOOTER_WATERMARK_SRC}
+          alt=""
+          decoding="sync"
+          className="cookie-notice-watermark"
+        />
+      </div>
       <div className="cookie-notice-fade" aria-hidden />
 
       <Container className="cookie-notice-panel flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
