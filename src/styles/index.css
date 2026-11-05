@@ -476,78 +476,138 @@
     }
   }
 
-  .section-edge-fade::before,
-  .section-edge-fade::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: 6.25rem;
-    pointer-events: none;
-    --fade: var(--color-beige-50);
+  .section-edge-fade {
+    --section-fade: 6.25rem;
+    --section-veil: var(--color-ink);
+    --edge-mask: linear-gradient(
+      to bottom,
+      transparent 0,
+      rgb(0 0 0 / 0.001) calc(var(--section-fade) * 0.05),
+      rgb(0 0 0 / 0.009) calc(var(--section-fade) * 0.1),
+      rgb(0 0 0 / 0.027) calc(var(--section-fade) * 0.15),
+      rgb(0 0 0 / 0.058) calc(var(--section-fade) * 0.2),
+      rgb(0 0 0 / 0.104) calc(var(--section-fade) * 0.25),
+      rgb(0 0 0 / 0.163) calc(var(--section-fade) * 0.3),
+      rgb(0 0 0 / 0.235) calc(var(--section-fade) * 0.35),
+      rgb(0 0 0 / 0.317) calc(var(--section-fade) * 0.4),
+      rgb(0 0 0 / 0.407) calc(var(--section-fade) * 0.45),
+      rgb(0 0 0 / 0.5) calc(var(--section-fade) * 0.5),
+      rgb(0 0 0 / 0.593) calc(var(--section-fade) * 0.55),
+      rgb(0 0 0 / 0.683) calc(var(--section-fade) * 0.6),
+      rgb(0 0 0 / 0.765) calc(var(--section-fade) * 0.65),
+      rgb(0 0 0 / 0.837) calc(var(--section-fade) * 0.7),
+      rgb(0 0 0 / 0.896) calc(var(--section-fade) * 0.75),
+      rgb(0 0 0 / 0.942) calc(var(--section-fade) * 0.8),
+      rgb(0 0 0 / 0.973) calc(var(--section-fade) * 0.85),
+      rgb(0 0 0 / 0.991) calc(var(--section-fade) * 0.9),
+      rgb(0 0 0 / 0.999) calc(var(--section-fade) * 0.95),
+      #000 var(--section-fade),
+      #000 calc(100% - var(--section-fade)),
+      rgb(0 0 0 / 0.999) calc(100% - var(--section-fade) * 0.95),
+      rgb(0 0 0 / 0.991) calc(100% - var(--section-fade) * 0.9),
+      rgb(0 0 0 / 0.973) calc(100% - var(--section-fade) * 0.85),
+      rgb(0 0 0 / 0.942) calc(100% - var(--section-fade) * 0.8),
+      rgb(0 0 0 / 0.896) calc(100% - var(--section-fade) * 0.75),
+      rgb(0 0 0 / 0.837) calc(100% - var(--section-fade) * 0.7),
+      rgb(0 0 0 / 0.765) calc(100% - var(--section-fade) * 0.65),
+      rgb(0 0 0 / 0.683) calc(100% - var(--section-fade) * 0.6),
+      rgb(0 0 0 / 0.593) calc(100% - var(--section-fade) * 0.55),
+      rgb(0 0 0 / 0.5) calc(100% - var(--section-fade) * 0.5),
+      rgb(0 0 0 / 0.407) calc(100% - var(--section-fade) * 0.45),
+      rgb(0 0 0 / 0.317) calc(100% - var(--section-fade) * 0.4),
+      rgb(0 0 0 / 0.235) calc(100% - var(--section-fade) * 0.35),
+      rgb(0 0 0 / 0.163) calc(100% - var(--section-fade) * 0.3),
+      rgb(0 0 0 / 0.104) calc(100% - var(--section-fade) * 0.25),
+      rgb(0 0 0 / 0.058) calc(100% - var(--section-fade) * 0.2),
+      rgb(0 0 0 / 0.027) calc(100% - var(--section-fade) * 0.15),
+      rgb(0 0 0 / 0.009) calc(100% - var(--section-fade) * 0.1),
+      rgb(0 0 0 / 0.001) calc(100% - var(--section-fade) * 0.05),
+      transparent 100%
+    );
+  }
+
+  .section-edge-fade.bg-ink,
+  .section-edge-fade.bg-beige-50\/65,
+  .section-edge-fade.bg-beige-100\/65 {
+    background-color: transparent;
+  }
+
+  .section-edge-fade.bg-beige-50\/65 {
+    --section-veil: rgb(from var(--color-beige-50) r g b / 0.65);
+  }
+
+  .section-edge-fade.bg-beige-100\/65 {
+    --section-veil: rgb(from var(--color-beige-100) r g b / 0.65);
+  }
+
+  .section-edge-fade.section-edge-fade-top {
+    --edge-mask: linear-gradient(
+      to bottom,
+      transparent 0,
+      rgb(0 0 0 / 0.001) calc(var(--section-fade) * 0.05),
+      rgb(0 0 0 / 0.009) calc(var(--section-fade) * 0.1),
+      rgb(0 0 0 / 0.027) calc(var(--section-fade) * 0.15),
+      rgb(0 0 0 / 0.058) calc(var(--section-fade) * 0.2),
+      rgb(0 0 0 / 0.104) calc(var(--section-fade) * 0.25),
+      rgb(0 0 0 / 0.163) calc(var(--section-fade) * 0.3),
+      rgb(0 0 0 / 0.235) calc(var(--section-fade) * 0.35),
+      rgb(0 0 0 / 0.317) calc(var(--section-fade) * 0.4),
+      rgb(0 0 0 / 0.407) calc(var(--section-fade) * 0.45),
+      rgb(0 0 0 / 0.5) calc(var(--section-fade) * 0.5),
+      rgb(0 0 0 / 0.593) calc(var(--section-fade) * 0.55),
+      rgb(0 0 0 / 0.683) calc(var(--section-fade) * 0.6),
+      rgb(0 0 0 / 0.765) calc(var(--section-fade) * 0.65),
+      rgb(0 0 0 / 0.837) calc(var(--section-fade) * 0.7),
+      rgb(0 0 0 / 0.896) calc(var(--section-fade) * 0.75),
+      rgb(0 0 0 / 0.942) calc(var(--section-fade) * 0.8),
+      rgb(0 0 0 / 0.973) calc(var(--section-fade) * 0.85),
+      rgb(0 0 0 / 0.991) calc(var(--section-fade) * 0.9),
+      rgb(0 0 0 / 0.999) calc(var(--section-fade) * 0.95),
+      #000 var(--section-fade)
+    );
+  }
+
+  .section-edge-fade.section-edge-fade-bottom {
+    --edge-mask: linear-gradient(
+      to bottom,
+      #000 calc(100% - var(--section-fade)),
+      rgb(0 0 0 / 0.999) calc(100% - var(--section-fade) * 0.95),
+      rgb(0 0 0 / 0.991) calc(100% - var(--section-fade) * 0.9),
+      rgb(0 0 0 / 0.973) calc(100% - var(--section-fade) * 0.85),
+      rgb(0 0 0 / 0.942) calc(100% - var(--section-fade) * 0.8),
+      rgb(0 0 0 / 0.896) calc(100% - var(--section-fade) * 0.75),
+      rgb(0 0 0 / 0.837) calc(100% - var(--section-fade) * 0.7),
+      rgb(0 0 0 / 0.765) calc(100% - var(--section-fade) * 0.65),
+      rgb(0 0 0 / 0.683) calc(100% - var(--section-fade) * 0.6),
+      rgb(0 0 0 / 0.593) calc(100% - var(--section-fade) * 0.55),
+      rgb(0 0 0 / 0.5) calc(100% - var(--section-fade) * 0.5),
+      rgb(0 0 0 / 0.407) calc(100% - var(--section-fade) * 0.45),
+      rgb(0 0 0 / 0.317) calc(100% - var(--section-fade) * 0.4),
+      rgb(0 0 0 / 0.235) calc(100% - var(--section-fade) * 0.35),
+      rgb(0 0 0 / 0.163) calc(100% - var(--section-fade) * 0.3),
+      rgb(0 0 0 / 0.104) calc(100% - var(--section-fade) * 0.25),
+      rgb(0 0 0 / 0.058) calc(100% - var(--section-fade) * 0.2),
+      rgb(0 0 0 / 0.027) calc(100% - var(--section-fade) * 0.15),
+      rgb(0 0 0 / 0.009) calc(100% - var(--section-fade) * 0.1),
+      rgb(0 0 0 / 0.001) calc(100% - var(--section-fade) * 0.05),
+      transparent 100%
+    );
   }
 
   .section-edge-fade::before {
-    top: 0;
-    background: linear-gradient(
-      to bottom,
-      rgb(from var(--fade) r g b / 1) 0%,
-      rgb(from var(--fade) r g b / 0.999) 5%,
-      rgb(from var(--fade) r g b / 0.991) 10%,
-      rgb(from var(--fade) r g b / 0.973) 15%,
-      rgb(from var(--fade) r g b / 0.942) 20%,
-      rgb(from var(--fade) r g b / 0.896) 25%,
-      rgb(from var(--fade) r g b / 0.837) 30%,
-      rgb(from var(--fade) r g b / 0.765) 35%,
-      rgb(from var(--fade) r g b / 0.683) 40%,
-      rgb(from var(--fade) r g b / 0.593) 45%,
-      rgb(from var(--fade) r g b / 0.5) 50%,
-      rgb(from var(--fade) r g b / 0.407) 55%,
-      rgb(from var(--fade) r g b / 0.317) 60%,
-      rgb(from var(--fade) r g b / 0.235) 65%,
-      rgb(from var(--fade) r g b / 0.163) 70%,
-      rgb(from var(--fade) r g b / 0.104) 75%,
-      rgb(from var(--fade) r g b / 0.058) 80%,
-      rgb(from var(--fade) r g b / 0.027) 85%,
-      rgb(from var(--fade) r g b / 0.009) 90%,
-      rgb(from var(--fade) r g b / 0.001) 95%,
-      rgb(from var(--fade) r g b / 0) 100%
-    );
-  }
-
-  .section-edge-fade::after {
-    bottom: 0;
-    background: linear-gradient(
-      to top,
-      rgb(from var(--fade) r g b / 1) 0%,
-      rgb(from var(--fade) r g b / 0.999) 5%,
-      rgb(from var(--fade) r g b / 0.991) 10%,
-      rgb(from var(--fade) r g b / 0.973) 15%,
-      rgb(from var(--fade) r g b / 0.942) 20%,
-      rgb(from var(--fade) r g b / 0.896) 25%,
-      rgb(from var(--fade) r g b / 0.837) 30%,
-      rgb(from var(--fade) r g b / 0.765) 35%,
-      rgb(from var(--fade) r g b / 0.683) 40%,
-      rgb(from var(--fade) r g b / 0.593) 45%,
-      rgb(from var(--fade) r g b / 0.5) 50%,
-      rgb(from var(--fade) r g b / 0.407) 55%,
-      rgb(from var(--fade) r g b / 0.317) 60%,
-      rgb(from var(--fade) r g b / 0.235) 65%,
-      rgb(from var(--fade) r g b / 0.163) 70%,
-      rgb(from var(--fade) r g b / 0.104) 75%,
-      rgb(from var(--fade) r g b / 0.058) 80%,
-      rgb(from var(--fade) r g b / 0.027) 85%,
-      rgb(from var(--fade) r g b / 0.009) 90%,
-      rgb(from var(--fade) r g b / 0.001) 95%,
-      rgb(from var(--fade) r g b / 0) 100%
-    );
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--section-veil);
+    pointer-events: none;
+    -webkit-mask-image: var(--edge-mask);
+    mask-image: var(--edge-mask);
   }
 
   @media (min-width: 768px) {
-    .section-edge-fade::before,
-    .section-edge-fade::after {
-      height: 9.5rem;
+    .section-edge-fade {
+      --section-fade: 9.5rem;
     }
   }
 
@@ -578,6 +638,17 @@
       rgba(0, 0, 0, 0.45) 58%,
       transparent 82%
     );
+  }
+
+  .section-edge-fade .section-hero-watermark {
+    -webkit-mask-image:
+      linear-gradient(to right, black 0%, black 28%, rgb(0 0 0 / 0.45) 58%, transparent 82%),
+      var(--edge-mask);
+    mask-image:
+      linear-gradient(to right, black 0%, black 28%, rgb(0 0 0 / 0.45) 58%, transparent 82%),
+      var(--edge-mask);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
   }
 
 }
@@ -895,6 +966,8 @@
   inset: 0;
   z-index: 60;
   pointer-events: none;
+  perspective: 1680px;
+  perspective-origin: right center;
 }
 
 .site-drawer-backdrop {
@@ -902,23 +975,60 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.46);
   opacity: 0;
-  transition: opacity 700ms var(--ease-premium);
+  transition: opacity 900ms var(--ease-premium);
 }
 
 .site-drawer {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
   height: 100%;
   width: calc(100% - 2.25rem);
+  transform-origin: right center;
+  transform: rotateY(-96deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  opacity: 0;
+  transition:
+    transform 980ms cubic-bezier(0.62, 0.02, 0.12, 1),
+    opacity 240ms ease 640ms;
+}
+
+.site-drawer-sheet {
+  position: relative;
+  display: flex;
+  height: 100%;
   flex-direction: column;
+  overflow-x: hidden;
   overflow-y: auto;
   border-left: 1px solid rgb(123 75 42 / 0.16);
-  background: var(--color-beige-50);
-  box-shadow: -28px 0 70px rgb(0 0 0 / 0.28);
-  transform: translate3d(104%, 0, 0);
-  transition: transform 820ms var(--ease-premium);
+  background:
+    linear-gradient(180deg, rgb(255 252 246 / 0.92), transparent 9.5rem),
+    var(--color-beige-50);
+  box-shadow:
+    -1px 0 0 #f4f0e7,
+    -2px 0 0 #e3ddd0,
+    -4px 0 0 #f7f3ea,
+    -5px 0 0 #d8d1c3,
+    -7px 0 0 #efeae0,
+    -8px 0 0 #cfc7b6,
+    -34px 12px 64px rgb(0 0 0 / 0.24);
+  backface-visibility: hidden;
+}
+
+.site-drawer-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgb(48 26 12 / 0.32) 0%,
+    rgb(48 26 12 / 0.1) 24%,
+    transparent 62%
+  );
+  opacity: 1;
+  transition: opacity 520ms ease;
 }
 
 .lang-flag {
@@ -1055,7 +1165,17 @@
 }
 
 .site-drawer-root[data-open='true'] .site-drawer {
-  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition:
+    transform 1180ms cubic-bezier(0.16, 0.84, 0.18, 1),
+    opacity 160ms ease;
+}
+
+.site-drawer-root[data-open='true'] .site-drawer-shade {
+  opacity: 0;
+  transition-delay: 120ms;
+  transition-duration: 900ms;
 }
 
 .site-drawer-root[data-open='true'] .site-drawer-link {
@@ -1064,6 +1184,10 @@
 }
 
 @media (min-width: 768px) {
+  .site-drawer-root {
+    perspective: 2800px;
+  }
+
   .site-drawer {
     width: 66.666%;
   }
@@ -1099,8 +1223,13 @@
   .nav-toggle__bar > span,
   .site-drawer,
   .site-drawer-backdrop,
+  .site-drawer-shade,
   .site-drawer-link,
   .dossier-copy {
     transition: none;
+  }
+
+  .site-drawer-root:not([data-open='true']) .site-drawer {
+    visibility: hidden;
   }
 }

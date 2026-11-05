@@ -101,43 +101,40 @@ export function Header() {
       <div className="site-drawer-root" data-open={open ? 'true' : 'false'} inert={open ? undefined : true}>
         <div className="site-drawer-backdrop" onClick={() => setOpen(false)} />
         <nav id="site-menu" className="site-drawer" aria-label={m.nav.primary}>
-          <div className="site-drawer-head">
-            <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
-              <BrandLogo className="h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-12 md:w-12" />
-              <span className="brand-title text-sm text-gold-dark sm:text-base">GASTROMENU</span>
-            </Link>
-          </div>
-          <ul>
-            {m.nav.links.map((link, index) => (
-              <li
-                key={link.to}
-                className="site-drawer-link"
-                style={{ transitionDelay: open ? `${160 + index * 55}ms` : '0ms' }}
-              >
-                <NavLink
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `site-drawer-anchor ${isActive ? 'is-active' : ''}`
-                  }
-                  onClick={() => setOpen(false)}
+          <div className="site-drawer-sheet">
+            <div className="site-drawer-head">
+              <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
+                <BrandLogo className="h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-12 md:w-12" />
+                <span className="brand-title text-sm text-gold-dark sm:text-base">GASTROMENU</span>
+              </Link>
+            </div>
+            <ul>
+              {m.nav.links.map((link, index) => (
+                <li
+                  key={link.to}
+                  className="site-drawer-link"
+                  style={{ transitionDelay: open ? `${520 + index * 48}ms` : '0ms' }}
                 >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-            <li
-              className="site-drawer-link md:hidden"
-              style={{ transitionDelay: open ? `${160 + m.nav.links.length * 55}ms` : '0ms' }}
-            >
-              <LanguageSwitch tone="light" />
-            </li>
-          </ul>
-          <div className="site-drawer-foot">
-            <Link to="/contacto" className="site-drawer-cta" onClick={() => setOpen(false)}>
-              {m.nav.contact}
-            </Link>
-            <p className="site-drawer-note">{m.nav.note}</p>
+                  <NavLink
+                    to={link.to}
+                    className={({ isActive }) =>
+                      `site-drawer-anchor ${isActive ? 'is-active' : ''}`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            <div className="site-drawer-foot">
+              <Link to="/contacto" className="site-drawer-cta" onClick={() => setOpen(false)}>
+                {m.nav.contact}
+              </Link>
+              <p className="site-drawer-note">{m.nav.note}</p>
+            </div>
           </div>
+          <div className="site-drawer-shade" aria-hidden />
         </nav>
       </div>
     </>

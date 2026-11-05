@@ -4,12 +4,24 @@ import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { Section } from '@/components/ui/Section'
 import { SEO } from '@/lib/seo/SEO'
-import { dossierImageUrl, type DossierPageContent } from '@/data/dossierTypes'
+import { dossierImageUrl, type DossierPageContent, type DossierSection } from '@/data/dossierTypes'
 import { localizeDossier } from '@/data/dossier/en'
 import { useMessages } from '@/i18n/useMessages'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { DossierGallery } from '@/components/sections/DossierGallery'
 import { ExpandableCopy } from '@/components/sections/ExpandableCopy'
+
+function darkEdge(section?: DossierSection) {
+  return section?.variant === 'dark' && section.images.length > 0
+}
+
+function edgeBesideDark(previous?: DossierSection, next?: DossierSection) {
+  const top = darkEdge(previous)
+  const bottom = darkEdge(next)
+  if (top && bottom) return 'both' as const
+  if (top) return 'top' as const
+  if (bottom) return 'bottom' as const
+}
 
 const pageHeroWatermark: Record<string, string> = {
   '/cartas': '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
@@ -92,6 +104,11 @@ export function DossierPage({ content }: DossierPageProps) {
           ariaLabel={section.nav}
           className="scroll-mt-24 md:scroll-mt-28"
           watermarkSrc={hasImages ? dossierImageUrl(section.images[0]) : undefined}
+          edgeFade={
+            section.variant === 'dark'
+              ? undefined
+              : edgeBesideDark(page.sections[index - 1], page.sections[index + 1])
+          }
         >
           <div
             className={
@@ -129,7 +146,7 @@ export function DossierPage({ content }: DossierPageProps) {
         )
       })}
 
-      <ContactCTA />
+      <ContactCTA fadeTop={darkEdge(page.sections.at(-1))} />
     </>
   )
 }

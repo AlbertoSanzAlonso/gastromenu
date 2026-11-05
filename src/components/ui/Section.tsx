@@ -8,6 +8,7 @@ interface SectionProps {
   variant?: 'light' | 'dark' | 'beige'
   ariaLabel?: string
   watermarkSrc?: string
+  edgeFade?: 'top' | 'bottom' | 'both'
 }
 
 const variantStyles = {
@@ -26,14 +27,26 @@ export function Section({
   variant = 'light',
   ariaLabel,
   watermarkSrc,
+  edgeFade,
 }: SectionProps) {
+  const fadeClass =
+    variant === 'dark'
+      ? watermarkSrc
+        ? 'section-edge-fade'
+        : ''
+      : edgeFade === 'both'
+        ? 'section-edge-fade'
+        : edgeFade === 'top'
+          ? 'section-edge-fade section-edge-fade-top'
+          : edgeFade === 'bottom'
+            ? 'section-edge-fade section-edge-fade-bottom'
+            : ''
+
   return (
     <section
       id={id}
       aria-label={ariaLabel}
-      className={`section-padding relative overflow-hidden ${variantStyles[variant]} ${
-        watermarkSrc && variant === 'dark' ? 'section-edge-fade' : ''
-      } ${className}`}
+      className={`section-padding relative overflow-hidden ${variantStyles[variant]} ${fadeClass} ${className}`}
     >
       {watermarkSrc && variant === 'dark' && (
         <img

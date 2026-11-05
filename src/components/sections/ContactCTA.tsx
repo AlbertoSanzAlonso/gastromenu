@@ -6,11 +6,11 @@ import { GoldText } from '@/components/ui/GoldText'
 import { company } from '@/data/contact'
 import { useMessages } from '@/i18n/useMessages'
 
-export function ContactCTA() {
+export function ContactCTA({ fadeTop = false }: { fadeTop?: boolean }) {
   const { m } = useMessages()
 
   return (
-    <Section variant="beige" ariaLabel={m.home.ctaLabel}>
+    <Section variant="beige" ariaLabel={m.home.ctaLabel} edgeFade={fadeTop ? 'top' : undefined}>
       <div className="text-center max-w-3xl mx-auto">
         <BrandDivider className="mb-8" />
         <p className="slide-label mb-8">

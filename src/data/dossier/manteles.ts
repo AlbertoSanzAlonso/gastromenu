@@ -44,7 +44,8 @@ export const mantelesPage: DossierPageContent = {
         'Ni qué decir del orgullo del equipo de GastroMenú Premium cuando nos enteramos de la noticia! El orgullo de un trabajo bien hecho que trasciende fronteras.',
       ],
       images: [
-        { file: '02-mantel-antes-dos-puestos-premium.webp', caption: 'Antes y después', src: '/images/web/manteles/02-mantel-antes-dos-puestos-premium.webp' },
+        { file: '02-mantel-antes-dos-puestos-premium.webp', caption: 'Antes', src: '/images/web/manteles/02-mantel-antes-dos-puestos-premium.webp' },
+        { file: '02-mantel-despues-dos-puestos-premium.webp', caption: 'Después', src: '/images/web/manteles/02-mantel-despues-dos-puestos-premium.webp' },
       ],
       variant: 'beige',
     },

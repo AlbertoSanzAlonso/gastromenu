@@ -37,7 +37,7 @@ export const mantelesCopy: DossierCopy = {
         'You will ask what for. Well: some have laminated them and use them every day at home, at lunch or at dinner, as a permanent memory of that stay in Spain and of how well they spent it in that restaurant. Others have framed them, and the picture now dresses a wall of the house. Incredible, but true. And here we attach the images those foreign guests sent our client, which do not let us exaggerate.',
         'Needless to say, the pride of the GastroMenú Premium team when we heard the news. The pride of a job well done that crosses borders.',
       ],
-      captions: ['Before and after'],
+      captions: ['Before', 'After'],
     },
     {
       nav: 'With text',
