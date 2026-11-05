@@ -103,10 +103,9 @@ export function Header() {
         <nav id="site-menu" className="site-drawer" aria-label={m.nav.primary}>
           <div className="site-drawer-head">
             <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
-              <BrandLogo className="h-10 w-10 object-contain md:h-12 md:w-12" />
-              <span className="brand-title text-sm text-gold-dark md:text-base">GASTROMENU</span>
+              <BrandLogo className="h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-12 md:w-12" />
+              <span className="brand-title text-sm text-gold-dark sm:text-base">GASTROMENU</span>
             </Link>
-            <LanguageSwitch tone="light" className="mr-14 md:hidden" />
           </div>
           <ul>
             {m.nav.links.map((link, index) => (
@@ -126,6 +125,12 @@ export function Header() {
                 </NavLink>
               </li>
             ))}
+            <li
+              className="site-drawer-link md:hidden"
+              style={{ transitionDelay: open ? `${160 + m.nav.links.length * 55}ms` : '0ms' }}
+            >
+              <LanguageSwitch tone="light" />
+            </li>
           </ul>
           <div className="site-drawer-foot">
             <Link to="/contacto" className="site-drawer-cta" onClick={() => setOpen(false)}>

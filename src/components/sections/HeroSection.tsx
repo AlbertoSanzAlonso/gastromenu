@@ -80,7 +80,7 @@ export function HeroSection() {
       <HeroStage slides={slides} index={slider.index} mirrored={mirrored} />
 
       <div
-        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-premium lg:block ${
+        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-in-out lg:block ${
           mirrored ? 'translate-x-full' : 'translate-x-0'
         }`}
         aria-hidden
@@ -105,7 +105,7 @@ export function HeroSection() {
       />
       <div className="hero-mobile-scrim pointer-events-none absolute inset-0 z-[1]" aria-hidden />
       <div
-        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-premium lg:w-1/2 lg:via-black/10 lg:to-transparent ${
+        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-in-out lg:w-1/2 lg:via-black/10 lg:to-transparent ${
           mirrored
             ? 'lg:translate-x-full lg:bg-gradient-to-l lg:from-black/30'
             : 'lg:translate-x-0 lg:bg-gradient-to-r lg:from-black/30'
@@ -114,7 +114,7 @@ export function HeroSection() {
       />
 
       <Container className="relative z-10 w-full py-12 md:py-16">
-        <div className="hero-mobile-copy mx-auto max-w-3xl text-center lg:hidden">
+        <div className="hero-mobile-copy mx-auto min-h-[28rem] max-w-3xl text-center md:min-h-[32rem] lg:hidden">
           <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
           <BrandDivider className="mb-8" />
           {slide && (
@@ -136,7 +136,7 @@ export function HeroSection() {
         </div>
 
         <div
-          className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-premium lg:block lg:max-w-[50%] ${
+          className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-in-out lg:block lg:min-h-[24rem] lg:max-w-[50%] ${
             mirrored ? 'lg:translate-x-full lg:text-right' : 'lg:translate-x-0 lg:text-left'
           }`}
         >
@@ -203,10 +203,8 @@ function HeroStage({
 
   return (
     <div
-      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-premium lg:inset-y-0 lg:left-0 lg:w-1/2 ${
-        mirrored
-          ? 'lg:translate-x-0 lg:[mask-image:linear-gradient(to_left,transparent_0%,black_52%,black_100%)]'
-          : 'lg:translate-x-full lg:[mask-image:linear-gradient(to_right,transparent_0%,black_52%,black_100%)]'
+      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-in-out lg:inset-y-0 lg:left-0 lg:w-1/2 ${
+        mirrored ? 'lg:translate-x-0' : 'lg:translate-x-full'
       }`}
       aria-hidden
     >
@@ -230,17 +228,44 @@ function HeroStage({
               src={item.image}
               alt=""
               className={`h-full w-full max-lg:object-cover max-lg:blur-[7px] lg:blur-none ${
+                active || exiting ? (position % 2 === 0 ? 'hero-zoom-in' : 'hero-zoom-out') : ''
+              } ${
                 item.fit === 'contain'
                   ? 'hero-carta hero-float lg:object-contain'
-                  : `lg:object-cover ${active ? 'hero-drift' : 'scale-[1.14]'}`
+                  : `lg:object-cover ${active || exiting ? 'hero-drift' : 'scale-[1.14]'}`
               }`}
-              style={active && item.fit !== 'contain' ? { animationDuration: `${HERO_SLIDE_MS}ms` } : undefined}
+              style={
+                active || exiting
+                  ? {
+                      ...(item.fit !== 'contain'
+                        ? { animationDuration: `${HERO_SLIDE_MS}ms` }
+                        : {}),
+                      animationPlayState: exiting ? 'paused' : 'running',
+                    }
+                  : undefined
+              }
               loading={position === 0 ? 'eager' : 'lazy'}
               decoding={position === 0 ? 'sync' : 'async'}
             />
           </div>
         )
       })}
+      <div
+        className={`pointer-events-none absolute inset-0 hidden transition-opacity duration-[1600ms] ease-in-out lg:block ${
+          mirrored ? 'opacity-0' : 'opacity-100'
+        }`}
+        style={{
+          background: 'linear-gradient(to right, #000 0%, rgba(0,0,0,0.45) 24%, transparent 56%)',
+        }}
+      />
+      <div
+        className={`pointer-events-none absolute inset-0 hidden transition-opacity duration-[1600ms] ease-in-out lg:block ${
+          mirrored ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{
+          background: 'linear-gradient(to left, #000 0%, rgba(0,0,0,0.45) 24%, transparent 56%)',
+        }}
+      />
     </div>
   )
 }
@@ -281,21 +306,18 @@ function FadingCopy({
   const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
 
   return (
-    <div className="relative">
+    <div className={`relative ${shellClassName ?? ''}`} style={shellStyle}>
       {view.outgoing ? (
         <div
-          key={view.outgoing.id}
-          className={animate ? 'hero-copy-out pointer-events-none absolute inset-x-0 top-0' : 'pointer-events-none absolute inset-x-0 top-0'}
+          className="hero-copy-out pointer-events-none absolute inset-x-0 top-0"
           style={crossfadeStyle}
           aria-hidden
         >
           {children(view.outgoing)}
         </div>
       ) : null}
-      <div key={view.current.id} className={shellClassName} style={shellStyle}>
-        <div className={animate ? 'hero-copy' : undefined} style={crossfadeStyle}>
-          {children(view.current)}
-        </div>
+      <div className={animate ? 'hero-copy' : undefined} style={crossfadeStyle}>
+        {children(view.current)}
       </div>
     </div>
   )

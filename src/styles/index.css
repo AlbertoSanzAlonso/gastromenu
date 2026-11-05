@@ -476,6 +476,81 @@
     }
   }
 
+  .section-edge-fade::before,
+  .section-edge-fade::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 6.25rem;
+    pointer-events: none;
+    --fade: var(--color-beige-50);
+  }
+
+  .section-edge-fade::before {
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      rgb(from var(--fade) r g b / 1) 0%,
+      rgb(from var(--fade) r g b / 0.999) 5%,
+      rgb(from var(--fade) r g b / 0.991) 10%,
+      rgb(from var(--fade) r g b / 0.973) 15%,
+      rgb(from var(--fade) r g b / 0.942) 20%,
+      rgb(from var(--fade) r g b / 0.896) 25%,
+      rgb(from var(--fade) r g b / 0.837) 30%,
+      rgb(from var(--fade) r g b / 0.765) 35%,
+      rgb(from var(--fade) r g b / 0.683) 40%,
+      rgb(from var(--fade) r g b / 0.593) 45%,
+      rgb(from var(--fade) r g b / 0.5) 50%,
+      rgb(from var(--fade) r g b / 0.407) 55%,
+      rgb(from var(--fade) r g b / 0.317) 60%,
+      rgb(from var(--fade) r g b / 0.235) 65%,
+      rgb(from var(--fade) r g b / 0.163) 70%,
+      rgb(from var(--fade) r g b / 0.104) 75%,
+      rgb(from var(--fade) r g b / 0.058) 80%,
+      rgb(from var(--fade) r g b / 0.027) 85%,
+      rgb(from var(--fade) r g b / 0.009) 90%,
+      rgb(from var(--fade) r g b / 0.001) 95%,
+      rgb(from var(--fade) r g b / 0) 100%
+    );
+  }
+
+  .section-edge-fade::after {
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgb(from var(--fade) r g b / 1) 0%,
+      rgb(from var(--fade) r g b / 0.999) 5%,
+      rgb(from var(--fade) r g b / 0.991) 10%,
+      rgb(from var(--fade) r g b / 0.973) 15%,
+      rgb(from var(--fade) r g b / 0.942) 20%,
+      rgb(from var(--fade) r g b / 0.896) 25%,
+      rgb(from var(--fade) r g b / 0.837) 30%,
+      rgb(from var(--fade) r g b / 0.765) 35%,
+      rgb(from var(--fade) r g b / 0.683) 40%,
+      rgb(from var(--fade) r g b / 0.593) 45%,
+      rgb(from var(--fade) r g b / 0.5) 50%,
+      rgb(from var(--fade) r g b / 0.407) 55%,
+      rgb(from var(--fade) r g b / 0.317) 60%,
+      rgb(from var(--fade) r g b / 0.235) 65%,
+      rgb(from var(--fade) r g b / 0.163) 70%,
+      rgb(from var(--fade) r g b / 0.104) 75%,
+      rgb(from var(--fade) r g b / 0.058) 80%,
+      rgb(from var(--fade) r g b / 0.027) 85%,
+      rgb(from var(--fade) r g b / 0.009) 90%,
+      rgb(from var(--fade) r g b / 0.001) 95%,
+      rgb(from var(--fade) r g b / 0) 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .section-edge-fade::before,
+    .section-edge-fade::after {
+      height: 9.5rem;
+    }
+  }
+
   .section-hero-watermark {
     position: absolute;
     z-index: 0;
@@ -504,6 +579,7 @@
       transparent 82%
     );
   }
+
 }
 
 @keyframes cookie-notice-in {
@@ -527,86 +603,38 @@
 }
 
 @keyframes hero-copy {
-  0% {
+  from {
     opacity: 0;
-    filter: blur(0px);
-    transform: translate3d(0, 0.28rem, 0);
   }
-  8% {
-    opacity: 0.5;
-    filter: blur(5px);
-    transform: translate3d(0, 0.08rem, 0);
-  }
-  16% {
+  to {
     opacity: 1;
-    filter: blur(0px);
-    transform: none;
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-    transform: none;
   }
 }
 
 @keyframes hero-copy-out {
-  0% {
+  from {
     opacity: 1;
-    filter: blur(0px);
-    transform: none;
   }
-  8% {
-    opacity: 0.4;
-    filter: blur(5px);
-    transform: translate3d(0, -0.06rem, 0);
-  }
-  16% {
+  to {
     opacity: 0;
-    filter: blur(0px);
-    transform: translate3d(0, -0.14rem, 0);
-  }
-  100% {
-    opacity: 0;
-    filter: blur(0px);
-    transform: translate3d(0, -0.14rem, 0);
   }
 }
 
 @keyframes hero-slide-in {
-  0% {
+  from {
     opacity: 0;
-    filter: blur(0px);
   }
-  8% {
-    opacity: 0.45;
-    filter: blur(8px);
-  }
-  16% {
+  to {
     opacity: 1;
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0px);
   }
 }
 
 @keyframes hero-slide-out {
-  0% {
+  from {
     opacity: 1;
-    filter: blur(0px);
   }
-  8% {
-    opacity: 0.4;
-    filter: blur(8px);
-  }
-  16% {
+  to {
     opacity: 0;
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 0;
-    filter: blur(0px);
   }
 }
 
@@ -643,6 +671,42 @@
   }
 }
 
+@keyframes hero-zoom-in {
+  from {
+    transform: translate3d(0, 0.45rem, 0) scale(1.05);
+  }
+  to {
+    transform: translate3d(0, -0.4rem, 0) scale(1.14);
+  }
+}
+
+@keyframes hero-zoom-out {
+  from {
+    transform: translate3d(0, -0.4rem, 0) scale(1.14);
+  }
+  to {
+    transform: translate3d(0, 0.45rem, 0) scale(1.05);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-zoom-in,
+  .hero-zoom-out {
+    animation-duration: 4.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    transform-origin: center;
+  }
+
+  .hero-zoom-in {
+    animation-name: hero-zoom-in;
+  }
+
+  .hero-zoom-out {
+    animation-name: hero-zoom-out;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-float {
     animation: none;
@@ -650,19 +714,19 @@
 }
 
 .hero-copy {
-  animation: hero-copy 700ms linear both;
+  animation: hero-copy 1100ms ease both;
 }
 
 .hero-copy-out {
-  animation: hero-copy-out 700ms linear both;
+  animation: hero-copy-out 1100ms ease both;
 }
 
 .hero-slide-in {
-  animation: hero-slide-in 700ms linear both;
+  animation: hero-slide-in 1100ms ease both;
 }
 
 .hero-slide-out {
-  animation: hero-slide-out 700ms linear both;
+  animation: hero-slide-out 1100ms ease both;
 }
 
 .hero-slide-frame {
@@ -708,7 +772,7 @@
 @media (min-width: 1024px) {
   .hero-slide-frame {
     transform: translate3d(var(--hero-x, 0%), 0, 0);
-    transition: transform 200ms ease-in-out;
+    transition: transform 1100ms ease-in-out;
   }
 }
 
@@ -874,6 +938,26 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .site-drawer-head {
+    position: relative;
+  }
+
+  .site-drawer-brand {
+    position: absolute;
+    top: 50%;
+    left: calc(50vw - 2.25rem);
+    gap: 0.5rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .site-drawer-brand {
+    gap: 0.75rem;
+  }
 }
 
 .site-drawer ul {

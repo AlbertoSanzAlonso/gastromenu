@@ -14,7 +14,7 @@ const variantStyles = {
   light:
     'bg-beige-50/65 text-ink [&_.slide-heading]:text-ink [&_.slide-body]:text-stone',
   dark:
-    'bg-ink/78 text-cream [&_.slide-heading]:text-cream [&_.slide-body]:text-cream-muted',
+    'bg-ink text-cream [&_.slide-heading]:text-cream [&_.slide-body]:text-cream-muted',
   beige:
     'bg-beige-100/65 text-ink [&_.slide-heading]:text-ink [&_.slide-body]:text-stone',
 }
@@ -31,7 +31,9 @@ export function Section({
     <section
       id={id}
       aria-label={ariaLabel}
-      className={`section-padding relative overflow-hidden ${variantStyles[variant]} ${className}`}
+      className={`section-padding relative overflow-hidden ${variantStyles[variant]} ${
+        watermarkSrc && variant === 'dark' ? 'section-edge-fade' : ''
+      } ${className}`}
     >
       {watermarkSrc && variant === 'dark' && (
         <img
@@ -42,7 +44,7 @@ export function Section({
           className="section-hero-watermark"
         />
       )}
-      <Container className="relative z-[1]">{children}</Container>
+      <Container className="relative z-[2]">{children}</Container>
     </section>
   )
 }
