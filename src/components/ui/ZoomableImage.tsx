@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type PointerEvent, type TransitionEvent } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type TransitionEvent } from 'react'
 
 const MIN_SCALE = 1
 const MAX_SCALE = 4
@@ -293,7 +293,7 @@ export function ZoomableImage({
     tapOriginRef.current = null
   }
 
-  function onClick(event: MouseEvent<HTMLDivElement>) {
+  function onClick() {
     if (movedRef.current) {
       movedRef.current = false
       return
