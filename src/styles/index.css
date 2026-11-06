@@ -227,7 +227,7 @@
 
   .cookie-notice {
     position: fixed;
-    z-index: 40;
+    z-index: 55;
     right: 0;
     bottom: 0;
     left: 0;
@@ -443,6 +443,8 @@
   }
 
   .floating-action--whatsapp {
+    height: 4rem;
+    width: 4rem;
     background: var(--color-ink);
     color: var(--color-gold-slide);
     border: 1px solid color-mix(in srgb, var(--color-gold-slide) 72%, transparent);
@@ -450,8 +452,8 @@
   }
 
   .floating-action--whatsapp svg {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.85rem;
+    width: 1.85rem;
   }
 
   .floating-action--top.is-visible:hover {
@@ -477,16 +479,6 @@
     .floating-actions {
       right: 1.75rem;
       bottom: max(1.75rem, env(safe-area-inset-bottom));
-    }
-
-    .floating-action--whatsapp {
-      height: 4rem;
-      width: 4rem;
-    }
-
-    .floating-action--whatsapp svg {
-      height: 1.85rem;
-      width: 1.85rem;
     }
   }
 
