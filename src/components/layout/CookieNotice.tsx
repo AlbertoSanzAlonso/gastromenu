@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type TransitionEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
@@ -6,10 +6,13 @@ import { FOOTER_WATERMARK_SRC } from '@/data/brand'
 import { useMessages } from '@/i18n/useMessages'
 
 const STORAGE_KEY = 'gastromenu.cookie-notice'
+const EXIT_MS = 750
 
 export function CookieNotice() {
   const { m } = useMessages()
   const [open, setOpen] = useState(false)
+  const [shown, setShown] = useState(false)
+  const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
     try {
@@ -19,19 +22,54 @@ export function CookieNotice() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!open || leaving) return
+    let inner = 0
+    const frame = window.requestAnimationFrame(() => {
+      inner = window.requestAnimationFrame(() => setShown(true))
+    })
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.cancelAnimationFrame(inner)
+    }
+  }, [open, leaving])
+
+  useEffect(() => {
+    if (!leaving) return
+    const id = window.setTimeout(() => setOpen(false), EXIT_MS + 80)
+    return () => window.clearTimeout(id)
+  }, [leaving])
+
   function accept() {
     try {
       localStorage.setItem(STORAGE_KEY, '1')
     } catch {
       // El aviso sigue pudiendo cerrarse aunque el navegador bloquee el almacenamiento.
     }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setOpen(false)
+      return
+    }
+    setLeaving(true)
+    setShown(false)
+  }
+
+  function onTransitionEnd(event: TransitionEvent<HTMLElement>) {
+    if (event.target !== event.currentTarget || event.propertyName !== 'transform' || !leaving) return
     setOpen(false)
   }
 
   if (!open) return null
 
   return (
-    <aside className="cookie-notice" role="region" aria-label={m.cookies.label}>
+    <aside
+      className="cookie-notice"
+      data-shown={shown ? 'true' : 'false'}
+      data-leaving={leaving ? 'true' : 'false'}
+      role="region"
+      aria-label={m.cookies.label}
+      onTransitionEnd={onTransitionEnd}
+    >
       <div className="cookie-notice-art" aria-hidden>
         <img
           src={FOOTER_WATERMARK_SRC}
