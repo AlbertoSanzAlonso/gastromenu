@@ -81,7 +81,9 @@ export function GalleryLightbox({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10"
+      className={`fixed inset-0 z-[100] flex items-center justify-center ${
+        zoomed ? 'px-1 py-2 md:p-4' : 'p-4 md:p-10'
+      }`}
       role="dialog"
       aria-modal="true"
       aria-label={`${m.gallery.dialog}: ${slide.title}`}
@@ -136,7 +138,11 @@ export function GalleryLightbox({
         </span>
       </button>
 
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-14 md:px-20">
+      <div
+        className={`relative z-10 flex w-full flex-col items-center ${
+          zoomed ? 'max-w-none px-1 md:px-8' : 'max-w-3xl px-14 md:px-20'
+        }`}
+      >
         <figure className="flex w-full flex-col items-center">
           <ZoomableImage
             key={`${slide.id}-${activeIndex}`}
@@ -147,7 +153,12 @@ export function GalleryLightbox({
             onZoomedChange={handleZoomedChange}
           />
 
-          <figcaption className="mt-5 text-center max-w-2xl md:mt-8">
+          <figcaption
+            aria-hidden={zoomed}
+            className={`w-full max-w-2xl text-center ${
+              zoomed ? 'h-0 overflow-hidden opacity-0' : 'mt-5 md:mt-8'
+            }`}
+          >
             <p className="font-brand text-lg md:text-2xl uppercase tracking-[0.18em] text-cream font-medium">
               {slide.title}
             </p>
@@ -164,6 +175,11 @@ export function GalleryLightbox({
             </p>
           </figcaption>
         </figure>
+        {zoomed && (
+          <p className="pointer-events-none fixed bottom-3 left-1/2 z-20 -translate-x-1/2 font-brand text-[10px] uppercase tracking-[0.16em] text-cream/70 md:text-xs md:tracking-[0.28em]">
+            {m.gallery.zoomHintActive}
+          </p>
+        )}
       </div>
     </div>,
     document.body,

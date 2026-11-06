@@ -20,13 +20,13 @@ export const atrilesPage: DossierPageContent = {
       paragraphs: [
         'Si su ya sola presencia impone, elaborado artesanalmente con acero de alta calidad, diseñado para durar toda la vida, con un diseño simple, plástico y elegante, que destaca por sí solo y por la grandeza de su amplia pantalla retroiluminada de 120 cm x 60 cm (tamaño total: 150 cm de alto x 60,4 cm de lado x 50 cm de fondo) ni qué decir de la cantidad de platos o imágenes que puede albergar la gráfica de dicho equipo!',
         'Es sencillamente espectacular… toda la información de su establecimiento en un espacio amplio y diáfano que atrapa al viandante nada más estar frente a él. Cómo no verlo? Con esas medidas no pasa desapercibido. Además y muy por el contrario de equipos similares que se hacen a medida, el portamenú rígido de pie es extremadamente delgado: su pantalla no llega a los 2 cm, protegido por una resistente lámina de metacrilato transparente y de fácil intercambio de gráficas.',
-        'El atril, como todos los demás, tiene dos versiones: eléctrico o con batería. Si posee un enchufe cercano a donde se vaya a instalar y sin que éste moleste el tránsito del personal y/o clientes, le animamos a que elija esta opción, no tendrá que preocuparse de nada más que encenderlo y apagarlo. Incluso, si lo desea, ni eso, ya que los atriles portamenús de GastroMenú Premium, pueden ir con un sistema de encendido y apagado programado automático (extra).',
+        'El atril, como todos los demás, tiene dos versiones: eléctrico o con batería. Si posee un enchufe cercano a donde se vaya a instalar y sin que éste moleste el tránsito del personal y/o clientes, le animamos a que elija esta opción, no tendrá que preocuparse de nada más que encenderlo y apagarlo. Incluso, si lo desea, ni eso, ya que los atriles portamenús de **GastroMenú Premium**, pueden ir con un sistema de encendido y apagado programado automático (extra).',
         'Si no dispone de toma de corriente cercana al equipo, siempre puede optar por la modalidad autónoma, es decir, equipamos su atril con batería para dar la potencia suficiente a la gran pantalla por varias horas. Además y para controlar la carga de ésta, dispone de una pequeña pantalla de control de energía remanente.',
         'El atril portamenú rígido está lacado al horno en negro texturizado, aunque puede pedirlo en otras tonalidades y acabados (extra), para que haga juego con su imagen corporativa. Además lleva una coqueta maceta, iluminada perimetralmente en verde, lo que le da un aire especial en la noche, rematada con una planta artificial decorativa, donde albergamos el cargador inteligente (corta automáticamente la recepción de energía cuando la batería está completamente cargada) y la batería.',
         'El desplazamiento del equipo es suave y silencioso, gracias a sus ruedas de caucho tratado y sistema autobloqueante. Y por último le aconsejamos, una vez adquiera su nuevo equipo, abonarse al servicio de mantenimiento anual, el cual, aparte de una revisión completa al año, le incluye el reemplazo de hasta dos (2) pantallas backlight con diseño y transporte y con un precio muy reducido si decide ampliar los reemplazos a 3, 4 o más…',
         'Además, dispondrá de descuentos especiales si hay que reemplazar componentes y no se le cobrará mano de obra ni traslados. ¡Por muy poquito, ni se lo piense…!',
         'Diseñamos la pantalla backlight de su equipo sin cargo (traducciones nativas y fotografías profesionales: aparte) y a su entera satisfacción, para que sus productos destaquen de su competencia y pueda facturar más y mejor.',
-        '¡No verá nada igual en el mercado! Sólo disponible en GastroMenú Premium y con un precio muy ajustado.',
+        '¡No verá nada igual en el mercado! Sólo disponible en **GastroMenú Premium** y con un precio muy ajustado.',
       ],
       highlights: [
         'Estructura: acero inoxidable',
@@ -88,7 +88,7 @@ export const atrilesPage: DossierPageContent = {
         'Dispone de tres modalidades: sin iluminación (si, por ejemplo, su establecimiento sólo abre en horario diurno); con iluminación eléctrica (altamente recomendable), sólo se conecta a la energía eléctrica (muy bajo consumo) pero debe disponer de un enchufe próximo al sitio donde se vaya a instalar; totalmente autónomo, con batería, cargador interno, además de pantalla para controlar el remanente energético y para que pueda colocarlo donde quiera.',
         'En estas dos últimas, puede tener la opción de que hagamos el equipo totalmente autónomo: le colocamos un timer para programar encendidos y apagados (extra).',
         'Y por supuesto, diseñamos su carta, en el estilo que desee, además le brindamos la opción de mantenimiento anual, con dos cambios de pantalla (con precio muy especial para más cambios si así lo desea) y con descuentos en componentes, por si en el futuro se debe reemplazar alguno. Siempre la mano de obra será sin cargo.',
-        'Ni se lo piense, el portamenú de pared retroiluminado de GastroMenú Premium es la solución ideal para captar clientes y embellecer aún más su establecimiento.',
+        'Ni se lo piense, el portamenú de pared retroiluminado de **GastroMenú Premium** es la solución ideal para captar clientes y embellecer aún más su establecimiento.',
       ],
       highlights: [
         '1300 mm × casi 850 mm',
@@ -124,9 +124,9 @@ export const atrilesPage: DossierPageContent = {
       title: 'Oportunidades, por poco',
       emphasis: 'tiempo',
       paragraphs: [
-        'En GastroMenú Premium disponemos de un pequeño stock de atriles portamenús para liquidar, por cambio de modelos.',
+        'En **GastroMenú Premium** disponemos de un pequeño stock de atriles portamenús para liquidar, por cambio de modelos.',
         'Estamos hablando de equipos nuevos y con garantía en algunos casos y en otro (por ejemplo en vitrinas de aluminio con cerradura de pared) reciclados, pintados y preparados como nuevos y todos, absolutamente, con sus gráficas correspondientes personalizadas con su carta o el mensaje que quiera transmitir.',
-        'Es una gran oportunidad para hacerse con un equipo de alta calidad a un precio muy interesante…',
+        '**Es una gran oportunidad para hacerse con un equipo de alta calidad a un precio muy interesante…**',
         'No deje pasar esta increíble oportunidad. No disponemos de mucho stock, en algunos casos sólo 1 o 2 equipos y en otros no más de 10 unidades.',
         'Pregunte lo antes posible —si es que en este momento queda alguno— por estos chollos para hacerse con un muy buen atril portamenú, tanto con o sin iluminación.',
       ],

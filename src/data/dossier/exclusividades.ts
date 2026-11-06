@@ -20,7 +20,7 @@ export const exclusividadesPage: DossierPageContent = {
       paragraphs: [
         'Cuando llega la hora de presentar la cuenta a sus clientes, que mejor que realizarlo en un envoltorio elegante, fino y delicado, a la vez que práctico y duradero.',
         'Le presentamos un portacuentas totalmente personalizado, para que sus comensales finalicen la experiencia de haberse sentido bien atendidos, bien comidos y con una excelente sensación interior. La cuenta, dentro de un portacuentas de tejido o en semipiel, con su logo grabado en la portada y por dentro, cuando su cliente lo abra, una inscripción agradeciéndole su visita, acompañado de una tarjeta de su establecimiento para invitarle a retornar pronto. Qué mejor despedida?…',
-        'En GastroMenú Premium los elaboramos a mano, como todo lo que hacemos y en varias tonalidades de color y personalización de su logo. Pregunte por ellos y agregue un toque de clase adicional a la colección de sus nuevas cartas.',
+        'En **GastroMenú Premium** los elaboramos a mano, como todo lo que hacemos y en varias tonalidades de color y personalización de su logo. Pregunte por ellos y agregue un toque de clase adicional a la colección de sus nuevas cartas.',
       ],
       highlights: [
         'Grabado o troquel del logo en ambas caras',

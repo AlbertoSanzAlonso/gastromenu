@@ -18,7 +18,7 @@ export const mantelesCopy: DossierCopy = {
       paragraphs: [
         'We often do not notice that a table can carry bacteria. Yes: however clean it looks, they are there. And one of the functions of a single-use placemat is precisely to stand as a barrier between those organisms and the guest’s plate.',
         'Apart from that, individual paper placemats —fully recyclable, single use— can carry information about the menu or the dishes you want to highlight, or a short photographic gallery. Remember: we eat with our eyes. And if you are in a tourist area, a good solution is to print the menu on both sides, in different languages, so foreign guests have a better chance of reading the offer.',
-        'If you want a placemat of image alone, at GastroMenú Premium we design every kind of placemat to your corporate identity, on high-quality 90-gram papers, satin so the images take a vivid lead, or matte if you prefer. They are fully recyclable and printed with ecological inks.',
+        'If you want a placemat of image alone, at **GastroMenú Premium** we design every kind of placemat to your corporate identity, on high-quality 90-gram papers, satin so the images take a vivid lead, or matte if you prefer. They are fully recyclable and printed with ecological inks.',
         'And a person does not live by the menu alone. We also make breakfast placemats, and placemats for hotels, cafés and other houses. Remember that the guest will be looking at the placemat every time they lower their head to the plate. And even long before the plate is on it. We also make children’s placemats —to see if they will sit still for once— to colour and to do crosswords. Here too you can promote the children’s menu.',
       ],
       highlights: ['90-gram paper', 'Satin or matte', 'Ecological inks', 'Fully recyclable'],
@@ -35,7 +35,7 @@ export const mantelesCopy: DossierCopy = {
         'That became the motif of the placemat itself, with the name of the house and —why not— the support of a famous beer brand.',
         'The decision was such a success that several foreign regulars asked for a number of placemats and took them back to their countries.',
         'You will ask what for. Well: some have laminated them and use them every day at home, at lunch or at dinner, as a permanent memory of that stay in Spain and of how well they spent it in that restaurant. Others have framed them, and the picture now dresses a wall of the house. Incredible, but true. And here we attach the images those foreign guests sent our client, which do not let us exaggerate.',
-        'Needless to say, the pride of the GastroMenú Premium team when we heard the news. The pride of a job well done that crosses borders.',
+        'Needless to say, the pride of the **GastroMenú Premium** team when we heard the news. The pride of a job well done that crosses borders.',
       ],
       captions: ['Before', 'After'],
     },
@@ -48,7 +48,7 @@ export const mantelesCopy: DossierCopy = {
         'If single-use paper placemats have one thing, it is the ability to give the guest information at once. Offering the whole menu at a glance saves time and money. It also adds a further degree of hygiene: as we said, the placemat is a natural barrier between the germs and bacteria on the table surface and the food your guests are going to eat.',
         'What better than to give them the whole offer, properly laid out, with neuromarketing techniques, so they can choose the dish that interests you most —by margin, by speed in the kitchen, and so on— and, if you accompany it with small extra photographs, which are not essential, so much the better.',
         'Here is a variety of paper placemats, made with special ecological inks, fully recyclable, 90 grams, A3 or larger.',
-        'At GastroMenú Premium we have spent 28 years designing placemats with your menu, so the guest has the whole offer to hand and you can widen your income.',
+        'At **GastroMenú Premium** we have spent 28 years designing placemats with your menu, so the guest has the whole offer to hand and you can widen your income.',
       ],
     },
     {
@@ -58,7 +58,7 @@ export const mantelesCopy: DossierCopy = {
       emphasis: 'table',
       paragraphs: [
         'If, on the contrary, you want the placemats to blend with the room, to mark a difference from the competition, or to give your guests another kind of image, we recommend placemats with a personal design and no text: only your logo, or your logo together with that of a sponsor.',
-        'At GastroMenú Premium we design to measure the placemats you want on your tables. We personalise, we adapt and we advise on the styles and types that best suit the house. You will gain in elegance, style and taste, and your guests will thank you for it.',
+        'At **GastroMenú Premium** we design to measure the placemats you want on your tables. We personalise, we adapt and we advise on the styles and types that best suit the house. You will gain in elegance, style and taste, and your guests will thank you for it.',
       ],
     },
     {
@@ -69,7 +69,7 @@ export const mantelesCopy: DossierCopy = {
       paragraphs: [
         'The versatility of disposable paper placemats means they adapt to every kind of house.',
         'In this case, if you have a grill or an asador, we present placemats made to set off the star product, or to lay out the wide offer you want your guests to have to hand.',
-        'The placemat belongs to the room and carries the message you want to send. If you want a design placemat, you only have to ask GastroMenú Premium. It is the most economical, practical and hygienic option you can imagine.',
+        'The placemat belongs to the room and carries the message you want to send. If you want a design placemat, you only have to ask **GastroMenú Premium**. It is the most economical, practical and hygienic option you can imagine.',
       ],
     },
     {
@@ -79,7 +79,7 @@ export const mantelesCopy: DossierCopy = {
       emphasis: 'wine',
       paragraphs: [
         'A very interesting option for wineries and distributors is to promote their products in different restaurants.',
-        'GastroMenú Premium does more than design those special placemats —with neuromarketing adapted to the final guest— carrying the image of your wines and the message you want to reach the consumer, to encourage the drinking of the best wines. We can also deliver them to the restaurants the winery names, so you do not have to worry about a thing.',
+        '**GastroMenú Premium** does more than design those special placemats —with neuromarketing adapted to the final guest— carrying the image of your wines and the message you want to reach the consumer, to encourage the drinking of the best wines. We can also deliver them to the restaurants the winery names, so you do not have to worry about a thing.',
         'It is an excellent way, in every kind of restaurant or in a specific region, to run a marketing action with excellent results.',
         'We have special terms for wineries and distributors. Ask us.',
       ],
@@ -90,7 +90,7 @@ export const mantelesCopy: DossierCopy = {
       title: 'Placemats for the whole',
       emphasis: 'world',
       paragraphs: [
-        'The offer GastroMenú Premium has for adapting placemats to every kind of house is enormous. Whether you have a themed restaurant or any other establishment, we strongly advise single-use paper placemats, for the versatility they have and the excellent result they give at the moment of decision. It has been shown that they have a high power over the guest’s last choice.',
+        'The offer **GastroMenú Premium** has for adapting placemats to every kind of house is enormous. Whether you have a themed restaurant or any other establishment, we strongly advise single-use paper placemats, for the versatility they have and the excellent result they give at the moment of decision. It has been shown that they have a high power over the guest’s last choice.',
         'If you want to try them, call us. We will show you many models from clients with assured success, and we will give shape to yours, so that you become one of them.',
       ],
     },
@@ -100,7 +100,7 @@ export const mantelesCopy: DossierCopy = {
       title: 'Why not a',
       emphasis: 'cocktail',
       paragraphs: [
-        'We make small placemats, about A4, to promote cocktails or, if you wish, to place that section on a large placemat beside the menu, or a freer design to promote the cocktails. Either way, GastroMenú Premium has solutions so these aperitifs help you raise the takings.',
+        'We make small placemats, about A4, to promote cocktails or, if you wish, to place that section on a large placemat beside the menu, or a freer design to promote the cocktails. Either way, **GastroMenú Premium** has solutions so these aperitifs help you raise the takings.',
       ],
     },
     {
@@ -111,7 +111,7 @@ export const mantelesCopy: DossierCopy = {
       paragraphs: [
         'And not only summer. In the other seasons too, because if disposable paper placemats have one thing, it is that the information can be changed quickly.',
         'They are entirely adaptable. You can dress the tables of a beach bar, a beach restaurant or a beach club with a fresh image in summer and a different one for the rest of the year, if you open in other months.',
-        'At GastroMenú Premium we know very well the speed of table turns, of dressing them, setting them and leaving them ready for service.',
+        'At **GastroMenú Premium** we know very well the speed of table turns, of dressing them, setting them and leaving them ready for service.',
         'For that, table placemats give you the speed and the certainty that in a moment the table is ready, and at the same time they give the next guests the information of the menu.',
         'You can also combine table placemats with menus. On the placemat, your best offers, with or without images, so the guest can be drawn to something that interests us, and then the menu reinforces the gastronomic offer. The move is completed beautifully.',
         'The placemat can also point to the desserts, and that image stays there through the whole meal. Every time the guest lowers their head to the plate, the dessert offer is with them. And what will they do when they finish eating?',
@@ -125,7 +125,7 @@ export const mantelesCopy: DossierCopy = {
       paragraphs: [
         'What better in the morning than a very good breakfast, to face the day with energy?',
         'But many of your guests may not know that you have other things that belong to breakfast: smoothies, perhaps, special breads, particular bowls of fruit and seeds. What better than to set them on the new breakfast placemats, to promote those sales?',
-        'At GastroMenú Premium we encourage you to place placemats designed personally for the house, to promote breakfast, with specific images that lift the offer still further or introduce products the public does not know you have.',
+        'At **GastroMenú Premium** we encourage you to place placemats designed personally for the house, to promote breakfast, with specific images that lift the offer still further or introduce products the public does not know you have.',
         'Besides guaranteeing hygiene on the tables, you will notice the sales rise, and the till will thank you.',
       ],
     },
@@ -136,7 +136,7 @@ export const mantelesCopy: DossierCopy = {
       emphasis: 'table',
       paragraphs: [
         'In some restaurants, paper placemats are not enough and a further step is needed.',
-        'That is why, at GastroMenú Premium, we design and make rigid mats lacquered by hand, in Alubond —an aluminium sandwich— with the corners cut by laser and a coat of gloss lacquer, easy to wash, and there, truly, not a trace of bacteria remains.',
+        'That is why, at **GastroMenú Premium**, we design and make rigid mats lacquered by hand, in Alubond —an aluminium sandwich— with the corners cut by laser and a coat of gloss lacquer, easy to wash, and there, truly, not a trace of bacteria remains.',
         'With an exuberant presence and a generous size of 40 × 30 cm and 5 mm high, more than enough for an individual service of real luxury.',
         'Plates set on this rigid mat rise to another category. Easy to store and easy to clean, and of course fully personal. Order them now and enjoy the exclusivity of a unique product.',
       ],
@@ -153,9 +153,26 @@ export const mantelesCopy: DossierCopy = {
       title: 'Children count',
       emphasis: 'too',
       paragraphs: [
-        'And so the bill comes out right, what better than to keep the small troop entertained. GastroMenú Premium designs placemats made especially for them, where they can not only colour or do crosswords, but also see an offer directed at them, to promote sales and raise the bill.',
+        'And so the bill comes out right, what better than to keep the small troop entertained. **GastroMenú Premium** designs placemats made especially for them, where they can not only colour or do crosswords, but also see an offer directed at them, to promote sales and raise the bill.',
         'Do not miss the chance to connect with children and make your offer known. You will not regret it.',
       ],
+    },
+    {
+      nav: 'PVC',
+      kicker: 'Custom PVC placemats',
+      title: 'Comfortable for every',
+      emphasis: 'day',
+      paragraphs: [
+        'The **printing of reusable individual placemats** is done on PVC made for hospitality. Unlike disposable placemats, the reusable ones offer several formats. The usual sizes for this individual placemat are A3 (29.7 × 42 cm) and 35 × 35 cm, and there is always the option of a custom format: a round placemat, or any other shape you want. A high-grip base keeps it firmly on the table.',
+        '**Custom PVC placemats** are a very comfortable choice for everyday service. This PVC placemat is a durable plastic, waterproof and tear-resistant, suitable for restaurants. PVC is known for being easy to clean with a damp cloth and easy to keep. It also accepts cleaning with chemical products.',
+      ],
+      highlights: [
+        'PVC made for hospitality',
+        'A3 and 35 × 35 cm, or to measure',
+        'High-grip base',
+        'Waterproof and easy to clean',
+      ],
+      captions: ['Chop', 'Flexibility', 'Detail', 'The fold', 'Origin, round', 'Pizza House'],
     },
   ],
 }

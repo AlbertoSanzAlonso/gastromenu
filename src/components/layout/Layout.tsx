@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { BrandWatermark } from '@/components/layout/BrandWatermark'
 import { CookieNotice } from '@/components/layout/CookieNotice'
+import { FloatingActions } from '@/components/layout/FloatingActions'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 
@@ -29,6 +30,7 @@ export function Layout() {
       </main>
       <Footer />
       <CookieNotice />
+      <FloatingActions />
     </div>
   )
 }

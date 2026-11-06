@@ -18,7 +18,7 @@ export const exclusividadesCopy: DossierCopy = {
       paragraphs: [
         'When the moment comes to present the bill, what better way than an elegant, fine and delicate holder, practical and made to last.',
         'We present a fully personal bill presenter, so your guests finish with the sense of having been well looked after, well fed, and with an excellent feeling. The bill, inside a presenter of fabric or faux leather, with your logo on the cover and, inside, a line thanking them for the visit, together with a card from the house inviting them to return soon. What better farewell?',
-        'At GastroMenú Premium we make them by hand, as we make everything, in several colours and with your logo. Ask about them and add one more touch of class to the collection of your new menus.',
+        'At **GastroMenú Premium** we make them by hand, as we make everything, in several colours and with your logo. Ask about them and add one more touch of class to the collection of your new menus.',
       ],
       highlights: [
         'Logo engraved or die-cut on both sides',

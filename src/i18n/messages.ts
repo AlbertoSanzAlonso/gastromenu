@@ -144,6 +144,10 @@ const es = {
     privacy: 'política de privacidad',
     accept: 'Entendido',
   },
+  actions: {
+    whatsapp: 'Escribir por WhatsApp',
+    toTop: 'Volver arriba',
+  },
   contact: {
     subtitle: 'Sin compromiso, al mejor precio',
     titleBefore: 'Hablemos de su',
@@ -387,6 +391,10 @@ const en: typeof es = {
     body: 'This site uses only technical cookies, required for the page to work and stay secure. We do not use analytics or advertising cookies. See the',
     privacy: 'privacy policy',
     accept: 'Understood',
+  },
+  actions: {
+    whatsapp: 'Message us on WhatsApp',
+    toTop: 'Back to top',
   },
   contact: {
     subtitle: 'Without obligation, at the right price',

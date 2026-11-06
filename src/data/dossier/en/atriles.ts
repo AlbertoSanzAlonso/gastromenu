@@ -18,13 +18,13 @@ export const atrilesCopy: DossierCopy = {
       paragraphs: [
         'Its presence alone is imposing: made by hand in high-quality steel, designed to last a lifetime, with a simple, clear and elegant form that stands out on its own and through the scale of its backlit panel, 120 cm × 60 cm (overall size: 150 cm high × 60.4 cm wide × 50 cm deep). And that is before counting the dishes or images the graphics of the unit can hold.',
         'It is simply spectacular. All the information of the house in a wide, open space that catches the passer-by the moment they stand in front of it. How could they miss it? At those measurements it does not go unnoticed. And, unlike similar units made to measure, the rigid freestanding stand is extremely slim: the panel is under 2 cm, protected by a resistant sheet of clear methacrylate, and the graphics are easy to change.',
-        'The stand, like all the others, has two versions: mains or battery. If there is a socket near where it will stand, and it will not get in the way of staff or guests, we encourage you to choose that option. You will only have to switch it on and off. Even that can be avoided: GastroMenú Premium menu stands can take an automatic programmed on-and-off system (extra).',
+        'The stand, like all the others, has two versions: mains or battery. If there is a socket near where it will stand, and it will not get in the way of staff or guests, we encourage you to choose that option. You will only have to switch it on and off. Even that can be avoided: **GastroMenú Premium** menu stands can take an automatic programmed on-and-off system (extra).',
         'If there is no socket nearby, you can always choose the self-contained version. We fit the stand with a battery powerful enough for the large panel for several hours. To keep track of the charge, it has a small display of the energy remaining.',
         'The rigid menu stand is oven-lacquered in textured black, though you can order other tones and finishes (extra) to match your identity. It also carries a neat planter, lit around the edge in green, which gives it a particular air at night, finished with a decorative artificial plant, where we house the intelligent charger —it cuts the charge automatically when the battery is full— and the battery itself.',
         'The unit moves softly and quietly, thanks to treated rubber wheels and a self-locking system. And once you have your new unit, we advise an annual maintenance subscription: a full check once a year, and the replacement of up to two (2) backlight panels, with design and transport, at a much reduced price if you decide to extend the replacements to three, four or more.',
         'You will also have special discounts if a component has to be replaced, and labour and travel are not charged. For very little, do not think twice.',
         'We design the backlight panel of your unit at no charge (native translations and professional photographs are separate) and to your full satisfaction, so your products stand out from the competition and you can bill more, and better.',
-        'You will not see anything like it on the market. Available only from GastroMenú Premium, and at a very adjusted price.',
+        'You will not see anything like it on the market. Available only from **GastroMenú Premium**, and at a very adjusted price.',
       ],
       highlights: [
         'Structure: stainless steel',
@@ -77,7 +77,7 @@ export const atrilesCopy: DossierCopy = {
         'Three versions: unlit, if for example the house opens only by day; mains lighting, highly recommended, simply connected to the electricity at very low consumption, provided there is a socket nearby; or fully self-contained, with battery, internal charger and a display of the energy remaining, so you can place it wherever you wish.',
         'In the last two, the unit can be made fully automatic: we fit a timer to programme switching on and off (extra).',
         'And of course we design your menu in the style you want. We also offer annual maintenance, with two panel changes —at a special price for further changes if you wish— and discounts on components if one has to be replaced later. Labour is always free of charge.',
-        'Do not think twice. The backlit wall menu board from GastroMenú Premium is the ideal way to win guests and to make the house even more beautiful.',
+        'Do not think twice. The backlit wall menu board from **GastroMenú Premium** is the ideal way to win guests and to make the house even more beautiful.',
       ],
       highlights: [
         '1300 mm × almost 850 mm',
@@ -104,9 +104,9 @@ export const atrilesCopy: DossierCopy = {
       title: 'Opportunities, for a short',
       emphasis: 'time',
       paragraphs: [
-        'At GastroMenú Premium we have a small stock of menu stands to clear, because of a change of model.',
+        'At **GastroMenú Premium** we have a small stock of menu stands to clear, because of a change of model.',
         'These are new units, warranted in some cases, and in others —for example lockable aluminium wall cases— recycled, painted and prepared as new. All of them, without exception, come with graphics personalised with your menu or the message you want to convey.',
-        'It is a real chance to take a high-quality unit at a very interesting price.',
+        '**It is a real chance to take a high-quality unit at a very interesting price.**',
         'Do not let it pass. We do not have much stock: in some cases only one or two units, in others no more than ten.',
         'Ask as soon as you can —if any remain at this moment— about these pieces, and take a very good menu stand, lit or unlit.',
       ],

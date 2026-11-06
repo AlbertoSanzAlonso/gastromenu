@@ -3,6 +3,29 @@ import { useMessages } from '@/i18n/useMessages'
 
 const COLLAPSED_HEIGHT = '11.5rem'
 const ALIGN_AFTER_MS = 700
+const BOLD = /\*\*([^*]+)\*\*/g
+
+function renderInline(text: string) {
+  const nodes: Array<string | { bold: string }> = []
+  let last = 0
+  for (const match of text.matchAll(BOLD)) {
+    const start = match.index ?? 0
+    if (start > last) nodes.push(text.slice(last, start))
+    nodes.push({ bold: match[1] })
+    last = start + match[0].length
+  }
+  if (last < text.length) nodes.push(text.slice(last))
+
+  return nodes.map((node, index) =>
+    typeof node === 'string' ? (
+      node
+    ) : (
+      <strong key={index} className="font-bold">
+        {node.bold}
+      </strong>
+    ),
+  )
+}
 
 let scrollToken = 0
 
@@ -132,7 +155,7 @@ export function ExpandableCopy({
       >
         {paragraphs.map((paragraph) => (
           <p key={paragraph} className="slide-body">
-            {paragraph}
+            {renderInline(paragraph)}
           </p>
         ))}
         {highlights && highlights.length > 0 && (
