@@ -1,3 +1,5 @@
+import { handleContact, type ContactEnv } from './contact'
+
 interface PageRow {
   slug: string
   path: string
@@ -38,7 +40,7 @@ interface Statement {
   all<T>(): Promise<{ results: T[] }>
 }
 
-interface Env {
+interface Env extends ContactEnv {
   DB: {
     prepare(query: string): Statement
   }
@@ -52,7 +54,7 @@ interface Env {
 
 const corsHeaders = {
   'access-control-allow-origin': '*',
-  'access-control-allow-methods': 'GET, OPTIONS',
+  'access-control-allow-methods': 'GET, POST, OPTIONS',
   'access-control-allow-headers': 'content-type',
 }
 
@@ -62,11 +64,15 @@ export default {
       return new Response(null, { headers: corsHeaders })
     }
 
+    const url = new URL(request.url)
+
+    if (request.method === 'POST' && url.pathname === '/api/contact') {
+      return handleContact(request, env)
+    }
+
     if (request.method !== 'GET') {
       return json({ error: 'Método no permitido' }, 405)
     }
-
-    const url = new URL(request.url)
 
     if (url.pathname === '/api/health') {
       return json({ ok: true })

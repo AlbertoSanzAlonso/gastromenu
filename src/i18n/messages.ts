@@ -181,7 +181,8 @@ const es = {
     privacyLink: 'política de privacidad',
     sending: 'Enviando…',
     submit: 'Enviar consulta',
-    error: 'No se pudo enviar la consulta',
+    error: 'No se pudo enviar la consulta. Inténtelo de nuevo en unos minutos.',
+    errorInvalid: 'Revise los datos del formulario e inténtelo de nuevo.',
     types: [
       { value: 'Franquicias / Cadenas', label: 'Franquicias / Cadenas' },
       { value: 'Restaurante', label: 'Restaurante' },
@@ -203,9 +204,10 @@ const es = {
     less: 'Leer menos',
   },
   blog: {
-    topics: 'Temas del blog',
-    meanwhile: 'Mientras tanto, si quiere resolver un proyecto concreto, escríbanos.',
-    contact: 'Contactar',
+    topics: 'Artículos',
+    read: 'Leer artículo',
+    back: 'Volver al blog',
+    missing: 'Este artículo no está publicado.',
   },
   gallery: {
     label: 'Galería de productos',
@@ -429,7 +431,8 @@ const en: typeof es = {
     privacyLink: 'privacy policy',
     sending: 'Sending…',
     submit: 'Send enquiry',
-    error: 'The enquiry could not be sent',
+    error: 'The enquiry could not be sent. Please try again in a few minutes.',
+    errorInvalid: 'Check the form and try again.',
     types: [
       { value: 'Franquicias / Cadenas', label: 'Franchises / Chains' },
       { value: 'Restaurante', label: 'Restaurant' },
@@ -451,9 +454,10 @@ const en: typeof es = {
     less: 'Read less',
   },
   blog: {
-    topics: 'Blog topics',
-    meanwhile: 'Meanwhile, if you want to resolve a specific project, write to us.',
-    contact: 'Contact',
+    topics: 'Articles',
+    read: 'Read article',
+    back: 'Back to the blog',
+    missing: 'This article is not published.',
   },
   gallery: {
     label: 'Product gallery',

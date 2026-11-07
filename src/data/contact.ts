@@ -31,13 +31,9 @@ export const company = {
   },
 } as const
 
-/** Las redes sin URL pública se muestran, pero no enlazan hasta tener el perfil. */
 export const socialLinks = [
-  { id: 'facebook', label: 'Facebook', href: '' },
-  { id: 'youtube', label: 'YouTube', href: '' },
-  { id: 'linkedin', label: 'LinkedIn', href: '' },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/gastromenupremium/' },
   { id: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/34605989264' },
-  { id: 'pinterest', label: 'Pinterest', href: '' },
 ] as const
 
 export type SocialId = (typeof socialLinks)[number]['id']

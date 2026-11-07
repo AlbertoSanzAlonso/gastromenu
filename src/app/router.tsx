@@ -15,6 +15,7 @@ import { AdminLayout } from '@/pages/admin/AdminLayout'
 import { AdminTeamPage } from '@/pages/admin/AdminTeamPage'
 import { AtrilesPage } from '@/pages/AtrilesPage'
 import { AvisoLegalPage } from '@/pages/AvisoLegalPage'
+import { BlogArticlePage } from '@/pages/BlogArticlePage'
 import { BlogPage } from '@/pages/BlogPage'
 import { CartasPage } from '@/pages/CartasPage'
 import { ContactPage } from '@/pages/ContactPage'
@@ -59,6 +60,11 @@ export const router = createBrowserRouter([
         path: 'blog',
         loader: () => loadDossierPage('blog', blogPage),
         element: <BlogPage />,
+      },
+      {
+        path: 'blog/:slug',
+        loader: () => loadDossierPage('blog', blogPage),
+        element: <BlogArticlePage />,
       },
       { path: 'contacto', element: <ContactPage /> },
       { path: 'aviso-legal', element: <AvisoLegalPage /> },

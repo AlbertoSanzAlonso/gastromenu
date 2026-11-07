@@ -42,7 +42,17 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-10 max-w-3xl mx-auto slide-frame p-8 md:p-10 bg-ink-soft/40">
+    <form onSubmit={handleSubmit} className="relative space-y-10 max-w-3xl mx-auto slide-frame p-8 md:p-10 bg-ink-soft/40">
+      <div className="absolute -left-[9999px] h-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="companyWebsite">Sitio web</label>
+        <input
+          id="companyWebsite"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.companyWebsite}
+          onChange={(e) => updateField('companyWebsite', e.target.value)}
+        />
+      </div>
       {error && (
         <p className="text-red-300 text-sm font-label" role="alert">
           {error}

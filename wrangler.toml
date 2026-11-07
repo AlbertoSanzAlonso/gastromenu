@@ -11,3 +11,15 @@ migrations_dir = "migrations"
 [[r2_buckets]]
 binding = "MEDIA"
 bucket_name = "gastromenu-media"
+
+# El formulario solo puede escribir a info@cartasmenu.com.
+# El remitente tiene que ser una dirección del dominio dado de alta en Email Service.
+[vars]
+CONTACT_TO = "info@cartasmenu.com"
+CONTACT_FROM = "consultas@gastromenupremium.com"
+CONTACT_FROM_NAME = "GastroMenú Premium"
+
+[[send_email]]
+name = "EMAIL"
+destination_address = "info@cartasmenu.com"
+allowed_sender_addresses = ["consultas@gastromenupremium.com"]

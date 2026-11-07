@@ -14,6 +14,7 @@ interface ContactFormState {
   interests: string[]
   message: string
   privacyAccepted: boolean
+  companyWebsite: string
 }
 
 const initialState: ContactFormState = {
@@ -27,6 +28,7 @@ const initialState: ContactFormState = {
   interests: [],
   message: '',
   privacyAccepted: false,
+  companyWebsite: '',
 }
 
 export function useContactForm() {
@@ -70,15 +72,32 @@ export function useContactForm() {
     }
 
     try {
-      if (isSupabaseConfigured && supabase) {
-        const { error: dbError } = await supabase
-          .from('contact_inquiries')
-          .insert(payload)
+      const response = await fetch(contactEndpoint(), {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          establishmentName: form.establishmentName,
+          establishmentType: form.establishmentType,
+          firstName: form.firstName,
+          lastName: form.lastName,
+          phone: form.phone,
+          address: form.address,
+          email: form.email,
+          interests: form.interests,
+          message: form.message,
+          privacyAccepted: form.privacyAccepted,
+          companyWebsite: form.companyWebsite,
+        }),
+      })
 
-        if (dbError) throw dbError
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 800))
-        console.info('Consulta (modo demo):', payload)
+      if (!response.ok) {
+        const code = await readErrorCode(response)
+        throw new Error(code === 'invalid' ? m.form.errorInvalid : m.form.error)
+      }
+
+      if (isSupabaseConfigured && supabase) {
+        const { error: dbError } = await supabase.from('contact_inquiries').insert(payload)
+        if (dbError) console.error('La consulta se envió, pero no quedó guardada', dbError.message)
       }
 
       setSuccess(true)
@@ -100,4 +119,22 @@ export function useContactForm() {
     error,
     resetSuccess: () => setSuccess(false),
   }
+}
+
+function contactEndpoint() {
+  const configured = import.meta.env.VITE_CONTENT_API?.trim()
+  if (!configured) return '/api/contact'
+  return `${configured.replace(/\/$/, '')}/api/contact`
+}
+
+async function readErrorCode(response: Response) {
+  try {
+    const data: unknown = await response.json()
+    if (data && typeof data === 'object' && 'error' in data && data.error === 'invalid') {
+      return 'invalid'
+    }
+  } catch {
+    return 'send'
+  }
+  return 'send'
 }

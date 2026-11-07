@@ -70,7 +70,7 @@ export const dossierSeo = {
     path: '/blog',
     title: 'Blog',
     description:
-      'Comentarios, sugerencias y consejos de GastroMenú Premium sobre cartas, portamenús y manteles. Los artículos irán llegando a esta sección.',
+      'Consejos de GastroMenú Premium para elaborar cartas, cuidar los materiales, elegir portamenús y diseñar mensajes y manteles.',
   },
 } satisfies Record<string, SeoCopy & { path: string }>
 
@@ -150,6 +150,51 @@ export const publicPages: readonly PublicPage[] = [
     imageDirs: [],
   },
   {
+    path: '/blog/elaboracion',
+    title: 'Elaboración de cartas',
+    description:
+      'Cómo ordenar una carta según el local, la oferta y la frecuencia con la que cambia: formato, jerarquía, idiomas y páginas intercambiables.',
+    changefreq: 'monthly',
+    priority: '0.6',
+    imageDirs: [],
+  },
+  {
+    path: '/blog/cuidado',
+    title: 'Cuidados y mantenimiento',
+    description:
+      'Cómo alargar la vida de las cartas: limpieza, sol, humedad, recambios y revisión de tornillos, esquineros y elásticos.',
+    changefreq: 'monthly',
+    priority: '0.6',
+    imageDirs: [],
+  },
+  {
+    path: '/blog/portamenu',
+    title: 'Elección de portamenús',
+    description:
+      'Cómo elegir el atril según el punto de lectura: entrada, barra o mesa, con la altura, la luz y el material del local.',
+    changefreq: 'monthly',
+    priority: '0.6',
+    imageDirs: [],
+  },
+  {
+    path: '/blog/neuromarketing',
+    title: 'Diseño de los mensajes',
+    description:
+      'Cómo ordenar los mensajes de la carta para que se recorran: apertura, cierre, un solo acento y precios que no tapen el plato.',
+    changefreq: 'monthly',
+    priority: '0.6',
+    imageDirs: [],
+  },
+  {
+    path: '/blog/diseno-manteles',
+    title: 'Diseño de los manteles',
+    description:
+      'Cómo diseñar un mantel que se lea en la mesa: una función, poco texto, contraste y un mensaje fuera de la zona del plato.',
+    changefreq: 'monthly',
+    priority: '0.6',
+    imageDirs: [],
+  },
+  {
     path: '/contacto',
     title: contactSeo.title,
     description: contactSeo.description,
@@ -216,7 +261,13 @@ export function buildJsonLd(input: {
   const homeLabel = input.locale === 'en' ? 'Home' : 'Inicio'
   const sameAs = socialLinks.map((link) => link.href).filter((href) => href.length > 0)
   const pageType =
-    input.path === '/contacto' ? 'ContactPage' : input.path === '/blog' ? 'Blog' : 'WebPage'
+    input.path === '/contacto'
+      ? 'ContactPage'
+      : input.path === '/blog'
+        ? 'Blog'
+        : input.path.startsWith('/blog/')
+          ? 'BlogPosting'
+          : 'WebPage'
 
   const business = {
     '@type': ['LocalBusiness', 'Manufacturer'],
@@ -296,23 +347,42 @@ export function buildJsonLd(input: {
   const graph: Record<string, unknown>[] = [business, website, webPage]
 
   if (input.path !== '/') {
+    const crumbs = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: homeLabel,
+        item: `${SITE_URL}/`,
+      },
+      ...(input.path.startsWith('/blog/')
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Blog',
+              item: `${SITE_URL}/blog`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: input.crumb,
+              item: url,
+            },
+          ]
+        : [
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: input.crumb,
+              item: url,
+            },
+          ]),
+    ]
+
     graph.push({
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: homeLabel,
-          item: `${SITE_URL}/`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: input.crumb,
-          item: url,
-        },
-      ],
+      itemListElement: crumbs,
     })
   }
 

@@ -304,6 +304,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://gastromenupremium.com/blog/elaboracion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gastromenupremium.com/blog/cuidado</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gastromenupremium.com/blog/portamenu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gastromenupremium.com/blog/neuromarketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gastromenupremium.com/blog/diseno-manteles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://gastromenupremium.com/contacto</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

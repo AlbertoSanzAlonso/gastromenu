@@ -1,8 +1,8 @@
 import { Link, useLoaderData } from 'react-router-dom'
 import type { DossierPageContent } from '@/data/dossierTypes'
+import { dossierImageUrl } from '@/data/dossierTypes'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { BrandDivider } from '@/components/ui/BrandDivider'
-import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { GoldText } from '@/components/ui/GoldText'
 import { Section } from '@/components/ui/Section'
@@ -31,23 +31,35 @@ export function BlogPage() {
       </section>
 
       <Section variant="light" ariaLabel={m.blog.topics}>
-        <div className="grid md:grid-cols-2 gap-6">
-          {content.sections.map((topic, index) => (
-            <article key={topic.id} className="slide-frame px-8 py-7">
-              <p className="slide-label text-[10px] mb-4">0{index + 1}</p>
-              <h2 className="slide-heading text-2xl mb-3">{topic.title}</h2>
-              <p className="slide-body text-base">{topic.paragraphs[0]}</p>
-            </article>
-          ))}
-        </div>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+          {content.sections.map((topic) => {
+            const image = topic.images[0]
+            const title = [topic.title, topic.emphasis].filter(Boolean).join(' ')
 
-        <div className="mt-16 text-center">
-          <p className="slide-body mb-8">
-            {m.blog.meanwhile}
-          </p>
-          <Link to="/contacto" className="inline-block cursor-pointer">
-            <Button size="lg">{m.blog.contact}</Button>
-          </Link>
+            return (
+              <article key={topic.id} className="slide-frame flex h-full flex-col overflow-hidden bg-beige-50">
+                <Link to={`/blog/${topic.id}`} className="group flex h-full cursor-pointer flex-col">
+                  {image && (
+                    <div className="aspect-[16/10] overflow-hidden bg-ink-muted">
+                      <img
+                        src={dossierImageUrl(image)}
+                        alt={image.caption}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.04]"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col px-7 py-7 md:px-8">
+                    <p className="slide-label text-[10px] mb-4">{topic.kicker}</p>
+                    <h2 className="slide-heading text-2xl md:text-3xl mb-3 text-balance">{title}</h2>
+                    <p className="slide-body text-base line-clamp-3">{topic.paragraphs[0]}</p>
+                    <span className="slide-label mt-6 text-[10px] text-gold-slide">{m.blog.read}</span>
+                  </div>
+                </Link>
+              </article>
+            )
+          })}
         </div>
       </Section>
 
