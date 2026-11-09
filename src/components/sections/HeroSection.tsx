@@ -115,7 +115,7 @@ export function HeroSection() {
 
       <Container className="relative z-10 w-full py-12 md:py-16">
         <div className="hero-mobile-copy mx-auto min-h-[28rem] max-w-3xl text-center md:min-h-[32rem] lg:hidden">
-          <h1 className="brand-title gold-shimmer mb-8 text-4xl md:text-6xl">GASTROMENU</h1>
+          <h1 className="brand-title gold-shimmer mb-8 text-3xl sm:text-4xl md:text-5xl">GastroMenú Premium</h1>
           <BrandDivider className="mb-8" />
           {slide && (
             <FadingCopy slide={slide}>

@@ -8,7 +8,7 @@ export const mantelesCopy: DossierCopy = {
   title: 'When the art reaches the',
   emphasis: 'table',
   lead:
-    'Personal design of high-quality paper placemats with neuromarketing. We make them in several languages and, if you wish, with photographs of your own dishes or gastronomic images from our library. Heavyweight paper, including recycled, gloss or matte. We also design children’s placemats. They form a natural barrier against the germs that live on tables.',
+    'We design rigid, flexible and disposable placemats. The design is personal, with neuromarketing, in several languages and, if you wish, with photographs of your own dishes or gastronomic images from our library. On the paper ones we use heavyweight stock, including recycled, gloss or matte. We also design children’s placemats. They form a natural barrier against the germs that live on tables.',
   sections: [
     {
       nav: 'Paper',

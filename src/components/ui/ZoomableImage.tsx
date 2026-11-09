@@ -154,6 +154,11 @@ export function ZoomableImage({
   }, [motion])
 
   useEffect(() => {
+    if (!enlarged) return
+    apply(2, 0, 0, true)
+  }, [enlarged, apply])
+
+  useEffect(() => {
     const node = viewportRef.current
     if (!node) return
 
@@ -298,11 +303,7 @@ export function ZoomableImage({
       movedRef.current = false
       return
     }
-    if (transformRef.current.scale > 1.01) {
-      apply(1, 0, 0, true)
-      return
-    }
-    if (enlargedRef.current) {
+    if (enlargedRef.current || transformRef.current.scale > 1.01) {
       collapse()
       return
     }
@@ -312,11 +313,7 @@ export function ZoomableImage({
   function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key !== 'Enter' && event.key !== ' ') return
     event.preventDefault()
-    if (transformRef.current.scale > 1.01) {
-      apply(1, 0, 0, true)
-      return
-    }
-    if (enlargedRef.current) {
+    if (enlargedRef.current || transformRef.current.scale > 1.01) {
       collapse()
       return
     }
@@ -365,7 +362,7 @@ export function ZoomableImage({
         }`}
         style={{
           transform: `${flip}translate3d(${transform.x}px, ${transform.y}px, 0) scale(${transform.scale})`,
-          transition: motion ? (motion.animate ? 'transform 500ms var(--ease-premium)' : 'none') : smooth ? 'transform 320ms var(--ease-premium)' : 'none',
+          transition: motion ? (motion.animate ? 'transform 180ms var(--ease-premium)' : 'none') : smooth ? 'transform 280ms var(--ease-premium)' : 'none',
         }}
       />
     </div>

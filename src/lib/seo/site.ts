@@ -1,6 +1,6 @@
 import { company, socialLinks } from '../../data/contact'
 
-export const SITE_NAME = 'GASTROMENU'
+export const SITE_NAME = 'GastroMenú Premium'
 export const SITE_URL = company.url
 
 export const OG_IMAGE = {
@@ -8,11 +8,11 @@ export const OG_IMAGE = {
   width: 762,
   height: 1024,
   type: 'image/jpeg',
-  alt: 'Cartas artesanales GastroMenu',
+  alt: 'Cartas artesanales GastroMenú Premium',
 } as const
 
 export const homeSeo: SeoCopy = {
-  title: 'GASTROMENU — Cartas artesanales premium',
+  title: 'GastroMenú Premium — Cartas artesanales',
   description:
     'Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998.',
 }
@@ -20,19 +20,25 @@ export const homeSeo: SeoCopy = {
 export const contactSeo: SeoCopy = {
   title: 'Contacto',
   description:
-    'Llámenos al 605 989 264 o escríbanos a info@cartasmenu.com. Oficina en Benalmádena Pueblo, Málaga. Talleres en Madrid, Málaga y Granada.',
+    'Llámenos al 952 058 319 o al 605 989 264, o escríbanos a info@cartasmenu.com. Talleres en Madrid y Málaga.',
 }
 
 export const legalNoticeSeo: SeoCopy = {
   title: 'Aviso legal',
   description:
-    'Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenu, titularidad de Fudys Gourmet SL.',
+    'Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenú Premium, titularidad de Fudys Gourmet SL.',
 }
 
 export const privacySeo: SeoCopy = {
   title: 'Política de privacidad',
   description:
-    'Información sobre el tratamiento de datos personales de GastroMenu, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD.',
+    'Información sobre el tratamiento de datos personales de GastroMenú Premium, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD.',
+}
+
+export const salesTermsSeo: SeoCopy = {
+  title: 'Condiciones de venta',
+  description:
+    'Presupuesto, señal, plazos de elaboración y garantía de los encargos de GastroMenú Premium, titularidad de Fudys Gourmet SL.',
 }
 
 export const dossierSeo = {
@@ -214,6 +220,14 @@ export const publicPages: readonly PublicPage[] = [
     path: '/privacidad',
     title: privacySeo.title,
     description: privacySeo.description,
+    changefreq: 'yearly',
+    priority: '0.3',
+    imageDirs: [],
+  },
+  {
+    path: '/condiciones-de-venta',
+    title: salesTermsSeo.title,
+    description: salesTermsSeo.description,
     changefreq: 'yearly',
     priority: '0.3',
     imageDirs: [],

@@ -23,6 +23,7 @@ import { ExclusividadesPage } from '@/pages/ExclusividadesPage'
 import { HomePage } from '@/pages/HomePage'
 import { MantelesPage } from '@/pages/MantelesPage'
 import { NosotrosPage } from '@/pages/NosotrosPage'
+import { CondicionesVentaPage } from '@/pages/CondicionesVentaPage'
 import { PrivacidadPage } from '@/pages/PrivacidadPage'
 
 export const router = createBrowserRouter([
@@ -69,6 +70,8 @@ export const router = createBrowserRouter([
       { path: 'contacto', element: <ContactPage /> },
       { path: 'aviso-legal', element: <AvisoLegalPage /> },
       { path: 'privacidad', element: <PrivacidadPage /> },
+      { path: 'condiciones', element: <CondicionesVentaPage /> },
+      { path: 'condiciones-de-venta', element: <CondicionesVentaPage /> },
     ],
   },
   {

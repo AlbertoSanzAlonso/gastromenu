@@ -50,10 +50,6 @@ export function PrivacidadPage() {
             'La constancia de que ha aceptado esta política.',
           ]}
         />
-        <p>
-          No solicitamos categorías especiales de datos. Le pedimos que no incluya en el mensaje
-          información de salud, ideología u otros datos que no sean necesarios para el presupuesto.
-        </p>
       </LegalSection>
 
       <LegalSection title="Para qué los usamos">

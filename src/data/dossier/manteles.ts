@@ -9,7 +9,7 @@ export const mantelesPage: DossierPageContent = {
   title: 'Cuando el arte llega a la',
   emphasis: 'mesa',
   lead:
-    'Diseño personalizado de manteles de papel de alta calidad con neuromárketing. Los elaboramos en varios idiomas y, si lo desea, con fotografías de sus propios platos o con imágenes gastronómicas de nuestro banco de imágenes. Papel de alto gramaje, incluso reciclado, en brillo o en mate. También diseñamos manteles infantiles. Forman una barrera natural contra los gérmenes que existen en las mesas.',
+    'Diseñamos manteles rígidos, flexibles y descartables. El diseño es personalizado, con neuromárketing, en varios idiomas y, si lo desea, con fotografías de sus propios platos o con imágenes gastronómicas de nuestro banco de imágenes. En los de papel usamos alto gramaje, incluso reciclado, en brillo o en mate. También diseñamos manteles infantiles. Forman una barrera natural contra los gérmenes que existen en las mesas.',
   sections: [
     {
       id: 'papel',

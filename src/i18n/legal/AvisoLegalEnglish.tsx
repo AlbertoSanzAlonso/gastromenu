@@ -32,7 +32,7 @@ export function AvisoLegalEnglish() {
           {company.domain} presents the activity of {company.brand}: the design, manufacture and
           sale of menus, paper placemats, menu stands and other bespoke work for hospitality. The
           information is commercial and informative. A commission is formed when both parties accept
-          the quote and the specific terms of that order.
+          the quote and the <Link to="/condiciones-de-venta">conditions of sale</Link>.
         </p>
       </LegalSection>
 
@@ -102,6 +102,7 @@ export function AvisoLegalEnglish() {
           of Málaga, unless consumer rules impose another forum.
         </p>
         <LegalCrossLink to="/privacidad">Privacy policy</LegalCrossLink>
+        <LegalCrossLink to="/condiciones-de-venta">Conditions of sale</LegalCrossLink>
       </LegalSection>
     </LegalDocument>
   )

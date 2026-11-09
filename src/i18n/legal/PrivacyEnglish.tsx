@@ -40,10 +40,6 @@ export function PrivacyEnglish() {
             'The record that you have accepted this policy.',
           ]}
         />
-        <p>
-          We do not ask for special categories of data. Please do not include in the message
-          information about health, ideology or other data that are not needed for the quote.
-        </p>
       </LegalSection>
 
       <LegalSection title="What we use them for">

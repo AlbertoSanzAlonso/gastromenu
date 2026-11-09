@@ -1,4 +1,4 @@
-import { contactSeo, homeSeo, legalNoticeSeo, privacySeo } from '@/lib/seo/site'
+import { contactSeo, homeSeo, legalNoticeSeo, privacySeo, salesTermsSeo } from '@/lib/seo/site'
 
 const es = {
   language: {
@@ -7,7 +7,7 @@ const es = {
     en: 'English',
   },
   nav: {
-    home: 'GastroMenu - Inicio',
+    home: 'GastroMenú Premium - Inicio',
     open: 'Abrir menú',
     close: 'Cerrar menú',
     primary: 'Navegación principal',
@@ -82,8 +82,8 @@ const es = {
     collectionCards: [
       { title: 'Cartas menú', description: 'Tapas duras, piel, tejidos y madera' },
       { title: 'Atriles portamenú', description: 'De pie, de pared y retroiluminados' },
-      { title: 'Manteles', description: 'De papel y rígidos lacados a mano' },
-      { title: 'Exclusividades', description: 'Porta cuentas y porta adiciones' },
+      { title: 'Manteles', description: 'Rígidos, flexibles y descartables' },
+      { title: 'Exclusividades', description: 'Porta cuentas' },
     ],
     aboutLabel: 'Sobre nosotros',
     aboutSubtitle: '28 años de experiencia',
@@ -93,7 +93,7 @@ const es = {
     values: [
       { title: 'Nuestra historia', description: '28 años de experiencia.' },
       { title: 'Lo que hacemos', description: 'Cartas, manteles y portamenús.' },
-      { title: 'Cómo trabajamos', description: 'Diseño personalizado y fabricación artesanal.' },
+      { title: 'Cómo trabajamos', description: 'Diseño personalizado y elaboración artesanal.' },
       {
         title: 'Nuestro compromiso',
         description: 'Calidad, materiales, durabilidad y atención personalizada.',
@@ -104,12 +104,16 @@ const es = {
     teamTitleBefore: 'Artesanía y',
     teamTitleAccent: 'dedicación',
     teamStep: 'Paso',
-    teamSteps: ['In situ', 'Estudio', 'Retoque', 'Acabado', 'Equipo'],
+    teamSteps: ['In situ', 'Alérgenos', 'Traducción', 'Retoque', 'Acabado', 'Equipo'],
     teamMembers: [
       { title: 'Toma de fotografías in situ', description: '' },
-      { title: 'Toma de fotografías en estudio', description: '' },
-      { title: 'Control y retoque fotográfico', description: '' },
-      { title: 'Ajuste de tornillos y acabado artesanal', description: '' },
+      { title: 'Colocación de alérgenos oficiales, plato por plato', description: '' },
+      { title: 'Traducciones profesionales por traductores reales', description: '' },
+      {
+        title: 'Control y retoque fotográfico',
+        description: 'Completo banco de imágenes gastronómicas',
+      },
+      { title: 'Acabado artesanal por maestros encuadernadores', description: '' },
       { title: 'Un gran equipo a su disposición', description: 'Desde 1998 al servicio de la hostelería' },
     ],
     ctaLabel: 'Llamada a la acción',
@@ -124,7 +128,7 @@ const es = {
     heroTitle: 'La excelencia\ncomo destino',
     heroQuote: 'A veces una primera impresión es la que queda para siempre…',
     about:
-      'En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.\n\nDiseñamos y fabricamos cartas de menú, manteles personalizados tanto rígidos como descartables y atriles portamenús de acero, que combinan diseño, artesanía y materiales de alta calidad. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.\n\nPor eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.\n\n28 años de experiencia. Diseño personalizado. Fabricación artesanal.',
+      'En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.\n\nDiseñamos y elaboramos artesanalmente cartas de menú, manteles personalizados rígidos, flexibles y descartables y atriles personalizados, fabricados en acero galvanizado, con pantallas luminosas de alto impacto visual. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.\n\nPor eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.\n\n28 años de experiencia. Diseño personalizado. Elaboración artesanal.',
   },
   footer: {
     tagline: 'Cartas artesanales premium para el alma de tu negocio.',
@@ -137,6 +141,7 @@ const es = {
     rights: 'Todos los derechos reservados.',
     legal: 'Aviso legal',
     privacy: 'Política de privacidad',
+    terms: 'Condiciones de venta',
   },
   cookies: {
     label: 'Cookies',
@@ -186,22 +191,25 @@ const es = {
     types: [
       { value: 'Franquicias / Cadenas', label: 'Franquicias / Cadenas' },
       { value: 'Restaurante', label: 'Restaurante' },
+      { value: 'Restaurante de playa', label: 'Restaurante de playa' },
+      { value: 'Beach club', label: 'Beach club' },
+      { value: 'Hotel', label: 'Hotel' },
       { value: 'Pizzería', label: 'Pizzería' },
-      { value: 'Cafetería', label: 'Cafetería' },
-      { value: 'Bar', label: 'Bar' },
       { value: 'Otro', label: 'Otro' },
     ],
     interests: [
       { value: 'Cartas menú (vinos, postres, etc.)', label: 'Cartas menú (vinos, postres, etc.)' },
-      { value: 'Manteles descartables', label: 'Manteles descartables' },
+      { value: 'Manteles descartables', label: 'Manteles rígidos, flexibles y descartables' },
       { value: 'Interiorismos / luminosos', label: 'Interiorismos / luminosos' },
-      { value: 'Portamenús', label: 'Portamenús' },
+      { value: 'Atriles portamenús', label: 'Atriles portamenús' },
     ],
   },
   dossier: {
     sections: 'Secciones',
     more: 'Leer más',
     less: 'Leer menos',
+    callNow: 'Llámenos ahora',
+    whatsappNow: 'WhatsApp',
   },
   blog: {
     topics: 'Artículos',
@@ -246,6 +254,10 @@ const es = {
     privacyHeading: 'Política de',
     privacyAccent: 'privacidad',
     privacyDescription: privacySeo.description,
+    termsTitle: salesTermsSeo.title,
+    termsHeading: 'Condiciones de',
+    termsAccent: 'venta',
+    termsDescription: salesTermsSeo.description,
   },
 }
 
@@ -256,7 +268,7 @@ const en: typeof es = {
     en: 'English',
   },
   nav: {
-    home: 'GastroMenu - Home',
+    home: 'GastroMenú Premium - Home',
     open: 'Open menu',
     close: 'Close menu',
     primary: 'Main navigation',
@@ -273,11 +285,11 @@ const en: typeof es = {
     note: 'Because excellence is also served at the table.',
   },
   seo: {
-    homeTitle: 'GASTROMENU — Handcrafted premium menus',
+    homeTitle: 'GastroMenú Premium — Handcrafted menus',
     homeDescription: 'Handcrafted menus, placemats and menu stands. Made in-house since 1998.',
     contactTitle: 'Contact',
     contactDescription:
-      'Call us on 605 989 264 or write to info@cartasmenu.com. Office in Benalmádena Pueblo, Málaga. Workshops in Madrid, Málaga and Granada.',
+      'Call us on 952 058 319 or on 605 989 264, or write to info@cartasmenu.com. Workshops in Madrid and Málaga.',
     locale: 'en_GB',
   },
   hero: {
@@ -332,8 +344,8 @@ const en: typeof es = {
     collectionCards: [
       { title: 'Menus', description: 'Hard covers, leather, fabrics and wood' },
       { title: 'Menu stands', description: 'Freestanding, wall-mounted and backlit' },
-      { title: 'Placemats', description: 'Paper, and rigid mats lacquered by hand' },
-      { title: 'Exclusives', description: 'Bill presenters and addition holders' },
+      { title: 'Placemats', description: 'Rigid, flexible and disposable' },
+      { title: 'Exclusives', description: 'Bill presenters' },
     ],
     aboutLabel: 'About us',
     aboutSubtitle: '28 years of experience',
@@ -343,7 +355,7 @@ const en: typeof es = {
     values: [
       { title: 'Our history', description: '28 years of experience.' },
       { title: 'What we make', description: 'Menus, placemats and menu stands.' },
-      { title: 'How we work', description: 'Personal design and handcrafted manufacture.' },
+      { title: 'How we work', description: 'Personal design and handcrafted making.' },
       {
         title: 'Our commitment',
         description: 'Quality, materials, durability and personal attention.',
@@ -354,12 +366,16 @@ const en: typeof es = {
     teamTitleBefore: 'Craft and',
     teamTitleAccent: 'devotion',
     teamStep: 'Step',
-    teamSteps: ['On site', 'Studio', 'Retouch', 'Finish', 'Team'],
+    teamSteps: ['On site', 'Allergens', 'Translation', 'Retouch', 'Finish', 'Team'],
     teamMembers: [
       { title: 'Photography on site', description: '' },
-      { title: 'Studio photography', description: '' },
-      { title: 'Photographic control and retouching', description: '' },
-      { title: 'Setting the screws and the hand finish', description: '' },
+      { title: 'Official allergens, placed dish by dish', description: '' },
+      { title: 'Professional translations by real translators', description: '' },
+      {
+        title: 'Photographic control and retouching',
+        description: 'A complete bank of gastronomic images',
+      },
+      { title: 'Hand finish by master bookbinders', description: '' },
       { title: 'A team at your disposal', description: 'Serving hospitality since 1998' },
     ],
     ctaLabel: 'Call to action',
@@ -374,7 +390,7 @@ const en: typeof es = {
     heroTitle: 'Excellence\nas destination',
     heroQuote: 'Sometimes a first impression is the one that lasts forever…',
     about:
-      'At GastroMenú Premium we have spent 28 years working for restaurants that know every detail counts.\n\nWe design and make menus, custom placemats —both rigid and disposable— and steel menu stands, combining design, craft and high-quality materials. Leather, faux leather, fabrics, selected woods, rigid covers, Alubond and steel are some of the materials we use to shape solutions made specifically for hospitality.\n\nThat is why we develop personal products that do more than serve a function: they communicate the character of the house, strengthen its identity and help create a coherent experience from the first contact.\n\n28 years of experience. Personal design. Handcrafted manufacture.',
+      'At GastroMenú Premium we have spent 28 years working for restaurants that know every detail counts.\n\nWe design and craft by hand menus, custom placemats —rigid, flexible and disposable— and personal menu stands, made in galvanised steel, with luminous screens of high visual impact. Leather, faux leather, fabrics, selected woods, rigid covers, Alubond and steel are some of the materials we use to shape solutions made specifically for hospitality.\n\nThat is why we develop personal products that do more than serve a function: they communicate the character of the house, strengthen its identity and help create a coherent experience from the first contact.\n\n28 years of experience. Personal design. Handcrafted making.',
   },
   footer: {
     tagline: 'Premium handcrafted menus for the soul of your business.',
@@ -387,6 +403,7 @@ const en: typeof es = {
     rights: 'All rights reserved.',
     legal: 'Legal notice',
     privacy: 'Privacy policy',
+    terms: 'Conditions of sale',
   },
   cookies: {
     label: 'Cookies',
@@ -436,22 +453,25 @@ const en: typeof es = {
     types: [
       { value: 'Franquicias / Cadenas', label: 'Franchises / Chains' },
       { value: 'Restaurante', label: 'Restaurant' },
+      { value: 'Restaurante de playa', label: 'Beach restaurant' },
+      { value: 'Beach club', label: 'Beach club' },
+      { value: 'Hotel', label: 'Hotel' },
       { value: 'Pizzería', label: 'Pizzeria' },
-      { value: 'Cafetería', label: 'Café' },
-      { value: 'Bar', label: 'Bar' },
       { value: 'Otro', label: 'Other' },
     ],
     interests: [
       { value: 'Cartas menú (vinos, postres, etc.)', label: 'Menus (wines, desserts and more)' },
-      { value: 'Manteles descartables', label: 'Disposable placemats' },
+      { value: 'Manteles descartables', label: 'Rigid, flexible and disposable placemats' },
       { value: 'Interiorismos / luminosos', label: 'Interiors / illuminated pieces' },
-      { value: 'Portamenús', label: 'Menu stands' },
+      { value: 'Atriles portamenús', label: 'Menu stands' },
     ],
   },
   dossier: {
     sections: 'Sections',
     more: 'Read more',
     less: 'Read less',
+    callNow: 'Call us now',
+    whatsappNow: 'WhatsApp',
   },
   blog: {
     topics: 'Articles',
@@ -492,12 +512,17 @@ const en: typeof es = {
     noticeHeading: 'Legal',
     noticeAccent: 'notice',
     noticeDescription:
-      'Identifying details, terms of use and intellectual property of the GastroMenu site, owned by Fudys Gourmet SL.',
+      'Identifying details, terms of use and intellectual property of the GastroMenú Premium site, owned by Fudys Gourmet SL.',
     privacyTitle: 'Privacy policy',
     privacyHeading: 'Privacy',
     privacyAccent: 'policy',
     privacyDescription:
-      'How GastroMenu, owned by Fudys Gourmet SL, processes personal data under the GDPR and the Spanish LOPDGDD.',
+      'How GastroMenú Premium, owned by Fudys Gourmet SL, processes personal data under the GDPR and the Spanish LOPDGDD.',
+    termsTitle: 'Conditions of sale',
+    termsHeading: 'Conditions of',
+    termsAccent: 'sale',
+    termsDescription:
+      'Quotes, deposits, making times and warranty for commissions from GastroMenú Premium, owned by Fudys Gourmet SL.',
   },
 }
 

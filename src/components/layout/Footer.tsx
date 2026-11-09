@@ -24,20 +24,18 @@ export function Footer() {
       <div aria-hidden className="section-watermark-overlay section-watermark-overlay--footer" />
 
       <Container className="relative z-[2]">
-        <div className="grid md:grid-cols-3 gap-12 md:gap-8">
-          <div>
-            <BrandLogo
-              variant="lockup"
-              className="mb-4 h-28 w-auto max-w-[16rem] object-contain object-left opacity-95 md:h-32"
-            />
-            <BrandDivider className="!mx-0 !max-w-[8rem] mb-4" />
-            <p className="slide-body text-sm !text-left leading-relaxed max-w-xs">
-              {m.footer.tagline}
-            </p>
-            <SocialLinks compact className="mt-8" />
-          </div>
+        <div className="mx-auto flex max-w-xl flex-col items-center text-center">
+          <BrandLogo
+            variant="lockup"
+            className="mb-4 h-28 w-auto max-w-[16rem] object-contain opacity-95 md:h-32"
+          />
+          <BrandDivider className="mb-4" />
+          <p className="slide-body text-sm leading-relaxed">{m.footer.tagline}</p>
+          <SocialLinks compact className="mt-8 justify-center" />
+        </div>
 
-          <div>
+        <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-8">
+          <div className="md:text-left">
             <p className="slide-label text-[10px] mb-6">{m.footer.navigation}</p>
             <ul className="space-y-3">
               {m.nav.links.map((link) => (
@@ -79,15 +77,6 @@ export function Footer() {
           >
             {company.email}
           </a>
-          <a
-            href={company.office.maps}
-            target="_blank"
-            rel="noreferrer"
-            className="font-serif text-sm font-light leading-relaxed text-cream-muted transition-colors hover:text-gold-slide"
-          >
-            {company.office.street}
-            <span className="mt-1 block">{company.office.city}</span>
-          </a>
           <p className="slide-label text-[10px]">
             {m.footer.workshops} {company.workshops.places.join(', ')}
           </p>
@@ -107,7 +96,7 @@ export function Footer() {
         </p>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="slide-label text-[10px]">© {year} GastroMenu. {m.footer.rights}</p>
+          <p className="slide-label text-[10px]">© {year} GastroMenú Premium. {m.footer.rights}</p>
           <p className="slide-label text-[10px]">
             <Link to="/aviso-legal" className="transition-colors hover:text-gold-highlight">
               {m.footer.legal}
@@ -115,6 +104,10 @@ export function Footer() {
             <span className="mx-2 text-gold-slide/40">·</span>
             <Link to="/privacidad" className="transition-colors hover:text-gold-highlight">
               {m.footer.privacy}
+            </Link>
+            <span className="mx-2 text-gold-slide/40">·</span>
+            <Link to="/condiciones-de-venta" className="transition-colors hover:text-gold-highlight">
+              {m.footer.terms}
             </Link>
           </p>
         </div>

@@ -9,7 +9,7 @@ export function AdminLayout() {
   return (
     <AdminAuthProvider>
       <Helmet>
-        <title>Backoffice | GASTROMENU</title>
+        <title>Backoffice | GastroMenú Premium</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <AdminGate />

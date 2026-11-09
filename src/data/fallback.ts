@@ -20,7 +20,7 @@ export const fallbackCategories: GalleryCategory[] = [
   {
     id: '3',
     slug: 'portamenus',
-    title: 'Portamenú de acero con pantalla flexible',
+    title: 'Atril portamenú de acero con pantalla flexible',
     subtitle: 'Tecnología e iluminación premium',
     sort_order: 3,
     created_at: '',
@@ -28,8 +28,8 @@ export const fallbackCategories: GalleryCategory[] = [
   {
     id: '4',
     slug: 'adiciones',
-    title: 'Porta adiciones personalizados',
-    subtitle: 'Tejido, piel o semipiel en varios colores',
+    title: 'Porta cuentas personalizados',
+    subtitle: 'Tejido o semipiel en varios colores',
     sort_order: 4,
     created_at: '',
   },
@@ -57,30 +57,32 @@ export const fallbackGalleryItems: GalleryItem[] = [
   { id: 'p1', category_id: '3', title: 'Elegante curvatura en acero', description: null, image_url: '/images/gallery/artesania-coleccion.png', sort_order: 1, featured: true, created_at: '' },
   { id: 'p2', category_id: '3', title: 'Portamenú con 3 iluminaciones', description: null, image_url: '/images/gallery/gastromenu-brand.png', sort_order: 2, featured: true, created_at: '' },
   { id: 'p3', category_id: '3', title: 'Logo soldado a mano', description: null, image_url: '/images/gallery/asador-carne.jpg', sort_order: 3, featured: false, created_at: '' },
-  { id: 'a1', category_id: '4', title: 'Porta adiciones con logo grabado', description: 'Tejido, piel o semipiel', image_url: '/images/gallery/bistrobar-triptico.jpg', sort_order: 1, featured: true, created_at: '' },
+  { id: 'a1', category_id: '4', title: 'Porta cuentas con logo grabado', description: 'Tejido o semipiel', image_url: '/images/gallery/bistrobar-triptico.jpg', sort_order: 1, featured: true, created_at: '' },
   { id: 'b1', category_id: '5', title: 'Diseño personalizado, elegante y versátil', description: '3 mm de grosor, robusto y lavable', image_url: '/images/gallery/angus-sirloin.jpg', sort_order: 1, featured: true, created_at: '' },
 ]
 
 export const fallbackTeam: TeamMember[] = [
   { id: 't1', title: 'Toma de fotografías in situ', description: null, image_url: null, sort_order: 1, created_at: '' },
-  { id: 't2', title: 'Toma de fotografías en estudio', description: null, image_url: null, sort_order: 2, created_at: '' },
-  { id: 't3', title: 'Control y retoque fotográfico', description: null, image_url: null, sort_order: 3, created_at: '' },
-  { id: 't4', title: 'Ajuste de tornillos y acabado artesanal', description: null, image_url: null, sort_order: 4, created_at: '' },
-  { id: 't5', title: 'Un gran equipo a su disposición', description: 'Desde 1998 al servicio de la hostelería', image_url: null, sort_order: 5, created_at: '' },
+  { id: 't2', title: 'Colocación de alérgenos oficiales, plato por plato', description: null, image_url: null, sort_order: 2, created_at: '' },
+  { id: 't3', title: 'Traducciones profesionales por traductores reales', description: null, image_url: null, sort_order: 3, created_at: '' },
+  { id: 't4', title: 'Control y retoque fotográfico', description: 'Completo banco de imágenes gastronómicas', image_url: null, sort_order: 4, created_at: '' },
+  { id: 't5', title: 'Acabado artesanal por maestros encuadernadores', description: null, image_url: null, sort_order: 5, created_at: '' },
+  { id: 't6', title: 'Un gran equipo a su disposición', description: 'Desde 1998 al servicio de la hostelería', image_url: null, sort_order: 6, created_at: '' },
 ]
 
 export const establishmentTypes = [
   'Franquicias / Cadenas',
   'Restaurante',
+  'Restaurante de playa',
+  'Beach club',
+  'Hotel',
   'Pizzería',
-  'Cafetería',
-  'Bar',
   'Otro',
 ] as const
 
 export const interestOptions = [
   'Cartas menú (vinos, postres, etc.)',
-  'Manteles descartables',
+  'Manteles rígidos, flexibles y descartables',
   'Interiorismos / luminosos',
-  'Portamenús',
+  'Atriles portamenús',
 ] as const

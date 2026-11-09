@@ -13,6 +13,7 @@ interface LegalDocumentProps {
   accent: string
   description: string
   path: string
+  updated?: string
   children: ReactNode
 }
 
@@ -22,6 +23,7 @@ export function LegalDocument({
   accent,
   description,
   path,
+  updated,
   children,
 }: LegalDocumentProps) {
   const { m } = useMessages()
@@ -36,7 +38,7 @@ export function LegalDocument({
 
         <article className="mx-auto -mt-8 max-w-3xl">
           <p className="slide-label mb-14 text-center text-[10px] !tracking-[0.16em] sm:!tracking-[0.28em]">
-            {m.legal.updated}
+            {updated ?? m.legal.updated}
           </p>
           <div className="space-y-12">{children}</div>
         </article>

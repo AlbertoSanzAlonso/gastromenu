@@ -40,18 +40,6 @@ export function ContactDetails() {
         <article className="p-8">
           <p className="slide-label mb-5">{m.contact.where}</p>
           <p className="font-label text-[10px] uppercase tracking-[0.22em] text-cream-muted">
-            {m.contact.office}
-          </p>
-          <a
-            href={company.office.maps}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-3 block font-serif text-base leading-snug text-cream transition-colors hover:text-gold-slide sm:text-lg"
-          >
-            <span className="block whitespace-nowrap">{company.office.street}</span>
-            <span className="mt-1 block text-cream-muted">{company.office.city}</span>
-          </a>
-          <p className="mt-6 font-label text-[10px] uppercase tracking-[0.22em] text-cream-muted">
             {m.contact.workshops}
           </p>
           <p className="mt-3 font-serif text-lg text-cream">

@@ -1,7 +1,7 @@
 export const company = {
   legalName: 'Fudys Gourmet SL',
   cif: 'B06899389',
-  brand: 'GASTROMENU',
+  brand: 'GastroMenú Premium',
   domain: 'gastromenupremium.com',
   url: 'https://gastromenupremium.com',
   email: 'info@cartasmenu.com',
@@ -17,7 +17,7 @@ export const company = {
     'O escríbanos para indicarnos sus necesidades. Nos pondremos en contacto lo antes posible.',
   phones: [
     { display: '605 989 264', tel: '+34605989264' },
-    { display: '951 62 22 57', tel: '+34951622257' },
+    { display: '952 058 319', tel: '+34952058319' },
   ],
   office: {
     label: 'Oficina comercial',
@@ -27,7 +27,7 @@ export const company = {
   },
   workshops: {
     label: 'Talleres e impresión',
-    places: ['Madrid', 'Málaga', 'Granada'],
+    places: ['Madrid', 'Málaga'],
   },
 } as const
 

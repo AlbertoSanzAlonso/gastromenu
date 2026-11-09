@@ -47,7 +47,8 @@ export const cartasCopy: DossierCopy = {
         'This is a very interesting way to cover a complete offer: food menus, wine lists and dessert menus, the last of which can be swapped for cocktails, or for beers if that offer is wide enough.',
         'Trilogy menus, whether in hard covers or in other materials —leather, faux leather, fabrics, wood and the rest— are priced more tightly than if you order them separately.',
         'In every case the menus are fully personal, to the taste and style of the client, so the mark of the house is set on them and they belong to their natural setting: the dining room.',
-        'We currently have a specific trilogy offer: 30 food menus, 20 wine and drinks menus and 10 dessert menus. The food menus hold 8 inner pages of about A4 or larger, with metal screws and laminated card of excellent quality. The wine lists are a little narrower and taller. They hold 4 pages, held at the centre with elastics, which also makes the pages easy to change. The dessert menus hold 2 mounted inner pages, in hard covers only.',
+        'We currently have a specific trilogy offer: **30 food menus**, **20 wine and drinks menus** and **10 dessert menus**.',
+        'The food menus hold 8 inner pages of about A4 or larger, with metal screws and laminated card of excellent quality. The wine lists are a little narrower and taller. They hold 4 pages, held at the centre with elastics, which also makes the pages easy to change. The dessert menus hold 2 mounted inner pages, in hard covers only.',
         'Pages can always be added if the menu needs them, in multiples of four: 8, 12, 16 and so on. You will receive a quote adjusted to the trilogy offer.',
         'If you wish, metal corners can be fitted so the protection is complete.',
         'And if you present the day’s suggestions to your guests, **GastroMenú Premium** can fit a magnetic system inside the cover, so an A4 sheet sits in their sight with that day’s offer.',
@@ -74,7 +75,7 @@ export const cartasCopy: DossierCopy = {
         'It should seduce, convey value and help to sell.',
         '**GastroMenú Premium** turns the menu of your restaurant into a brand experience that begins in the guest’s hands.',
       ],
-      captions: ['Faux leather'],
+      captions: ['El Torillo', 'El Torillo', 'Green faux leather', 'Faux leather'],
     },
     {
       nav: 'Leather',
@@ -95,6 +96,7 @@ export const cartasCopy: DossierCopy = {
         'A piece that speaks for the restaurant before the first plate even reaches the table.',
         'A menu presented in a handcrafted piece predisposes the guest to a higher ticket, connecting touch with palate.',
       ],
+      captions: ['Cervantes', 'Tooled leather', 'Leather', 'Karnivoro'],
     },
     {
       nav: 'Fabrics',
@@ -113,7 +115,7 @@ export const cartasCopy: DossierCopy = {
         'Because when the container is at the level of the content, the experience changes.',
         '**GastroMenú Premium**. Menus designed to be felt, recognised and remembered.',
       ],
-      captions: ['Fine fabrics'],
+      captions: ['Printed fabrics', 'Hessian', 'Linen', 'Fabric'],
     },
     {
       nav: 'Woods',
@@ -128,7 +130,7 @@ export const cartasCopy: DossierCopy = {
         'And that is where our work begins.',
         'We are not a print shop. We are makers of personal gastronomic menus.',
         'We start from your concept and develop the whole visual world: structure, type, grounds, colour, photography and composition. We bring in your corporate identity and study how to present the dishes so the guest’s experience is better, and so the products you want to highlight sell more strongly.',
-        'We can complete the piece with metal elements, different binding systems and personal finishes, so the menu belongs to the room around it. And, if you wish, we laser-cut your logo or any visual element.',
+        'We can complete the piece with metal elements, different binding systems and personal finishes, so the menu belongs to the room around it. And, if you wish, we laser-engrave your logo or any visual element.',
         'Because wood is not simply a material.',
         'It is a way of saying, without words, that here every detail is looked after.',
         '**GastroMenú Premium** creates menus with an identity of their own, for houses that mean to be remembered.',
@@ -149,6 +151,7 @@ export const cartasCopy: DossierCopy = {
         'At **GastroMenú Premium** you will find the right partner for the project.',
         'Remember that we also make steel menu stands, in several sizes and styles, designed to last, on battery or on the mains, so passers-by and possible guests can see the offer.',
       ],
+      captions: ['Ruta del Ibérico', 'Las Brasas', 'Plaza', 'Cuts'],
     },
     {
       nav: 'World cuisine',
@@ -191,6 +194,7 @@ export const cartasCopy: DossierCopy = {
         'A good cocktail does more than open the appetite. It is an important part of the bill, and it cannot go unnoticed. And not only cocktails: we encourage you to put the beers on the drinks menu —they can take the lead when there are enough of them, and of sufficient quality— and the spirits the house holds. Apart from what the law requires you to list, this is a category that bills, and bills well.',
         '**GastroMenú Premium** menus are exquisitely durable: a perfect balance between the beauty of work done by hand and the protection needed for daily service. A tactile design that lifts the perceived value of every glass. Add cocktail menus to the collection. You will gain in image, you will give your guests a real added value, and you will help the products —and the takings— to rise.',
       ],
+      captions: ['Amaretto', 'Amaretto', 'Cocktails', 'Cocktails'],
     },
     {
       nav: 'Pizzerias',
@@ -201,12 +205,12 @@ export const cartasCopy: DossierCopy = {
         'Wherever there is a good pizzeria, that unmistakable scent of a pizza just out of the oven makes people nearby want to come in at once. There is nothing like the aroma of a good pizza ready to serve.',
         'But if, once seated, the guest is handed a menu with traces of grease, old plastic and a certain stale smell as soon as the pages open —and if the type is too small, packed together, with images dropped in anyhow, and it is night and someone is wearing glasses— what happens in the mind? Do they still want the pizza? Or do they think: if this is the menu, what will the kitchen be like? Many guests think exactly that, even if they do not say it, even while they can smell a pizza fresh from the oven.',
         'If a house does not look after its image, beginning with the menus and continuing with the tableware, the glass, the linen and the cutlery, the small details on the table, the experience goes down the drain. It can even lead to poor opinions on certain networks, which is worse still.',
-        'At **GastroMenú Premium** we know that when guests receive a menu in proper condition —with a certain weight, clear images at high resolution, clear and elegant type with generous leading, allergen information dish by dish and, when needed, a correct translation— those same guests feel at ease. They can choose without guessing, and if they are intolerant they see, beside each dish, the correct and precise allergen information the law requires.',
+        'At **GastroMenú Premium** we know that when guests receive a menu in proper condition —with a certain weight, clear images at high resolution, clear and elegant type with generous leading, allergen information dish by dish and, when needed, a correct translation— those same guests feel at ease. They can choose without guessing, and if they are intolerant to the allergens they see, beside each dish, the correct and precise information the law requires.',
         'If you choose us for your next menus, you will have the guarantee not only of high-quality materials, but of a whole that belongs aesthetically to the house: a style that meets the placemats, the curtains or the walls, so that sitting down to eat in the pizzeria is fully immersive.',
         'We will set off the principal dishes with neuromarketing, we will try to raise the average ticket, and we will give your guests a feeling as pleasant as the one they had at the door, smelling a good pizza ready to serve.',
         'We create exclusive menus for pizzerias, joining design, quality and personality so the offer stands out at first glance.',
         'Trust us with the next menus, and complete the move with excellent outdoor menu stands in galvanised steel —resistant to humidity and rust— on battery or on the mains, so guests walk into the pizzeria without a second thought.',
-        'Call us today on 605 989 264 and we will talk.',
+        'Call us now on 952 058 319, or on WhatsApp at 605 989 264, and we will talk.',
       ],
     },
     {
@@ -225,6 +229,7 @@ export const cartasCopy: DossierCopy = {
         'A distinction is needed between a menu for the loungers, where the guest will probably arrive wet from the sea and may ask for a menu —or where the menu is left on the loungers, which we do not advise if you want them to last, because sun, wind and humidity will wear them— and a menu for the dining room. For the first, we advise faux leather or Vanol, so they hold up better, with high-density polycarbonate pages inside, printed at high resolution. That material costs more than laminated card, but it is better prepared for the conditions and it lasts extraordinarily well.',
         'Whatever you choose, at **GastroMenú Premium** we will advise you on what is best for the house, so your guests can read the offer more easily and more comfortably.',
       ],
+      captions: ['Margarita', 'Juan Playa', 'La Palmera', 'Beach bar'],
     },
     {
       nav: 'Desserts',
@@ -244,10 +249,11 @@ export const cartasCopy: DossierCopy = {
         'Usually a dessert menu is a pair of pages mounted on the inside of the covers, if the desserts do not change through the year. We can also make a small booklet of 4 pages held with elastics, for a quick change of offer.',
         'And do not forget the economical trilogy offer: 30 food menus (8 pages) + 20 wine lists (4 pages) + 2 dessert menus (2 pages). Better? Impossible.',
       ],
+      captions: ['Desserts', 'The View', 'Desserts', 'Desserts'],
     },
     {
       nav: 'Before and after',
-      kicker: 'Renewal',
+      kicker: 'The before and after of a menu',
       title: 'Nothing to',
       emphasis: 'compare',
       paragraphs: [
@@ -255,10 +261,10 @@ export const cartasCopy: DossierCopy = {
         'A change that touches directly the image your guests have of the restaurant. Because —and never forget it— the menus are the first thing they see when they sit down. That is where the presentation has to be strongest. Give them not only the best cooking, the treatment of the dishes and an acceptable price. The wrapping of all that counts too. And it counts a great deal.',
         'We know that change is sometimes hard. We resist what is new, we look, we compare, and sometimes we choose the cheapest, or what the budget will allow. That is fair. But be careful: the most economical is not always a sign of quality. In cars, we already know which names lead in reliability and tradition, and also in economy and power. Those names have to be paid for.',
         'At **GastroMenú Premium**, as with high-range vehicles, we make only products of proven high quality. Premium products. Nothing else.',
-        'We do not make menus just to get by, or cheap little ones, because that is simply not our style. We work noble products by hand, and the result is only excellence.',
+        'We do not make menus just to get by, or basic ones, because that is simply not our style. We work noble products by hand, and the result is only excellence.',
         'If you want menus in your hands that do more than sell —that settle your style and leave your mark on the table, so guests know from the first moment where they are sitting— then you can count on **GastroMenú Premium**. For everything else, there are copy shops and printers, and they will of course give you an excellent service. What they will not give you is the speciality in menus, the professional advice, the tradition of nearly three decades doing the same thing day after day, or the guarantee of quality and the mark of exclusivity we set on every product.',
       ],
-      captions: ['Mi Café, before and after'],
+      captions: ['Mi Café, before and after', 'The Catch, before and after', 'El Lotero, before and after', 'Before and after'],
     },
     {
       nav: 'Assembly',
@@ -268,13 +274,13 @@ export const cartasCopy: DossierCopy = {
       paragraphs: [
         'The whole assembly of the menus is done by hand. With craft. With patience and with calm. One by one. With care, with devotion and effort, with all the art and experience of years spent carrying out the wishes of hundreds of demanding clients.',
         'Every smallest detail is considered at **GastroMenú Premium**.',
-        'The manual setting of each screw, the tightening of the corners by hand, the exhaustive selection of raw materials: absolutely the whole process is done by hand, so your guests have a premium experience. When they hold a unique instrument that carries warmth and weight, design and elegance, that is the first sensation the client feels on sitting down at your table.',
+        'The manual setting of each screw, the hand-tightening of the corners, the exhaustive selection of raw materials: absolutely the whole process is done by hand, so your guests have a premium experience. When they hold a unique instrument that carries warmth and weight, design and elegance, that is the first sensation the client feels on sitting down at your table.',
         'Because an exceptional menu has to do two things: represent the level of the restaurant and help it reach its aims.',
         'That is why at **GastroMenú Premium** we follow traditional techniques, so your menus are a reflection of the kitchen, of the art, of the know-how.',
         'So that you are proud of them, so that you sell more, and better.',
         'For all of that, trust **GastroMenú Premium**. We know how to do things. And we do them well.',
       ],
-      captions: ['Assembled by hand'],
+      captions: ['Assembled by hand', 'Assembled by hand', 'Assembled by hand', 'Assembled by hand'],
     },
     {
       nav: 'Details',
@@ -292,6 +298,7 @@ export const cartasCopy: DossierCopy = {
         'Choose **GastroMenú Premium**. Choose excellence.',
         'Your guests will thank you for it.',
       ],
+      captions: ['Las Tablas', 'Relief', 'Elastic', 'Allergens'],
     },
   ],
 }

@@ -1,7 +1,6 @@
 import { Section } from '@/components/ui/Section'
 import { Heading } from '@/components/ui/Heading'
 import { GoldText } from '@/components/ui/GoldText'
-import { messages } from '@/i18n/messages'
 import { useMessages } from '@/i18n/useMessages'
 import { useTeam } from '@/features/team/hooks/useTeam'
 
@@ -32,9 +31,12 @@ function TeamStepMarker({ sortOrder }: { sortOrder: number }) {
 }
 
 export function TeamSection() {
-  const { locale, m } = useMessages()
+  const { m } = useMessages()
   const { members } = useTeam()
-  const spanishTeam = messages.es.home.teamMembers
+  const steps = m.home.teamMembers.map((member, index) => ({
+    ...member,
+    imageUrl: members[index]?.image_url ?? null,
+  }))
 
   return (
     <Section variant="light" ariaLabel={m.home.teamLabel}>
@@ -48,35 +50,26 @@ export function TeamSection() {
       </Heading>
 
       <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-        {members.map((member) => {
-          const index = member.sort_order - 1
-          const source = spanishTeam[index]
-          const target = m.home.teamMembers[index]
-          const translated = locale === 'en' && source && target && member.title === source.title
-          const localized = {
-            title: translated ? target.title : member.title,
-            description: translated ? target.description || member.description : member.description,
-          }
-
+        {steps.map((member, index) => {
           return (
           <article
-            key={member.id}
+            key={member.title}
             className="group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-sm text-center p-8 md:p-10 border border-beige-300/70 bg-transparent hover:border-gold-slide/50 transition-colors duration-400"
           >
-            {member.image_url && (
+            {member.imageUrl && (
               <img
-                src={member.image_url}
+                src={member.imageUrl}
                 alt=""
                 className="mx-auto mb-6 h-28 w-28 object-cover"
               />
             )}
-            <TeamStepMarker sortOrder={member.sort_order} />
+            <TeamStepMarker sortOrder={index + 1} />
             <h3 className="slide-heading text-lg mb-3">
-              {localized.title}
+              {member.title}
             </h3>
-            {localized.description && (
+            {member.description && (
               <p className="slide-body text-sm">
-                {localized.description}
+                {member.description}
               </p>
             )}
           </article>

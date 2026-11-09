@@ -10,6 +10,43 @@ import { useMessages } from '@/i18n/useMessages'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import { DossierGallery } from '@/components/sections/DossierGallery'
 import { ExpandableCopy } from '@/components/sections/ExpandableCopy'
+import { company, socialLinks } from '@/data/contact'
+
+function SectionReach({ mirrored }: { mirrored?: boolean }) {
+  const { m } = useMessages()
+  const phone = company.phones[0]
+  const landline = company.phones[1]
+  const whatsapp = socialLinks.find((item) => item.id === 'whatsapp')
+
+  return (
+    <div className={`mt-8 flex flex-wrap gap-3 ${mirrored ? 'lg:justify-end' : ''}`}>
+      <a
+        href={`tel:${phone.tel}`}
+        className="slide-label border border-gold-slide/70 px-4 py-2 text-[10px] transition-colors hover:bg-gold-slide hover:text-ink"
+      >
+        {m.dossier.callNow} {phone.display}
+      </a>
+      {landline && (
+        <a
+          href={`tel:${landline.tel}`}
+          className="slide-label border border-gold-slide/70 px-4 py-2 text-[10px] transition-colors hover:bg-gold-slide hover:text-ink"
+        >
+          {landline.display}
+        </a>
+      )}
+      {whatsapp && (
+        <a
+          href={whatsapp.href}
+          target="_blank"
+          rel="noreferrer"
+          className="slide-label border border-gold-slide/70 px-4 py-2 text-[10px] transition-colors hover:bg-gold-slide hover:text-ink"
+        >
+          {m.dossier.whatsappNow}
+        </a>
+      )}
+    </div>
+  )
+}
 
 function darkEdge(section?: DossierSection) {
   return section?.variant === 'dark' && section.images.length > 0
@@ -24,7 +61,7 @@ function edgeBesideDark(previous?: DossierSection, next?: DossierSection) {
 }
 
 const pageHeroWatermark: Record<string, string> = {
-  '/cartas': '/images/web/inicio/01-cartas-menu-premium-1620x945.webp',
+  '/cartas': '/images/web/cartas/g-0012-orient-express.webp',
   '/atriles': '/images/web/inicio/02-atriles-portamenu-premium-1620x945.webp',
   '/manteles': '/images/web/inicio/03-manteles-premium-1620x945.webp',
   '/exclusividades': '/images/web/inicio/04-exclusividades-premium-1620x945.webp',
@@ -134,6 +171,7 @@ export function DossierPage({ content }: DossierPageProps) {
                   setOpenSection((current) => (current === section.id ? null : section.id))
                 }
               />
+              <SectionReach mirrored={mirrored && hasImages} />
             </header>
 
             {hasImages && (

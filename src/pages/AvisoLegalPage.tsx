@@ -38,8 +38,8 @@ export function AvisoLegalPage() {
           {company.domain} presenta la actividad de {company.brand}: diseño, fabricación y
           comercialización de cartas de menú, manteles de papel, portamenús y otros trabajos de
           hostelería a medida. La información tiene carácter comercial e informativo. El encargo de
-          un trabajo se formaliza cuando ambas partes aceptan el presupuesto y las condiciones
-          concretas de ese pedido.
+          un trabajo se formaliza cuando ambas partes aceptan el presupuesto y las{' '}
+          <Link to="/condiciones-de-venta">condiciones de venta</Link>.
         </p>
       </LegalSection>
 
@@ -110,6 +110,7 @@ export function AvisoLegalPage() {
           usuarios imponga otro fuero.
         </p>
         <LegalCrossLink to="/privacidad">Política de privacidad</LegalCrossLink>
+        <LegalCrossLink to="/condiciones-de-venta">Condiciones de venta</LegalCrossLink>
       </LegalSection>
     </LegalDocument>
   )
