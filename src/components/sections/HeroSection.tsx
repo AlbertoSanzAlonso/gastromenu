@@ -59,7 +59,6 @@ export function HeroSection() {
   const mirrored = slider.index % 2 === 1
   const [alignRight, setAlignRight] = useState(mirrored)
   const touch = useRef({ x: 0, armed: false })
-
   useEffect(() => {
     if (alignRight === mirrored) return
     // Coincide con hero-copy-out (~40% del crossfade): al desaparecer las letras.
@@ -111,12 +110,8 @@ export function HeroSection() {
           {slide && (
             <FadingCopy
               slide={slide}
-              shellClassName={
-                slider.index === 0 ? undefined : 'hero-letters origin-center'
-              }
-              shellStyle={
-                slider.index === 0 ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }
-              }
+              letterMotion={slider.index === 0 ? 'grow' : 'shrink'}
+              originClassName="origin-center"
             >
               {(item) => (
                 <>
@@ -142,14 +137,8 @@ export function HeroSection() {
           {slide && (
             <FadingCopy
               slide={slide}
-              shellClassName={
-                slider.index === 0
-                  ? undefined
-                  : `hero-letters ${alignRight ? 'origin-right' : 'origin-left'}`
-              }
-              shellStyle={
-                slider.index === 0 ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }
-              }
+              letterMotion={slider.index === 0 ? 'grow' : 'shrink'}
+              originClassName={alignRight ? 'origin-right' : 'origin-left'}
             >
               {(item) => (
                 <>
@@ -403,66 +392,121 @@ function useHeroCrossfade(slide: HeroSlide) {
   return { current, outgoing }
 }
 
+function LetterMotion({
+  motion,
+  originClassName,
+  frozen,
+  children,
+}: {
+  motion: 'grow' | 'shrink'
+  originClassName: string
+  frozen?: boolean
+  children: ReactNode
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+  const [heldTransform, setHeldTransform] = useState<string | null>(null)
+  const endScale = motion === 'grow' ? 1.04 : 0.96
+
+  useLayoutEffect(() => {
+    if (frozen) {
+      const node = ref.current
+      if (!node) return
+      const computed = getComputedStyle(node).transform
+      setHeldTransform((current) =>
+        current ?? (computed === 'none' ? `scale(${endScale})` : computed),
+      )
+      return
+    }
+
+    setHeldTransform(null)
+    setScale(1)
+    const id = window.requestAnimationFrame(() => setScale(endScale))
+    return () => window.cancelAnimationFrame(id)
+  }, [frozen, endScale])
+
+  return (
+    <div
+      ref={ref}
+      className={originClassName}
+      style={
+        heldTransform
+          ? { transform: heldTransform, transition: 'none' }
+          : {
+              transform: `scale(${scale})`,
+              transition: scale === 1 ? 'none' : `transform ${HERO_SLIDE_MS}ms ease-out`,
+            }
+      }
+    >
+      {children}
+    </div>
+  )
+}
+
 function FadingCopy({
   slide,
-  shellClassName,
-  shellStyle,
+  letterMotion,
+  originClassName,
   children,
 }: {
   slide: HeroSlide
-  shellClassName?: string
-  shellStyle?: { animationDuration: string }
+  letterMotion: 'grow' | 'shrink'
+  originClassName: string
   children: (item: HeroSlide) => ReactNode
 }) {
   const view = useHeroCrossfade(slide)
   const animate = view.outgoing !== null
   const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
-  const shellById = useRef(
-    new Map<string, { className?: string; style?: { animationDuration: string } }>(),
-  )
+  const motionById = useRef(new Map<string, { motion: 'grow' | 'shrink'; origin: string }>())
   const frozenOut = useRef<{
     id: string
-    className?: string
-    style?: { animationDuration: string }
+    motion: 'grow' | 'shrink'
+    origin: string
   } | null>(null)
 
   if (view.outgoing) {
     if (frozenOut.current?.id !== view.outgoing.id) {
       frozenOut.current = {
         id: view.outgoing.id,
-        ...(shellById.current.get(view.outgoing.id) ?? {}),
+        ...(motionById.current.get(view.outgoing.id) ?? {
+          motion: letterMotion,
+          origin: originClassName,
+        }),
       }
     }
   } else {
     frozenOut.current = null
   }
 
-  shellById.current.set(view.current.id, { className: shellClassName, style: shellStyle })
+  motionById.current.set(view.current.id, { motion: letterMotion, origin: originClassName })
 
   const layers = view.outgoing
     ? [
         {
           item: view.outgoing,
           phase: 'out' as const,
-          shell: frozenOut.current ?? { className: shellClassName, style: shellStyle },
+          motion: frozenOut.current?.motion ?? letterMotion,
+          origin: frozenOut.current?.origin ?? originClassName,
         },
         {
           item: view.current,
           phase: 'in' as const,
-          shell: { className: shellClassName, style: shellStyle },
+          motion: letterMotion,
+          origin: originClassName,
         },
       ]
     : [
         {
           item: view.current,
           phase: 'idle' as const,
-          shell: { className: shellClassName, style: shellStyle },
+          motion: letterMotion,
+          origin: originClassName,
         },
       ]
 
   return (
     <div className="relative">
-      {layers.map(({ item, phase, shell }) => (
+      {layers.map(({ item, phase, motion, origin }) => (
         <div
           key={item.id}
           className={
@@ -475,9 +519,9 @@ function FadingCopy({
           style={phase === 'idle' ? undefined : crossfadeStyle}
           aria-hidden={phase === 'out' ? true : undefined}
         >
-          <div className={shell.className} style={shell.style}>
+          <LetterMotion motion={motion} originClassName={origin} frozen={phase === 'out'}>
             {children(item)}
-          </div>
+          </LetterMotion>
         </div>
       ))}
     </div>

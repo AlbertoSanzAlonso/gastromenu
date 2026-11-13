@@ -813,6 +813,15 @@
   }
 }
 
+@keyframes hero-letters-grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
 .hero-drift {
   animation-name: hero-drift;
   animation-timing-function: linear;
@@ -1006,15 +1015,30 @@
   will-change: transform;
 }
 
+.hero-letters-grow {
+  animation-name: hero-letters-grow;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  will-change: transform;
+}
+
+/* Congela la escala al salir para que no vuelva al tamaño original mientras aún se ve. */
+.hero-copy-out .hero-letters,
+.hero-copy-out .hero-letters-grow {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-letters {
+  .hero-letters,
+  .hero-letters-grow {
     animation: none;
   }
 }
 
 .hero-stage[data-paused='true'] .hero-drift,
 .hero-stage[data-paused='true'] .hero-float,
-.hero-stage[data-paused='true'] .hero-letters {
+.hero-stage[data-paused='true'] .hero-letters,
+.hero-stage[data-paused='true'] .hero-letters-grow {
   animation-play-state: paused;
 }
 
