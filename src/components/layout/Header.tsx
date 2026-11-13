@@ -6,7 +6,7 @@ import { LanguageSwitch } from '@/components/ui/LanguageSwitch'
 import { useMessages } from '@/i18n/useMessages'
 
 const SCROLL_THRESHOLD = 12
-const DRAWER_CLOSE_MS = 1000
+const DRAWER_CLOSE_MS = 720
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -87,7 +87,7 @@ export function Header() {
     </header>
 
       <LanguageSwitch
-        className={`fixed top-5 left-5 z-[70] p-2.5 transition-opacity duration-500 ease-premium md:top-7 md:left-10 ${
+        className={`fixed top-5 left-5 z-[70] p-2.5 transition-opacity duration-300 ease-premium md:top-7 md:left-10 ${
           langsVisible ? 'opacity-100' : 'max-md:pointer-events-none max-md:opacity-0'
         }`}
       />
