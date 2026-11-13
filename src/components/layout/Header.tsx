@@ -130,7 +130,7 @@ export function Header() {
               ))}
             </ul>
             <div className="site-drawer-foot">
-              <Link to="/contacto" className="site-drawer-cta" onClick={() => setOpen(false)}>
+              <Link to="/contacto#formulario" className="site-drawer-cta" onClick={() => setOpen(false)}>
                 {m.nav.contact}
               </Link>
               <p className="site-drawer-note">{m.nav.note}</p>

@@ -12,14 +12,15 @@ migrations_dir = "migrations"
 binding = "MEDIA"
 bucket_name = "gastromenu-media"
 
-# El formulario solo puede escribir a hola@gastromenupremium.com.
-# El remitente tiene que ser una dirección del dominio dado de alta en Email Service.
+# Destino de prueba del formulario. El remitente tiene que ser una dirección
+# del dominio dado de alta en Email Service; el destino debe estar verificado
+# en Cloudflare Email Workers.
 [vars]
-CONTACT_TO = "hola@gastromenupremium.com"
+CONTACT_TO = "albertosanzdev@gmail.com"
 CONTACT_FROM = "consultas@gastromenupremium.com"
 CONTACT_FROM_NAME = "GastroMenú Premium"
 
 [[send_email]]
 name = "EMAIL"
-destination_address = "hola@gastromenupremium.com"
+destination_address = "albertosanzdev@gmail.com"
 allowed_sender_addresses = ["consultas@gastromenupremium.com"]
