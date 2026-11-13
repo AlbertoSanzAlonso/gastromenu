@@ -395,23 +395,69 @@ function FadingCopy({
   const view = useHeroCrossfade(slide)
   const animate = view.outgoing !== null
   const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
+  const shellById = useRef(
+    new Map<string, { className?: string; style?: { animationDuration: string } }>(),
+  )
+  const frozenOut = useRef<{
+    id: string
+    className?: string
+    style?: { animationDuration: string }
+  } | null>(null)
+
+  if (view.outgoing) {
+    if (frozenOut.current?.id !== view.outgoing.id) {
+      frozenOut.current = {
+        id: view.outgoing.id,
+        ...(shellById.current.get(view.outgoing.id) ?? {}),
+      }
+    }
+  } else {
+    frozenOut.current = null
+  }
+
+  shellById.current.set(view.current.id, { className: shellClassName, style: shellStyle })
+
+  const layers = view.outgoing
+    ? [
+        {
+          item: view.outgoing,
+          phase: 'out' as const,
+          shell: frozenOut.current ?? { className: shellClassName, style: shellStyle },
+        },
+        {
+          item: view.current,
+          phase: 'in' as const,
+          shell: { className: shellClassName, style: shellStyle },
+        },
+      ]
+    : [
+        {
+          item: view.current,
+          phase: 'idle' as const,
+          shell: { className: shellClassName, style: shellStyle },
+        },
+      ]
 
   return (
     <div className="relative">
-      {view.outgoing ? (
+      {layers.map(({ item, phase, shell }) => (
         <div
-          className="hero-copy-out pointer-events-none absolute inset-x-0 top-0"
-          style={crossfadeStyle}
-          aria-hidden
+          key={item.id}
+          className={
+            phase === 'out'
+              ? 'hero-copy-out pointer-events-none absolute inset-x-0 top-0'
+              : phase === 'in'
+                ? 'hero-copy'
+                : undefined
+          }
+          style={phase === 'idle' ? undefined : crossfadeStyle}
+          aria-hidden={phase === 'out' ? true : undefined}
         >
-          {children(view.outgoing)}
+          <div className={shell.className} style={shell.style}>
+            {children(item)}
+          </div>
         </div>
-      ) : null}
-      <div className={animate ? 'hero-copy' : undefined} style={crossfadeStyle}>
-        <div key={view.current.id} className={shellClassName} style={shellStyle}>
-          {children(view.current)}
-        </div>
-      </div>
+      ))}
     </div>
   )
 }
