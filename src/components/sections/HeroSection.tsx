@@ -303,7 +303,7 @@ function HeroStage({
                   ? 'hero-slide-in'
                   : exiting
                     ? isCover
-                      ? 'hero-slide-out-cover'
+                      ? 'hero-slide-out lg:hero-slide-out-cover'
                       : 'hero-slide-out'
                     : ''
             } ${

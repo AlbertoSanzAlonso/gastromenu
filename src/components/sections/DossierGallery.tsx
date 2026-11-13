@@ -113,7 +113,7 @@ export function DossierGallery({ images }: DossierGalleryProps) {
                 type="button"
                 aria-label={m.gallery.next}
                 onClick={() => step(1)}
-                className="absolute right-24 top-1/2 z-[2] flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-cream/40 bg-ink/55 text-xl text-cream transition-colors hover:border-gold-slide hover:text-gold-slide md:right-4"
+                className="absolute right-3 top-1/2 z-[2] flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-cream/40 bg-ink/55 text-xl text-cream transition-colors hover:border-gold-slide hover:text-gold-slide"
               >
                 ›
               </button>

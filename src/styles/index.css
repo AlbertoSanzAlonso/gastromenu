@@ -942,6 +942,7 @@
   }
 
   .hero-slide-out,
+  .hero-slide-out-cover,
   .hero-copy-out {
     animation-name: hero-fade-out;
     animation-timing-function: ease;
