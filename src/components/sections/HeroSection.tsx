@@ -303,11 +303,24 @@ function HeroStage({
         const offset = slideOffset(position, index, slides.length)
         const active = position === index
         const exiting = position === leaving
+        const isCover = position === 0
         return (
           <div
             key={item.id}
             className={`hero-slide-frame absolute inset-0 ${
-              !motionOn ? '' : active ? 'hero-slide-in' : exiting ? 'hero-slide-out' : ''
+              !motionOn
+                ? ''
+                : active
+                  ? 'hero-slide-in'
+                  : exiting
+                    ? isCover
+                      ? 'hero-slide-out-cover'
+                      : 'hero-slide-out'
+                    : ''
+            } ${
+              isCover
+                ? 'lg:[mask-image:linear-gradient(to_right,transparent_0%,black_18%,black_100%)]'
+                : ''
             }`}
             style={{
               ['--hero-x' as string]: `${offset * 6}%`,
@@ -338,6 +351,15 @@ function HeroStage({
               loading={position === 0 ? 'eager' : 'lazy'}
               decoding={position === 0 ? 'sync' : 'async'}
             />
+            {isCover ? (
+              <div
+                className="pointer-events-none absolute inset-0 hidden lg:block"
+                style={{
+                  background:
+                    'linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 10%, transparent 22%)',
+                }}
+              />
+            ) : null}
           </div>
         )
       })}

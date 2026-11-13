@@ -952,6 +952,18 @@
     }
   }
 
+  @keyframes hero-slide-swap-out-cover {
+    0% {
+      opacity: 1;
+    }
+    32% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   @keyframes hero-slide-swap-in {
     0%,
     46% {
@@ -966,6 +978,13 @@
     animation-name: hero-slide-swap-out;
     animation-duration: 1600ms;
     animation-timing-function: ease-in-out;
+  }
+
+  .hero-slide-out-cover {
+    animation-name: hero-slide-swap-out-cover;
+    animation-duration: 1600ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
   }
 
   .hero-slide-in {
