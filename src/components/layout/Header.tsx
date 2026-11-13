@@ -6,9 +6,11 @@ import { LanguageSwitch } from '@/components/ui/LanguageSwitch'
 import { useMessages } from '@/i18n/useMessages'
 
 const SCROLL_THRESHOLD = 12
+const DRAWER_CLOSE_MS = 1000
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [langsVisible, setLangsVisible] = useState(true)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const { m } = useMessages()
@@ -26,6 +28,16 @@ export function Header() {
   useEffect(() => {
     setOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (open) {
+      setLangsVisible(false)
+      return
+    }
+
+    const id = window.setTimeout(() => setLangsVisible(true), DRAWER_CLOSE_MS)
+    return () => window.clearTimeout(id)
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -76,7 +88,7 @@ export function Header() {
 
       <LanguageSwitch
         className={`fixed top-5 left-5 z-[70] p-2.5 transition-opacity duration-500 ease-premium md:top-7 md:left-10 ${
-          open ? 'max-md:pointer-events-none max-md:opacity-0' : ''
+          langsVisible ? 'opacity-100' : 'max-md:pointer-events-none max-md:opacity-0'
         }`}
       />
 
