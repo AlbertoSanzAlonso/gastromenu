@@ -40,10 +40,9 @@ export const atrilesPage: DossierPageContent = {
       ],
       images: [
         { file: '08-atril-pie-la-terraza.webp', caption: 'La Terraza', src: '/images/web/atriles/08-atril-pie-la-terraza.webp' },
-        { file: 'nosotros-18.webp', caption: 'Altanour', src: '/images/web/nosotros/nosotros-18.webp' },
+        { file: '01-atril-de-pie-altanour-premium.webp', caption: 'Altanour', src: '/images/web/atriles/01-atril-de-pie-altanour-premium.webp' },
+        { file: '10-atril-pie-negro-texturizado.webp', caption: 'Con jardinera', src: '/images/web/atriles/10-atril-pie-negro-texturizado.webp' },
         { file: '12-atril-pie-mujer-pizza.webp', caption: 'En terraza', src: '/images/web/atriles/12-atril-pie-mujer-pizza.webp' },
-        { file: '09-atril-pie-sin-fondo.webp', caption: 'Modelo de pie', src: '/images/web/atriles/09-atril-pie-sin-fondo.webp' },
-        { file: '10-atril-pie-negro-texturizado.webp', caption: 'Negro texturizado', src: '/images/web/atriles/10-atril-pie-negro-texturizado.webp' },
         { file: '06-atril-pie-trasera.webp', caption: 'Trasera', src: '/images/web/atriles/06-atril-pie-trasera.webp' },
         { file: '07-atril-pie-perfil.webp', caption: 'Perfil', src: '/images/web/atriles/07-atril-pie-perfil.webp' },
         { file: '11-atril-pie-medidas.webp', caption: 'Medidas', src: '/images/web/atriles/11-atril-pie-medidas.webp' },
@@ -74,6 +73,7 @@ export const atrilesPage: DossierPageContent = {
         'Sin luz, eléctrico o con batería',
       ],
       images: [
+        { file: '20-atril-cilindrico-frontal-perfil.webp', caption: 'Frontal y perfil', src: '/images/web/atriles/20-atril-cilindrico-frontal-perfil.webp' },
         { file: '13-atril-cilindrico-producto.webp', caption: 'Modelo cilíndrico', src: '/images/web/atriles/13-atril-cilindrico-producto.webp' },
         { file: '14-atril-cilindrico-mujer.webp', caption: 'En fachada', src: '/images/web/atriles/14-atril-cilindrico-mujer.webp' },
         { file: '02-atril-cilindrico-premium.webp', caption: 'Detalle', src: '/images/web/atriles/02-atril-cilindrico-premium.webp' },

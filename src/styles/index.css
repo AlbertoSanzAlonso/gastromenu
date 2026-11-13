@@ -765,19 +765,23 @@
 }
 
 @keyframes hero-copy {
-  from {
+  0%,
+  48% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes hero-copy-out {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  40% {
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
   }
 }
@@ -805,7 +809,7 @@
     transform: scale(1);
   }
   to {
-    transform: scale(0.92);
+    transform: scale(0.96);
   }
 }
 
@@ -896,19 +900,23 @@
 }
 
 @keyframes hero-fade-in {
-  from {
+  0%,
+  48% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes hero-fade-out {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  40% {
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
   }
 }
@@ -932,16 +940,57 @@
 }
 
 @media (min-width: 1024px) {
+  @keyframes hero-slide-swap-out {
+    0% {
+      opacity: 1;
+    }
+    44% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes hero-slide-swap-in {
+    0%,
+    46% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hero-slide-out {
+    animation-name: hero-slide-swap-out;
+    animation-duration: 1600ms;
+    animation-timing-function: ease-in-out;
+  }
+
+  .hero-slide-in {
+    animation-name: hero-slide-swap-in;
+    animation-duration: 1600ms;
+    animation-timing-function: ease-in-out;
+  }
+
   .hero-slide-frame {
     transform: translate3d(var(--hero-x, 0%), 0, 0);
-    transition: transform 1100ms ease-in-out;
+    transition: transform 1600ms ease-in-out;
   }
 }
 
 .hero-letters {
   animation-name: hero-letters;
-  animation-timing-function: linear;
+  animation-timing-function: ease-out;
   animation-fill-mode: both;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-letters {
+    animation: none;
+  }
 }
 
 .hero-stage[data-paused='true'] .hero-drift,

@@ -51,9 +51,13 @@ export const mockHeroSlides: HeroSlide[] = [
   },
 ]
 
+/** Diapositivas ocultas del carrusel hasta nuevo aviso. */
+export const hiddenHeroSlideIds = new Set(['the-butcher'])
+
 export function composeHeroSlides(current: HeroSlide, extras: HeroSlide[] = mockHeroSlides) {
   const seen = new Set<string>()
   return [current, ...extras].filter((slide) => {
+    if (hiddenHeroSlideIds.has(slide.id)) return false
     if (seen.has(slide.image)) return false
     seen.add(slide.image)
     return true

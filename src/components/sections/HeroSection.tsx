@@ -1,4 +1,12 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent,
+  type ReactNode,
+} from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { BrandDivider } from '@/components/ui/BrandDivider'
@@ -12,6 +20,7 @@ import { useMessages } from '@/i18n/useMessages'
 import { useSiteCopy } from '@/i18n/useSiteCopy'
 
 const HERO_TEXTURE = '/images/hero-texture.webp'
+const HERO_SWAP_MS = 1600
 
 export function HeroSection() {
   const { m } = useMessages()
@@ -48,7 +57,15 @@ export function HeroSection() {
   const slider = useHeroSlider(slides.length)
   const slide = slides[slider.index] ?? slides[0]
   const mirrored = slider.index % 2 === 1
+  const [alignRight, setAlignRight] = useState(mirrored)
   const touch = useRef({ x: 0, armed: false })
+
+  useEffect(() => {
+    if (alignRight === mirrored) return
+    // Coincide con hero-copy-out (~40% del crossfade): al desaparecer las letras.
+    const id = window.setTimeout(() => setAlignRight(mirrored), Math.round(HERO_CROSSFADE_MS * 0.4))
+    return () => window.clearTimeout(id)
+  }, [mirrored, alignRight])
 
   function onPointerDown(event: PointerEvent<HTMLElement>) {
     if (event.pointerType === 'mouse') return
@@ -77,48 +94,30 @@ export function HeroSection() {
         touch.current.armed = false
       }}
     >
-      <HeroStage slides={slides} index={slider.index} mirrored={mirrored} />
+      <HeroTexturePanels mirrored={mirrored} />
 
-      <div
-        className={`absolute inset-y-0 left-0 hidden w-1/2 transition-transform duration-[1600ms] ease-in-out lg:block ${
-          mirrored ? 'translate-x-full' : 'translate-x-0'
-        }`}
-        aria-hidden
-      >
-        <img
-          src={HERO_TEXTURE}
-          alt=""
-          className={`h-full w-full object-cover ${
-            mirrored
-              ? 'object-left [mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]'
-              : 'scale-x-[-1] object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]'
-          }`}
-          loading="eager"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
-      </div>
+      <HeroStage slides={slides} index={slider.index} mirrored={mirrored} />
 
       <div
         className="pointer-events-none absolute inset-0 z-[1] lg:bg-gradient-to-b lg:from-transparent lg:via-black/10 lg:to-black/35"
         aria-hidden
       />
       <div className="hero-mobile-scrim pointer-events-none absolute inset-0 z-[1]" aria-hidden />
-      <div
-        className={`pointer-events-none absolute inset-y-0 left-0 z-[1] w-full transition-transform duration-[1600ms] ease-in-out lg:w-1/2 lg:via-black/10 lg:to-transparent ${
-          mirrored
-            ? 'lg:translate-x-full lg:bg-gradient-to-l lg:from-black/30'
-            : 'lg:translate-x-0 lg:bg-gradient-to-r lg:from-black/30'
-        }`}
-        aria-hidden
-      />
 
       <Container className="relative z-10 w-full py-12 md:py-16">
         <div className="hero-mobile-copy mx-auto min-h-[28rem] max-w-3xl text-center md:min-h-[32rem] lg:hidden">
           <h1 className="brand-title gold-shimmer mb-8 text-3xl sm:text-4xl md:text-5xl">GastroMenú Premium</h1>
           <BrandDivider className="mb-8" />
           {slide && (
-            <FadingCopy slide={slide}>
+            <FadingCopy
+              slide={slide}
+              shellClassName={
+                slider.index === 0 ? undefined : 'hero-letters origin-center'
+              }
+              shellStyle={
+                slider.index === 0 ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }
+              }
+            >
               {(item) => (
                 <>
                   <p className="brand-eyebrow mb-6 text-[11px] md:text-xs">{item.label}</p>
@@ -137,14 +136,20 @@ export function HeroSection() {
 
         <div
           className={`hidden max-w-5xl transition-transform duration-[1600ms] ease-in-out lg:block lg:min-h-[24rem] lg:max-w-[50%] ${
-            mirrored ? 'lg:translate-x-full lg:text-right' : 'lg:translate-x-0 lg:text-left'
-          }`}
+            mirrored ? 'lg:translate-x-full' : 'lg:translate-x-0'
+          } ${alignRight ? 'lg:text-right' : 'lg:text-left'}`}
         >
           {slide && (
             <FadingCopy
               slide={slide}
-              shellClassName={`hero-letters ${mirrored ? 'origin-right' : 'origin-left'}`}
-              shellStyle={{ animationDuration: `${HERO_SLIDE_MS}ms` }}
+              shellClassName={
+                slider.index === 0
+                  ? undefined
+                  : `hero-letters ${alignRight ? 'origin-right' : 'origin-left'}`
+              }
+              shellStyle={
+                slider.index === 0 ? undefined : { animationDuration: `${HERO_SLIDE_MS}ms` }
+              }
             >
               {(item) => (
                 <>
@@ -176,6 +181,88 @@ export function HeroSection() {
   )
 }
 
+function HeroTexturePanels({ mirrored }: { mirrored: boolean }) {
+  const leftRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLDivElement>(null)
+  const prevMirrored = useRef(mirrored)
+  const booted = useRef(false)
+
+  useLayoutEffect(() => {
+    const left = leftRef.current
+    const right = rightRef.current
+    if (!left || !right) return
+
+    const showRight = mirrored
+    if (!booted.current) {
+      booted.current = true
+      prevMirrored.current = mirrored
+      left.style.opacity = showRight ? '0' : '1'
+      right.style.opacity = showRight ? '1' : '0'
+      return
+    }
+
+    if (prevMirrored.current === mirrored) return
+    prevMirrored.current = mirrored
+
+    const outgoing = showRight ? left : right
+    const incoming = showRight ? right : left
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      outgoing.style.opacity = '0'
+      incoming.style.opacity = '1'
+      return
+    }
+
+    for (const panel of [outgoing, incoming]) {
+      panel.getAnimations().forEach((animation) => animation.cancel())
+    }
+
+    outgoing.animate(
+      [
+        { opacity: 1 },
+        { opacity: 0, offset: 0.38 },
+        { opacity: 0 },
+      ],
+      { duration: HERO_SWAP_MS, easing: 'ease-in-out', fill: 'forwards' },
+    )
+    incoming.animate(
+      [
+        { opacity: 0 },
+        { opacity: 0, offset: 0.62 },
+        { opacity: 1 },
+      ],
+      { duration: HERO_SWAP_MS, easing: 'ease-in-out', fill: 'forwards' },
+    )
+  }, [mirrored])
+
+  return (
+    <>
+      <div ref={leftRef} className="absolute inset-y-0 left-0 z-0 hidden w-1/2 lg:block" aria-hidden>
+        <img
+          src={HERO_TEXTURE}
+          alt=""
+          className="h-full w-full scale-x-[-1] object-cover object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]"
+          loading="eager"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+      </div>
+      <div ref={rightRef} className="absolute inset-y-0 left-1/2 z-0 hidden w-1/2 lg:block" aria-hidden>
+        <img
+          src={HERO_TEXTURE}
+          alt=""
+          className="h-full w-full object-cover object-left [mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]"
+          loading="eager"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent" />
+      </div>
+    </>
+  )
+}
+
 function HeroStage({
   slides,
   index,
@@ -197,13 +284,17 @@ function HeroStage({
 
   useEffect(() => {
     if (leaving === null) return
-    const id = window.setTimeout(() => setLeaving(null), HERO_CROSSFADE_MS)
+    const holdMs =
+      typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches
+        ? HERO_SWAP_MS
+        : HERO_CROSSFADE_MS
+    const id = window.setTimeout(() => setLeaving(null), holdMs)
     return () => window.clearTimeout(id)
   }, [leaving, tracked])
 
   return (
     <div
-      className={`absolute inset-0 overflow-hidden transition-transform duration-[1600ms] ease-in-out lg:inset-y-0 lg:left-0 lg:w-1/2 ${
+      className={`absolute inset-0 z-[2] overflow-hidden transition-transform duration-[1600ms] ease-in-out lg:inset-y-0 lg:left-0 lg:w-1/2 ${
         mirrored ? 'lg:translate-x-0' : 'lg:translate-x-full'
       }`}
       aria-hidden
@@ -306,7 +397,7 @@ function FadingCopy({
   const crossfadeStyle = animate ? { animationDuration: `${HERO_CROSSFADE_MS}ms` } : undefined
 
   return (
-    <div className={`relative ${shellClassName ?? ''}`} style={shellStyle}>
+    <div className="relative">
       {view.outgoing ? (
         <div
           className="hero-copy-out pointer-events-none absolute inset-x-0 top-0"
@@ -317,7 +408,9 @@ function FadingCopy({
         </div>
       ) : null}
       <div className={animate ? 'hero-copy' : undefined} style={crossfadeStyle}>
-        {children(view.current)}
+        <div key={view.current.id} className={shellClassName} style={shellStyle}>
+          {children(view.current)}
+        </div>
       </div>
     </div>
   )

@@ -86,7 +86,6 @@ export const nosotrosPage: DossierPageContent = {
         { file: 'nosotros-10.webp', caption: 'The Catch', src: '/images/web/nosotros/nosotros-10.webp' },
         { file: 'nosotros-12.webp', caption: 'La Favorita', src: '/images/web/nosotros/nosotros-12.webp' },
         { file: 'nosotros-13.webp', caption: 'Sa Marinada', src: '/images/web/nosotros/nosotros-13.webp' },
-        { file: 'nosotros-14.webp', caption: 'Sa Marinada', src: '/images/web/nosotros/nosotros-14.webp' },
       ],
       variant: 'dark',
     },

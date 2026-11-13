@@ -39,9 +39,8 @@ export const atrilesCopy: DossierCopy = {
       captions: [
         'La Terraza',
         'Altanour',
+        'With planter',
         'On the terrace',
-        'Freestanding model',
-        'Textured black',
         'Rear',
         'Profile',
         'Measurements',
@@ -69,7 +68,7 @@ export const atrilesCopy: DossierCopy = {
         'Quiet self-locking wheels',
         'Unlit, mains or battery',
       ],
-      captions: ['Cylindrical model', 'On the façade', 'Detail'],
+      captions: ['Front and profile', 'Cylindrical model', 'On the façade', 'Detail'],
     },
     {
       nav: 'Wall',
