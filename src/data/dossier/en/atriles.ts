@@ -8,7 +8,7 @@ export const atrilesCopy: DossierCopy = {
   title: 'Simply:',
   emphasis: 'spectacular',
   lead:
-    'Innovation and design in practical new products that draw people straight to the door. High-value pieces, made by hand in steel and personalised by laser. Self-contained on battery or mains-powered, a wide high-brightness panel, freestanding and wall-mounted models, graphics that are easy to change, and high-quality oven-baked paint in several coats.',
+    'Innovation and design in practical new products that draw people straight to the door. High-value pieces, made by hand in steel and personalised by laser. Self-contained on battery or mains-powered, freestanding and wall-mounted models, graphics that are easy to change, and high-quality oven-baked paint in several coats.',
   sections: [
     {
       nav: 'Freestanding',
@@ -36,7 +36,16 @@ export const atrilesCopy: DossierCopy = {
         'Approximate width: 65 cm',
         'Approximate depth: 55 cm',
       ],
-      captions: ['Altanour', 'Rear', 'Profile'],
+      captions: [
+        'La Terraza',
+        'Altanour',
+        'On the terrace',
+        'Freestanding model',
+        'Textured black',
+        'Rear',
+        'Profile',
+        'Measurements',
+      ],
     },
     {
       nav: 'Cylindrical',
@@ -60,7 +69,7 @@ export const atrilesCopy: DossierCopy = {
         'Quiet self-locking wheels',
         'Unlit, mains or battery',
       ],
-      captions: ['Cylindrical model'],
+      captions: ['Cylindrical model', 'On the façade', 'Detail'],
     },
     {
       nav: 'Wall',
@@ -86,17 +95,7 @@ export const atrilesCopy: DossierCopy = {
         'Vertical or horizontal',
         'Stainless steel, laser cutting and blue LED',
       ],
-    },
-    {
-      nav: 'Displays',
-      kicker: 'Wide formats',
-      title: 'A wide panel, highly',
-      emphasis: 'bright',
-      paragraphs: [
-        'A wide, high-brightness panel, in different models, freestanding and wall-mounted. Self-contained units with current designs that do not date, made to last and to resist the weather.',
-        'Graphics that are easy to change. High-quality oven-baked paint, in several coats. The right measurements, and easy to place inside your premises.',
-      ],
-      captions: ['Wide display'],
+      captions: ['Horizontal, blue LED', 'Vertical, blue LED', 'Wood sides', 'Wood, on the façade'],
     },
     {
       nav: 'Outlet',
@@ -104,11 +103,18 @@ export const atrilesCopy: DossierCopy = {
       title: 'Opportunities, for a short',
       emphasis: 'time',
       paragraphs: [
+        'A wide, high-brightness panel, in different models, freestanding and wall-mounted. Self-contained units with current designs that do not date, made to last and to resist the weather. Graphics that are easy to change. High-quality oven-baked paint, in several coats. The right measurements, and easy to place inside your premises.',
         'At **GastroMenú Premium** we have a small stock of menu stands to clear, because of a change of model.',
         'These are new units, warranted in some cases, and in others —for example lockable aluminium wall cases— recycled, painted and prepared as new. All of them, without exception, come with graphics personalised with your menu or the message you want to convey.',
         '**It is a real chance to take a high-quality unit at a very interesting price.**',
         'Do not let it pass. We do not have much stock: in some cases only one or two units, in others no more than ten.',
         'Ask as soon as you can —if any remain at this moment— about these pieces, and take a very good menu stand, lit or unlit.',
+      ],
+      captions: [
+        'Flexible panel',
+        'Double menu stand',
+        'Aluminium, perimeter lighting',
+        'Wide display',
       ],
     },
   ],

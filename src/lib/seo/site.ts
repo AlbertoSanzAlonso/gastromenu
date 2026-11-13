@@ -20,7 +20,7 @@ export const homeSeo: SeoCopy = {
 export const contactSeo: SeoCopy = {
   title: 'Contacto',
   description:
-    'Llámenos al 952 058 319 o al 605 989 264, o escríbanos a info@cartasmenu.com. Talleres en Madrid y Málaga.',
+    'Llámenos al 952 058 319 o al 605 989 264, o escríbanos a hola@gastromenupremium.com. Talleres en Madrid y Málaga.',
 }
 
 export const legalNoticeSeo: SeoCopy = {

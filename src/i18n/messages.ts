@@ -165,6 +165,12 @@ const es = {
     hours: 'Lunes a viernes, de 09:00 a 15:00 h.',
     office: 'Oficina comercial',
     workshops: 'Talleres e impresión',
+    emails: {
+      general: 'Información general',
+      commercial: 'Contactos comerciales',
+      design: 'Área de diseño',
+      stands: 'Atriles portamenús',
+    },
   },
   form: {
     thanksTitle: 'Gracias por su confianza',
@@ -289,7 +295,7 @@ const en: typeof es = {
     homeDescription: 'Handcrafted menus, placemats and menu stands. Made in-house since 1998.',
     contactTitle: 'Contact',
     contactDescription:
-      'Call us on 952 058 319 or on 605 989 264, or write to info@cartasmenu.com. Workshops in Madrid and Málaga.',
+      'Call us on 952 058 319 or on 605 989 264, or write to hola@gastromenupremium.com. Workshops in Madrid and Málaga.',
     locale: 'en_GB',
   },
   hero: {
@@ -427,6 +433,12 @@ const en: typeof es = {
     hours: 'Monday to Friday, 9:00 a.m. to 3:00 p.m.',
     office: 'Sales office',
     workshops: 'Workshops and printing',
+    emails: {
+      general: 'General enquiries',
+      commercial: 'Sales',
+      design: 'Design',
+      stands: 'Menu stands',
+    },
   },
   form: {
     thanksTitle: 'Thank you for your trust',

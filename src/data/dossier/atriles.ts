@@ -9,7 +9,7 @@ export const atrilesPage: DossierPageContent = {
   title: 'Simplemente:',
   emphasis: 'espectacular',
   lead:
-    'Innovación y diseño en productos novedosos y prácticos que atraen al público directamente a la puerta del establecimiento. Piezas de alto valor, elaboradas artesanalmente en acero y personalizadas a láser. Alimentación autónoma con batería o eléctricos, amplia pantalla de alto brillo, modelos de pie y de pared, fácil recambio de la gráfica y pintura de alta calidad al horno, de varias capas.',
+    'Innovación y diseño en productos novedosos y prácticos que atraen al público directamente a la puerta del establecimiento. Piezas de alto valor, elaboradas artesanalmente en acero y personalizadas a láser. Alimentación autónoma con batería o eléctricos, modelos de pie y de pared, fácil recambio de la gráfica y pintura de alta calidad al horno, de varias capas.',
   sections: [
     {
       id: 'de-pie',
@@ -39,9 +39,14 @@ export const atrilesPage: DossierPageContent = {
         'Fondo aproximado: 55 cm',
       ],
       images: [
+        { file: '08-atril-pie-la-terraza.webp', caption: 'La Terraza', src: '/images/web/atriles/08-atril-pie-la-terraza.webp' },
         { file: 'nosotros-18.webp', caption: 'Altanour', src: '/images/web/nosotros/nosotros-18.webp' },
+        { file: '12-atril-pie-mujer-pizza.webp', caption: 'En terraza', src: '/images/web/atriles/12-atril-pie-mujer-pizza.webp' },
+        { file: '09-atril-pie-sin-fondo.webp', caption: 'Modelo de pie', src: '/images/web/atriles/09-atril-pie-sin-fondo.webp' },
+        { file: '10-atril-pie-negro-texturizado.webp', caption: 'Negro texturizado', src: '/images/web/atriles/10-atril-pie-negro-texturizado.webp' },
         { file: '06-atril-pie-trasera.webp', caption: 'Trasera', src: '/images/web/atriles/06-atril-pie-trasera.webp' },
         { file: '07-atril-pie-perfil.webp', caption: 'Perfil', src: '/images/web/atriles/07-atril-pie-perfil.webp' },
+        { file: '11-atril-pie-medidas.webp', caption: 'Medidas', src: '/images/web/atriles/11-atril-pie-medidas.webp' },
       ],
       variant: 'light',
     },
@@ -69,7 +74,9 @@ export const atrilesPage: DossierPageContent = {
         'Sin luz, eléctrico o con batería',
       ],
       images: [
-        { file: '02-atril-cilindrico-premium.webp', caption: 'Modelo cilíndrico', src: '/images/web/atriles/02-atril-cilindrico-premium.webp' },
+        { file: '13-atril-cilindrico-producto.webp', caption: 'Modelo cilíndrico', src: '/images/web/atriles/13-atril-cilindrico-producto.webp' },
+        { file: '14-atril-cilindrico-mujer.webp', caption: 'En fachada', src: '/images/web/atriles/14-atril-cilindrico-mujer.webp' },
+        { file: '02-atril-cilindrico-premium.webp', caption: 'Detalle', src: '/images/web/atriles/02-atril-cilindrico-premium.webp' },
       ],
       variant: 'beige',
     },
@@ -99,24 +106,12 @@ export const atrilesPage: DossierPageContent = {
         'Inox, corte láser y led azul',
       ],
       images: [
-        { file: '03-atril-pared-rio-bravo-premium.webp', caption: 'Río Bravo', src: '/images/web/atriles/03-atril-pared-rio-bravo-premium.webp' },
+        { file: '03-atril-pared-rio-bravo-premium.webp', caption: 'Horizontal, led azul', src: '/images/web/atriles/03-atril-pared-rio-bravo-premium.webp' },
+        { file: '09-atril-pie-sin-fondo.webp', caption: 'Vertical, led azul', src: '/images/web/atriles/09-atril-pie-sin-fondo.webp' },
+        { file: '15-atril-pared-madera-iluminado.webp', caption: 'Laterales de madera', src: '/images/web/atriles/15-atril-pared-madera-iluminado.webp' },
+        { file: '16-atril-pared-madera-gente.webp', caption: 'Madera, en fachada', src: '/images/web/atriles/16-atril-pared-madera-gente.webp' },
       ],
       variant: 'dark',
-    },
-    {
-      id: 'pantallas',
-      nav: 'Pantallas',
-      kicker: 'Formatos amplios',
-      title: 'Amplia pantalla, de alto',
-      emphasis: 'brillo',
-      paragraphs: [
-        'Amplia pantalla de alto brillo, en diferentes modelos, tanto de pie como de pared. Equipos autónomos con diseños actuales y totalmente atemporales, fabricados para durar en el tiempo y resistir las condiciones climatológicas.',
-        'Fácil recambio de la gráfica. Pintura de alta calidad al horno, de varias capas. Medidas perfectas y fácil acomodo dentro de sus instalaciones.',
-      ],
-      images: [
-        { file: '04-atril-pantalla-ancha-premium.webp', caption: 'Pantalla ancha', src: '/images/web/atriles/04-atril-pantalla-ancha-premium.webp' },
-      ],
-      variant: 'light',
     },
     {
       id: 'outlet',
@@ -125,13 +120,19 @@ export const atrilesPage: DossierPageContent = {
       title: 'Oportunidades, por poco',
       emphasis: 'tiempo',
       paragraphs: [
+        'Amplia pantalla de alto brillo, en diferentes modelos, tanto de pie como de pared. Equipos autónomos con diseños actuales y totalmente atemporales, fabricados para durar en el tiempo y resistir las condiciones climatológicas. Fácil recambio de la gráfica. Pintura de alta calidad al horno, de varias capas. Medidas perfectas y fácil acomodo dentro de sus instalaciones.',
         'En **GastroMenú Premium** disponemos de un pequeño stock de atriles portamenús para liquidar, por cambio de modelos.',
         'Estamos hablando de equipos nuevos y con garantía en algunos casos y en otro (por ejemplo en vitrinas de aluminio con cerradura de pared) reciclados, pintados y preparados como nuevos y todos, absolutamente, con sus gráficas correspondientes personalizadas con su carta o el mensaje que quiera transmitir.',
         '**Es una gran oportunidad para hacerse con un equipo de alta calidad a un precio muy interesante…**',
         'No deje pasar esta increíble oportunidad. No disponemos de mucho stock, en algunos casos sólo 1 o 2 equipos y en otros no más de 10 unidades.',
         'Pregunte lo antes posible —si es que en este momento queda alguno— por estos chollos para hacerse con un muy buen atril portamenú, tanto con o sin iluminación.',
       ],
-      images: [],
+      images: [
+        { file: '17-atril-pantalla-flexible-apertura.webp', caption: 'Pantalla flexible', src: '/images/web/atriles/17-atril-pantalla-flexible-apertura.webp' },
+        { file: '18-atril-doble-banus.webp', caption: 'Doble portamenú', src: '/images/web/atriles/18-atril-doble-banus.webp' },
+        { file: '19-atril-pared-aluminio-iluminacion.webp', caption: 'Aluminio, iluminación perimetral', src: '/images/web/atriles/19-atril-pared-aluminio-iluminacion.webp' },
+        { file: '04-atril-pantalla-ancha-premium.webp', caption: 'Pantalla ancha', src: '/images/web/atriles/04-atril-pantalla-ancha-premium.webp' },
+      ],
       variant: 'beige',
     },
   ],

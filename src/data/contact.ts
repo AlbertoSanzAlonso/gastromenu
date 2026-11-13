@@ -4,7 +4,14 @@ export const company = {
   brand: 'GastroMenú Premium',
   domain: 'gastromenupremium.com',
   url: 'https://gastromenupremium.com',
-  email: 'info@cartasmenu.com',
+  /** Correo general (info, legal, formularios). */
+  email: 'hola@gastromenupremium.com',
+  emails: [
+    { id: 'general', address: 'hola@gastromenupremium.com' },
+    { id: 'commercial', address: 'comercial@gastromenupremium.com' },
+    { id: 'design', address: 'produccion@gastromenupremium.com' },
+    { id: 'stands', address: 'talleres@gastromenupremium.com' },
+  ],
   /** Domicilio social publicado en el Registro Mercantil. */
   registeredAddress:
     'Av. de los Botijos, s/n, bloque 5A, local 13, Edificio Alquibla, 29639 Benalmádena (Málaga)',

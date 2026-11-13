@@ -22,7 +22,7 @@ export const mantelesCopy: DossierCopy = {
         'And a person does not live by the menu alone. We also make breakfast placemats, and placemats for hotels, cafés and other houses. Remember that the guest will be looking at the placemat every time they lower their head to the plate. And even long before the plate is on it. We also make children’s placemats —to see if they will sit still for once— to colour and to do crosswords. Here too you can promote the children’s menu.',
       ],
       highlights: ['90-gram paper', 'Satin or matte', 'Ecological inks', 'Fully recyclable'],
-      captions: ['On the table'],
+      captions: ['On the table', 'Favorita', 'Único', 'Plaza', 'La Cepa'],
     },
     {
       nav: 'A case',
@@ -37,7 +37,7 @@ export const mantelesCopy: DossierCopy = {
         'You will ask what for. Well: some have laminated them and use them every day at home, at lunch or at dinner, as a permanent memory of that stay in Spain and of how well they spent it in that restaurant. Others have framed them, and the picture now dresses a wall of the house. Incredible, but true. And here we attach the images those foreign guests sent our client, which do not let us exaggerate.',
         'Needless to say, the pride of the **GastroMenú Premium** team when we heard the news. The pride of a job well done that crosses borders.',
       ],
-      captions: ['Before', 'After'],
+      captions: ['La Cepa in Europe', 'Framed', 'On the table', 'Before', 'After'],
     },
     {
       nav: 'With text',
@@ -60,6 +60,16 @@ export const mantelesCopy: DossierCopy = {
         'If, on the contrary, you want the placemats to blend with the room, to mark a difference from the competition, or to give your guests another kind of image, we recommend placemats with a personal design and no text: only your logo, or your logo together with that of a sponsor.',
         'At **GastroMenú Premium** we design to measure the placemats you want on your tables. We personalise, we adapt and we advise on the styles and types that best suit the house. You will gain in elegance, style and taste, and your guests will thank you for it.',
       ],
+      captions: [
+        'La Casita',
+        'Favorita',
+        'Único',
+        'Plaza',
+        'La Cepa',
+        'Sicsú',
+        'Verde Mar',
+        'Palmeras Plaza',
+      ],
     },
     {
       nav: 'Grill houses',
@@ -71,6 +81,7 @@ export const mantelesCopy: DossierCopy = {
         'In this case, if you have a grill or an asador, we present placemats made to set off the star product, or to lay out the wide offer you want your guests to have to hand.',
         'The placemat belongs to the room and carries the message you want to send. If you want a design placemat, you only have to ask **GastroMenú Premium**. It is the most economical, practical and hygienic option you can imagine.',
       ],
+      captions: ['El Asador', 'Carbón', 'Argentino', 'Los Ibéricos', 'Basque grill', 'Los Carnívoros'],
     },
     {
       nav: 'Wines',
@@ -83,6 +94,7 @@ export const mantelesCopy: DossierCopy = {
         'It is an excellent way, in every kind of restaurant or in a specific region, to run a marketing action with excellent results.',
         'We have special terms for wineries and distributors. Ask us.',
       ],
+      captions: ['Real Italian Food', 'Protos', 'López de Haro', 'Vinoteca Bacus', 'Jumilla wines'],
     },
     {
       nav: 'Themed',
@@ -93,6 +105,7 @@ export const mantelesCopy: DossierCopy = {
         'The offer **GastroMenú Premium** has for adapting placemats to every kind of house is enormous. Whether you have a themed restaurant or any other establishment, we strongly advise single-use paper placemats, for the versatility they have and the excellent result they give at the moment of decision. It has been shown that they have a high power over the guest’s last choice.',
         'If you want to try them, call us. We will show you many models from clients with assured success, and we will give shape to yours, so that you become one of them.',
       ],
+      captions: ['Mister Noodles', 'Mexican', 'Lebanese', 'Kaede', 'Haruki'],
     },
     {
       nav: 'Cocktails',
@@ -116,6 +129,13 @@ export const mantelesCopy: DossierCopy = {
         'You can also combine table placemats with menus. On the placemat, your best offers, with or without images, so the guest can be drawn to something that interests us, and then the menu reinforces the gastronomic offer. The move is completed beautifully.',
         'The placemat can also point to the desserts, and that image stays there through the whole meal. Every time the guest lowers their head to the plate, the dessert offer is with them. And what will they do when they finish eating?',
       ],
+      captions: [
+        'Alma Mediterránea',
+        'Estrella de Mar',
+        'Rocamar',
+        'Seafood beach bar',
+        'Mediterraneum',
+      ],
     },
     {
       nav: 'Breakfast',
@@ -128,6 +148,7 @@ export const mantelesCopy: DossierCopy = {
         'At **GastroMenú Premium** we encourage you to place placemats designed personally for the house, to promote breakfast, with specific images that lift the offer still further or introduce products the public does not know you have.',
         'Besides guaranteeing hygiene on the tables, you will notice the sales rise, and the till will thank you.',
       ],
+      captions: ['Breakfast', 'Hearts', 'Hotel Ambassador', 'La Colombiana', 'Ambassador'],
     },
     {
       nav: 'Rigid',
@@ -146,6 +167,7 @@ export const mantelesCopy: DossierCopy = {
         'Corners cut by laser',
         'Gloss lacquer, washable',
       ],
+      captions: ['Fish', 'Starfish', 'Starfish alone', 'Set', 'Cinnabar Café'],
     },
     {
       nav: 'For children',

@@ -28,13 +28,21 @@ export function ContactDetails() {
 
         <article className="border-b border-gold-slide/20 p-8 md:border-r md:border-b-0">
           <p className="slide-label mb-5">{m.contact.write}</p>
-          <a
-            href={`mailto:${company.email}`}
-            className="block font-serif text-lg text-cream break-all transition-colors hover:text-gold-slide"
-          >
-            {company.email}
-          </a>
-          <p className="mt-6 text-sm leading-relaxed text-cream-muted">{m.contact.callBody}</p>
+          <ul className="space-y-4">
+            {company.emails.map((item) => (
+              <li key={item.id}>
+                <p className="font-label text-[10px] uppercase tracking-[0.18em] text-cream-muted">
+                  {m.contact.emails[item.id]}
+                </p>
+                <a
+                  href={`mailto:${item.address}`}
+                  className="mt-1 block font-serif text-base text-cream break-all transition-colors hover:text-gold-slide"
+                >
+                  {item.address}
+                </a>
+              </li>
+            ))}
+          </ul>
         </article>
 
         <article className="p-8">
