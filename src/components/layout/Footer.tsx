@@ -28,7 +28,7 @@ export function Footer() {
           <div className="mb-4 flex flex-col items-center gap-3">
             <BrandLogo className="h-14 w-14 object-contain opacity-95 md:h-16 md:w-16" />
             <p className="brand-title text-sm tracking-[0.14em] text-gold-slide md:text-base">
-              GastroMenú Premium
+              GastroMenu Premium
             </p>
           </div>
           <BrandDivider className="mb-4" />
@@ -98,7 +98,7 @@ export function Footer() {
         </p>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="slide-label text-[10px]">© {year} GastroMenú Premium. {m.footer.rights}</p>
+          <p className="slide-label text-[10px]">© {year} GastroMenu Premium. {m.footer.rights}</p>
           <p className="slide-label text-[10px]">
             <Link to="/aviso-legal" className="transition-colors hover:text-gold-highlight">
               {m.footer.legal}

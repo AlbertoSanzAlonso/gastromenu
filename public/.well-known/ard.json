@@ -1,21 +1,21 @@
 {
   "specVersion": "1.0",
   "host": {
-    "displayName": "GastroMenú Premium",
+    "displayName": "GastroMenu Premium",
     "identifier": "www.gastromenupremium.com",
     "documentationUrl": "https://www.gastromenupremium.com/llms.txt"
   },
   "entries": [
     {
       "identifier": "urn:air:www.gastromenupremium.com:page:inicio",
-      "displayName": "GastroMenú Premium — Cartas artesanales",
+      "displayName": "GastroMenu Premium — Cartas artesanales",
       "description": "Fabricación propia de cartas de menú, manteles y atriles portamenú desde 1998. Talleres en Madrid y Málaga. Titularidad de Fudys Gourmet SL.",
       "type": "text/html",
       "url": "https://www.gastromenupremium.com/",
       "representativeQueries": [
         "cartas de menú artesanales para restaurantes",
         "fabricante de portamenús premium en España",
-        "GastroMenú Premium contacto"
+        "GastroMenu Premium contacto"
       ],
       "tags": ["cartas", "restaurantes", "fabricacion"]
     },
@@ -28,7 +28,7 @@
       "representativeQueries": [
         "cartas de menú en piel o madera",
         "portamenús personalizados para restaurante",
-        "cartas artesanales GastroMenú"
+        "cartas artesanales GastroMenu"
       ],
       "tags": ["cartas", "menu", "piel"]
     },
@@ -41,7 +41,7 @@
       "representativeQueries": [
         "atriles portamenú para restaurante",
         "atril de pie iluminado para carta",
-        "atriles de pared GastroMenú"
+        "atriles de pared GastroMenu"
       ],
       "tags": ["atriles", "portamenu"]
     },
@@ -65,9 +65,9 @@
       "type": "text/html",
       "url": "https://www.gastromenupremium.com/contacto",
       "representativeQueries": [
-        "teléfono de GastroMenú Premium",
+        "teléfono de GastroMenu Premium",
         "pedir presupuesto de cartas de menú",
-        "email comercial GastroMenú"
+        "email comercial GastroMenu"
       ],
       "tags": ["contacto", "presupuesto"]
     },
@@ -78,8 +78,8 @@
       "type": "text/plain",
       "url": "https://www.gastromenupremium.com/llms.txt",
       "representativeQueries": [
-        "qué es GastroMenú Premium",
-        "resumen de productos GastroMenú para un agente"
+        "qué es GastroMenu Premium",
+        "resumen de productos GastroMenu para un agente"
       ],
       "tags": ["llms.txt", "documentation"]
     },
@@ -90,7 +90,7 @@
       "type": "application/mcp-server-card+json",
       "url": "https://www.gastromenupremium.com/.well-known/mcp.json",
       "representativeQueries": [
-        "tiene GastroMenú un servidor MCP",
+        "tiene GastroMenu un servidor MCP",
         "herramientas de agente de gastromenupremium.com"
       ],
       "tags": ["mcp"]
@@ -102,8 +102,8 @@
       "type": "application/a2a-agent-card+json",
       "url": "https://www.gastromenupremium.com/.well-known/agent.json",
       "representativeQueries": [
-        "agente de GastroMenú Premium",
-        "cómo consulta un agente los productos de GastroMenú"
+        "agente de GastroMenu Premium",
+        "cómo consulta un agente los productos de GastroMenu"
       ],
       "tags": ["a2a", "agent"]
     },
@@ -114,7 +114,7 @@
       "type": "application/linkset+json",
       "url": "https://www.gastromenupremium.com/.well-known/api-catalog",
       "representativeQueries": [
-        "dónde está el catálogo de APIs de GastroMenú",
+        "dónde está el catálogo de APIs de GastroMenu",
         "descubrir recursos públicos de gastromenupremium.com"
       ],
       "tags": ["api-catalog", "rfc9727"]

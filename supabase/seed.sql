@@ -1,4 +1,4 @@
--- Datos iniciales para GastroMenúPremium
+-- Datos iniciales para GastroMenuPremium
 
 insert into gallery_categories (slug, title, subtitle, sort_order) values
   ('cartas', 'Cartas de menú, vinos, postres y cócteles', 'Materiales nobles y acabados artesanales', 1),

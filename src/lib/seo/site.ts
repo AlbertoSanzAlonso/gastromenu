@@ -1,6 +1,6 @@
 import { company, socialLinks } from '../../data/contact'
 
-export const SITE_NAME = 'GastroMenú Premium'
+export const SITE_NAME = 'GastroMenu Premium'
 export const SITE_URL = company.url
 
 export const OG_IMAGE = {
@@ -8,11 +8,11 @@ export const OG_IMAGE = {
   width: 762,
   height: 1024,
   type: 'image/jpeg',
-  alt: 'Cartas artesanales GastroMenú Premium',
+  alt: 'Cartas artesanales GastroMenu Premium',
 } as const
 
 export const homeSeo: SeoCopy = {
-  title: 'GastroMenú Premium — Cartas artesanales',
+  title: 'GastroMenu Premium — Cartas artesanales',
   description:
     'Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998.',
 }
@@ -26,19 +26,19 @@ export const contactSeo: SeoCopy = {
 export const legalNoticeSeo: SeoCopy = {
   title: 'Aviso legal',
   description:
-    'Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenú Premium, titularidad de Fudys Gourmet SL.',
+    'Datos identificativos, condiciones de uso y propiedad intelectual del sitio de GastroMenu Premium, titularidad de Fudys Gourmet SL.',
 }
 
 export const privacySeo: SeoCopy = {
   title: 'Política de privacidad',
   description:
-    'Información sobre el tratamiento de datos personales de GastroMenú Premium, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD.',
+    'Información sobre el tratamiento de datos personales de GastroMenu Premium, titularidad de Fudys Gourmet SL, conforme al RGPD y la LOPDGDD.',
 }
 
 export const salesTermsSeo: SeoCopy = {
   title: 'Condiciones de venta',
   description:
-    'Presupuesto, señal, plazos de elaboración y garantía de los encargos de GastroMenú Premium, titularidad de Fudys Gourmet SL.',
+    'Presupuesto, señal, plazos de elaboración y garantía de los encargos de GastroMenu Premium, titularidad de Fudys Gourmet SL.',
 }
 
 export const dossierSeo = {
@@ -46,13 +46,13 @@ export const dossierSeo = {
     path: '/nosotros',
     title: 'Nosotros',
     description:
-      'GastroMenú Premium. Más de 28 años convirtiendo la presentación en parte de la experiencia. Cartas, manteles y atriles portamenú.',
+      'GastroMenu Premium. Más de 28 años convirtiendo la presentación en parte de la experiencia. Cartas, manteles y atriles portamenú.',
   },
   cartas: {
     path: '/cartas',
     title: 'Cartas menú',
     description:
-      'Cartas de menú, vinos, postres y cócteles en tapas duras, piel, semipiel, tejidos nobles y maderas selectas. Fabricación artesanal GastroMenú Premium.',
+      'Cartas de menú, vinos, postres y cócteles en tapas duras, piel, semipiel, tejidos nobles y maderas selectas. Fabricación artesanal GastroMenu Premium.',
   },
   atriles: {
     path: '/atriles',
@@ -76,7 +76,7 @@ export const dossierSeo = {
     path: '/blog',
     title: 'Blog',
     description:
-      'Consejos de GastroMenú Premium para elaborar cartas, cuidar los materiales, elegir portamenús y diseñar mensajes y manteles.',
+      'Consejos de GastroMenu Premium para elaborar cartas, cuidar los materiales, elegir portamenús y diseñar mensajes y manteles.',
   },
 } satisfies Record<string, SeoCopy & { path: string }>
 
@@ -287,7 +287,7 @@ export function buildJsonLd(input: {
     '@type': ['LocalBusiness', 'Manufacturer'],
     '@id': BUSINESS_ID,
     name: SITE_NAME,
-    alternateName: ['GastroMenú', 'GastroMenú Premium'],
+    alternateName: ['GastroMenu', 'GastroMenu Premium'],
     legalName: company.legalName,
     taxID: company.cif,
     url: SITE_URL,

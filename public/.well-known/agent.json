@@ -1,6 +1,6 @@
 {
   "protocolVersion": "0.2.5",
-  "name": "GastroMenú Premium",
+  "name": "GastroMenu Premium",
   "description": "Ficha informativa. Este dominio no opera un endpoint JSON-RPC A2A. Las mismas respuestas están en las páginas públicas: cartas, atriles, manteles, exclusividades y contacto. Titularidad de Fudys Gourmet SL. Teléfonos +34 605 989 264 y +34 952 058 319. Correo hola@gastromenupremium.com.",
   "url": "https://www.gastromenupremium.com/contacto",
   "preferredTransport": "JSONRPC",
@@ -24,8 +24,8 @@
       "description": "Nombre comercial, razón social, CIF, teléfonos, correo y talleres. Se leen en la home, el contacto y llms.txt. No hay un método JSON-RPC: hay que leer esas páginas.",
       "tags": ["contacto", "empresa", "nap"],
       "examples": [
-        "teléfono de GastroMenú Premium",
-        "dónde fabrica GastroMenú las cartas"
+        "teléfono de GastroMenu Premium",
+        "dónde fabrica GastroMenu las cartas"
       ],
       "inputModes": ["text/plain"],
       "outputModes": ["text/html", "text/plain"]
@@ -36,7 +36,7 @@
       "description": "Cartas menú, atriles portamenú, manteles y exclusividades descritos en las páginas del dossier. No inventar precios ni materiales que no aparezcan ahí.",
       "tags": ["cartas", "atriles", "manteles"],
       "examples": [
-        "qué cartas de menú fabrica GastroMenú",
+        "qué cartas de menú fabrica GastroMenu",
         "atriles iluminados para restaurante"
       ],
       "inputModes": ["text/plain"],
@@ -49,7 +49,7 @@
       "tags": ["presupuesto", "contacto"],
       "examples": [
         "pedir presupuesto de cartas artesanales",
-        "cómo contactar con GastroMenú Premium"
+        "cómo contactar con GastroMenu Premium"
       ],
       "inputModes": ["text/plain"],
       "outputModes": ["text/html", "text/plain"]

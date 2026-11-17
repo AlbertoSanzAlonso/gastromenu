@@ -3,7 +3,7 @@ import type { DossierCopy } from '@/i18n/translateDossier'
 export const blogCopy: DossierCopy = {
   seoTitle: 'Blog',
   seoDescription:
-    'Practical notes from GastroMenú Premium on making menus, caring for materials, choosing menu stands and designing messages and placemats.',
+    'Practical notes from GastroMenu Premium on making menus, caring for materials, choosing menu stands and designing messages and placemats.',
   kicker: 'Blog',
   title: 'Comments, suggestions and',
   emphasis: 'advice',

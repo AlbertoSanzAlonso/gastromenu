@@ -9,7 +9,7 @@ export const nosotrosPage: DossierPageContent = {
   title: 'La presentación también forma parte de la',
   emphasis: 'experiencia',
   lead:
-    'Más de 28 años convirtiendo la presentación en parte de la experiencia. En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.',
+    'Más de 28 años convirtiendo la presentación en parte de la experiencia. En GastroMenu Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.',
   heroImages: [
     { file: 'g-0046-piel.webp', caption: 'Piel', src: '/images/web/cartas/g-0046-piel.webp' },
     { file: 'g-0057-cervantes.webp', caption: 'Cervantes', src: '/images/web/cartas/g-0057-cervantes.webp' },
@@ -25,13 +25,13 @@ export const nosotrosPage: DossierPageContent = {
       title: 'Más de 28 años convirtiendo la presentación en parte de la',
       emphasis: 'experiencia',
       paragraphs: [
-        'En **GastroMenú Premium** llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.',
+        'En **GastroMenu Premium** llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.',
         'Diseñamos y elaboramos artesanalmente cartas de menú, manteles personalizados rígidos, flexibles y descartables y atriles personalizados, fabricados en acero galvanizado, con pantallas luminosas de alto impacto visual. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.',
         'Cada proyecto nace de una idea: que la imagen del restaurante empiece antes de que el cliente se siente a la mesa.',
         'Por eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.',
         'Desde una carta artesanal hasta un portamenú autónomo, iluminado con batería, estudiamos cada proyecto para encontrar el equilibrio entre estética, funcionalidad, resistencia y personalidad.',
         '28 años de experiencia. Diseño personalizado. Elaboración artesanal.',
-        '**GastroMenú Premium**. La presentación también forma parte de la experiencia.',
+        '**GastroMenu Premium**. La presentación también forma parte de la experiencia.',
       ],
       highlights: [
         'Nuestra historia — 28 años de experiencia.',
@@ -76,7 +76,7 @@ export const nosotrosPage: DossierPageContent = {
       paragraphs: [
         'Tú pones la creatividad. Nosotros hacemos que cobre vida.',
         '¿Tienes un diseño para una carta de menú, un portamenú o un elemento de presentación para un restaurante y necesitas convertirlo en un producto real?',
-        'En **GastroMenú Premium** ponemos nuestros 28 años de experiencia en fabricación especializada al servicio de agencias de publicidad, estudios creativos y diseñadores gráficos.',
+        'En **GastroMenu Premium** ponemos nuestros 28 años de experiencia en fabricación especializada al servicio de agencias de publicidad, estudios creativos y diseñadores gráficos.',
         '**Tú diseñas. Tu cliente elige. Nosotros lo elaboramos artesanalmente.**',
         'Trabajamos a partir de tus diseños para crear cartas de menú y portamenús completamente personalizados, respetando fielmente la identidad visual, las medidas, los materiales y los acabados definidos para cada proyecto.',
         'Puedes elegir entre piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas y otros materiales, combinando diferentes texturas, colores y sistemas de fabricación para conseguir una pieza única.',
@@ -87,7 +87,7 @@ export const nosotrosPage: DossierPageContent = {
         'El resultado es un producto desarrollado específicamente para tu proyecto, con tu diseño y la identidad de tu cliente, fabricado con materiales y materias primas de calidad y con el cuidado que requiere un producto premium.',
         'Y todo ello con precios ajustados y condiciones pensadas para profesionales, para que puedas presentar a tu cliente una solución personalizada y competitiva.',
         'Del diseño al producto final. Envíanos tu proyecto. Nosotros nos encargamos de hacerlo realidad.',
-        '“En **GastroMenú Premium** disponemos de condiciones especialmente pensadas para agencias y diseñadores.”',
+        '“En **GastroMenu Premium** disponemos de condiciones especialmente pensadas para agencias y diseñadores.”',
         'Tu diseño + nuestro saber hacer = un producto único. Cartas menú, atriles portamenús, mantelería rígida y descartable, fabricación personalizada.',
       ],
       images: [
@@ -108,7 +108,7 @@ export const nosotrosPage: DossierPageContent = {
       paragraphs: [
         'Tres cartas, una misma esencia. Calidad y elegancia para toda su oferta gastronómica.',
         'Presente la personalidad de su restaurante en cada detalle con nuestra exclusiva trilogía: carta de menú, carta de vinos y carta de postres.',
-        'En **GastroMenú Premium** le ofrecemos la oportunidad de adquirir las tres cartas conjuntamente, disfrutando de una propuesta más económica y de una imagen coordinada que dará unidad, distinción y personalidad a toda su oferta gastronómica.',
+        'En **GastroMenu Premium** le ofrecemos la oportunidad de adquirir las tres cartas conjuntamente, disfrutando de una propuesta más económica y de una imagen coordinada que dará unidad, distinción y personalidad a toda su oferta gastronómica.',
         'Diseñamos y fabricamos cada pieza de manera totalmente artesanal, con 28 años de experiencia, utilizando materiales nobles y seleccionados: tapas duras, semipiel, textiles y otros acabados de alta calidad.',
         'Cada trilogía es personalizada para reflejar la verdadera esencia de su establecimiento, combinando diseño, elegancia, resistencia y cuidado por los pequeños detalles.',
         'Tres cartas que hablan de su restaurante. Una presentación que marca la diferencia.',
@@ -154,7 +154,7 @@ export const nosotrosPage: DossierPageContent = {
         'Es inenarrable el orgullo interior y el placer de saber que hemos cumplido, del trabajo bien hecho. Muchos clientes nos confiesan, meses después de haberles entregado el material que les ha subido el tique medio. Incluso que los comensales habituales les felicitan por el cambio.',
         'Se nota incluso en la actitud de los camareros cuando llevan las nuevas cartas a las mesas, lo hacen con la confianza de que el cliente no tendrá ya que preguntarle por determinados platos, o por los alérgenos que llevan o porque no puede leer bien lo que pone la carta, al estar rota o manchada.',
         'En fin, anécdotas: miles!',
-        'Pero, lo dicho, nos alegramos y enorgullecemos de ver que el trabajo duro, arduo, lento y artesanal (a veces incomprendido) de un gran equipo de personas: diseñadores, técnicos comerciales, administrativos, fotógrafos, traductores, desarrollo web y gestión profesional de RR.SS., impresores, plastificadores, troqueladores, maquinistas, encuadernadores, transportistas y todo el mundo que se mueve alrededor de este fascinante universo de las artes gráficas que no se ve, pero que están ahí día sí y día también para que sus nuevas cartas tengan la mejor calidad y el exquisito acabado que sólo le puede dar **GastroMenú Premium**.',
+        'Pero, lo dicho, nos alegramos y enorgullecemos de ver que el trabajo duro, arduo, lento y artesanal (a veces incomprendido) de un gran equipo de personas: diseñadores, técnicos comerciales, administrativos, fotógrafos, traductores, desarrollo web y gestión profesional de RR.SS., impresores, plastificadores, troqueladores, maquinistas, encuadernadores, transportistas y todo el mundo que se mueve alrededor de este fascinante universo de las artes gráficas que no se ve, pero que están ahí día sí y día también para que sus nuevas cartas tengan la mejor calidad y el exquisito acabado que sólo le puede dar **GastroMenu Premium**.',
       ],
       images: [
         { file: 'nosotros-18.webp', caption: 'Altanour', src: '/images/web/nosotros/nosotros-18.webp' },

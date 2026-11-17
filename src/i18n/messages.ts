@@ -7,7 +7,7 @@ const es = {
     en: 'English',
   },
   nav: {
-    home: 'GastroMenú Premium - Inicio',
+    home: 'GastroMenu Premium - Inicio',
     open: 'Abrir menú',
     close: 'Cerrar menú',
     primary: 'Navegación principal',
@@ -33,7 +33,7 @@ const es = {
   hero: {
     carousel: 'carrusel',
     presentation: 'Presentación',
-    coverAlt: 'Imagen de portada de GastroMenú Premium',
+    coverAlt: 'Imagen de portada de GastroMenu Premium',
     coverLabel: 'Alta calidad en imagen gastronómica',
     since: 'Fabricación propia desde 1998',
     discover: 'Descubrir colección',
@@ -128,7 +128,7 @@ const es = {
     heroTitle: 'La excelencia\ncomo destino',
     heroQuote: 'A veces una primera impresión es la que queda para siempre…',
     about:
-      'En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.\n\nDiseñamos y elaboramos artesanalmente cartas de menú, manteles personalizados rígidos, flexibles y descartables y atriles personalizados, fabricados en acero galvanizado, con pantallas luminosas de alto impacto visual. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.\n\nPor eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.\n\n28 años de experiencia. Diseño personalizado. Elaboración artesanal.',
+      'En GastroMenu Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.\n\nDiseñamos y elaboramos artesanalmente cartas de menú, manteles personalizados rígidos, flexibles y descartables y atriles personalizados, fabricados en acero galvanizado, con pantallas luminosas de alto impacto visual. Piel, semipiel, tejidos, maderas seleccionadas, tapas rígidas, Alubond y acero son algunos de los materiales con los que damos forma a soluciones pensadas específicamente para el mundo de la restauración.\n\nPor eso desarrollamos productos personalizados que no solo cumplen una función, sino que comunican el carácter del establecimiento, refuerzan su identidad y contribuyen a crear una experiencia coherente desde el primer contacto.\n\n28 años de experiencia. Diseño personalizado. Elaboración artesanal.',
   },
   footer: {
     tagline: 'Cartas artesanales premium para el alma de tu negocio.',
@@ -274,7 +274,7 @@ const en: typeof es = {
     en: 'English',
   },
   nav: {
-    home: 'GastroMenú Premium - Home',
+    home: 'GastroMenu Premium - Home',
     open: 'Open menu',
     close: 'Close menu',
     primary: 'Main navigation',
@@ -291,7 +291,7 @@ const en: typeof es = {
     note: 'Because excellence is also served at the table.',
   },
   seo: {
-    homeTitle: 'GastroMenú Premium — Handcrafted menus',
+    homeTitle: 'GastroMenu Premium — Handcrafted menus',
     homeDescription: 'Handcrafted menus, placemats and menu stands. Made in-house since 1998.',
     contactTitle: 'Contact',
     contactDescription:
@@ -301,7 +301,7 @@ const en: typeof es = {
   hero: {
     carousel: 'carousel',
     presentation: 'Presentation',
-    coverAlt: 'GastroMenú Premium cover image',
+    coverAlt: 'GastroMenu Premium cover image',
     coverLabel: 'A fine image for the table',
     since: 'In-house manufacturing since 1998',
     discover: 'Discover the collection',
@@ -396,7 +396,7 @@ const en: typeof es = {
     heroTitle: 'Excellence\nas destination',
     heroQuote: 'Sometimes a first impression is the one that lasts forever…',
     about:
-      'At GastroMenú Premium we have spent 28 years working for restaurants that know every detail counts.\n\nWe design and craft by hand menus, custom placemats —rigid, flexible and disposable— and personal menu stands, made in galvanised steel, with luminous screens of high visual impact. Leather, faux leather, fabrics, selected woods, rigid covers, Alubond and steel are some of the materials we use to shape solutions made specifically for hospitality.\n\nThat is why we develop personal products that do more than serve a function: they communicate the character of the house, strengthen its identity and help create a coherent experience from the first contact.\n\n28 years of experience. Personal design. Handcrafted making.',
+      'At GastroMenu Premium we have spent 28 years working for restaurants that know every detail counts.\n\nWe design and craft by hand menus, custom placemats —rigid, flexible and disposable— and personal menu stands, made in galvanised steel, with luminous screens of high visual impact. Leather, faux leather, fabrics, selected woods, rigid covers, Alubond and steel are some of the materials we use to shape solutions made specifically for hospitality.\n\nThat is why we develop personal products that do more than serve a function: they communicate the character of the house, strengthen its identity and help create a coherent experience from the first contact.\n\n28 years of experience. Personal design. Handcrafted making.',
   },
   footer: {
     tagline: 'Premium handcrafted menus for the soul of your business.',
@@ -524,17 +524,17 @@ const en: typeof es = {
     noticeHeading: 'Legal',
     noticeAccent: 'notice',
     noticeDescription:
-      'Identifying details, terms of use and intellectual property of the GastroMenú Premium site, owned by Fudys Gourmet SL.',
+      'Identifying details, terms of use and intellectual property of the GastroMenu Premium site, owned by Fudys Gourmet SL.',
     privacyTitle: 'Privacy policy',
     privacyHeading: 'Privacy',
     privacyAccent: 'policy',
     privacyDescription:
-      'How GastroMenú Premium, owned by Fudys Gourmet SL, processes personal data under the GDPR and the Spanish LOPDGDD.',
+      'How GastroMenu Premium, owned by Fudys Gourmet SL, processes personal data under the GDPR and the Spanish LOPDGDD.',
     termsTitle: 'Conditions of sale',
     termsHeading: 'Conditions of',
     termsAccent: 'sale',
     termsDescription:
-      'Quotes, deposits, making times and warranty for commissions from GastroMenú Premium, owned by Fudys Gourmet SL.',
+      'Quotes, deposits, making times and warranty for commissions from GastroMenu Premium, owned by Fudys Gourmet SL.',
   },
 }
 

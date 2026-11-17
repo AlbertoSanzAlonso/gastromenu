@@ -1,10 +1,10 @@
 {
   "specVersion": "0.1",
   "name": "gastromenu-web",
-  "title": "GastroMenú Premium — información pública",
+  "title": "GastroMenu Premium — información pública",
   "description": "Este sitio no expone un servidor MCP remoto ni herramientas WebMCP invocables. La información para agentes está en las páginas HTML, en llms.txt y en el catálogo ARD.",
   "provider": {
-    "name": "GastroMenú Premium",
+    "name": "GastroMenu Premium",
     "url": "https://www.gastromenupremium.com/",
     "contact": "https://www.gastromenupremium.com/contacto"
   },

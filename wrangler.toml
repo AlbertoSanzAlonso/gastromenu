@@ -19,4 +19,4 @@ compatibility_date = "2026-10-17"
 [vars]
 CONTACT_TO = "hola@gastromenupremium.com"
 CONTACT_FROM = "hola@gastromenupremium.com"
-CONTACT_FROM_NAME = "GastroMenú Premium"
+CONTACT_FROM_NAME = "GastroMenu Premium"

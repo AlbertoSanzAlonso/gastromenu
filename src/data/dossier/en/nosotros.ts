@@ -3,12 +3,12 @@ import type { DossierCopy } from '@/i18n/translateDossier'
 export const nosotrosCopy: DossierCopy = {
   seoTitle: 'About',
   seoDescription:
-    'GastroMenú Premium. More than 28 years turning presentation into part of the experience. Menus, placemats and menu stands.',
+    'GastroMenu Premium. More than 28 years turning presentation into part of the experience. Menus, placemats and menu stands.',
   kicker: 'About',
   title: 'Presentation is also part of the',
   emphasis: 'experience',
   lead:
-    'More than 28 years turning presentation into part of the experience. At GastroMenú Premium we have spent 28 years working for restaurants that know every detail counts.',
+    'More than 28 years turning presentation into part of the experience. At GastroMenu Premium we have spent 28 years working for restaurants that know every detail counts.',
   heroCaptions: ['Leather', 'Cervantes', 'Wood', 'Khan', 'Il Capitano'],
   sections: [
     {
@@ -17,13 +17,13 @@ export const nosotrosCopy: DossierCopy = {
       title: 'More than 28 years turning presentation into part of the',
       emphasis: 'experience',
       paragraphs: [
-        'At **GastroMenú Premium** we have spent 28 years working for restaurants that know every detail counts.',
+        'At **GastroMenu Premium** we have spent 28 years working for restaurants that know every detail counts.',
         'We design and craft by hand menus, custom placemats —rigid, flexible and disposable— and personal menu stands, made in galvanised steel, with luminous screens of high visual impact. Leather, faux leather, fabrics, selected woods, rigid covers, Alubond and steel are some of the materials we use to shape solutions made specifically for hospitality.',
         'Every project starts from one idea: that the image of the restaurant begins before the guest sits down.',
         'That is why we develop personal products that do more than serve a function: they communicate the character of the house, strengthen its identity and help create a coherent experience from the first contact.',
         'From a handcrafted menu to a self-contained menu stand, lit by battery, we study each project to find the balance between aesthetics, function, resistance and personality.',
         '28 years of experience. Personal design. Handcrafted making.',
-        '**GastroMenú Premium**. Presentation is also part of the experience.',
+        '**GastroMenu Premium**. Presentation is also part of the experience.',
       ],
       highlights: [
         'Our history — 28 years of experience.',
@@ -52,7 +52,7 @@ export const nosotrosCopy: DossierCopy = {
       paragraphs: [
         'You bring the creativity. We bring it to life.',
         'Do you have a design for a menu, a menu stand or a piece of presentation for a restaurant, and need it turned into a real product?',
-        'At **GastroMenú Premium** we put 28 years of specialised manufacture at the service of advertising agencies, creative studios and graphic designers.',
+        'At **GastroMenu Premium** we put 28 years of specialised manufacture at the service of advertising agencies, creative studios and graphic designers.',
         '**You design. Your client chooses. We craft it by hand.**',
         'We work from your designs to create fully personal menus and menu stands, faithfully respecting the visual identity, the measurements, the materials and the finishes defined for each project.',
         'You can choose leather, faux leather, fabrics, selected woods, rigid covers and other materials, combining textures, colours and making systems to arrive at a unique piece.',
@@ -63,7 +63,7 @@ export const nosotrosCopy: DossierCopy = {
         'The result is a product developed specifically for your project, with your design and your client’s identity, made with quality materials and the care a premium product requires.',
         'And all of it at adjusted prices and on terms conceived for professionals, so you can present your client with a personal, competitive solution.',
         'From the design to the finished product. Send us your project. We will make it real.',
-        '“At **GastroMenú Premium** we have terms conceived especially for agencies and designers.”',
+        '“At **GastroMenu Premium** we have terms conceived especially for agencies and designers.”',
         'Your design + our know-how = a unique product. Menus, menu stands, rigid and disposable placemats, personal manufacture.',
       ],
       captions: ['Orient Express', 'El Torillo', 'Koco', 'Torii', 'Pizza Mare'],
@@ -76,7 +76,7 @@ export const nosotrosCopy: DossierCopy = {
       paragraphs: [
         'Three menus, one essence. Quality and elegance for your whole gastronomic offer.',
         'Show the personality of your restaurant in every detail with our exclusive trilogy: food menu, wine list and dessert menu.',
-        'At **GastroMenú Premium** you can take the three menus together, with a more economical proposal and a coordinated image that gives unity, distinction and personality to the whole offer.',
+        'At **GastroMenu Premium** you can take the three menus together, with a more economical proposal and a coordinated image that gives unity, distinction and personality to the whole offer.',
         'We design and make every piece entirely by hand, with 28 years of experience, using noble, selected materials: hard covers, faux leather, textiles and other high-quality finishes.',
         'Each trilogy is personalised to reflect the true essence of the house, combining design, elegance, resistance and care for the small details.',
         'Three menus that speak of your restaurant. A presentation that makes the difference.',
@@ -94,7 +94,7 @@ export const nosotrosCopy: DossierCopy = {
         'The inner pride of a job well done is hard to put into words. Many clients tell us, months after delivery, that their average ticket has risen. Even that regular guests congratulate them on the change.',
         'It shows in the waiters, too, when they carry the new menus to the tables. They do it with the confidence that the guest will no longer have to ask about certain dishes, or about the allergens, or struggle to read a menu that is torn or stained.',
         'In short, anecdotes: thousands of them.',
-        'But, as we said, we are glad and proud to see that the hard, slow, handcrafted work —sometimes misunderstood— of a large team is what it is: designers, sales technicians, administrators, photographers, translators, web development and the professional running of social media, printers, laminators, die-cutters, machinists, binders, carriers and everyone who moves around this fascinating world of the graphic arts. They are not seen, but they are there, day after day, so that your new menus have the best quality and the exquisite finish that only **GastroMenú Premium** can give them.',
+        'But, as we said, we are glad and proud to see that the hard, slow, handcrafted work —sometimes misunderstood— of a large team is what it is: designers, sales technicians, administrators, photographers, translators, web development and the professional running of social media, printers, laminators, die-cutters, machinists, binders, carriers and everyone who moves around this fascinating world of the graphic arts. They are not seen, but they are there, day after day, so that your new menus have the best quality and the exquisite finish that only **GastroMenu Premium** can give them.',
       ],
       captions: ['Altanour', 'Muscatel', 'Mi Café', 'La Favorita'],
     },

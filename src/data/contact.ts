@@ -1,7 +1,7 @@
 export const company = {
   legalName: 'Fudys Gourmet SL',
   cif: 'B06899389',
-  brand: 'GastroMenú Premium',
+  brand: 'GastroMenu Premium',
   domain: 'gastromenupremium.com',
   url: 'https://www.gastromenupremium.com',
   /** Correo general (info, legal, formularios). */

@@ -78,7 +78,7 @@ export function Header() {
           <span
             className={`brand-title text-center text-[clamp(0.66rem,3.15vw,0.84rem)] leading-[1.15] tracking-[0.14em] transition-all duration-500 ease-premium group-hover:opacity-80 sm:text-left sm:text-xs sm:leading-none md:text-sm ${logoColor}`}
           >
-            <span className="block whitespace-nowrap sm:inline">GastroMenú</span>
+            <span className="block whitespace-nowrap sm:inline">GastroMenu</span>
             <span className="hidden sm:inline"> </span>
             <span className="block whitespace-nowrap sm:inline">Premium</span>
           </span>
@@ -119,7 +119,7 @@ export function Header() {
             <div className="site-drawer-head">
               <Link to="/" className="site-drawer-brand" onClick={() => setOpen(false)}>
                 <BrandLogo className="h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-12 md:w-12" />
-                <span className="brand-title text-xs tracking-[0.14em] text-gold-dark sm:text-sm">GastroMenú Premium</span>
+                <span className="brand-title text-xs tracking-[0.14em] text-gold-dark sm:text-sm">GastroMenu Premium</span>
               </Link>
             </div>
             <ul>

@@ -1,4 +1,4 @@
--- GastroMenúPremium — Esquema inicial
+-- GastroMenuPremium — Esquema inicial
 -- Ejecutar en Supabase SQL Editor o con supabase db push
 
 create extension if not exists "uuid-ossp";

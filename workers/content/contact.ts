@@ -3,7 +3,7 @@ import { EMAIL_LOGO_PNG_BASE64 } from './emailLogo'
 
 const OWNER_EMAIL = company.email
 const FROM_EMAIL = company.email
-const FROM_NAME = 'GastroMenú Premium'
+const FROM_NAME = 'GastroMenu Premium'
 
 const LIMITS = {
   establishmentName: 120,
@@ -81,7 +81,7 @@ export async function handleContact(request: Request, env: ContactEnv): Promise<
     from: `${fromName} <${fromEmail}>`,
     to: [inquiry.email],
     replyTo: OWNER_EMAIL,
-    subject: 'Hemos recibido su consulta — GastroMenú Premium',
+    subject: 'Hemos recibido su consulta — GastroMenu Premium',
     text: thanksText(inquiry),
     html: thanksHtml(inquiry),
   })
@@ -233,7 +233,7 @@ function thanksText(inquiry: Inquiry) {
     `Establecimiento: ${inquiry.establishmentName}`,
     '',
     'Un saludo,',
-    'GastroMenú Premium',
+    'GastroMenu Premium',
     company.email,
     company.url,
   ].join('\n')
@@ -362,7 +362,7 @@ function brandEmail(innerRows: string) {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;background:#0a0a0a;border:1px solid rgba(197,160,89,0.28)">
             <tr>
               <td align="center" style="padding:36px 28px 20px">
-                <img src="cid:gm-logo" width="180" alt="GastroMenú Premium" style="display:block;width:180px;max-width:70%;height:auto;border:0;margin:0 auto">
+                <img src="cid:gm-logo" width="180" alt="GastroMenu Premium" style="display:block;width:180px;max-width:70%;height:auto;border:0;margin:0 auto">
               </td>
             </tr>
             ${innerRows}
