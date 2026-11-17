@@ -11,9 +11,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="/images/hero-ref-01-800.webp"
+      imagesrcset="/images/hero-ref-01-800.webp 800w, /images/hero-ref-01.webp 1254w"
+      imagesizes="(min-width: 1024px) 50vw, 100vw"
+      fetchpriority="high"
     />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <!--seo:head-->
     <title>GastroMenú Premium — Cartas artesanales</title>
     <meta

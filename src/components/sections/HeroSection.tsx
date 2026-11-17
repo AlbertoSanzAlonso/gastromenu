@@ -21,6 +21,18 @@ import { useSiteCopy } from '@/i18n/useSiteCopy'
 
 const HERO_TEXTURE = '/images/hero-texture.webp'
 const HERO_SWAP_MS = 1600
+const HERO_IMAGE_SIZES = '(min-width: 1024px) 50vw, 100vw'
+
+function heroSrcSet(src: string) {
+  if (src === '/images/hero-ref-01.webp') {
+    return '/images/hero-ref-01-800.webp 800w, /images/hero-ref-01.webp 1254w'
+  }
+  const match = src.match(/^(.*\/images\/hero\/)([^/]+)\.webp$/)
+  if (!match) return undefined
+  const [, dir, name] = match
+  if (name.endsWith('-720')) return undefined
+  return `${dir}${name}-720.webp 720w, ${src} 1448w`
+}
 
 export function HeroSection() {
   const { m } = useMessages()
@@ -170,13 +182,29 @@ export function HeroSection() {
   )
 }
 
+function useDesktopHeroTexture() {
+  const [enabled, setEnabled] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)')
+    const sync = () => setEnabled(media.matches)
+    sync()
+    media.addEventListener('change', sync)
+    return () => media.removeEventListener('change', sync)
+  }, [])
+
+  return enabled
+}
+
 function HeroTexturePanels({ mirrored }: { mirrored: boolean }) {
+  const enabled = useDesktopHeroTexture()
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
   const prevMirrored = useRef(mirrored)
   const booted = useRef(false)
 
   useLayoutEffect(() => {
+    if (!enabled) return
     const left = leftRef.current
     const right = rightRef.current
     if (!left || !right) return
@@ -222,28 +250,36 @@ function HeroTexturePanels({ mirrored }: { mirrored: boolean }) {
       ],
       { duration: HERO_SWAP_MS, easing: 'ease-in-out', fill: 'forwards' },
     )
-  }, [mirrored])
+  }, [enabled, mirrored])
+
+  if (!enabled) return null
 
   return (
     <>
-      <div ref={leftRef} className="absolute inset-y-0 left-0 z-0 hidden w-1/2 lg:block" aria-hidden>
+      <div ref={leftRef} className="absolute inset-y-0 left-0 z-0 w-1/2" aria-hidden>
         <img
           src={HERO_TEXTURE}
           alt=""
+          width={1024}
+          height={1024}
           className="h-full w-full scale-x-[-1] object-cover object-right [mask-image:linear-gradient(to_left,black_0%,black_45%,transparent_100%)]"
-          loading="eager"
+          loading="lazy"
           decoding="async"
+          fetchPriority="low"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
       </div>
-      <div ref={rightRef} className="absolute inset-y-0 left-1/2 z-0 hidden w-1/2 lg:block" aria-hidden>
+      <div ref={rightRef} className="absolute inset-y-0 left-1/2 z-0 w-1/2" aria-hidden>
         <img
           src={HERO_TEXTURE}
           alt=""
+          width={1024}
+          height={1024}
           className="h-full w-full object-cover object-left [mask-image:linear-gradient(to_right,transparent_0%,black_55%,black_100%)]"
-          loading="eager"
+          loading="lazy"
           decoding="async"
+          fetchPriority="low"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
         <div className="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent" />
@@ -293,6 +329,11 @@ function HeroStage({
         const active = position === index
         const exiting = position === leaving
         const isCover = position === 0
+        const near =
+          active ||
+          exiting ||
+          Math.abs(slideOffset(position, index, slides.length)) <= 1
+        const srcSet = near ? heroSrcSet(item.image) : undefined
         return (
           <div
             key={item.id}
@@ -317,29 +358,36 @@ function HeroStage({
               zIndex: exiting ? 3 : active ? 2 : 1,
             }}
           >
-            <img
-              src={item.image}
-              alt=""
-              className={`h-full w-full max-lg:object-cover max-lg:blur-[7px] lg:blur-none ${
-                active || exiting ? (position % 2 === 0 ? 'hero-zoom-in' : 'hero-zoom-out') : ''
-              } ${
-                item.fit === 'contain'
-                  ? 'hero-carta hero-float lg:object-contain'
-                  : `lg:object-cover ${active || exiting ? 'hero-drift' : 'scale-[1.14]'}`
-              }`}
-              style={
-                active || exiting
-                  ? {
-                      ...(item.fit !== 'contain'
-                        ? { animationDuration: `${HERO_SLIDE_MS}ms` }
-                        : {}),
-                      animationPlayState: exiting ? 'paused' : 'running',
-                    }
-                  : undefined
-              }
-              loading={position === 0 ? 'eager' : 'lazy'}
-              decoding={position === 0 ? 'sync' : 'async'}
-            />
+            {near ? (
+              <img
+                src={item.image}
+                srcSet={srcSet}
+                sizes={srcSet ? HERO_IMAGE_SIZES : undefined}
+                alt=""
+                width={isCover ? 1254 : 1448}
+                height={isCover ? 1254 : 1086}
+                className={`h-full w-full max-lg:object-cover max-lg:blur-[7px] lg:blur-none ${
+                  active || exiting ? (position % 2 === 0 ? 'hero-zoom-in' : 'hero-zoom-out') : ''
+                } ${
+                  item.fit === 'contain'
+                    ? 'hero-carta hero-float lg:object-contain'
+                    : `lg:object-cover ${active || exiting ? 'hero-drift' : 'scale-[1.14]'}`
+                }`}
+                style={
+                  active || exiting
+                    ? {
+                        ...(item.fit !== 'contain'
+                          ? { animationDuration: `${HERO_SLIDE_MS}ms` }
+                          : {}),
+                        animationPlayState: exiting ? 'paused' : 'running',
+                      }
+                    : undefined
+                }
+                loading={position === 0 ? 'eager' : 'lazy'}
+                decoding={position === 0 ? 'sync' : 'async'}
+                fetchPriority={position === 0 ? 'high' : 'low'}
+              />
+            ) : null}
             {isCover ? (
               <div
                 className="pointer-events-none absolute inset-0 hidden lg:block"
