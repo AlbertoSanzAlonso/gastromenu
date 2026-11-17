@@ -1,72 +1,8 @@
 # GastroMenú Premium — robots.txt
 User-agent: *
-Allow: /
 Disallow: /admin
 
-# Agentic Resource Discovery (ARD)
-Agentmap: https://www.gastromenupremium.com/.well-known/ai-catalog.json
-
-# AI crawlers — allow public content (same policy as *)
-User-agent: GPTBot
-Allow: /
-Disallow: /admin
-
-User-agent: ChatGPT-User
-Allow: /
-Disallow: /admin
-
-User-agent: OAI-SearchBot
-Allow: /
-Disallow: /admin
-
-User-agent: ClaudeBot
-Allow: /
-Disallow: /admin
-
-User-agent: Claude-SearchBot
-Allow: /
-Disallow: /admin
-
-User-agent: Claude-User
-Allow: /
-Disallow: /admin
-
-User-agent: anthropic-ai
-Allow: /
-Disallow: /admin
-
-User-agent: PerplexityBot
-Allow: /
-Disallow: /admin
-
-User-agent: Perplexity-User
-Allow: /
-Disallow: /admin
-
-User-agent: Google-Extended
-Allow: /
-Disallow: /admin
-
-User-agent: Applebot-Extended
-Allow: /
-Disallow: /admin
-
-User-agent: Amazonbot
-Allow: /
-Disallow: /admin
-
-User-agent: cohere-ai
-Allow: /
-Disallow: /admin
-
-User-agent: Meta-ExternalAgent
-Allow: /
-Disallow: /admin
-
-User-agent: Bytespider
-Allow: /
-Disallow: /admin
-
+# Recursos para IA (comentarios informativos)
 # llms.txt: https://www.gastromenupremium.com/llms.txt
 # AI catalog: https://www.gastromenupremium.com/.well-known/ai-catalog.json
 # ARD: https://www.gastromenupremium.com/.well-known/ard.json
