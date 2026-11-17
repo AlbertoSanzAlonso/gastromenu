@@ -1,0 +1,123 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "GastroMenú Premium",
+    "identifier": "www.gastromenupremium.com",
+    "documentationUrl": "https://www.gastromenupremium.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:page:inicio",
+      "displayName": "GastroMenú Premium — Cartas artesanales",
+      "description": "Fabricación propia de cartas de menú, manteles y atriles portamenú desde 1998. Talleres en Madrid y Málaga. Titularidad de Fudys Gourmet SL.",
+      "type": "text/html",
+      "url": "https://www.gastromenupremium.com/",
+      "representativeQueries": [
+        "cartas de menú artesanales para restaurantes",
+        "fabricante de portamenús premium en España",
+        "GastroMenú Premium contacto"
+      ],
+      "tags": ["cartas", "restaurantes", "fabricacion"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:page:cartas",
+      "displayName": "Cartas menú",
+      "description": "Cartas de menú, vinos, postres y cócteles en tapas duras, piel, semipiel, tejidos nobles y maderas selectas.",
+      "type": "text/html",
+      "url": "https://www.gastromenupremium.com/cartas",
+      "representativeQueries": [
+        "cartas de menú en piel o madera",
+        "portamenús personalizados para restaurante",
+        "cartas artesanales GastroMenú"
+      ],
+      "tags": ["cartas", "menu", "piel"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:page:atriles",
+      "displayName": "Atriles portamenú",
+      "description": "Atriles de pie, cilíndricos y de pared en acero, con pantalla retroiluminada, batería o conexión eléctrica.",
+      "type": "text/html",
+      "url": "https://www.gastromenupremium.com/atriles",
+      "representativeQueries": [
+        "atriles portamenú para restaurante",
+        "atril de pie iluminado para carta",
+        "atriles de pared GastroMenú"
+      ],
+      "tags": ["atriles", "portamenu"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:page:manteles",
+      "displayName": "Manteles",
+      "description": "Manteles de papel de un solo uso y manteles rígidos lacados a mano, con diseño personalizado.",
+      "type": "text/html",
+      "url": "https://www.gastromenupremium.com/manteles",
+      "representativeQueries": [
+        "manteles personalizados para restaurante",
+        "manteles de papel promocionales",
+        "manteles rígidos lacados"
+      ],
+      "tags": ["manteles", "papel"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:page:contacto",
+      "displayName": "Contacto",
+      "description": "Teléfonos 605 989 264 y 952 058 319, correo hola@gastromenupremium.com. Oficina en Benalmádena; talleres en Madrid y Málaga.",
+      "type": "text/html",
+      "url": "https://www.gastromenupremium.com/contacto",
+      "representativeQueries": [
+        "teléfono de GastroMenú Premium",
+        "pedir presupuesto de cartas de menú",
+        "email comercial GastroMenú"
+      ],
+      "tags": ["contacto", "presupuesto"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:doc:llms",
+      "displayName": "Resumen para modelos de lenguaje",
+      "description": "Presentación de la empresa, productos, contacto y enlaces de descubrimiento para agentes.",
+      "type": "text/plain",
+      "url": "https://www.gastromenupremium.com/llms.txt",
+      "representativeQueries": [
+        "qué es GastroMenú Premium",
+        "resumen de productos GastroMenú para un agente"
+      ],
+      "tags": ["llms.txt", "documentation"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:doc:mcp",
+      "displayName": "Ficha MCP del sitio",
+      "description": "No hay servidor MCP remoto ni herramientas invocables. La ficha remite a las páginas públicas y a llms.txt.",
+      "type": "application/mcp-server-card+json",
+      "url": "https://www.gastromenupremium.com/.well-known/mcp.json",
+      "representativeQueries": [
+        "tiene GastroMenú un servidor MCP",
+        "herramientas de agente de gastromenupremium.com"
+      ],
+      "tags": ["mcp"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:doc:agente",
+      "displayName": "Ficha de agente",
+      "description": "No hay endpoint JSON-RPC A2A. La información de la empresa está en las páginas públicas y en llms.txt.",
+      "type": "application/a2a-agent-card+json",
+      "url": "https://www.gastromenupremium.com/.well-known/agent.json",
+      "representativeQueries": [
+        "agente de GastroMenú Premium",
+        "cómo consulta un agente los productos de GastroMenú"
+      ],
+      "tags": ["a2a", "agent"]
+    },
+    {
+      "identifier": "urn:air:www.gastromenupremium.com:doc:api-catalog",
+      "displayName": "Catálogo de recursos (RFC 9727)",
+      "description": "Linkset que indexa llms.txt, el catálogo ARD y el sitemap. Este dominio no publica una API REST remota.",
+      "type": "application/linkset+json",
+      "url": "https://www.gastromenupremium.com/.well-known/api-catalog",
+      "representativeQueries": [
+        "dónde está el catálogo de APIs de GastroMenú",
+        "descubrir recursos públicos de gastromenupremium.com"
+      ],
+      "tags": ["api-catalog", "rfc9727"]
+    }
+  ]
+}

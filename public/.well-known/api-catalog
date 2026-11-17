@@ -1,0 +1,49 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.gastromenupremium.com/",
+      "title": "GastroMenú Premium — sitio público",
+      "service-doc": [
+        {
+          "href": "https://www.gastromenupremium.com/llms.txt",
+          "type": "text/plain",
+          "title": "Resumen para agentes (llms.txt)"
+        },
+        {
+          "href": "https://www.gastromenupremium.com/",
+          "type": "text/html",
+          "title": "Inicio"
+        },
+        {
+          "href": "https://www.gastromenupremium.com/contacto",
+          "type": "text/html",
+          "title": "Contacto y presupuesto"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://www.gastromenupremium.com/.well-known/ai-catalog.json",
+          "type": "application/json",
+          "title": "Catálogo agéntico (ARD / AI Catalog)"
+        },
+        {
+          "href": "https://www.gastromenupremium.com/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://www.gastromenupremium.com/.well-known/mcp.json",
+          "type": "application/json",
+          "title": "Ficha MCP (sin endpoint remoto)"
+        },
+        {
+          "href": "https://www.gastromenupremium.com/.well-known/agent.json",
+          "type": "application/json",
+          "title": "Ficha de agente (sin JSON-RPC)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "protocolVersion": "0.2.5",
+  "name": "GastroMenú Premium",
+  "description": "Ficha informativa. Este dominio no opera un endpoint JSON-RPC A2A. Las mismas respuestas están en las páginas públicas: cartas, atriles, manteles, exclusividades y contacto. Titularidad de Fudys Gourmet SL. Teléfonos +34 605 989 264 y +34 952 058 319. Correo hola@gastromenupremium.com.",
+  "url": "https://www.gastromenupremium.com/contacto",
+  "preferredTransport": "JSONRPC",
+  "version": "1.0.0",
+  "documentationUrl": "https://www.gastromenupremium.com/llms.txt",
+  "provider": {
+    "organization": "Fudys Gourmet SL",
+    "url": "https://www.gastromenupremium.com/"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/plain", "text/html"],
+  "skills": [
+    {
+      "id": "empresa",
+      "name": "Datos de la empresa",
+      "description": "Nombre comercial, razón social, CIF, teléfonos, correo y talleres. Se leen en la home, el contacto y llms.txt. No hay un método JSON-RPC: hay que leer esas páginas.",
+      "tags": ["contacto", "empresa", "nap"],
+      "examples": [
+        "teléfono de GastroMenú Premium",
+        "dónde fabrica GastroMenú las cartas"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/html", "text/plain"]
+    },
+    {
+      "id": "productos",
+      "name": "Productos publicados",
+      "description": "Cartas menú, atriles portamenú, manteles y exclusividades descritos en las páginas del dossier. No inventar precios ni materiales que no aparezcan ahí.",
+      "tags": ["cartas", "atriles", "manteles"],
+      "examples": [
+        "qué cartas de menú fabrica GastroMenú",
+        "atriles iluminados para restaurante"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/html", "text/plain"]
+    },
+    {
+      "id": "presupuesto",
+      "name": "Solicitud de presupuesto",
+      "description": "Orienta a la página de contacto o a los teléfonos publicados. No hay API de pedido remota en este dominio.",
+      "tags": ["presupuesto", "contacto"],
+      "examples": [
+        "pedir presupuesto de cartas artesanales",
+        "cómo contactar con GastroMenú Premium"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["text/html", "text/plain"]
+    }
+  ]
+}

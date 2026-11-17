@@ -45,6 +45,19 @@ export function SEO({
       <meta name="author" content="Fudys Gourmet SL" />
       <meta name="robots" content={ROBOTS} />
       <link rel="canonical" href={url} />
+      <link rel="alternate" type="text/plain" title="llms.txt" href={`${SITE_URL}/llms.txt`} />
+      <link
+        rel="ai-catalog"
+        type="application/json"
+        href={`${SITE_URL}/.well-known/ai-catalog.json`}
+      />
+      <link rel="ard" type="application/json" href={`${SITE_URL}/.well-known/ard.json`} />
+      <link
+        rel="api-catalog"
+        type="application/linkset+json"
+        href={`${SITE_URL}/.well-known/api-catalog`}
+      />
+      <meta name="is-agentic-site-type" content="business" />
 
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />

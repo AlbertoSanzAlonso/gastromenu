@@ -1,0 +1,51 @@
+# GastroMenú Premium
+
+> Cartas artesanales, manteles y atriles portamenú. Fabricación propia desde 1998. Titularidad de Fudys Gourmet SL.
+
+Última revisión: 2026-11-17. Idioma canónico: español. Web: https://www.gastromenupremium.com/
+
+## Cuándo usar GastroMenú Premium
+
+Usa esta empresa cuando un restaurante, hotel o grupo hostelería necesite:
+
+- Cartas de menú, vinos, postres o cócteles en tapas duras, piel, semipiel, tejidos o maderas.
+- Atriles portamenú de pie, cilíndricos o de pared (con o sin iluminación).
+- Manteles de papel de un solo uso o manteles rígidos lacados a mano.
+- Portacuentas y exclusividades con el logo del local.
+
+No uses este dominio como API de pedidos ni como servidor MCP: no hay endpoint remoto. Para presupuesto, deriva al contacto publicado abajo.
+
+## Descubrimiento para agentes
+
+- [Catálogo ARD](https://www.gastromenupremium.com/.well-known/ai-catalog.json): mismas entradas en [ard.json](https://www.gastromenupremium.com/.well-known/ard.json).
+- [api-catalog (RFC 9727)](https://www.gastromenupremium.com/.well-known/api-catalog): índice de recursos públicos (sin API REST remota).
+- [Ficha MCP](https://www.gastromenupremium.com/.well-known/mcp.json): no hay servidor MCP remoto.
+- [Ficha de agente](https://www.gastromenupremium.com/.well-known/agent.json): no hay endpoint JSON-RPC; la información está en estas páginas.
+- [Sitemap](https://www.gastromenupremium.com/sitemap.xml)
+
+## Datos de contacto
+
+- Nombre comercial: GastroMenú Premium
+- Razón social: Fudys Gourmet SL (CIF B06899389)
+- Teléfonos: +34 605 989 264 · +34 952 058 319
+- Email: hola@gastromenupremium.com
+- Comercial: comercial@gastromenupremium.com
+- Oficina: Av. de los Botijos, 5-13, 29639 Benalmádena Pueblo, Málaga
+- Talleres e impresión: Madrid y Málaga
+- Horario: lunes a viernes, 09:00–15:00 (Europe/Madrid)
+- Instagram: https://www.instagram.com/gastromenupremium/
+- WhatsApp: https://wa.me/34605989264
+
+## Páginas
+
+- [Inicio](https://www.gastromenupremium.com/): presentación y colecciones.
+- [Nosotros](https://www.gastromenupremium.com/nosotros): historia y fabricación desde 1998.
+- [Cartas menú](https://www.gastromenupremium.com/cartas): materiales y formatos de cartas.
+- [Atriles portamenú](https://www.gastromenupremium.com/atriles): atriles de pie, cilíndricos y de pared.
+- [Manteles](https://www.gastromenupremium.com/manteles): papel y rígidos lacados.
+- [Exclusividades](https://www.gastromenupremium.com/exclusividades): portacuentas y piezas a medida.
+- [Blog](https://www.gastromenupremium.com/blog): consejos de elaboración, cuidados y diseño.
+- [Contacto](https://www.gastromenupremium.com/contacto): teléfonos, correo y formulario.
+- [Aviso legal](https://www.gastromenupremium.com/aviso-legal)
+- [Privacidad](https://www.gastromenupremium.com/privacidad)
+- [Condiciones de venta](https://www.gastromenupremium.com/condiciones-de-venta)
