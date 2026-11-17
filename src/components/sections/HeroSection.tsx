@@ -98,7 +98,7 @@ export function HeroSection() {
       aria-roledescription={m.hero.carousel}
       aria-label={m.hero.presentation}
       data-paused={slider.paused ? 'true' : 'false'}
-      className="hero-stage relative z-20 flex h-[calc(100svh-5rem)] min-h-[34rem] items-center overflow-hidden bg-black touch-pan-y md:h-[calc(100svh-6rem)]"
+      className="hero-stage relative z-0 flex h-[calc(100svh-5rem)] min-h-[34rem] items-center overflow-hidden bg-black touch-pan-y md:h-[calc(100svh-6rem)]"
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
       onPointerCancel={() => {

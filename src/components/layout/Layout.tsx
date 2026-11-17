@@ -31,9 +31,9 @@ export function Layout() {
   }, [pathname, hash])
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <BrandWatermark />
+    <div className="flex min-h-screen flex-col bg-beige-50">
       <Header />
+      <BrandWatermark />
       <main className="relative z-10 flex-1 pt-20 md:pt-24">
         <Outlet />
       </main>
