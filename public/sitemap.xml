@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://gastromenupremium.com/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -39,6 +40,7 @@
   </url>
   <url>
     <loc>https://gastromenupremium.com/nosotros</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -113,9 +115,42 @@
       <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-18.webp</image:loc>
       <image:title>nosotros 18</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-19-armado-mano.webp</image:loc>
+      <image:title>nosotros 19 armado mano</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-20-armado-cartas.webp</image:loc>
+      <image:title>nosotros 20 armado cartas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-01-the-catch.webp</image:loc>
+      <image:title>nosotros trilogia 01 the catch</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-02-la-favorita.webp</image:loc>
+      <image:title>nosotros trilogia 02 la favorita</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-03-sa-marinada.webp</image:loc>
+      <image:title>nosotros trilogia 03 sa marinada</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-04-the-view.webp</image:loc>
+      <image:title>nosotros trilogia 04 the view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-05-agio.webp</image:loc>
+      <image:title>nosotros trilogia 05 agio</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/nosotros/nosotros-trilogia-06-quebracho.webp</image:loc>
+      <image:title>nosotros trilogia 06 quebracho</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://gastromenupremium.com/cartas</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -441,6 +476,7 @@
   </url>
   <url>
     <loc>https://gastromenupremium.com/atriles</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -522,6 +558,7 @@
   </url>
   <url>
     <loc>https://gastromenupremium.com/manteles</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -740,9 +777,46 @@
       <image:loc>https://gastromenupremium.com/images/web/manteles/53-mantel-rigido-montado.webp</image:loc>
       <image:title>mantel rigido montado</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/54-mantel-el-cateto.webp</image:loc>
+      <image:title>mantel el cateto</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/55-mantel-don-pedro.webp</image:loc>
+      <image:title>mantel don pedro</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/56-manteles-gente-brindando.webp</image:loc>
+      <image:title>manteles gente brindando</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/57-mantel-el-lotero.webp</image:loc>
+      <image:title>mantel el lotero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/58-mantel-rocamar-nuevo.webp</image:loc>
+      <image:title>mantel rocamar nuevo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/59-mantel-la-cepa-cuadro.webp</image:loc>
+      <image:title>mantel la cepa cuadro</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/60-mantel-marisqueria-plaza.webp</image:loc>
+      <image:title>mantel marisqueria plaza</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/61-manteles-negros.webp</image:loc>
+      <image:title>manteles negros</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gastromenupremium.com/images/web/manteles/62-manteles-desayuno-grupo.webp</image:loc>
+      <image:title>manteles desayuno grupo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://gastromenupremium.com/exclusividades</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -760,51 +834,61 @@
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog/elaboracion</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog/cuidado</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog/portamenu</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog/neuromarketing</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/blog/diseno-manteles</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/contacto</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/aviso-legal</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/privacidad</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://gastromenupremium.com/condiciones-de-venta</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

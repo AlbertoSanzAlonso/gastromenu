@@ -49,7 +49,7 @@ export function AdminShell() {
           <Link to="/" className="flex items-center gap-3">
             <BrandLogo className="h-10 w-10 object-contain brightness-0 invert" />
             <span>
-              <span className="block font-brand text-sm uppercase tracking-[0.18em]">Gastromenu</span>
+              <span className="block font-brand text-sm uppercase tracking-[0.18em]">GastroMenú Premium</span>
               <span className="mt-1 block font-label text-[10px] uppercase tracking-[0.28em] text-gold-slide">
                 Backoffice
               </span>

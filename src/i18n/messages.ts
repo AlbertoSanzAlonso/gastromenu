@@ -33,7 +33,7 @@ const es = {
   hero: {
     carousel: 'carrusel',
     presentation: 'Presentación',
-    coverAlt: 'Imagen de portada de Gastromenu',
+    coverAlt: 'Imagen de portada de GastroMenú Premium',
     coverLabel: 'Alta calidad en imagen gastronómica',
     since: 'Fabricación propia desde 1998',
     discover: 'Descubrir colección',
@@ -301,7 +301,7 @@ const en: typeof es = {
   hero: {
     carousel: 'carousel',
     presentation: 'Presentation',
-    coverAlt: 'Gastromenu cover image',
+    coverAlt: 'GastroMenú Premium cover image',
     coverLabel: 'A fine image for the table',
     since: 'In-house manufacturing since 1998',
     discover: 'Discover the collection',

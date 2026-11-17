@@ -9,6 +9,7 @@ export const nosotrosCopy: DossierCopy = {
   emphasis: 'experience',
   lead:
     'More than 28 years turning presentation into part of the experience. At GastroMenú Premium we have spent 28 years working for restaurants that know every detail counts.',
+  heroCaptions: ['Leather', 'Cervantes', 'Wood', 'Khan', 'Il Capitano'],
   sections: [
     {
       nav: 'History',
@@ -30,7 +31,7 @@ export const nosotrosCopy: DossierCopy = {
         'How we work — personal design and handcrafted making.',
         'Our commitment — quality, materials, durability and personal attention.',
       ],
-      captions: ['La Carihuela Chica', 'Margarita', 'Iñaki', 'Open menu'],
+      captions: ['La Carihuela Chica', 'Margarita', 'Margarita, interior', 'Iñaki', 'Happy client'],
     },
     {
       nav: 'Craft',
@@ -41,7 +42,7 @@ export const nosotrosCopy: DossierCopy = {
         'The story of the company. 28 years in the trade. The values of traditional craft, joined with innovation for the premium sector.',
         'Personal designs. We apply gastronomic marketing. We interpret what you want.',
       ],
-      captions: ['Assembled by hand', 'Measuring', 'Illustrated interior', 'Finished piece'],
+      captions: ['Assembled by hand', 'Measuring', 'Finished piece', 'Binding', 'Workshop team'],
     },
     {
       nav: 'Agencies',
@@ -65,6 +66,23 @@ export const nosotrosCopy: DossierCopy = {
         '“At **GastroMenú Premium** we have terms conceived especially for agencies and designers.”',
         'Your design + our know-how = a unique product. Menus, menu stands, rigid and disposable placemats, personal manufacture.',
       ],
+      captions: ['Orient Express', 'El Torillo', 'Koco', 'Torii', 'Pizza Mare'],
+    },
+    {
+      nav: 'Trilogy',
+      kicker: 'Special offer',
+      title: 'The gastronomic',
+      emphasis: 'trilogy',
+      paragraphs: [
+        'Three menus, one essence. Quality and elegance for your whole gastronomic offer.',
+        'Show the personality of your restaurant in every detail with our exclusive trilogy: food menu, wine list and dessert menu.',
+        'At **GastroMenú Premium** you can take the three menus together, with a more economical proposal and a coordinated image that gives unity, distinction and personality to the whole offer.',
+        'We design and make every piece entirely by hand, with 28 years of experience, using noble, selected materials: hard covers, faux leather, textiles and other high-quality finishes.',
+        'Each trilogy is personalised to reflect the true essence of the house, combining design, elegance, resistance and care for the small details.',
+        'Three menus that speak of your restaurant. A presentation that makes the difference.',
+        'Take your trilogy and enjoy special economic terms.',
+      ],
+      captions: ['The Catch', 'La Favorita', 'Sa Marinada', 'The View', 'Agio'],
     },
     {
       nav: 'Clients',

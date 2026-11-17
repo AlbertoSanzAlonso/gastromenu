@@ -74,7 +74,7 @@ export function DossierGallery({ images }: DossierGalleryProps) {
             className="relative block w-full cursor-pointer border-0 bg-transparent p-0 text-left"
             aria-label={images.length === 1 ? m.gallery.openOne : m.gallery.openMany(images.length)}
           >
-            <span className="relative block aspect-[4/3] max-h-[32rem] w-full overflow-hidden">
+            <span className="relative block aspect-[4/3] max-h-[32rem] w-full overflow-hidden bg-ink/90">
               {images.map((image, index) => {
                 const active = index === activePreview
 
@@ -92,7 +92,7 @@ export function DossierGallery({ images }: DossierGalleryProps) {
                       alt=""
                       loading={index === activePreview || index === nextPreview ? 'eager' : 'lazy'}
                       decoding="async"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                     />
                   </span>
                 )

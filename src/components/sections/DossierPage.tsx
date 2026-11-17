@@ -92,7 +92,7 @@ export function DossierPage({ content }: DossierPageProps) {
       <SEO title={page.seoTitle} description={page.seoDescription} path={page.path} />
 
       <section className="relative overflow-hidden bg-ink text-cream">
-        {pageHeroWatermark[page.path] && (
+        {pageHeroWatermark[page.path] && !page.heroImages?.length && (
           <img
             src={pageHeroWatermark[page.path]}
             alt=""
@@ -102,30 +102,46 @@ export function DossierPage({ content }: DossierPageProps) {
           />
         )}
         <Container className="relative z-[1] pt-12 pb-12 md:pt-16 md:pb-16">
-          <p className="slide-label mb-6">{page.kicker}</p>
-          <h1 className="slide-heading text-4xl md:text-6xl text-cream max-w-4xl text-balance">
-            {page.title}{' '}
-            {page.emphasis && <GoldText>{page.emphasis}</GoldText>}
-          </h1>
-          <BrandDivider className="!mx-0 mt-8 mb-6 max-w-[8rem]" />
-          <p className="slide-body !text-cream-muted max-w-3xl text-lg md:text-xl">{page.lead}</p>
+          <div
+            className={
+              page.heroImages?.length
+                ? 'grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20'
+                : undefined
+            }
+          >
+            <div>
+              <p className="slide-label mb-6">{page.kicker}</p>
+              <h1 className="slide-heading text-4xl md:text-6xl text-cream max-w-4xl text-balance">
+                {page.title}{' '}
+                {page.emphasis && <GoldText>{page.emphasis}</GoldText>}
+              </h1>
+              <BrandDivider className="!mx-0 mt-8 mb-6 max-w-[8rem]" />
+              <p className="slide-body !text-cream-muted max-w-3xl text-lg md:text-xl">{page.lead}</p>
 
-          {page.sections.length > 1 && (
-            <nav
-              aria-label={m.dossier.sections}
-              className="mt-10 flex flex-wrap gap-3"
-            >
-              {page.sections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className="slide-label whitespace-nowrap border border-gold-slide/35 px-4 py-2 text-cream/90 hover:border-gold-slide hover:text-gold-slide transition-colors duration-400"
+              {page.sections.length > 1 && (
+                <nav
+                  aria-label={m.dossier.sections}
+                  className="mt-10 flex flex-wrap gap-3"
                 >
-                  {section.nav}
-                </a>
-              ))}
-            </nav>
-          )}
+                  {page.sections.map((section) => (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      className="slide-label whitespace-nowrap border border-gold-slide/35 px-4 py-2 text-cream/90 hover:border-gold-slide hover:text-gold-slide transition-colors duration-400"
+                    >
+                      {section.nav}
+                    </a>
+                  ))}
+                </nav>
+              )}
+            </div>
+
+            {page.heroImages && page.heroImages.length > 0 && (
+              <div className="[&_.slide-label]:text-cream/80">
+                <DossierGallery images={page.heroImages} />
+              </div>
+            )}
+          </div>
         </Container>
       </section>
 

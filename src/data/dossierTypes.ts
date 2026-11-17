@@ -24,6 +24,7 @@ export interface DossierPageContent {
   title: string
   emphasis?: string
   lead: string
+  heroImages?: DossierImage[]
   sections: DossierSection[]
 }
 

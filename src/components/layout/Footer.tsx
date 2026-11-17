@@ -25,10 +25,12 @@ export function Footer() {
 
       <Container className="relative z-[2]">
         <div className="mx-auto flex max-w-xl flex-col items-center text-center">
-          <BrandLogo
-            variant="lockup"
-            className="mb-4 h-28 w-auto max-w-[16rem] object-contain opacity-95 md:h-32"
-          />
+          <div className="mb-4 flex flex-col items-center gap-3">
+            <BrandLogo className="h-14 w-14 object-contain opacity-95 md:h-16 md:w-16" />
+            <p className="brand-title text-sm tracking-[0.14em] text-gold-slide md:text-base">
+              GastroMenú Premium
+            </p>
+          </div>
           <BrandDivider className="mb-4" />
           <p className="slide-body text-sm leading-relaxed">{m.footer.tagline}</p>
           <SocialLinks compact className="mt-8 justify-center" />

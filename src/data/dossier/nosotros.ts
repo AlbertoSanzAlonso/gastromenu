@@ -10,6 +10,13 @@ export const nosotrosPage: DossierPageContent = {
   emphasis: 'experiencia',
   lead:
     'Más de 28 años convirtiendo la presentación en parte de la experiencia. En GastroMenú Premium llevamos 28 años trabajando para restaurantes que entienden que cada detalle cuenta.',
+  heroImages: [
+    { file: 'g-0046-piel.webp', caption: 'Piel', src: '/images/web/cartas/g-0046-piel.webp' },
+    { file: 'g-0057-cervantes.webp', caption: 'Cervantes', src: '/images/web/cartas/g-0057-cervantes.webp' },
+    { file: 'g-0094-madera.webp', caption: 'Madera', src: '/images/web/cartas/g-0094-madera.webp' },
+    { file: 'g-0164-khan.webp', caption: 'Khan', src: '/images/web/cartas/g-0164-khan.webp' },
+    { file: 'g-0301-il-capitano.webp', caption: 'Il Capitano', src: '/images/web/cartas/g-0301-il-capitano.webp' },
+  ],
   sections: [
     {
       id: 'historia',
@@ -35,8 +42,9 @@ export const nosotrosPage: DossierPageContent = {
       images: [
         { file: 'nosotros-06.webp', caption: 'La Carihuela Chica', src: '/images/web/nosotros/nosotros-06.webp' },
         { file: 'nosotros-08.webp', caption: 'Margarita', src: '/images/web/nosotros/nosotros-08.webp' },
+        { file: 'nosotros-07.webp', caption: 'Margarita, interior', src: '/images/web/nosotros/nosotros-07.webp' },
         { file: 'nosotros-11.webp', caption: 'Iñaki', src: '/images/web/nosotros/nosotros-11.webp' },
-        { file: 'nosotros-03.webp', caption: 'Carta abierta', src: '/images/web/nosotros/nosotros-03.webp' },
+        { file: 'nosotros-01.webp', caption: 'Cliente satisfecho', src: '/images/web/nosotros/nosotros-01.webp' },
       ],
       variant: 'light',
     },
@@ -53,8 +61,9 @@ export const nosotrosPage: DossierPageContent = {
       images: [
         { file: 'nosotros-04.webp', caption: 'Armado a mano', src: '/images/web/nosotros/nosotros-04.webp' },
         { file: 'nosotros-05.webp', caption: 'Medición', src: '/images/web/nosotros/nosotros-05.webp' },
-        { file: 'nosotros-07.webp', caption: 'Interior ilustrado', src: '/images/web/nosotros/nosotros-07.webp' },
         { file: 'nosotros-15.webp', caption: 'Pieza terminada', src: '/images/web/nosotros/nosotros-15.webp' },
+        { file: 'g-0170-armado-1.webp', caption: 'Encuadernación', src: '/images/web/cartas/g-0170-armado-1.webp' },
+        { file: 'g-0176-armado-2.webp', caption: 'Equipo en taller', src: '/images/web/cartas/g-0176-armado-2.webp' },
       ],
       variant: 'beige',
     },
@@ -83,11 +92,56 @@ export const nosotrosPage: DossierPageContent = {
       ],
       images: [
         { file: 'nosotros-09.webp', caption: 'Orient Express', src: '/images/web/nosotros/nosotros-09.webp' },
-        { file: 'nosotros-10.webp', caption: 'The Catch', src: '/images/web/nosotros/nosotros-10.webp' },
-        { file: 'nosotros-12.webp', caption: 'La Favorita', src: '/images/web/nosotros/nosotros-12.webp' },
-        { file: 'nosotros-13.webp', caption: 'Sa Marinada', src: '/images/web/nosotros/nosotros-13.webp' },
+        { file: 'g-0053-torillo.webp', caption: 'El Torillo', src: '/images/web/cartas/g-0053-torillo.webp' },
+        { file: 'g-0092-koco.webp', caption: 'Koco', src: '/images/web/cartas/g-0092-koco.webp' },
+        { file: 'g-0166-torii.webp', caption: 'Torii', src: '/images/web/cartas/g-0166-torii.webp' },
+        { file: 'g-0716-pizza-mare.webp', caption: 'Pizza Mare', src: '/images/web/cartas/g-0716-pizza-mare.webp' },
       ],
       variant: 'dark',
+    },
+    {
+      id: 'trilogia',
+      nav: 'Trilogía',
+      kicker: 'Oferta especial',
+      title: 'La trilogía',
+      emphasis: 'gastronómica',
+      paragraphs: [
+        'Tres cartas, una misma esencia. Calidad y elegancia para toda su oferta gastronómica.',
+        'Presente la personalidad de su restaurante en cada detalle con nuestra exclusiva trilogía: carta de menú, carta de vinos y carta de postres.',
+        'En **GastroMenú Premium** le ofrecemos la oportunidad de adquirir las tres cartas conjuntamente, disfrutando de una propuesta más económica y de una imagen coordinada que dará unidad, distinción y personalidad a toda su oferta gastronómica.',
+        'Diseñamos y fabricamos cada pieza de manera totalmente artesanal, con 28 años de experiencia, utilizando materiales nobles y seleccionados: tapas duras, semipiel, textiles y otros acabados de alta calidad.',
+        'Cada trilogía es personalizada para reflejar la verdadera esencia de su establecimiento, combinando diseño, elegancia, resistencia y cuidado por los pequeños detalles.',
+        'Tres cartas que hablan de su restaurante. Una presentación que marca la diferencia.',
+        'Adquiera su trilogía y disfrute de condiciones económicas especiales.',
+      ],
+      images: [
+        {
+          file: 'nosotros-trilogia-01-the-catch.webp',
+          caption: 'The Catch',
+          src: '/images/web/nosotros/nosotros-trilogia-01-the-catch.webp',
+        },
+        {
+          file: 'nosotros-trilogia-02-la-favorita.webp',
+          caption: 'La Favorita',
+          src: '/images/web/nosotros/nosotros-trilogia-02-la-favorita.webp',
+        },
+        {
+          file: 'nosotros-trilogia-03-sa-marinada.webp',
+          caption: 'Sa Marinada',
+          src: '/images/web/nosotros/nosotros-trilogia-03-sa-marinada.webp',
+        },
+        {
+          file: 'nosotros-trilogia-04-the-view.webp',
+          caption: 'The View',
+          src: '/images/web/nosotros/nosotros-trilogia-04-the-view.webp',
+        },
+        {
+          file: 'nosotros-trilogia-05-agio.webp',
+          caption: 'Agio',
+          src: '/images/web/nosotros/nosotros-trilogia-05-agio.webp',
+        },
+      ],
+      variant: 'beige',
     },
     {
       id: 'clientes',

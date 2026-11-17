@@ -26,7 +26,7 @@ export function AdminLoginPage() {
         <div className="mb-8 flex items-center gap-4">
           <BrandLogo className="h-12 w-12 object-contain" />
           <div>
-            <p className="font-brand text-sm uppercase tracking-[0.18em]">Gastromenu</p>
+            <p className="font-brand text-sm uppercase tracking-[0.18em]">GastroMenú Premium</p>
             <p className="mt-1 font-label text-[10px] uppercase tracking-[0.28em] text-gold-slide">
               Backoffice
             </p>

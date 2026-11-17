@@ -14,7 +14,7 @@ export function BrandLogo({
   return (
     <img
       src={lockup ? BRAND_LOCKUP_SRC : BRAND_ICON_SRC}
-      alt={lockup ? 'Gastromenu' : ''}
+      alt={lockup ? 'GastroMenú Premium' : ''}
       aria-hidden={lockup ? undefined : true}
       className={className ?? (lockup ? 'h-24 w-auto object-contain' : 'h-10 w-10 object-contain')}
       decoding="async"

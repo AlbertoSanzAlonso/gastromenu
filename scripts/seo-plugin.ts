@@ -120,6 +120,23 @@ function imagesFor(root: string, dirs: readonly string[]) {
   return images
 }
 
+function lastmodFor(root: string, page: PublicPage) {
+  let latest = 0
+
+  for (const dir of page.imageDirs) {
+    const absolute = path.join(root, 'public', dir)
+    if (!fs.existsSync(absolute)) continue
+    for (const name of fs.readdirSync(absolute)) {
+      if (!IMAGE_EXT.test(name)) continue
+      const mtime = fs.statSync(path.join(absolute, name)).mtimeMs
+      if (mtime > latest) latest = mtime
+    }
+  }
+
+  if (!latest) latest = Date.now()
+  return new Date(latest).toISOString().slice(0, 10)
+}
+
 export function renderSitemap(root: string) {
   const urls = publicPages
     .map((page) => {
@@ -134,6 +151,7 @@ export function renderSitemap(root: string) {
 
       return `  <url>
     <loc>${pageUrl(page.path)}</loc>
+    <lastmod>${lastmodFor(root, page)}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
 ${images ? `${images}\n` : ''}  </url>`
@@ -145,6 +163,13 @@ ${images ? `${images}\n` : ''}  </url>`
 ${urls}
 </urlset>
 `
+}
+
+export function writeSitemap(root: string, outDir?: string) {
+  const xml = renderSitemap(root)
+  fs.writeFileSync(path.join(root, 'public', 'sitemap.xml'), xml)
+  if (outDir) fs.writeFileSync(path.join(outDir, 'sitemap.xml'), xml)
+  return xml
 }
 
 function writeRouteHtml(outDir: string, routePath: string, html: string) {
@@ -196,9 +221,7 @@ export function gastromenuSeoPlugin(): Plugin {
         writeRouteHtml(outDir, routePath, injectHead(template, privateHead()))
       }
 
-      const xml = renderSitemap(root)
-      fs.writeFileSync(path.join(outDir, 'sitemap.xml'), xml)
-      fs.writeFileSync(path.join(root, 'public', 'sitemap.xml'), xml)
+      writeSitemap(root, outDir)
     },
   }
 }

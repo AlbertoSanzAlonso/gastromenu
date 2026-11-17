@@ -4,7 +4,7 @@ export const SITE_NAME = 'GastroMenú Premium'
 export const SITE_URL = company.url
 
 export const OG_IMAGE = {
-  src: '/og-image.png',
+  src: '/og-image.jpg',
   width: 762,
   height: 1024,
   type: 'image/jpeg',

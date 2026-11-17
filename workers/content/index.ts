@@ -75,7 +75,13 @@ export default {
     }
 
     if (url.pathname === '/api/health') {
-      return json({ ok: true })
+      return json({ ok: true, contact: Boolean(env.RESEND_API_KEY), content: Boolean(env.DB) })
+    }
+
+    if (!env.DB || !env.MEDIA) {
+      if (url.pathname.startsWith('/api/content') || url.pathname.startsWith('/api/media/')) {
+        return json({ error: 'Contenido no configurado (D1/R2)' }, 503)
+      }
     }
 
     if (url.pathname === '/api/content') {

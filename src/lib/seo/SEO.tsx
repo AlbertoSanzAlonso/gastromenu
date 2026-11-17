@@ -39,6 +39,7 @@ export function SEO({
 
   return (
     <Helmet>
+      <html lang={locale} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="author" content="Fudys Gourmet SL" />

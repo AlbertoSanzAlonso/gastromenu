@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
 import { atrilesPage } from '@/data/dossier/atriles'
 import { blogPage } from '@/data/dossier/blog'
@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
       { path: 'contacto', element: <ContactPage /> },
       { path: 'aviso-legal', element: <AvisoLegalPage /> },
       { path: 'privacidad', element: <PrivacidadPage /> },
-      { path: 'condiciones', element: <CondicionesVentaPage /> },
+      { path: 'condiciones', element: <Navigate to="/condiciones-de-venta" replace /> },
       { path: 'condiciones-de-venta', element: <CondicionesVentaPage /> },
     ],
   },

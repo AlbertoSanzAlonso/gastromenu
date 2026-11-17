@@ -5,16 +5,16 @@ export const mantelesCopy: DossierCopy = {
   seoDescription:
     'Single-use paper placemats and rigid mats lacquered by hand. Personal design, neuromarketing and 90-gram papers.',
   kicker: 'Placemats',
-  title: 'When the art reaches the',
-  emphasis: 'table',
+  title: 'To dress your tables and sell',
+  emphasis: 'more…',
   lead:
     'We design rigid, flexible and disposable placemats. The design is personal, with neuromarketing, in several languages and, if you wish, with photographs of your own dishes or gastronomic images from our library. On the paper ones we use heavyweight stock, including recycled, gloss or matte. We also design children’s placemats. They form a natural barrier against the germs that live on tables.',
   sections: [
     {
       nav: 'Paper',
       kicker: 'Paper placemats',
-      title: 'When the art reaches the',
-      emphasis: 'table',
+      title: 'To dress your tables and sell',
+      emphasis: 'more…',
       paragraphs: [
         'We often do not notice that a table can carry bacteria. Yes: however clean it looks, they are there. And one of the functions of a single-use placemat is precisely to stand as a barrier between those organisms and the guest’s plate.',
         'Apart from that, individual paper placemats —fully recyclable, single use— can carry information about the menu or the dishes you want to highlight, or a short photographic gallery. Remember: we eat with our eyes. And if you are in a tourist area, a good solution is to print the menu on both sides, in different languages, so foreign guests have a better chance of reading the offer.',
@@ -22,7 +22,7 @@ export const mantelesCopy: DossierCopy = {
         'And a person does not live by the menu alone. We also make breakfast placemats, and placemats for hotels, cafés and other houses. Remember that the guest will be looking at the placemat every time they lower their head to the plate. And even long before the plate is on it. We also make children’s placemats —to see if they will sit still for once— to colour and to do crosswords. Here too you can promote the children’s menu.',
       ],
       highlights: ['90-gram paper', 'Satin or matte', 'Ecological inks', 'Fully recyclable'],
-      captions: ['On the table', 'Favorita', 'Único', 'Plaza', 'La Cepa'],
+      captions: ['On the table', 'Favorita', 'Único', 'Toast', 'Black placemats'],
     },
     {
       nav: 'A case',
@@ -50,6 +50,14 @@ export const mantelesCopy: DossierCopy = {
         'Here is a variety of paper placemats, made with special ecological inks, fully recyclable, 90 grams, A3 or larger.',
         'At **GastroMenú Premium** we have spent 28 years designing placemats with your menu, so the guest has the whole offer to hand and you can widen your income.',
       ],
+      captions: [
+        'El Encuentro',
+        'Marisquería Plaza',
+        'Rocamar',
+        'El Lotero',
+        'El Cateto',
+        'Don Pedro',
+      ],
     },
     {
       nav: 'Design',
@@ -61,14 +69,11 @@ export const mantelesCopy: DossierCopy = {
         'At **GastroMenú Premium** we design to measure the placemats you want on your tables. We personalise, we adapt and we advise on the styles and types that best suit the house. You will gain in elegance, style and taste, and your guests will thank you for it.',
       ],
       captions: [
-        'La Casita',
-        'Favorita',
-        'Único',
-        'Plaza',
-        'La Cepa',
         'Sicsú',
         'Verde Mar',
-        'Palmeras Plaza',
+        'Marisquería Plaza',
+        'La Casita',
+        'La Cepa',
       ],
     },
     {
@@ -105,7 +110,7 @@ export const mantelesCopy: DossierCopy = {
         'The offer **GastroMenú Premium** has for adapting placemats to every kind of house is enormous. Whether you have a themed restaurant or any other establishment, we strongly advise single-use paper placemats, for the versatility they have and the excellent result they give at the moment of decision. It has been shown that they have a high power over the guest’s last choice.',
         'If you want to try them, call us. We will show you many models from clients with assured success, and we will give shape to yours, so that you become one of them.',
       ],
-      captions: ['Mister Noodles', 'Mexican', 'Lebanese', 'Kaede', 'Haruki'],
+      captions: ['Mister Noodles', 'Mexican', 'Lebanese', 'Kaede'],
     },
     {
       nav: 'Cocktails',
@@ -132,7 +137,7 @@ export const mantelesCopy: DossierCopy = {
       captions: [
         'Alma Mediterránea',
         'Estrella de Mar',
-        'Rocamar',
+        'Marisquería Plaza',
         'Seafood beach bar',
         'Mediterraneum',
       ],
@@ -148,7 +153,14 @@ export const mantelesCopy: DossierCopy = {
         'At **GastroMenú Premium** we encourage you to place placemats designed personally for the house, to promote breakfast, with specific images that lift the offer still further or introduce products the public does not know you have.',
         'Besides guaranteeing hygiene on the tables, you will notice the sales rise, and the till will thank you.',
       ],
-      captions: ['Breakfast', 'Hearts', 'Hotel Ambassador', 'La Colombiana', 'Ambassador'],
+      captions: [
+        'Breakfast',
+        'Hearts',
+        'Hotel Ambassador',
+        'La Colombiana',
+        'Ambassador',
+        'Breakfast at the table',
+      ],
     },
     {
       nav: 'Rigid',

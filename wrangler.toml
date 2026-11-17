@@ -2,25 +2,22 @@ name = "gastromenu-content"
 main = "workers/content/index.ts"
 compatibility_date = "2026-10-17"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "gastromenu"
-database_id = "00000000-0000-0000-0000-000000000000"
-migrations_dir = "migrations"
+# D1/R2 desactivados hasta activar R2 en el dashboard y crear recursos:
+#   npm run cf:create
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "gastromenu"
+# database_id = "00000000-0000-0000-0000-000000000000"
+# migrations_dir = "migrations"
+#
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "gastromenu-media"
 
-[[r2_buckets]]
-binding = "MEDIA"
-bucket_name = "gastromenu-media"
-
-# Destino de prueba del formulario. El remitente tiene que ser una dirección
-# del dominio dado de alta en Email Service; el destino debe estar verificado
-# en Cloudflare Email Workers.
+# Formulario vía Resend.
+# Local: `.dev.vars` · Producción: npx wrangler secret put RESEND_API_KEY
+# Tras verificar el dominio en Resend: TO/FROM = hola@gastromenupremium.com
 [vars]
-CONTACT_TO = "albertosanzdev@gmail.com"
-CONTACT_FROM = "consultas@gastromenupremium.com"
+CONTACT_TO = "sanz_alonso84@hotmail.com"
+CONTACT_FROM = "onboarding@resend.dev"
 CONTACT_FROM_NAME = "GastroMenú Premium"
-
-[[send_email]]
-name = "EMAIL"
-destination_address = "albertosanzdev@gmail.com"
-allowed_sender_addresses = ["consultas@gastromenupremium.com"]

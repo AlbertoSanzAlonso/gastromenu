@@ -1,7 +1,7 @@
 import { company } from '../../src/data/contact'
 
 const OWNER_EMAIL = company.email
-const FROM_EMAIL = `consultas@${company.domain}`
+const FROM_EMAIL = company.email
 const FROM_NAME = 'GastroMenú Premium'
 
 const LIMITS = {
@@ -17,16 +17,7 @@ const LIMITS = {
 } as const
 
 export interface ContactEnv {
-  EMAIL?: {
-    send(message: {
-      to: string
-      from: { email: string; name?: string }
-      replyTo?: string
-      subject: string
-      text: string
-      html: string
-    }): Promise<{ messageId: string }>
-  }
+  RESEND_API_KEY?: string
   CONTACT_TO?: string
   CONTACT_FROM?: string
   CONTACT_FROM_NAME?: string
@@ -63,23 +54,36 @@ export async function handleContact(request: Request, env: ContactEnv): Promise<
   if (!parsed.ok) return contactJson({ error: 'invalid' }, 400)
   if (parsed.kind === 'ignore') return contactJson({ ok: true })
 
-  if (!env.EMAIL) return contactJson({ error: 'send' }, 503)
+  if (!env.RESEND_API_KEY) return contactJson({ error: 'send' }, 503)
 
   const inquiry = parsed.inquiry
   const to = env.CONTACT_TO || OWNER_EMAIL
-  const from = env.CONTACT_FROM || FROM_EMAIL
+  const fromEmail = env.CONTACT_FROM || FROM_EMAIL
   const fromName = env.CONTACT_FROM_NAME || FROM_NAME
   const subject = singleLine(`Nueva consulta — ${inquiry.establishmentName}`, 140)
 
   try {
-    await env.EMAIL.send({
-      to,
-      from: { email: from, name: fromName },
-      replyTo: inquiry.email,
-      subject,
-      text: inquiryText(inquiry),
-      html: inquiryHtml(inquiry),
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${env.RESEND_API_KEY}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: `${fromName} <${fromEmail}>`,
+        to: [to],
+        reply_to: inquiry.email,
+        subject,
+        text: inquiryText(inquiry),
+        html: inquiryHtml(inquiry),
+      }),
     })
+
+    if (!response.ok) {
+      const detail = await response.text()
+      console.error('No se pudo enviar la consulta', response.status, detail)
+      return contactJson({ error: 'send' }, 502)
+    }
   } catch (error) {
     console.error('No se pudo enviar la consulta', error)
     return contactJson({ error: 'send' }, 502)

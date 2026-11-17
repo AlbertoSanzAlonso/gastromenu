@@ -17,6 +17,7 @@ export interface DossierCopy {
   title: string
   emphasis?: string
   lead: string
+  heroCaptions?: string[]
   sections: DossierSectionCopy[]
 }
 
@@ -33,6 +34,10 @@ export function translateDossier(base: DossierPageContent, copy: DossierCopy): D
     title: copy.title,
     emphasis: copy.emphasis,
     lead: copy.lead,
+    heroImages: base.heroImages?.map((image, imageIndex) => ({
+      ...image,
+      caption: copy.heroCaptions?.[imageIndex] ?? image.caption,
+    })),
     sections: base.sections.map((section, index) => {
       const next = copy.sections[index]
       return {
