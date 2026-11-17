@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 import { Container } from '@/components/ui/Container'
@@ -12,20 +12,15 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [langsVisible, setLangsVisible] = useState(true)
   const [scrolled, setScrolled] = useState(false)
-  const [booted, setBooted] = useState(false)
   const location = useLocation()
   const { m } = useMessages()
-
-  useLayoutEffect(() => {
-    setScrolled(window.scrollY > SCROLL_THRESHOLD)
-    setBooted(true)
-  }, [])
 
   useEffect(() => {
     function handleScroll() {
       setScrolled(window.scrollY > SCROLL_THRESHOLD)
     }
 
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -67,7 +62,6 @@ export function Header() {
     <header
       className="site-header fixed top-0 left-0 right-0 z-50"
       data-scrolled={scrolled ? 'true' : 'false'}
-      data-booted={booted ? 'true' : 'false'}
     >
       <Container as="div" className="flex h-20 items-center justify-center md:h-24">
         <Link
@@ -77,8 +71,6 @@ export function Header() {
           onClick={() => setOpen(false)}
         >
           <BrandLogo
-            fetchPriority="high"
-            decoding="sync"
             className={`h-8 w-8 object-contain sm:h-9 sm:w-9 md:h-11 md:w-11 ${
               scrolled ? 'brightness-0 invert' : ''
             }`}

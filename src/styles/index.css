@@ -213,9 +213,6 @@
     box-shadow: none;
     backdrop-filter: blur(0);
     -webkit-backdrop-filter: blur(0);
-  }
-
-  .site-header[data-booted='true']::before {
     transition:
       background-color 500ms var(--ease-premium),
       backdrop-filter 500ms var(--ease-premium),
