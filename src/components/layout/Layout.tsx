@@ -1,10 +1,19 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { BrandWatermark } from '@/components/layout/BrandWatermark'
-import { CookieNotice } from '@/components/layout/CookieNotice'
-import { FloatingActions } from '@/components/layout/FloatingActions'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
+
+const CookieNotice = lazy(() =>
+  import('@/components/layout/CookieNotice').then((module) => ({
+    default: module.CookieNotice,
+  })),
+)
+const FloatingActions = lazy(() =>
+  import('@/components/layout/FloatingActions').then((module) => ({
+    default: module.FloatingActions,
+  })),
+)
 
 export function Layout() {
   const { pathname, hash } = useLocation()
@@ -29,8 +38,10 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
-      <CookieNotice />
-      <FloatingActions />
+      <Suspense fallback={null}>
+        <CookieNotice />
+        <FloatingActions />
+      </Suspense>
     </div>
   )
 }

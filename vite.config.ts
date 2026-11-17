@@ -4,8 +4,27 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { gastromenuSeoPlugin } from './scripts/seo-plugin'
 
+/** CSS en head: crítico primero; el stylesheet completo llega después y gana la cascada. */
+function deferStylesheetPlugin() {
+  return {
+    name: 'defer-stylesheet',
+    transformIndexHtml: {
+      order: 'post' as const,
+      handler(html: string) {
+        return html.replace(
+          /<link rel="stylesheet"(\s[^>]*href="[^"]+\.css"[^>]*)>/g,
+          [
+            '<link rel="preload" as="style"$1 onload="this.onload=null;this.rel=\'stylesheet\'">',
+            '<noscript><link rel="stylesheet"$1></noscript>',
+          ].join(''),
+        )
+      },
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), gastromenuSeoPlugin()],
+  plugins: [react(), tailwindcss(), gastromenuSeoPlugin(), deferStylesheetPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

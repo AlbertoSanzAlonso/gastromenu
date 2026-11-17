@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { readLocalData, subscribeLocalChanges } from '@/features/admin/localStore'
 import { isSupabaseConfigured } from '@/lib/supabase/config'
 
 let remoteCache: Record<string, string> | null = null
 let remotePending: Promise<Record<string, string>> | null = null
 
-function localContentMap() {
+async function localContentMap() {
+  const { readLocalData } = await import('@/features/admin/localStore')
   const draft = readLocalData()
   if (!draft) return {}
   return Object.fromEntries(draft.content.map((row) => [row.key, row.value]))
@@ -36,13 +36,12 @@ export function invalidateSiteContent() {
 }
 
 export function useSiteContent() {
-  const [entries, setEntries] = useState<Record<string, string> | null>(() =>
-    isSupabaseConfigured ? null : localContentMap(),
-  )
+  const [entries, setEntries] = useState<Record<string, string> | null>(null)
 
   useEffect(() => {
+    let active = true
+
     if (isSupabaseConfigured) {
-      let active = true
       const timer = window.setTimeout(() => {
         void loadRemote().then((map) => {
           if (active) setEntries(map)
@@ -55,7 +54,24 @@ export function useSiteContent() {
       }
     }
 
-    return subscribeLocalChanges(() => setEntries(localContentMap()))
+    void localContentMap().then((map) => {
+      if (active) setEntries(map)
+    })
+
+    let unsubscribe = () => {}
+    void import('@/features/admin/localStore').then(({ subscribeLocalChanges }) => {
+      if (!active) return
+      unsubscribe = subscribeLocalChanges(() => {
+        void localContentMap().then((map) => {
+          if (active) setEntries(map)
+        })
+      })
+    })
+
+    return () => {
+      active = false
+      unsubscribe()
+    }
   }, [])
 
   function read(key: string, fallback: string) {
