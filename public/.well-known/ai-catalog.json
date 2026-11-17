@@ -7,7 +7,7 @@
   },
   "entries": [
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:page:inicio",
+      "identifier": "urn:air:www.gastromenupremium.com:page:inicio",
       "displayName": "GastroMenú Premium — Cartas artesanales",
       "description": "Fabricación propia de cartas de menú, manteles y atriles portamenú desde 1998. Talleres en Madrid y Málaga. Titularidad de Fudys Gourmet SL.",
       "type": "text/html",
@@ -20,7 +20,7 @@
       "tags": ["cartas", "restaurantes", "fabricacion"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:page:cartas",
+      "identifier": "urn:air:www.gastromenupremium.com:page:cartas",
       "displayName": "Cartas menú",
       "description": "Cartas de menú, vinos, postres y cócteles en tapas duras, piel, semipiel, tejidos nobles y maderas selectas.",
       "type": "text/html",
@@ -33,7 +33,7 @@
       "tags": ["cartas", "menu", "piel"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:page:atriles",
+      "identifier": "urn:air:www.gastromenupremium.com:page:atriles",
       "displayName": "Atriles portamenú",
       "description": "Atriles de pie, cilíndricos y de pared en acero, con pantalla retroiluminada, batería o conexión eléctrica.",
       "type": "text/html",
@@ -46,7 +46,7 @@
       "tags": ["atriles", "portamenu"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:page:manteles",
+      "identifier": "urn:air:www.gastromenupremium.com:page:manteles",
       "displayName": "Manteles",
       "description": "Manteles de papel de un solo uso y manteles rígidos lacados a mano, con diseño personalizado.",
       "type": "text/html",
@@ -59,7 +59,7 @@
       "tags": ["manteles", "papel"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:page:contacto",
+      "identifier": "urn:air:www.gastromenupremium.com:page:contacto",
       "displayName": "Contacto",
       "description": "Teléfonos 605 989 264 y 952 058 319, correo hola@gastromenupremium.com. Oficina en Benalmádena; talleres en Madrid y Málaga.",
       "type": "text/html",
@@ -72,7 +72,7 @@
       "tags": ["contacto", "presupuesto"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:doc:llms",
+      "identifier": "urn:air:www.gastromenupremium.com:doc:llms",
       "displayName": "Resumen para modelos de lenguaje",
       "description": "Presentación de la empresa, productos, contacto y enlaces de descubrimiento para agentes.",
       "type": "text/plain",
@@ -84,7 +84,7 @@
       "tags": ["llms.txt", "documentation"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:doc:mcp",
+      "identifier": "urn:air:www.gastromenupremium.com:doc:mcp",
       "displayName": "Ficha MCP del sitio",
       "description": "No hay servidor MCP remoto ni herramientas invocables. La ficha remite a las páginas públicas y a llms.txt.",
       "type": "application/mcp-server-card+json",
@@ -96,7 +96,7 @@
       "tags": ["mcp"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:doc:agente",
+      "identifier": "urn:air:www.gastromenupremium.com:doc:agente",
       "displayName": "Ficha de agente",
       "description": "No hay endpoint JSON-RPC A2A. La información de la empresa está en las páginas públicas y en llms.txt.",
       "type": "application/a2a-agent-card+json",
@@ -108,7 +108,7 @@
       "tags": ["a2a", "agent"]
     },
     {
-      "identifier": "urn:ai:www.gastromenupremium.com:doc:api-catalog",
+      "identifier": "urn:air:www.gastromenupremium.com:doc:api-catalog",
       "displayName": "Catálogo de recursos (RFC 9727)",
       "description": "Linkset que indexa llms.txt, el catálogo ARD y el sitemap. Este dominio no publica una API REST remota.",
       "type": "application/linkset+json",

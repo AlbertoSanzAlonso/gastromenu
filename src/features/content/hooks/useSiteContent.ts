@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { readLocalData, subscribeLocalChanges } from '@/features/admin/localStore'
-import { isSupabaseConfigured, supabase } from '@/lib/supabase/client'
+import { isSupabaseConfigured } from '@/lib/supabase/config'
 
 let remoteCache: Record<string, string> | null = null
 let remotePending: Promise<Record<string, string>> | null = null
@@ -14,18 +14,18 @@ function localContentMap() {
 function loadRemote(): Promise<Record<string, string>> {
   if (remoteCache) return Promise.resolve(remoteCache)
   if (!remotePending) {
-    remotePending = Promise.resolve(
-      supabase.from('site_content').select('key, value'),
-    ).then(({ data, error }) => {
-      const next: Record<string, string> = {}
-      if (!error && data) {
-        for (const row of data as { key: string; value: string }[]) {
-          next[row.key] = row.value
+    remotePending = import('@/lib/supabase/client')
+      .then(({ supabase }) => supabase.from('site_content').select('key, value'))
+      .then(({ data, error }) => {
+        const next: Record<string, string> = {}
+        if (!error && data) {
+          for (const row of data as { key: string; value: string }[]) {
+            next[row.key] = row.value
+          }
         }
-      }
-      remoteCache = next
-      return next
-    })
+        remoteCache = next
+        return next
+      })
   }
   return remotePending
 }
@@ -43,11 +43,15 @@ export function useSiteContent() {
   useEffect(() => {
     if (isSupabaseConfigured) {
       let active = true
-      loadRemote().then((map) => {
-        if (active) setEntries(map)
-      })
+      const timer = window.setTimeout(() => {
+        void loadRemote().then((map) => {
+          if (active) setEntries(map)
+        })
+      }, 0)
+
       return () => {
         active = false
+        window.clearTimeout(timer)
       }
     }
 

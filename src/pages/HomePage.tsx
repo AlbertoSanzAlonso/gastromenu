@@ -1,10 +1,28 @@
+import { lazy, Suspense } from 'react'
 import { useMessages } from '@/i18n/useMessages'
 import { SEO } from '@/lib/seo/SEO'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { CollectionsSection } from '@/components/sections/CollectionsSection'
-import { AboutSection } from '@/components/sections/AboutSection'
-import { TeamSection } from '@/components/sections/TeamSection'
-import { ContactCTA } from '@/components/sections/ContactCTA'
+
+const CollectionsSection = lazy(() =>
+  import('@/components/sections/CollectionsSection').then((module) => ({
+    default: module.CollectionsSection,
+  })),
+)
+const AboutSection = lazy(() =>
+  import('@/components/sections/AboutSection').then((module) => ({
+    default: module.AboutSection,
+  })),
+)
+const TeamSection = lazy(() =>
+  import('@/components/sections/TeamSection').then((module) => ({
+    default: module.TeamSection,
+  })),
+)
+const ContactCTA = lazy(() =>
+  import('@/components/sections/ContactCTA').then((module) => ({
+    default: module.ContactCTA,
+  })),
+)
 
 export function HomePage() {
   const { m } = useMessages()
@@ -18,10 +36,12 @@ export function HomePage() {
       />
       <HeroSection />
       <div className="relative z-10">
-        <CollectionsSection />
-        <AboutSection />
-        <TeamSection />
-        <ContactCTA />
+        <Suspense fallback={null}>
+          <CollectionsSection />
+          <AboutSection />
+          <TeamSection />
+          <ContactCTA />
+        </Suspense>
       </div>
     </>
   )

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.gastromenupremium.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -22,16 +22,32 @@
       <image:title>exclusividades premium 1620x945</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://www.gastromenupremium.com/images/hero/01-the-view-720.webp</image:loc>
+      <image:title>the view 720</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://www.gastromenupremium.com/images/hero/01-the-view.webp</image:loc>
       <image:title>the view</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.gastromenupremium.com/images/hero/02-amaretto-720.webp</image:loc>
+      <image:title>amaretto 720</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.gastromenupremium.com/images/hero/02-amaretto.webp</image:loc>
       <image:title>amaretto</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://www.gastromenupremium.com/images/hero/03-the-butcher-720.webp</image:loc>
+      <image:title>the butcher 720</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://www.gastromenupremium.com/images/hero/03-the-butcher.webp</image:loc>
       <image:title>the butcher</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.gastromenupremium.com/images/hero/04-cervantes-720.webp</image:loc>
+      <image:title>cervantes 720</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.gastromenupremium.com/images/hero/04-cervantes.webp</image:loc>
