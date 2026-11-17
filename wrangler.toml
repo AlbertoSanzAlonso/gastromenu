@@ -17,6 +17,6 @@ compatibility_date = "2026-10-17"
 # Formulario vía Resend.
 # Local: `.dev.vars` · Producción: npx wrangler secret put RESEND_API_KEY
 [vars]
-CONTACT_TO = "albertosanzdev@gmail.com"
+CONTACT_TO = "hola@gastromenupremium.com"
 CONTACT_FROM = "hola@gastromenupremium.com"
 CONTACT_FROM_NAME = "GastroMenú Premium"
