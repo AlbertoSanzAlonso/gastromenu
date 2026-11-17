@@ -3,7 +3,7 @@ export const company = {
   cif: 'B06899389',
   brand: 'GastroMenú Premium',
   domain: 'gastromenupremium.com',
-  url: 'https://gastromenupremium.com',
+  url: 'https://www.gastromenupremium.com',
   /** Correo general (info, legal, formularios). */
   email: 'hola@gastromenupremium.com',
   emails: [

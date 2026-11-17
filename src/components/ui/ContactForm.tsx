@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react'
+import { useEffect, useRef, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/Button'
 import { useContactForm } from '@/features/contact/hooks/useContactForm'
@@ -19,6 +19,12 @@ export function ContactForm() {
     resetSuccess,
   } = useContactForm()
   const { m } = useMessages()
+  const thanksRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!success) return
+    thanksRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [success])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -27,7 +33,11 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div id="formulario" className="scroll-mt-24 md:scroll-mt-28 text-center py-16">
+      <div
+        ref={thanksRef}
+        id="formulario"
+        className="scroll-mt-24 md:scroll-mt-28 text-center py-16"
+      >
         <p className="slide-heading text-2xl mb-4">
           {m.form.thanksTitle}
         </p>
