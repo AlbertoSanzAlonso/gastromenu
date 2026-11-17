@@ -623,8 +623,8 @@
   }
 
   .section-edge-fade.bg-ink,
-  .section-edge-fade.bg-beige-50,
-  .section-edge-fade.bg-beige-100 {
+  .section-edge-fade.bg-beige-50\/65,
+  .section-edge-fade.bg-beige-100\/65 {
     background-color: transparent;
   }
 
@@ -633,12 +633,12 @@
     padding-bottom: calc(var(--section-pad, var(--spacing-section-sm)) + var(--section-fade) * 0.55);
   }
 
-  .section-edge-fade.bg-beige-50 {
-    --section-veil: var(--color-beige-50);
+  .section-edge-fade.bg-beige-50\/65 {
+    --section-veil: rgb(from var(--color-beige-50) r g b / 0.65);
   }
 
-  .section-edge-fade.bg-beige-100 {
-    --section-veil: var(--color-beige-100);
+  .section-edge-fade.bg-beige-100\/65 {
+    --section-veil: rgb(from var(--color-beige-100) r g b / 0.65);
   }
 
   .section-edge-fade.section-edge-fade-top {
